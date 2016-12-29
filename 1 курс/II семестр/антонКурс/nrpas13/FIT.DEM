@@ -1,0 +1,53 @@
+PROGRAM d14r1(input,output);
+(* driver for routine FIT *)
+CONST
+   npt=100;
+   spread=0.5;
+TYPE
+   glndata = ARRAY [1..npt] OF real;
+VAR
+   gliset : integer;
+   glgset : real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   a,b,chi2,q,siga,sigb : real;
+   i,idum,mwt : integer;
+   x,y,sig : glndata;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I GSER.PAS *)
+
+(*$I GCF.PAS *)
+
+(*$I GAMMQ.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I FIT.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -117;
+   FOR i := 1 to npt DO BEGIN
+      x[i] := 0.1*i;
+      y[i] := -2.0*x[i]+1.0+spread*gasdev(idum);
+      sig[i] := spread
+   END;
+   FOR mwt := 0 to 1 DO BEGIN
+      fit(x,y,npt,sig,mwt,a,b,siga,sigb,chi2,q);
+      writeln;
+      IF (mwt = 0) THEN BEGIN
+         writeln('ignoring standard deviations')
+      END ELSE BEGIN
+         writeln('including standard deviation')
+      END;
+      writeln(' ':5,'a  =  ',a:9:6,' ':6,'uncertainty:',siga:9:6);
+      writeln(' ':5,'b  =  ',b:9:6,' ':6,'uncertainty:',sigb:9:6);
+      writeln(' ':5,'chi-squared: ',chi2:14:6);
+      writeln(' ':5,'goodness-of-fit: ',q:10:6)
+   END
+END.

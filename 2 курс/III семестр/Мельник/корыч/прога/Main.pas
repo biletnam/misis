@@ -1,0 +1,212 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, ComCtrls, DB, DBTables, ExtCtrls, DBCtrls, Mask,
+  RpCon, RpConDS, RpConBDE, RpBase, RpSystem, RpDefine, RpRave, Zapros, ShellAPI;
+
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    PageControl1: TPageControl;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    TabSheet1: TTabSheet;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Table1: TTable;
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    TabSheet2: TTabSheet;
+    DBEdit7: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit11: TDBEdit;
+    DBEdit12: TDBEdit;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    DBNavigator2: TDBNavigator;
+    DataSource2: TDataSource;
+    Table2: TTable;
+    DBCheckBox1: TDBCheckBox;
+    TabSheet3: TTabSheet;
+    DBEdit8: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    DataSource3: TDataSource;
+    Table3: TTable;
+    DBNavigator3: TDBNavigator;
+    Query1: TQuery;
+    Query2: TQuery;
+    RvProject1: TRvProject;
+    RvSystem1: TRvSystem;
+    RvTableConnection1: TRvTableConnection;
+    RvTableConnection2: TRvTableConnection;
+    RvTableConnection3: TRvTableConnection;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Edit1: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    Button7: TButton;
+    DataSource4: TDataSource;
+    Label20: TLabel;
+    Edit2: TEdit;
+    Button8: TButton;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N9: TMenuItem;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+    procedure N9Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  PageControl1.ActivePage:=TabSheet1;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   PageControl1.ActivePage:=TabSheet2;
+end;
+
+procedure TForm1.N3Click(Sender: TObject);
+begin
+   Application.Terminate;
+end;
+
+procedure TForm1.N6Click(Sender: TObject);
+begin
+   ShowMessage('Фирма.Ресурсы. Разработал: Мельников Евгений ДИС-06-1');
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+   PageControl1.ActivePage:=TabSheet3;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+   RvProject1.Close;
+   RvProject1.ProjectFile:='Sklad.rav';
+   RvProject1.Execute;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+   RvProject1.Close;
+   RvProject1.ProjectFile:='Zakaz.rav';
+   RvProject1.Execute;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+   RvProject1.Close;
+   RvProject1.ProjectFile:='Info.rav';
+   RvProject1.Execute;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+   Query1.Close;
+   Query1.ParamByName('iName').AsString:=Edit1.Text;
+   Query1.ParamByName('iData').AsDate:=DateTimePicker1.Date;
+   Query1.Open;
+   DataSource4.DataSet:=Query1;
+   Form2.DBNavigator1.DataSource:=DataSource4;
+   Form2.DBGrid1.DataSource:=DataSource4;
+   Form2.Show;
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+   Query2.Close;
+   Query2.ParamByName('kodd').AsInteger:=StrToInt(Edit2.Text); 
+   Query2.Open;
+   DataSource4.DataSet:=Query2;
+   Form2.DBNavigator1.DataSource:=DataSource4;
+   Form2.DBGrid1.DataSource:=DataSource4;
+   Form2.Show;
+end;
+
+procedure TForm1.N5Click(Sender: TObject);
+begin
+   ShellExecute(Form1.Handle,nil,'Help.doc',nil,nil,SW_RESTORE);
+end;
+
+procedure TForm1.N7Click(Sender: TObject);
+begin
+   Form1.Button4.Click;
+end;
+
+procedure TForm1.N8Click(Sender: TObject);
+begin
+   Form1.Button5.Click;
+end;
+
+procedure TForm1.N9Click(Sender: TObject);
+begin
+   Form1.Button6.Click;
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
+end;
+
+end.

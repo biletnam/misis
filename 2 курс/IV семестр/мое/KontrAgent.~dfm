@@ -1,0 +1,147 @@
+object KontrAgenti: TKontrAgenti
+  Left = 516
+  Top = 339
+  Width = 594
+  Height = 424
+  Caption = #1057#1083#1086#1074#1072#1088#1100' '#1076#1072#1085#1085#1099#1093' - '#1050#1086#1085#1090#1088#1072#1075#1077#1085#1090#1099
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 80
+    Top = 24
+    Width = 65
+    Height = 17
+    Caption = 'Label1'
+  end
+  object Label2: TLabel
+    Left = 72
+    Top = 48
+    Width = 65
+    Height = 17
+    Caption = 'Label2'
+  end
+  object Label3: TLabel
+    Left = 80
+    Top = 72
+    Width = 65
+    Height = 17
+    Caption = 'Label3'
+  end
+  object Label4: TLabel
+    Left = 72
+    Top = 96
+    Width = 65
+    Height = 17
+    Caption = 'Label4'
+  end
+  object Label5: TLabel
+    Left = 72
+    Top = 120
+    Width = 65
+    Height = 17
+    Caption = 'Label5'
+  end
+  object Label6: TLabel
+    Left = 72
+    Top = 144
+    Width = 65
+    Height = 17
+    Caption = 'Label6'
+  end
+  object Label7: TLabel
+    Left = 80
+    Top = 168
+    Width = 65
+    Height = 17
+    Caption = 'Label7'
+  end
+  object Label8: TLabel
+    Left = 72
+    Top = 192
+    Width = 65
+    Height = 17
+    Caption = 'Label8'
+  end
+  object Kontragenti_DBNavigator: TDBNavigator
+    Left = 144
+    Top = 344
+    Width = 240
+    Height = 25
+    DataSource = Kontragenti_DataSource
+    TabOrder = 0
+  end
+  object DBEdit1: TDBEdit
+    Left = 152
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 152
+    Top = 48
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 152
+    Top = 72
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 152
+    Top = 96
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 152
+    Top = 120
+    Width = 121
+    Height = 21
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit
+    Left = 152
+    Top = 144
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object DBEdit7: TDBEdit
+    Left = 152
+    Top = 168
+    Width = 121
+    Height = 21
+    TabOrder = 7
+  end
+  object DBEdit8: TDBEdit
+    Left = 152
+    Top = 192
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Kontragenti_DataSource: TDataSource
+    DataSet = Kontragenti_Table
+    Left = 48
+    Top = 344
+  end
+  object Kontragenti_Table: TTable
+    Active = True
+    TableName = 'KontrAgenti.DB'
+    Left = 8
+    Top = 344
+  end
+end

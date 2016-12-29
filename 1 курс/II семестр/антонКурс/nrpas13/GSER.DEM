@@ -1,0 +1,28 @@
+PROGRAM d6r8(input,output,dfile);
+(* driver for routine GSER *)
+VAR
+   a,gamser,gln,val,x : real;
+   i,nval : integer;
+   txt : string[25];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I GSER.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Incomplete Gamma Function');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln('a':4,'x':11,'actual':14,'gser(a,x)':14,
+         'gammln(a)':12,'gln':8);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,a,x,val);
+      gser(a,x,gamser,gln);
+      writeln(a:6:2,x:12:6,val:12:6,gamser:12:6,
+            gammln(a):12:6,gln:12:6)
+   END;
+   close(dfile)
+END.

@@ -1,0 +1,7 @@
+unit Globals;
+
+interface
+var CurrentProductId: string;
+implementation
+
+end.

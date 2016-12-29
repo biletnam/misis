@@ -1,0 +1,68 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBTables, ExtCtrls, DBCtrls, Grids, DBGrids, StdCtrls, unit1, unit3, unit5, unit4,
+  Menus;
+
+type
+  TForm2 = class(TForm)
+    MainMenu1: TMainMenu;
+    A1: TMenuItem;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    Button1: TButton;
+    procedure N6Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  Form5.Show;
+end;
+
+procedure TForm2.N5Click(Sender: TObject);
+begin
+  Form2.Close;
+end;
+
+procedure TForm2.N6Click(Sender: TObject);
+begin
+  Form1.CalcNom(nil);
+  Form1.Show();
+end;
+
+procedure TForm2.N7Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm2.N8Click(Sender: TObject);
+begin
+  Form4.Show;
+end;
+
+end.

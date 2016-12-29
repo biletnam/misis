@@ -1,0 +1,27 @@
+PROGRAM d6r20(input,output,dfile);
+(* driver for routine BESSJ *)
+VAR
+   i,n,nval : integer;
+   val,x : real;
+   txt : string[18];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I BESSJ0.PAS *)
+
+(*$I BESSJ1.PAS *)
+
+(*$I BESSJ.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Bessel Function Jn');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln('n':4,'x':7,'actual':14,'bessj(n,x)':18);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,n,x,val);
+      writeln(n:4,x:8:2,'   ',val:13,'   ',bessj(n,x):13)
+   END;
+   close(dfile)
+END.

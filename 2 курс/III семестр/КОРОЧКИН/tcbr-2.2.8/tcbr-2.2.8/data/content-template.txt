@@ -1,0 +1,15 @@
+BOOKSET_NAME_PLACEHOLDER (BOOKSET_ID_PLACEHOLDER)
+
+LBL_BOOKSET_TOTALSIZE: # files, ###.### bytes
+LBL_BOOKSET_BOOKLIST
+    MARKER_BOOKLIST_BOOK_ENTRY_BEGIN
+Book 1 (755.555 bytes)
+    MARKER_BOOKLIST_BOOK_ENTRY_END
+MARKER_JARLIST_JAR_ENTRY_BEGIN
+book_set_id_1.jar (### bytes)
+  Book 1
+    chapter....
+    chapter....
+    chapter....
+    chapter....
+MARKER_JARLIST_JAR_ENTRY_END

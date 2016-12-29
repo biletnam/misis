@@ -1,0 +1,53 @@
+PROGRAM d12r6(input,output);
+(* driver for routine CONVLV *)
+CONST
+   n=16;      (* data array size *)
+   m=9;      (* response function dimension - must be odd *)
+   n2p2=34;      (* n2=2*n+2 *)
+   pi=3.14159265;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   gln2array = ARRAY [1..n2p2] OF real;
+   gl2narray = gln2array;
+   gldarray = gln2array;
+VAR
+   i,isign,j : integer;
+   cmp : real;
+   ans : gln2array;
+   data,respns,resp : glnarray;
+
+(*$I MODFILE.PAS *)
+(*$I FOUR1.PAS *)
+
+(*$I TWOFFT.PAS *)
+
+(*$I REALFT.PAS *)
+
+(*$I CONVLV.PAS *)
+
+BEGIN
+   FOR i := 1 to n DO BEGIN
+      data[i] := 0.0;
+      IF ((i >= ((n DIV 2)-(n DIV 8))) AND
+         (i <= ((n DIV 2)+(n DIV 8)))) THEN
+         data[i] := 1.0
+   END;
+   FOR i := 1 to m DO BEGIN
+      respns[i] := 0.0;
+      IF ((i > 2) AND (i < 7)) THEN respns[i] := 1.0;
+      resp[i] := respns[i]
+   END;
+   isign := 1;
+   convlv(data,n,resp,m,isign,ans);
+(* compare with a direct convolution *)
+   writeln ('i':3,'CONVLV':14,'Expected':13);
+   FOR i := 1 to n DO BEGIN
+      cmp := 0.0;
+      FOR j := 1 to (m DIV 2) DO BEGIN
+         cmp := cmp+data[((i-j-1+n) MOD n)+1]*respns[j+1];
+         cmp := cmp+data[((i+j-1) MOD n)+1]*respns[m-j+1]
+      END;
+      cmp := cmp+data[i]*respns[1];
+      writeln (i:3,ans[i]:15:6,cmp:12:6)
+   END
+END.

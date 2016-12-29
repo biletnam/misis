@@ -1,0 +1,8 @@
+label = Samsung C100, X100
+jar=samsung_bookreader.jar
+
+skin.screen = 14x29x128x128
+skin.image = samsungX100.png
+
+bpp=8
+overridePhoneScreenSize=true

@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:x = 
+"urn:schemas-microsoft-com:office:excel" xmlns:a = 
+"urn:schemas-microsoft-com:office:access" xmlns:dt = 
+"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><TITLE>Заказы</TITLE><LINK 
+href="Заказы.files/filelist.xml" type=text/xml rel=File-List>
+<META content=Access.Application name=ProgId>
+<META name=VBSForEventHandlers VALUE="TRUE">
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=10.00.3420 name=DesignerVersion>
+<META content="HTML 4.0" name=vs_targetSchema>
+<OBJECT id=MSODSC tabIndex=-1 
+classid=CLSID:0002E553-0000-0000-C000-000000000046><PARAM NAME="XMLData" VALUE="<xml xmlns:a=&quot;urn:schemas-microsoft-com:office:access&quot;>&#13;&#10; <a:DataSourceControl>&#13;&#10;  <a:OWCVersion>10.0.0.5605         </a:OWCVersion>&#13;&#10;  <a:ConnectionString>Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Documents and Settings\Женя\Рабочий стол\БД\WORK\Компьютерный салон.mdb;Mode=Share Deny None;Extended Properties=&amp;quot;&amp;quot;;Persist Security Info=False;Jet OLEDB:System database=&amp;quot;&amp;quot;;Jet OLEDB:Registry Path=&amp;quot;&amp;quot;;Jet OLEDB:Database Password=&amp;quot;&amp;quot;;Jet OLEDB:Engine Type=0;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password=&amp;quot;&amp;quot;;Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False</a:ConnectionString>&#13;&#10;  <a:MaxRecords>10000</a:MaxRecords>&#13;&#10;  <a:GridX>10</a:GridX>&#13;&#10;  <a:GridY>10</a:GridY>&#13;&#10;  <a:OfflineType>2</a:OfflineType>&#13;&#10;  <a:XMLLocation>0</a:XMLLocation>&#13;&#10;  <a:XMLDataTarget></a:XMLDataTarget>&#13;&#10;  <a:ConnectionFile></a:ConnectionFile>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>ЗаказыNavLabel</a:ElementID>&#13;&#10;   <a:RecordsetLabel>Заказы |0 из |2;Заказы |0-|1 из |2</a:RecordsetLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Заказы-KodZakazchikaNavLabel</a:ElementID>&#13;&#10;   <a:RecordsetLabel>Заказы-Код заказчика |0 из |2;Заказы-KodZakazchika |0-|1 из |2</a:RecordsetLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>KodZakazchika</a:ElementID>&#13;&#10;   <a:ControlSource>Группа_Заказы-KodZakazchika</a:ControlSource>&#13;&#10;   <a:ChildLabel>KodZakazchika_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>KodTovara</a:ElementID>&#13;&#10;   <a:ControlSource>KodTovara</a:ControlSource>&#13;&#10;   <a:ChildLabel>KodTovara_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>DataZakaza</a:ElementID>&#13;&#10;   <a:ControlSource>DataZakaza</a:ControlSource>&#13;&#10;   <a:ChildLabel>DataZakaza_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Kolichestvo</a:ElementID>&#13;&#10;   <a:ControlSource>Kolichestvo</a:ControlSource>&#13;&#10;   <a:ChildLabel>Kolichestvo_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Dostavleno</a:ElementID>&#13;&#10;   <a:ControlSource>Dostavleno</a:ControlSource>&#13;&#10;   <a:ChildLabel>Dostavleno_метка</a:ChildLabel>&#13;&#10;   <a:Format>Yes/No</a:Format>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:GroupLevel>&#13;&#10;   <a:RecordSource>Заказы-KodZakazchika</a:RecordSource>&#13;&#10;   <a:DefaultSort>[Группа_Заказы-KodZakazchika]</a:DefaultSort>&#13;&#10;   <a:HeaderElementId>ЗаголовокЗаказыKodZakazchika</a:HeaderElementId>&#13;&#10;   <a:FooterElementId></a:FooterElementId>&#13;&#10;   <a:CaptionElementId></a:CaptionElementId>&#13;&#10;   <a:RecordNavigationElementId>КнопкиПереходаЗаказыKodZakazchika</a:RecordNavigationElementId>&#13;&#10;   <a:DataPageSize>1</a:DataPageSize>&#13;&#10;   <a:GroupFilterControl></a:GroupFilterControl>&#13;&#10;   <a:NoAllowEdits/>&#13;&#10;   <a:NoAllowAdditions/>&#13;&#10;   <a:NoAllowDeletions/>&#13;&#10;  </a:GroupLevel>&#13;&#10;  <a:GroupLevel>&#13;&#10;   <a:RecordSource>Заказы</a:RecordSource>&#13;&#10;   <a:DefaultSort></a:DefaultSort>&#13;&#10;   <a:HeaderElementId>ЗаголовокЗаказы</a:HeaderElementId>&#13;&#10;   <a:FooterElementId></a:FooterElementId>&#13;&#10;   <a:CaptionElementId></a:CaptionElementId>&#13;&#10;   <a:RecordNavigationElementId>КнопкиПереходаЗаказы</a:RecordNavigationElementId>&#13;&#10;   <a:DataPageSize>1</a:DataPageSize>&#13;&#10;   <a:GroupFilterControl></a:GroupFilterControl>&#13;&#10;  </a:GroupLevel>&#13;&#10;  <a:Datamodel a:version=&quot;0816&quot;>&#13;&#10;   <a:SchemaRowsource a:id=&quot;Заказы&quot; a:type=&quot;dscTable&quot;>&#13;&#10;    <a:SchemaField a:id=&quot;KodZakazchika&quot; a:datatype=&quot;130&quot; a:size=&quot;3&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;KodTovara&quot; a:datatype=&quot;130&quot; a:size=&quot;4&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;DataZakaza&quot; a:datatype=&quot;7&quot; a:size=&quot;0&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;Kolichestvo&quot; a:datatype=&quot;2&quot; a:size=&quot;0&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;Dostavleno&quot; a:datatype=&quot;11&quot; a:size=&quot;2&quot;/>&#13;&#10;   </a:SchemaRowsource>&#13;&#10;   <a:RecordsetDef a:id=&quot;Заказы&quot;>&#13;&#10;    <a:PageField a:id=&quot;KodZakazchika&quot;/>&#13;&#10;    <a:PageField a:id=&quot;KodTovara&quot;/>&#13;&#10;    <a:PageField a:id=&quot;DataZakaza&quot;/>&#13;&#10;    <a:PageField a:id=&quot;Kolichestvo&quot;/>&#13;&#10;    <a:PageField a:id=&quot;Dostavleno&quot;/>&#13;&#10;    <a:GroupingDef a:id=&quot;Заказы-KodZakazchika&quot;>&#13;&#10;     <a:PageField a:id=&quot;Группа_Заказы-KodZakazchika&quot; a:source=&quot;KodZakazchika&quot;&#13;&#10;      a:groupon=&quot;dscEachValue&quot; a:interval=&quot;1.0&quot;/>&#13;&#10;    </a:GroupingDef>&#13;&#10;   </a:RecordsetDef>&#13;&#10;  </a:Datamodel>&#13;&#10; </a:DataSourceControl>&#13;&#10;</xml>"></OBJECT>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<STYLE id=MSODAPDEFAULTS type=text/css>.MSTheme-Label {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: visible; BORDER-LEFT: 0px; WIDTH: 2.539cm; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; HEIGHT: 0.396cm; TEXT-ALIGN: left
+}
+.MsoTextbox {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; WIDTH: 2.539cm; FONT-FAMILY: Tahoma; HEIGHT: 0.502cm
+}
+.MsoBoundSpan {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; TEXT-ALIGN: left
+}
+.MsoHyperlinkDisplayText {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: 0px; CURSOR: hand; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; TEXT-ALIGN: left
+}
+.Mso2dSection {
+	LEFT: 0px; BEHAVIOR: url(#DEFAULT#Mso2dSection); OVERFLOW: hidden; POSITION: relative; TOP: 0px; BACKGROUND-COLOR: transparent
+}
+.Mso2dSectionBanner {
+	PADDING-RIGHT: 4px; DISPLAY: none; PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 8pt; LEFT: 0px; BEHAVIOR: url(#DEFAULT#Mso2dSectionBanner); OVERFLOW: visible; PADDING-TOP: 2px; FONT-FAMILY: Tahoma; TOP: 0px; HEIGHT: 0.507cm; BACKGROUND-COLOR: buttonface
+}
+.MsoRectangle {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; OVERFLOW: hidden; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.MsoTitle {
+	DISPLAY: none; FONT-WEIGHT: normal; COLOR: inactivecaptiontext
+}
+.MsoExpandCollapse {
+	CURSOR: hand
+}
+.MsoNavContainer {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; Z-INDEX: -1; BORDER-LEFT: gainsboro 1px solid; CURSOR: hand; BORDER-BOTTOM: gainsboro 1px solid; HEIGHT: 25px; BACKGROUND-COLOR: gainsboro
+}
+.MsoNavButton {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; BORDER-LEFT: gainsboro 1px solid; CURSOR: auto; BORDER-BOTTOM: gainsboro 1px solid; BACKGROUND-REPEAT: no-repeat
+}
+.MsoNavButtonMouseOver {
+	BORDER-RIGHT: highlight 1px solid; BORDER-TOP: highlight 1px solid; BORDER-LEFT: highlight 1px solid; BORDER-BOTTOM: highlight 1px solid; BACKGROUND-COLOR: buttonhighlight
+}
+.MsoNavToggleButtonMouseOver {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: buttonshadow
+}
+.MsoNavButtonMouseDown {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 1px solid; CURSOR: hand; BORDER-BOTTOM: buttonshadow 1px solid; BACKGROUND-COLOR: buttonshadow
+}
+.MsoNavRecordsetLabel {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: gainsboro 1px solid; WIDTH: 100%; CURSOR: default; PADDING-TOP: 0px; BORDER-BOTTOM: gainsboro 1px solid; FONT-FAMILY: Tahoma; POSITION: relative
+}
+.MsoRecordSelector {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; OVERFLOW: hidden; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; HEIGHT: 100%; BACKGROUND-COLOR: gainsboro
+}
+.MsoRecordSelectorCurrent {
+	BACKGROUND-POSITION: 1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11240); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorSelectedImage {
+	BACKGROUND-POSITION: 1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11241); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorSelected {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; TOP: 0px; HEIGHT: 100%; BACKGROUND-COLOR: buttonshadow
+}
+.MsoRecordSelectorDirtyCurrent {
+	BACKGROUND-POSITION: -1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11242); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorDirty {
+	BACKGROUND-POSITION: -1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11245); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorTransparent {
+	LEFT: 0px; OVERFLOW: hidden; TOP: 0px
+}
+HR {
+	COLOR: black
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+INPUT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma
+}
+MARQUEE {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+LEGEND {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+BUTTON {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+TEXTAREA {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+</STYLE>
+
+<SCRIPT language=Javascript id=MSODSC_Validation>
+validateBrowser();
+
+function validateBrowser() {
+	strVers=navigator.appVersion
+	strName=navigator.appName
+	strPlat=navigator.platform
+	intIndex1=strVers.indexOf("MSIE");
+	intIndex1=intIndex1+5
+	intIndex2=strVers.lastIndexOf(";");
+	intVer=strVers.substring(intIndex1, intIndex2)
+	intVer=parseInt(intVer)
+	if (strName=="Microsoft Internet Explorer" && strPlat=="Win32" && intVer>="5") {
+	validateOWC();
+	}
+	else {
+		strMsgGetIE="<TABLE cellSpacing=0 cellPadding=0 width='95%' border=0 height='8'><TR>"
+		strMsgGetIE+="<TD bgColor='#336699' height=25 width=15>&nbsp;</TD><TD bgColor='#666666' width=500px><FONT face=Tahoma "
+		strMsgGetIE+="size=4 color=white><b>&nbsp;Уведомление страницы доступа к данным</B></FONT></TD></TR>"
+		strMsgGetIE+="<TR><TD bgColor='#cccccc' width=15>&nbsp;</TD><TD bgColor='#cccccc' width=500px><BR>"
+		strMsgGetIE+="<p><font face='Tahoma' size='2'>"
+		strMsgGetIE+="Для отображения страницы требуется Windows IE 5.0 или более поздней версии.</p>"
+		strMsgGetIE+="<a href='http://www.microsoft.com/isapi/redir.dll?Prd=Office&Sbp=Access&Pver=10&Ar=DPdesigner&Sba=IEhome&Plcid=1049'><p align='center'>"
+		strMsgGetIE+="Выберите эту ссылку для установки последней версии Internet Explorer.</a></font></p><br></TD></TR></TABLE>"
+		document.write(strMsgGetIE)
+	}
+}
+
+function validateOWC() {
+	if (MSODSC.object==null) {
+		strMsgGetOWC="<TABLE width='95%' cellpadding=0 cellspacing=0 border=0 height='8'>"
+		strMsgGetOWC+="<TR><TD bgColor='#336699' height=25 width=15>&nbsp;</TD><TD bgColor='#666666' width=500px>"
+		strMsgGetOWC+="<FONT face=Tahoma color=white size=4><B>&nbsp;&nbsp;"
+		strMsgGetOWC+="Уведомление страницы доступа к данным</B></FONT></TD></TR><TR><TD bgColor='#cccccc' width=15>&nbsp;</TD>"
+		strMsgGetOWC+="<TD bgColor='#cccccc' width='500px'><BR>"
+		strMsgGetOWC+="<p><font face='Tahoma' size='2'>Для отображения страницы требуется наличие веб-компонентов Microsoft Office.</p>"
+		strMsgGetOWC+="</font><p><font face='Tahoma' size='2'>See the <a HRef='http://r.office.microsoft.com/r/rlidmsowcpub?clid=1049&p1=Microsoft Access&HelpLCID=1049'>Microsoft Office Web site</a> for more information. "
+		strMsgGetOWC+="</font></p><BR></TD></TR></TABLE>"
+		document.write(strMsgGetOWC)
+	}
+}
+
+</SCRIPT>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Женя</o:Author>
+  <o:LastAuthor>Женя</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-06-13T13:55:54Z</o:Created>
+  <o:LastSaved>2007-06-13T13:58:20Z</o:LastSaved>
+  <o:Company>Дом</o:Company>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:DownloadComponents/>
+  <o:LocationOfComponents HRef="file:///C:\Documents%20and%20Settings\Женя\Рабочий%20стол\Soft\MS%20Office%202003%20SR2\"/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--></HEAD>
+<BODY style="OVERFLOW: auto" vLink=#800080 link=#0000ff>
+<CENTER>
+<H1 class=MsoTitle id=ТекстЗаголовка>Название страницы</H1></CENTER>
+<P>&nbsp;</P>
+<DIV class=Mso2dSectionBanner id=ЗаголовокЗаказыKodZakazchikaBanner 
+style="MARGIN-LEFT: 0px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=ЗаголовокЗаказыKodZakazchikaBannerCaption>Заголовок: 
+Заказы-KodZakazchika</SPAN></DIV>
+<DIV class=Mso2dSection id=ЗаголовокЗаказыKodZakazchika 
+style="VISIBILITY: hidden; MARGIN-LEFT: 0px; WIDTH: 15.133cm; HEIGHT: 0.528cm"><IMG 
+class=MsoExpandCollapse id=Заказы-KodZakazchikaРазвертывание 
+style="LEFT: 0.105cm; POSITION: absolute; TOP: 0.211cm" tabIndex=1 
+src="owc://GIF/#11250"><SPAN class=MSTheme-Label id=KodZakazchika_метка 
+style="LEFT: 0.795cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0cm; HEIGHT: 0.449cm">Код 
+заказчика</SPAN><TEXTAREA class=MsoTextbox id=KodZakazchika style="LEFT: 3.546cm; WIDTH: 154px; POSITION: absolute; TOP: 0cm; HEIGHT: 17px" tabIndex=29 MsoTextAlign="General"></TEXTAREA></DIV>
+<DIV class=Mso2dSectionBanner id=ЗаголовокЗаказыBanner 
+style="MARGIN-LEFT: 24px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=ЗаголовокЗаказыBannerCaption>Заголовок: Заказы</SPAN></DIV>
+<DIV class=Mso2dSection id=ЗаголовокЗаказы 
+style="VISIBILITY: hidden; MARGIN-LEFT: 24px; WIDTH: 15.133cm; HEIGHT: 2.065cm"><SPAN 
+class=MSTheme-Label id=KodTovara_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0cm; HEIGHT: 0.449cm">Код 
+товара:</SPAN><TEXTAREA class=MsoTextbox id=KodTovara style="LEFT: 3.599cm; WIDTH: 56px; POSITION: absolute; TOP: 0cm; HEIGHT: 17px" tabIndex=30 MsoTextAlign="General"></TEXTAREA><SPAN 
+class=MSTheme-Label id=DataZakaza_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0.503cm; HEIGHT: 0.449cm">Дата 
+заказа:</SPAN><TEXTAREA class=MsoTextbox id=DataZakaza style="LEFT: 3.599cm; WIDTH: 69px; POSITION: absolute; TOP: 0.503cm; HEIGHT: 17px" tabIndex=31 MsoTextAlign="General"></TEXTAREA><SPAN 
+class=MSTheme-Label id=Kolichestvo_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 1.006cm; HEIGHT: 0.449cm">Количество:</SPAN><TEXTAREA class=MsoTextbox id=Kolichestvo style="LEFT: 3.599cm; WIDTH: 50px; POSITION: absolute; TOP: 1.006cm; HEIGHT: 17px" tabIndex=32 MsoTextAlign="General"></TEXTAREA><INPUT 
+id=Dostavleno 
+style="LEFT: 3.599cm; WIDTH: 0.458cm; POSITION: absolute; TOP: 1.534cm; HEIGHT: 0.396cm" 
+tabIndex=33 type=checkbox><SPAN class=MSTheme-Label id=Dostavleno_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 1.534cm; HEIGHT: 0.449cm">Доставлено</SPAN></DIV>
+<DIV class=Mso2dSectionBanner id=КнопкиПереходаЗаказыBanner 
+style="MARGIN-LEFT: 24px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=КнопкиПереходаЗаказыBannerCaption>КнопкиПерехода: Заказы</SPAN></DIV>
+<DIV class=Mso2dSection id=КнопкиПереходаЗаказы 
+style="VISIBILITY: hidden; MARGIN-LEFT: 24px; WIDTH: 15.133cm; HEIGHT: 0.846cm; BACKGROUND-COLOR: gainsboro">
+<TABLE class=MsoNavContainer id=ЗаказыПереход 
+style="LEFT: 4px; WIDTH: 568px; POSITION: absolute; TOP: 4px; HEIGHT: 18px" 
+cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFirst id=ЗаказыNavFirst tabIndex=1 height=20 
+      src="owc://GIF/#11200" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavPrevious id=ЗаказыNavPrevious tabIndex=2 height=20 
+      src="owc://GIF/#11202" width=20></TD>
+    <TD style="VERTICAL-ALIGN: middle; WIDTH: 100%; TEXT-ALIGN: center" 
+      noWrap><SPAN class=MsoNavRecordsetLabel id=ЗаказыNavLabel 
+      style="VISIBILITY: hidden" tabIndex=3>Заказы |0 из |2</SPAN></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavNext id=ЗаказыNavNext tabIndex=4 height=20 
+      src="owc://GIF/#11204" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavLast id=ЗаказыNavLast tabIndex=5 height=20 
+      src="owc://GIF/#11206" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavAddNew id=ЗаказыNavNew tabIndex=6 height=20 
+      src="owc://GIF/#11208" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavDelete id=ЗаказыNavDelete tabIndex=7 height=20 
+      src="owc://GIF/#11210" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSave id=ЗаказыNavSave tabIndex=8 height=20 
+      src="owc://GIF/#11214" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavUndo id=ЗаказыNavUndo tabIndex=9 height=20 
+      src="owc://GIF/#11212" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortAsc id=ЗаказыNavSortAscending tabIndex=10 height=20 
+      src="owc://GIF/#11216" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortDesc id=ЗаказыNavSortDescending tabIndex=11 height=20 
+      src="owc://GIF/#11218" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFilter id=ЗаказыNavFilterBySelection tabIndex=12 height=20 
+      src="owc://GIF/#11220" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavToggleFilter id=ЗаказыNavFilterToggle tabIndex=13 height=20 
+      src="owc://GIF/#11222" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavHelp id=ЗаказыNavHelp tabIndex=14 height=20 
+      src="owc://GIF/#11224" width=20></TD></TR></TBODY></TABLE></DIV>
+<DIV class=Mso2dSectionBanner id=КнопкиПереходаЗаказыKodZakazchikaBanner 
+style="MARGIN-LEFT: 0px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=КнопкиПереходаЗаказыKodZakazchikaBannerCaption>КнопкиПерехода: 
+Заказы-KodZakazchika</SPAN></DIV>
+<DIV class=Mso2dSection id=КнопкиПереходаЗаказыKodZakazchika 
+style="VISIBILITY: hidden; MARGIN-LEFT: 0px; WIDTH: 15.133cm; HEIGHT: 0.846cm; BACKGROUND-COLOR: gainsboro">
+<TABLE class=MsoNavContainer id=Заказы-KodZakazchikaПереход 
+style="LEFT: 4px; WIDTH: 568px; POSITION: absolute; TOP: 4px; HEIGHT: 18px" 
+cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFirst id=Заказы-KodZakazchikaNavFirst tabIndex=15 height=20 
+      src="owc://GIF/#11200" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavPrevious id=Заказы-KodZakazchikaNavPrevious tabIndex=16 
+      height=20 src="owc://GIF/#11202" width=20></TD>
+    <TD style="VERTICAL-ALIGN: middle; WIDTH: 100%; TEXT-ALIGN: center" 
+      noWrap><SPAN class=MsoNavRecordsetLabel id=Заказы-KodZakazchikaNavLabel 
+      style="VISIBILITY: hidden" tabIndex=17>Заказы-Код заказчика |0 из 
+    |2</SPAN></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavNext id=Заказы-KodZakazchikaNavNext tabIndex=18 height=20 
+      src="owc://GIF/#11204" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavLast id=Заказы-KodZakazchikaNavLast tabIndex=19 height=20 
+      src="owc://GIF/#11206" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavAddNew id=Заказы-KodZakazchikaNavNew tabIndex=20 height=20 
+      src="owc://GIF/#11208" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavDelete id=Заказы-KodZakazchikaNavDelete tabIndex=21 height=20 
+      src="owc://GIF/#11210" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSave id=Заказы-KodZakazchikaNavSave tabIndex=22 height=20 
+      src="owc://GIF/#11214" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavUndo id=Заказы-KodZakazchikaNavUndo tabIndex=23 height=20 
+      src="owc://GIF/#11212" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortAsc id=Заказы-KodZakazchikaNavSortAscending tabIndex=24 
+      height=20 src="owc://GIF/#11216" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortDesc id=Заказы-KodZakazchikaNavSortDescending tabIndex=25 
+      height=20 src="owc://GIF/#11218" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFilter id=Заказы-KodZakazchikaNavFilterBySelection tabIndex=26 
+      height=20 src="owc://GIF/#11220" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavToggleFilter id=Заказы-KodZakazchikaNavFilterToggle 
+      tabIndex=27 height=20 src="owc://GIF/#11222" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavHelp id=Заказы-KodZakazchikaNavHelp tabIndex=28 height=20 
+      src="owc://GIF/#11224" width=20></TD></TR></TBODY></TABLE></DIV>
+<P>&nbsp;</P></BODY></HTML>

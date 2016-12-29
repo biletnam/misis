@@ -1,0 +1,51 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    PaintBox1: TPaintBox;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+// превод координат в экранные
+function p(x,y:Double):TPoint;
+var point:TPoint;
+  w,h: integer;
+begin
+  w:=300;
+  h:=300;
+  point.X := Round(25 + x * w/6.7);
+  point.Y := Round(h - 25 - y * h/1600);
+  Result := point;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var i:integer;
+begin
+  // Рисуем координатную сетку
+  PaintBox1.Canvas.Rectangle(0,0,PaintBox1.Width,PaintBox1.Height);
+  PaintBox1.Canvas.Polyline([p(0,0), p(6.7,0)]); // ось Х
+  PaintBox1.Canvas.Polyline([p(0,0), p(0,1600)]); // ось Y
+
+ for i := 1 to 16 do
+   
+end;
+
+end.

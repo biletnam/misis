@@ -1,0 +1,100 @@
+PROGRAM d2r2 (input,output,dfile);
+(* driver for routine LUDCMP *)
+LABEL 10,99;
+CONST
+   np=20;
+TYPE
+   glnpbynp = ARRAY [1..np,1..np] OF real;
+   glnarray = ARRAY [1..np] OF real;
+   glindx = ARRAY [1..np] OF integer;
+VAR
+   j,k,l,m,n,dum : integer;
+   d : real;
+   a,xl,xu,x : glnpbynp;
+   indx,jndx : glindx;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I LUDCMP.PAS *)
+
+BEGIN
+   glopen(dfile,'matrx1.dat');
+10:   readln(dfile);
+   readln(dfile);
+   readln(dfile,n,m);
+   readln(dfile);
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n-1 DO read(dfile,a[k,l]);
+      readln(dfile,a[k,n])
+   END;
+   readln(dfile);
+   FOR l := 1 to m DO BEGIN
+      FOR k := 1 to n-1 DO read(dfile,x[k,l]);
+      readln(dfile,x[k,l])
+   END;
+(* print out a-matrix for comparison with product of lower *)
+(* and upper decomposition matrices *)
+   writeln('original matrix:');
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n-1 DO write(a[k,l]:12:6);
+      writeln(a[k,n]:12:6)
+   END;
+(* perform the decomposition *)
+   ludcmp(a,n,np,indx,d);
+(* compose separately the lower and upper matrices *)
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         IF (l > k) THEN BEGIN
+            xu[k,l] := a[k,l];
+            xl[k,l] := 0.0
+         END ELSE IF (l < k) THEN BEGIN
+            xu[k,l] := 0.0;
+            xl[k,l] := a[k,l]
+         END ELSE BEGIN
+            xu[k,l] := a[k,l];
+            xl[k,l] := 1.0
+         END
+      END
+   END;
+(* compute product of lower and upper matrices for *)
+(* comparison with original matrix *)
+   FOR k := 1 to n DO BEGIN
+      jndx[k] := k;
+      FOR l := 1 to n DO BEGIN
+         x[k,l] := 0.0;
+         FOR j := 1 to n DO BEGIN
+            x[k,l] := x[k,l]+xl[k,j]*xu[j,l]
+         END
+      END
+   END;
+   writeln('product of lower and upper matrices (rows unscrambled):');
+   FOR k := 1 to n DO BEGIN
+      dum := jndx[indx[k]];
+      jndx[indx[k]] := jndx[k];
+      jndx[k] := dum
+   END;
+   FOR k := 1 to n DO BEGIN
+      FOR j := 1 to n DO BEGIN
+         IF (jndx[j] = k) THEN BEGIN
+            FOR l := 1 to n-1 DO write(x[j,l]:12:6);
+            writeln(x[j,n]:12:6)
+         END
+      END
+   END;
+   writeln('lower matrix of the decomposition:');
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n-1 DO write(xl[k,l]:12:6);
+      writeln(xl[k,n]:12:6)
+   END;
+   writeln('upper matrix of the decomposition:');
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n-1 DO write(xu[k,l]:12:6);
+      writeln(xu[k,n]:12:6)
+   END;
+   writeln('***********************************');
+   IF eof(dfile) THEN GOTO 99;
+   writeln('press return FOR next problem:');
+   readln;
+   GOTO 10;
+99:   close(dfile)
+END.

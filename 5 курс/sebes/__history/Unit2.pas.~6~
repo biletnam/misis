@@ -1,0 +1,75 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, SQLite3, SQLiteTable3, StdCtrls, Grids, DBGrids;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    ListBox1: TListBox;
+    StringGrid1: TStringGrid;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  DB : TSQLiteDatabase;
+
+implementation
+
+{$R *.dfm}
+
+procedure LoadProducts();
+var Table: TSQLiteTable;
+i,j: integer;
+begin
+  Table := DB.GetTable('SELECT * FROM products');
+  with Form2 do
+  begin
+    StringGrid1.ColCount := Table.ColCount;
+    StringGrid1.RowCount := Table.Count+1;
+
+    StringGrid1.Cells[0,0] := 'id';
+    StringGrid1.Cells[1,0] := 'Наименование';
+    StringGrid1.Cells[2,0] := 'Подразделение';
+    StringGrid1.Cells[3,0] := 'Дата';
+    StringGrid1.Cells[4,0] := 'Выпущено';
+
+    StringGrid1.ColWidths[0] := 30;
+    StringGrid1.ColWidths[1] := 140;
+    StringGrid1.ColWidths[2] := 120;
+    StringGrid1.ColWidths[3] := 80;
+
+    for i := 0 to Table.Count - 1 do
+    begin
+      for j := 0 to Table.ColCount - 1 do
+      begin
+          StringGrid1.Cells[j,i+1] := Utf8ToAnsi(Table.FieldAsString(j));
+      end;
+      Table.Next;
+    end;
+
+  end;
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  //
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  DB := TSQLiteDatabase.Create('base.sqlite');
+  LoadProducts();
+end;
+
+end.

@@ -1,0 +1,77 @@
+// Toto je lokalizaènı sıbor pre jazyk 'slovenèina', pre TCBR prostredie
+// Lokalizaènı identifikıtor je (kód jazyka): SKY
+// Pre lokalizáciu prostredia, prelo správy uvedené nišie 
+// a premenuj tento súbor na shellmsg-SKY.txt
+
+// Tieto nišie riadky (AUTHOR_MODE entry) poskytujú nápomoc pre potreby diagnostiky.
+// odstraò ich po dokonceni lokalizacie
+
+AUTHOR_MODE=on
+
+// Postupuj pod¾a Tequilacat BookReader lokalizaèného postupu:
+//   http://tequilacat.narod.ru/dev/br/i18n.html
+// ak lokalizujes prostredie pre svoj jazyk, prosim zvá jeho zverejnenie
+//  - posli mi ho a budeš odmeneny vdy keï prostredie bude bea v tvojom jazyku:
+
+
+LBL_DEFAULT_ENCODING = Predvolene enkodovanie
+LBL_GENERIC_VERSION = Všeobecné (všetky telefóny)
+LBL_SELECT_OUTDIR = Vyber vıstunı adresár
+LBL_TEXT_NAME = Meno
+LBL_TEXT_PATH = Cesta
+LBL_TEXT_SIZE = Ve¾kos
+LBL_WRAP_BYWORD = So slovom
+LBL_WRAP_HYPHENATION = Ruské delenie slov
+LBL_WRAP_NOWRAP = Nezalamova
+MSG_BAD_PROJECT_ID = Zlé meno projektu (malo by obsahova iba anglické znaky): 
+MSG_BAD_SIZE = Zlá ve¾kos
+MSG_BUILD_FAILED = Vytváranie JAR zlyhalo. Pozri detaily v log-u
+MSG_CANTLOAD_IMAGE_FILE = Nemôem nahra obraz: 
+MSG_CANT_COPY_JAR = Nemôem kopírova JAR do: 
+MSG_CANT_EXTRACT_MFT = Nemôem extrahova manifest: 
+MSG_CANT_OPEN_FILE = Nemôem otvori súbor: 
+MSG_CANT_SAVE_FILE = Nemôem uloi súbor: 
+MSG_NOJARS = iadne midlety sa nenachádzajú v 'jars' adresáry\nstiahni ich a ulo ich tam
+MSG_NO_PROJECT_ID = Prosím zvo¾ meno projektu
+MSG_SUCCESSFULLY_GENERATED_FILES = V poriadku! Súbory vytvorené:
+MSG_UNSUPPORTED_IMAGE_FILE = Neznámy formát obrazu: 
+SelectFontImageForm = Zvoli obraz písma:
+SelectFontImageForm.AddFontBtn = Prida písmo z Windows
+SelectFontImageForm.NoFontButton = Poui písmo telefónu
+SelectFontImageForm.RemoveFontButton = Odstráò obraz písma
+ShellForm = Prostredie pre
+ShellForm.AltDirButtonsCheckBox = Alt. tlaèidlá posunu (Hore/Dole posun po stránkach)
+ShellForm.AmPmTimeFormatCheckBox = AM/PM èasovı formát namiesto 24h
+ShellForm.BitBtn1 = U&konèi
+ShellForm.DivideChaptersCheckBox = Poui názvy kapitol
+ShellForm.EncodingLabel = Enkódovanie textu
+ShellForm.ExtendHeightCheckBox = Rozšíri vıšku obrazovky o 
+ShellForm.HasDirButtonsCheckBox = Telefón má posuvné tlaèidlá
+ShellForm.InvertFontButton = Invertuj farby
+ShellForm.LocalizationAuthorNameLabel = Slovenskı preklad spáchal Miroslav Famfulík alias "Enki"
+ShellForm.LocalizeMidletCheckBox = Lokalizuj na svoj jazyk
+ShellForm.MidletTypeLabel = Typ Midletu
+ShellForm.NokiaBacklightIntensityLabel = Intenzita podsvietenia dyspleya pre Nokiu
+ShellForm.NumericChaptersCheckBox = Spracova samostatné èísla ako názvy kapitol
+ShellForm.RestrictChapterCheckBox = Max ve¾kos kapitoly (bytes)
+ShellForm.RestrictJarCheckBox = Max ve¾kos Jar súboru (bytes)
+ShellForm.Scroll1LineCheckBox = Autosposuv po 1 riadku
+ShellForm.SelBGColorBtn = Zvo¾ farbu pozadia
+ShellForm.SelFGColorBtn = Zvo¾ farbu písma
+ShellForm.SelNormalFontTButton = Vyber základé písmo
+ShellForm.SelRotatedFontTButton = Vyber otoèené písmo
+ShellForm.TabSheet1 = Kniha
+ShellForm.TabSheet2 = Nastavenia
+ShellForm.TabSheet3 = Písmo
+ShellForm.UseSeT610SideKeysCheckBox = Posun SE T610 klávesami hlasitosti
+ShellForm.WidthJustifyCheckBox = Zarovnaj na šírku (pomalšie)
+ShellForm.WrapModeLabel = Zalamovací mód
+ShellForm.aboutTabSheet = O programe
+ShellForm.buildButton = &Vytvor !
+ShellForm.myCBShowZipDebug = Uká Zip vıpis
+ShellForm.myClearLogButton = Vyma Log
+ShellForm.myLogTabSheet = Log
+ShellForm.myTBAddTxt = Pridaj text
+ShellForm.myTBEditTxt = Otvor v Notepade
+ShellForm.myTBRemoveTxt = Odstráò text
+ShellForm.myTBRenameTxt = Premenuj text v Jar

@@ -1,0 +1,9 @@
+label=Nokia S30 (6310,3585,3410,3510)
+vendor=nokia
+
+skin.screen=28x27x96x65
+skin.image=nokiaS30.jpg
+jar=nk_bookreader.jar
+
+MaxJarSize = 30000
+

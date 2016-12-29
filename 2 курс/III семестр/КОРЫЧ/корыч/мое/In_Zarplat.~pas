@@ -1,0 +1,27 @@
+unit In_Zarplat;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Tabl_Zarplat, StdCtrls, Mask, DBCtrls, ComCtrls;
+
+type
+  TIn_Zarplata = class(TForm)
+    Zarplat_Data: TDateTimePicker;
+    Zarplat_FIO: TDBEdit;
+    Zarplat_Summa: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  In_Zarplata: TIn_Zarplata;
+
+implementation
+
+{$R *.dfm}
+
+end.

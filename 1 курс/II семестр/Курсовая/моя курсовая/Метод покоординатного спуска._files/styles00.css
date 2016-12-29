@@ -1,0 +1,34 @@
+a:link {color: blue}
+a:visited {color: blue}
+a:active {color: blue}
+
+body {background-color : silver; background-image : url(dots1000.gif); font-family : verdana, serif; font-size : 8pt}
+
+h1.title {background-color : #333333; color : white; font-weight : bold; text-align : center; font-size : 24pt; font-style : italic}
+h2.title {background-color : #333333; color : white; font-weight : bold; text-align : center; font-size : 20pt; font-style : italic}
+h3.title {background-color : #333333; color : white; font-weight : bold; text-align : center; font-size : 16pt; font-style : italic}
+
+table.page {background-color : #777777}
+
+td {font-family : verdana, serif; font-size : 10pt; vertical-align : top}
+td.caption {background-color : #444444; color : white; font-weight : bold; text-align : center}
+td.subhead {background-color : #333333; color : white; font-weight : bold; text-align : center; font-size : 14pt}
+td.head {background-color : #333333; color : white; font-weight : bold; text-align : center; font-size : 18pt; font-style : italic}
+td.page {background-color : white; text-align : justify; padding-right: 10px; padding-left: 10px; padding-bottom: 10px}
+td.center {background-color : white; text-align : center; text-indent : 0em}
+
+input {font-size: 12pt; font-family: verdana}
+input.button {font-size: 12pt; font-weight: bold}
+
+pre {font-family : courier; font-size : 12pt; text-indent : 0em}
+
+ol {text-indent : 0em}
+
+ul {text-indent : 0em}
+ul.cont {margin-left : -1em; list-style-image : url(bullet40.gif)}
+ul.subc {margin-left : -1em; list-style-image : url(bullet30.gif)}
+
+li {text-indent : 0em}
+li.expn {list-style-image : url(bullet50.gif)}
+
+center {text-indent : 0em}

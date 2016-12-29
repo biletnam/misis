@@ -1,0 +1,39 @@
+PROGRAM d14r12(input,output);
+(* driver for routine ROFUNC *)
+CONST
+   spread=0.05;
+   ndata=100;
+TYPE
+   glsarray = ARRAY [1..ndata] OF real;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   aa,abdevt,b,rf : real;
+   i,idum,npt : integer;
+   arr,x,y : glsarray;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I SORT.PAS *)
+
+(*$I ROFUNC.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -11;
+   FOR i := 1 to ndata DO BEGIN
+      x[i] := 0.1*i;
+      y[i] := -2.0*x[i]+1.0+spread*gasdev(idum)
+   END;
+   writeln('b':9,'a':9,'ROFUNC':12,'ABDEVT':10);
+   FOR i := -5 to 5 DO BEGIN
+      b := -2.0+0.02*i;
+      rf := rofunc(b);
+      writeln(b:10:2,aa:9:2,rofunc(b):11:2,abdevt:10:2)
+   END
+END.

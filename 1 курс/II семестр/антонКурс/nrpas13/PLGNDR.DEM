@@ -1,0 +1,31 @@
+PROGRAM d6r27(input,output,dfile);
+(* driver for routine PLGNDR *)
+VAR
+   fac,val,x : real;
+   i,j,m,n,nval : integer;
+   txt : string[20];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I PLGNDR.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Legendre Polynomials');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln('n':4,'m':4,'x':10,'actual':19,'plgndr(n,m,x)':20);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,n,m,x,val);
+      fac := 1.0;
+      IF (m > 0) THEN BEGIN
+         FOR j := n-m+1 to n+m DO BEGIN
+            fac := fac*j
+         END
+      END;
+      fac := 2.0*fac/(2.0*n+1.0);
+      val := val*sqrt(fac);
+      writeln(n:4,m:4,'   ',x:13,'   ',val:13,'   ',plgndr(n,m,x):13)
+   END;
+   close(dfile)
+END.

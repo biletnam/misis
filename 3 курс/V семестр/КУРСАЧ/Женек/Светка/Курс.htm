@@ -1,0 +1,1658 @@
+<html xmlns:mcd="urn:schemas-mathsoft-com:mathcad"
+ xmlns:m="http://www.w3.org/1998/Math/MathML">
+<head>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<meta name=Generator content="Mathcad Professional"></meta>
+<meta name=ProgID content="Mathcad"></meta>
+<meta name=Version content="11.0"></meta>
+<meta name=MathML content="true"></meta>
+<title>
+Курс</title>
+<style type="text/css">
+body { background : #ffffff }
+.equation { margin-top: 0.5em; margin-bottom: 1em }
+.Normal { font-family:Arial,sans-serif; font-size:10pt }
+</style>
+<script id="clientEventHandlersJS" language="javascript">
+<!--
+//-->
+</script>
+</head>
+<body 
+mcd:mathfonts="id:0;name:Variables;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:1;name:Constants;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:2;name:Text;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:4;name:User 1;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:5;name:User 2;face:Courier New;size:10;bold:0;ital:0;ul:0;cid:-1
+id:6;name:User 3;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:7;name:User 4;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:8;name:User 5;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:9;name:User 6;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:10;name:User 7;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1"
+mcd:numberformat=""
+mcd:displayoptions=""
+mcd:unitformat=""
+mcd:tolerance=""
+mcd:builtinvars="origin:0"
+mcd:calcoptions="auto:true;optimize:false;strict:true"
+mcd:mathdisplay="mult:4;deriv:deriv;litsub:small;define:colon;globeq:triple;local:arrow;equal:bold"
+mcd:unitsystem="default:4"
+mcd:dimnames="display:false;mass:mass;length:length;time:time;current:charge;temp:temperature;lum:luminosity;subst:substance"
+mcd:docprops="lrtag:181;lhbtag:181;status:8201;delorig:1;deluser:1;cp:1;cc:1;cs:1"
+mcd:ruler="visible:0;units:0"
+mcd:derivopts="ip:0;sc:0;dv:1;os:1"
+mcd:doccolors="eq:#000000;bg:#ffffff;rg:#ffff80"
+mcd:grfxy="0 1 1 21 15 0 0 3 0 "
+mcd:xaxisxy="0 0 1 1 1 0 0 1 1 "
+mcd:yaxisxy="0 0 1 1 1 0 0 1 1 "
+mcd:tracesxy="0 1 0 0 1 1 
+0 2 1 0 1 1 
+0 3 2 0 1 1 
+0 4 3 0 1 1 
+0 1 4 0 1 1 
+0 2 5 0 1 1 
+0 3 6 0 1 1 
+0 4 0 0 1 1 
+0 1 1 0 1 1 
+0 2 2 0 1 1 
+0 3 3 0 1 1 
+0 4 4 0 1 1 
+0 1 5 0 1 1 
+0 2 6 0 1 1 
+0 3 0 0 1 1 
+0 4 1 0 1 1 "
+>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="8" mcd:aligny="32" 
+ style="position:absolute;top:13;left:8;width:298">
+<layer width=298>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>Вариант 3<br><comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>n=4 Метод золотого сечения<br><comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>m=5 Метод Ньютона<comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="99" mcd:aligny="168" 
+ style="position:absolute;top:91;left:16;width:173">
+<layer width=173>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>grad</ci>
+    <lambda>
+      <bvar>
+        <ci>f</ci>
+      </bvar>
+      <bvar>
+        <ci>a</ci>
+      </bvar>
+      <bvar>
+        <ci>b</ci>
+      </bvar>
+      <bvar>
+        <ci>c</ci>
+      </bvar>
+      <vector>
+        <apply>
+          <ci>-DERIVATIVE</ci>
+          <lambda>
+            <bvar>
+              <ci>a</ci>
+            </bvar>
+            <apply>
+              <ci>f</ci>
+              <ci>a</ci>
+              <ci>b</ci>
+              <ci>c</ci>
+            </apply>
+          </lambda>
+          <ci>a</ci>
+        </apply>
+        <apply>
+          <ci>-DERIVATIVE</ci>
+          <lambda>
+            <bvar>
+              <ci>b</ci>
+            </bvar>
+            <apply>
+              <ci>f</ci>
+              <ci>a</ci>
+              <ci>b</ci>
+              <ci>c</ci>
+            </apply>
+          </lambda>
+          <ci>b</ci>
+        </apply>
+        <apply>
+          <ci>-DERIVATIVE</ci>
+          <lambda>
+            <bvar>
+              <ci>c</ci>
+            </bvar>
+            <apply>
+              <ci>f</ci>
+              <ci>a</ci>
+              <ci>b</ci>
+              <ci>c</ci>
+            </apply>
+          </lambda>
+          <ci>c</ci>
+        </apply>
+      </vector>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0044.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true;color:#ffff80"
+mcd:textproperties=""
+mcd:alignx="200" mcd:aligny="168" 
+ style="position:absolute;top:155;left:200;width:109">
+<layer width=109>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Градиент функции</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="71" mcd:aligny="256" 
+ style="position:absolute;top:244;left:24;width:344">
+<layer width=344>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>H</ci>
+    <lambda>
+      <bvar>
+        <ci>F</ci>
+      </bvar>
+      <bvar>
+        <ci>v</ci>
+      </bvar>
+      <apply>
+        <ci>-sequence</ci>
+        <apply>
+          <apply>
+            <ci>-localassign</ci>
+            <ci>x</ci>
+            <apply>
+              <selector/>
+              <ci>v</ci>
+              <cn>0</cn>
+            </apply>
+          </apply>
+          <apply>
+            <ci>-localassign</ci>
+            <ci>y</ci>
+            <apply>
+              <selector/>
+              <ci>v</ci>
+              <cn>1</cn>
+            </apply>
+          </apply>
+          <apply>
+            <ci>-localassign</ci>
+            <ci>z</ci>
+            <apply>
+              <selector/>
+              <ci>v</ci>
+              <cn>2</cn>
+            </apply>
+          </apply>
+          <matrix>
+            <matrixrow>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>x</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>x</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>x</ci>
+                  </apply>
+                </lambda>
+                <ci>x</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>x</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>y</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>y</ci>
+                  </apply>
+                </lambda>
+                <ci>x</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>x</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>z</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>z</ci>
+                  </apply>
+                </lambda>
+                <ci>x</ci>
+              </apply>
+            </matrixrow>
+            <matrixrow>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>y</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>x</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>x</ci>
+                  </apply>
+                </lambda>
+                <ci>y</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>y</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>y</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>y</ci>
+                  </apply>
+                </lambda>
+                <ci>y</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>y</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>z</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>z</ci>
+                  </apply>
+                </lambda>
+                <ci>y</ci>
+              </apply>
+            </matrixrow>
+            <matrixrow>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>z</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>x</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>x</ci>
+                  </apply>
+                </lambda>
+                <ci>z</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>z</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>y</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>y</ci>
+                  </apply>
+                </lambda>
+                <ci>z</ci>
+              </apply>
+              <apply>
+                <ci>-DERIVATIVE</ci>
+                <lambda>
+                  <bvar>
+                    <ci>z</ci>
+                  </bvar>
+                  <apply>
+                    <ci>-DERIVATIVE</ci>
+                    <lambda>
+                      <bvar>
+                        <ci>z</ci>
+                      </bvar>
+                      <apply>
+                        <ci>F</ci>
+                        <ci>x</ci>
+                        <ci>y</ci>
+                        <ci>z</ci>
+                      </apply>
+                    </lambda>
+                    <ci>z</ci>
+                  </apply>
+                </lambda>
+                <ci>z</ci>
+              </apply>
+            </matrixrow>
+          </matrix>
+        </apply>
+      </apply>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0153.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true;color:#ffff80"
+mcd:textproperties=""
+mcd:alignx="376" mcd:aligny="256" 
+ style="position:absolute;top:243;left:376;width:103">
+<layer width=103>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Гессиан функции</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="91" mcd:aligny="480" 
+ style="position:absolute;top:468;left:16;width:352">
+<layer width=352>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>IsPologit</ci>
+    <lambda>
+      <bvar>
+        <ci>H</ci>
+      </bvar>
+      <apply>
+        <ci>-sequence</ci>
+        <apply>
+          <apply>
+            <ci>-for</ci>
+            <ci>i</ci>
+            <apply>
+              <ci>-NUMERIC_EVAL</ci>
+              <apply>
+                <ci>-range</ci>
+                <cn>0</cn>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <ci>rows</ci>
+                    <ci>H</ci>
+                  </apply>
+                  <cn>1</cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <ci>if</ci>
+              <apply>
+                <ci>-LTEQ</ci>
+                <apply>
+                  <ci>-abs</ci>
+                  <apply>
+                    <ci>submatrix</ci>
+                    <ci>H</ci>
+                    <cn>0</cn>
+                    <ci>i</ci>
+                    <cn>0</cn>
+                    <ci>i</ci>
+                  </apply>
+                </apply>
+                <cn>0</cn>
+              </apply>
+              <apply>
+                <ci>-return</ci>
+                <ci>'No'</ci>
+              </apply>
+              <ci>-not_available</ci>
+            </apply>
+          </apply>
+          <ci>'Yes'</ci>
+        </apply>
+      </apply>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0155.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="376" mcd:aligny="480" 
+ style="position:absolute;top:467;left:376;width:182">
+<layer width=182>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Проверка на положительную определенность матрицы Гессе</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+ style="position:absolute;top:564;left:8">
+<layer >
+<img src="./Курс_images/IMG0157.PNG" mcd:base64encoded=
+"DAAAAAEAAABcAAAACgAAAAQAAwAAAAhlcVJlZ2lvbgIAAAAAAEIAAAAJZG9jUmVnaW9uAgAAAAAARwAA
+AAhtY09iamVjdAAAAAAAAFsAAAABAAIAAAAGc2hwQm94AAAAAAAAVQAAAAdzaHBSZWN0AAAAAAAAVgAA
+AAgAAAA0AgAAoQAAAIgCAAB+AAAAQAIAAAAAAACdAAAAAAEAAAAAAgUAAQAAAAR0cmVlEAAAAAAAQAAA
+AA1wAAAAAAAGQEBe8QAAgAUHQEASzgAAQAYIQEACDwAAZAcAAAUER2V0VAAJQECOcAAAgAcACkBACsMA
+AIAJC0BAAg8AAGQKAAADAnhrAAxAQAIPAACkCgAAAwJkawAAAAANQECfwQAAgAYOQEA8AQAAQA0AAA8A
+AgAAAAlDVlNFcUl0ZW0BAAAAAAAMAAAABkVxSXRlbQEAAAAAAA0AAAAEDhAAAgAAAAxDVlNDb21ib0l0
+ZW0AAAAAAAAQAAAAB0NWU0l0ZW0AAAAAAAAPAAAAPAoAAF8AAABBAgAAQgAAACgAAAD//wAAEABDVlNP
+bGVDbGllbnRJdGVtAAEAAAEAAAABAAAAAAABAAAAAAoAANDPEeChsRrhAAAAAAAAAAAAAAAAAAAAAD4A
+AwD+/wkABgAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAABAAAAIAAAABAAAA/v///wAAAAAAAAAA////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////f////7////+/////v//////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////9SAG8AbwB0ACAARQBuAHQAcgB5AAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFgAFAP//////////AgAAAASj
+577vhNARppUAoCTPBdEAAAAAAAAAAAAAAADQjEzEZ2TJAQMAAAAAAQAAAAAAAEMAbwBuAHQAZQBuAHQA
+cwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAIA////////
+////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI4AAAAAAAAAAgBPAGwA
+ZQBQAHIAZQBzADAAMAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgA
+AgEBAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAHAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAP///////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAEAAAADAAAA/v////7/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////AAABANIGAAAiBAAAAAAAAAEA
+AAAAAAAAAAACAAAAAQAAAAEAAAAibWluID0gWm9sU2VjaCgtMC41LDAuNSwwLjA1LHhrLGRrKQJ4awNt
+aW4CZGsEb3V0MQNpbjIEb3V0MgNpbjMEb3V0MwNpbjQEb3V0NANpbjUEb3V0NQNpbjYAAAAABAAAAAEA
+AAD/////AgAAAE5BTkkAAAAAdABcAGIAaQBuADsAQwA6AFwAUAByAG8AZwByAGEAbQAgAEYABG91dDYD
+aW43BG91dDdpAGMAawBUAGkAbQBlAFwAUQBUAFMAeQBzAHQAZQBtAFwAOwBkADoAXABtAGEAdABsAGEA
+YgA2AHAANQBcAGIAaQBuAFwAdwBpAG4AMwAyADsAQwA6AFwARABvAGMAdQBtAGUAbgB0AHMAIABhAG4A
+ZAAgAFMAZQB0AHQAaQBuAGcAcwBcAEEAbABsACAAVQBzAGUAcgBzAFwAFAQ+BDoEQwQ8BDUEPQRCBEsE
+XABSAEEARAAgAFMAdAB1AGQAaQBvAFwANQAuADAAXABCAHAAbAA7AEQAOgBcAEEAcABwAFMAZQByAHYA
+XABBAHAAYQBjAGgAZQAyAC4AMgBcAGIAaQBuADsARAA6AFwAQQBwAHAAUwBlAHIAdgBcAHAAaABwADUA
+OwBEADoAXABBAHAAcAAAAAAAABFAQI5wAACADQASQEAwwQAAgRETQEAwwQAAQRIUQEAADwAAQBMAAAAV
+QEACDwAApBMAAAMCZGsAAgAAAAECABZAQAIPAACkEgAAAwJ4awACAAAAAQIAAAAAAAAAAAAAAAAAAA==
+"
+ border=0>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="192" mcd:aligny="576" 
+ style="position:absolute;top:563;left:192;width:131">
+<layer width=131>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Функция поиска шага</span>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="8" mcd:aligny="680" 
+ style="position:absolute;top:667;left:8;width:94">
+<layer width=94>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Метод Ньютона</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="140" mcd:aligny="704" 
+ style="position:absolute;top:692;left:8;width:724">
+<layer width=724>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>Newton</ci>
+    <lambda>
+      <bvar>
+        <ci>f</ci>
+      </bvar>
+      <bvar>
+        <ci>v</ci>
+      </bvar>
+      <bvar>
+        <ci>e1</ci>
+      </bvar>
+      <bvar>
+        <ci>e2</ci>
+      </bvar>
+      <bvar>
+        <ci>M</ci>
+      </bvar>
+      <apply>
+        <ci>-sequence</ci>
+        <apply>
+          <apply>
+            <ci>-localassign</ci>
+            <ci>k</ci>
+            <cn>0</cn>
+          </apply>
+          <apply>
+            <ci>-localassign</ci>
+            <apply>
+              <selector/>
+              <ci>x</ci>
+              <ci>k</ci>
+            </apply>
+            <ci>v</ci>
+          </apply>
+          <apply>
+            <ci>-while</ci>
+            <apply>
+              <ci>-and</ci>
+              <apply>
+                <ci>-GTEQ</ci>
+                <apply>
+                  <ci>-abs</ci>
+                  <apply>
+                    <ci>grad</ci>
+                    <ci>f</ci>
+                    <apply>
+                      <selector/>
+                      <apply>
+                        <ci>-PARENS</ci>
+                        <apply>
+                          <selector/>
+                          <ci>x</ci>
+                          <ci>k</ci>
+                        </apply>
+                      </apply>
+                      <cn>0</cn>
+                    </apply>
+                    <apply>
+                      <selector/>
+                      <apply>
+                        <ci>-PARENS</ci>
+                        <apply>
+                          <selector/>
+                          <ci>x</ci>
+                          <ci>k</ci>
+                        </apply>
+                      </apply>
+                      <cn>1</cn>
+                    </apply>
+                    <apply>
+                      <selector/>
+                      <apply>
+                        <ci>-PARENS</ci>
+                        <apply>
+                          <selector/>
+                          <ci>x</ci>
+                          <ci>k</ci>
+                        </apply>
+                      </apply>
+                      <cn>2</cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci>e1</ci>
+              </apply>
+              <apply>
+                <ci>-LTEQ</ci>
+                <ci>k</ci>
+                <ci>M</ci>
+              </apply>
+            </apply>
+            <apply>
+              <ci>-sequence</ci>
+              <apply>
+                <apply>
+                  <ci>-ifblock</ci>
+                  <apply>
+                    <apply>
+                      <ci>-pair</ci>
+                      <apply>
+                        <ci>-sequence</ci>
+                        <apply>
+                          <apply>
+                            <ci>-localassign</ci>
+                            <apply>
+                              <selector/>
+                              <ci>d</ci>
+                              <ci>k</ci>
+                            </apply>
+                            <apply>
+                              <ci>-mult-times-in</ci>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <ci>-PARENS</ci>
+                                  <apply>
+                                    <ci>-better_POWER</ci>
+                                    <apply>
+                                      <ci>H</ci>
+                                      <ci>f</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <ci>k</ci>
+                                      </apply>
+                                    </apply>
+                                    <apply>
+                                      <minus/>
+                                      <cn>1</cn>
+                                    </apply>
+                                  </apply>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <ci>grad</ci>
+                                <ci>f</ci>
+                                <apply>
+                                  <selector/>
+                                  <apply>
+                                    <ci>-PARENS</ci>
+                                    <apply>
+                                      <selector/>
+                                      <ci>x</ci>
+                                      <ci>k</ci>
+                                    </apply>
+                                  </apply>
+                                  <cn>0</cn>
+                                </apply>
+                                <apply>
+                                  <selector/>
+                                  <apply>
+                                    <ci>-PARENS</ci>
+                                    <apply>
+                                      <selector/>
+                                      <ci>x</ci>
+                                      <ci>k</ci>
+                                    </apply>
+                                  </apply>
+                                  <cn>1</cn>
+                                </apply>
+                                <apply>
+                                  <selector/>
+                                  <apply>
+                                    <ci>-PARENS</ci>
+                                    <apply>
+                                      <selector/>
+                                      <ci>x</ci>
+                                      <ci>k</ci>
+                                    </apply>
+                                  </apply>
+                                  <cn>2</cn>
+                                </apply>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <ci>-localassign</ci>
+                            <apply>
+                              <selector/>
+                              <ci>t</ci>
+                              <ci>k</ci>
+                            </apply>
+                            <cn>1</cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <ci>-EQUALS</ci>
+                        <apply>
+                          <ci>IsPologit</ci>
+                          <apply>
+                            <ci>-better_POWER</ci>
+                            <apply>
+                              <ci>H</ci>
+                              <ci>f</ci>
+                              <apply>
+                                <selector/>
+                                <ci>x</ci>
+                                <ci>k</ci>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <minus/>
+                              <cn>1</cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                        <ci>'Yes'</ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <ci>-sequence</ci>
+                    <apply>
+                      <apply>
+                        <ci>-localassign</ci>
+                        <apply>
+                          <selector/>
+                          <ci>d</ci>
+                          <ci>k</ci>
+                        </apply>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <ci>grad</ci>
+                            <ci>f</ci>
+                            <apply>
+                              <selector/>
+                              <apply>
+                                <ci>-PARENS</ci>
+                                <apply>
+                                  <selector/>
+                                  <ci>x</ci>
+                                  <ci>k</ci>
+                                </apply>
+                              </apply>
+                              <cn>0</cn>
+                            </apply>
+                            <apply>
+                              <selector/>
+                              <apply>
+                                <ci>-PARENS</ci>
+                                <apply>
+                                  <selector/>
+                                  <ci>x</ci>
+                                  <ci>k</ci>
+                                </apply>
+                              </apply>
+                              <cn>1</cn>
+                            </apply>
+                            <apply>
+                              <selector/>
+                              <apply>
+                                <ci>-PARENS</ci>
+                                <apply>
+                                  <selector/>
+                                  <ci>x</ci>
+                                  <ci>k</ci>
+                                </apply>
+                              </apply>
+                              <cn>2</cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <ci>-localassign</ci>
+                        <apply>
+                          <selector/>
+                          <ci>t</ci>
+                          <ci>k</ci>
+                        </apply>
+                        <apply>
+                          <ci>GetT</ci>
+                          <apply>
+                            <selector/>
+                            <ci>x</ci>
+                            <ci>k</ci>
+                          </apply>
+                          <apply>
+                            <selector/>
+                            <ci>d</ci>
+                            <ci>k</ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <ci>-localassign</ci>
+                  <apply>
+                    <selector/>
+                    <ci>x</ci>
+                    <apply>
+                      <plus/>
+                      <ci>k</ci>
+                      <cn>1</cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <selector/>
+                      <ci>x</ci>
+                      <ci>k</ci>
+                    </apply>
+                    <apply>
+                      <ci>-mult-times-in</ci>
+                      <apply>
+                        <selector/>
+                        <ci>t</ci>
+                        <ci>k</ci>
+                      </apply>
+                      <apply>
+                        <selector/>
+                        <ci>d</ci>
+                        <ci>k</ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <ci>-ifblock</ci>
+                  <apply>
+                    <apply>
+                      <ci>-pair</ci>
+                      <apply>
+                        <ci>-return</ci>
+                        <apply>
+                          <selector/>
+                          <ci>x</ci>
+                          <apply>
+                            <plus/>
+                            <ci>k</ci>
+                            <cn>1</cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <ci>-and</ci>
+                        <apply>
+                          <ci>-PARENS</ci>
+                          <apply>
+                            <ci>-lthan</ci>
+                            <apply>
+                              <ci>-abs</ci>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <selector/>
+                                  <ci>x</ci>
+                                  <apply>
+                                    <plus/>
+                                    <ci>k</ci>
+                                    <cn>1</cn>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <selector/>
+                                  <ci>x</ci>
+                                  <ci>k</ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <ci>e2</ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <ci>-PARENS</ci>
+                          <apply>
+                            <ci>-lthan</ci>
+                            <apply>
+                              <ci>-abs</ci>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <ci>f</ci>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <apply>
+                                          <plus/>
+                                          <ci>k</ci>
+                                          <cn>1</cn>
+                                        </apply>
+                                      </apply>
+                                    </apply>
+                                    <cn>0</cn>
+                                  </apply>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <apply>
+                                          <plus/>
+                                          <ci>k</ci>
+                                          <cn>1</cn>
+                                        </apply>
+                                      </apply>
+                                    </apply>
+                                    <cn>1</cn>
+                                  </apply>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <apply>
+                                          <plus/>
+                                          <ci>k</ci>
+                                          <cn>1</cn>
+                                        </apply>
+                                      </apply>
+                                    </apply>
+                                    <cn>2</cn>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <ci>f</ci>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <ci>k</ci>
+                                      </apply>
+                                    </apply>
+                                    <cn>0</cn>
+                                  </apply>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <ci>k</ci>
+                                      </apply>
+                                    </apply>
+                                    <cn>1</cn>
+                                  </apply>
+                                  <apply>
+                                    <selector/>
+                                    <apply>
+                                      <ci>-PARENS</ci>
+                                      <apply>
+                                        <selector/>
+                                        <ci>x</ci>
+                                        <ci>k</ci>
+                                      </apply>
+                                    </apply>
+                                    <cn>2</cn>
+                                  </apply>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <ci>e2</ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <ci>-localassign</ci>
+                    <ci>k</ci>
+                    <apply>
+                      <plus/>
+                      <ci>k</ci>
+                      <cn>1</cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <selector/>
+            <ci>x</ci>
+            <ci>k</ci>
+          </apply>
+        </apply>
+      </apply>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0160.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="88" mcd:aligny="1112" 
+ style="position:absolute;top:1099;left:88;width:148">
+<layer width=148>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Начальное приближение</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="39" mcd:aligny="1136" 
+ style="position:absolute;top:1102;left:24;width:50">
+<layer width=50>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>v</ci>
+    <vector>
+      <cn>0</cn>
+      <cn>0</cn>
+      <cn>0</cn>
+    </vector>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0162.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="75" mcd:aligny="1192" 
+ style="position:absolute;top:1172;left:24;width:315">
+<layer width=315>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>f</ci>
+    <lambda>
+      <bvar>
+        <ci>x</ci>
+      </bvar>
+      <bvar>
+        <ci>y</ci>
+      </bvar>
+      <bvar>
+        <ci>z</ci>
+      </bvar>
+      <apply>
+        <plus/>
+        <apply>
+          <plus/>
+          <apply>
+            <plus/>
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <ci>-better_POWER</ci>
+                    <ci>x</ci>
+                    <cn>2</cn>
+                  </apply>
+                  <apply>
+                    <ci>-mult-times-in</ci>
+                    <cn>3</cn>
+                    <apply>
+                      <ci>-better_POWER</ci>
+                      <ci>y</ci>
+                      <cn>2</cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <ci>-mult-times-in</ci>
+                  <cn>8</cn>
+                  <apply>
+                    <ci>-better_POWER</ci>
+                    <ci>z</ci>
+                    <cn>2</cn>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <ci>-mult-times-in</ci>
+                <apply>
+                  <ci>-mult-times-in</ci>
+                  <cn>6</cn>
+                  <ci>y</ci>
+                </apply>
+                <ci>z</ci>
+              </apply>
+            </apply>
+            <apply>
+              <ci>-mult-times-in</ci>
+              <apply>
+                <ci>-mult-times-in</ci>
+                <cn>4</cn>
+                <ci>x</ci>
+              </apply>
+              <ci>z</ci>
+            </apply>
+          </apply>
+          <apply>
+            <ci>-mult-times-in</ci>
+            <cn>2</cn>
+            <ci>z</ci>
+          </apply>
+        </apply>
+        <cn>6</cn>
+      </apply>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0163.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="376" mcd:aligny="1192" 
+ style="position:absolute;top:1179;left:376;width:112">
+<layer width=112>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Заданная функция</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="76" mcd:aligny="1216" 
+ style="position:absolute;top:1204;left:24;width:127">
+<layer width=127>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>Func</ci>
+    <lambda>
+      <bvar>
+        <ci>v</ci>
+      </bvar>
+      <apply>
+        <ci>f</ci>
+        <apply>
+          <selector/>
+          <ci>v</ci>
+          <cn>0</cn>
+        </apply>
+        <apply>
+          <selector/>
+          <ci>v</ci>
+          <cn>1</cn>
+        </apply>
+        <apply>
+          <selector/>
+          <ci>v</ci>
+          <cn>2</cn>
+        </apply>
+      </apply>
+    </lambda>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0165.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="55" mcd:aligny="1248" 
+ style="position:absolute;top:1236;left:24;width:177">
+<layer width=177>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>Ans</ci>
+    <apply>
+      <ci>Newton</ci>
+      <ci>f</ci>
+      <ci>v</ci>
+      <cn>0.1</cn>
+      <cn>0.15</cn>
+      <cn>10</cn>
+    </apply>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0166.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="208" mcd:aligny="1248" 
+ style="position:absolute;top:1235;left:208;width:197">
+<layer width=197>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Нахождение минимума методом Ньютона</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="54" mcd:aligny="1296" 
+ style="position:absolute;top:1262;left:24;width:79">
+<layer width=79>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <ci>Ans</ci>
+    <vector>
+      <cn>2</cn>
+      <cn>1</cn>
+      <apply>
+        <minus/>
+        <cn>1</cn>
+      </apply>
+    </vector>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0168.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="91" mcd:aligny="1344" 
+ style="position:absolute;top:1332;left:24;width:90">
+<layer width=90>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <apply>
+      <ci>Func</ci>
+      <ci>Ans</ci>
+    </apply>
+    <cn>5</cn>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0169.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true"
+mcd:textproperties=""
+mcd:alignx="120" mcd:aligny="1384" 
+ style="position:absolute;top:1371;left:120;width:327">
+<layer width=327>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Нахождение минимума средствами системы MathCad</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="69" mcd:aligny="1408" 
+ style="position:absolute;top:1396;left:32;width:145">
+<layer width=145>
+<comment mcd:mmldata="<math>
+  <declare>
+    <ci>Ans2</ci>
+    <apply>
+      <ci>Minimize</ci>
+      <ci>Func</ci>
+      <ci>v</ci>
+    </apply>
+  </declare>
+</math>"></comment>
+<img src="./Курс_images/IMG0171.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="68" mcd:aligny="1456" 
+ style="position:absolute;top:1422;left:32;width:85">
+<layer width=85>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <ci>Ans2</ci>
+    <vector>
+      <cn>2</cn>
+      <cn>1</cn>
+      <apply>
+        <minus/>
+        <cn>1</cn>
+      </apply>
+    </vector>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0172.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="105" mcd:aligny="1504" 
+ style="position:absolute;top:1492;left:32;width:96">
+<layer width=96>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <apply>
+      <ci>Func</ci>
+      <ci>Ans2</ci>
+    </apply>
+    <cn>5</cn>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0173.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="TXT" 
+mcd:properties="hilight:true;color:#ffff80"
+mcd:textproperties=""
+mcd:alignx="88" mcd:aligny="1560" 
+ style="position:absolute;top:1547;left:88;width:379">
+<layer width=379>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Классический метод решения задачи нахождения экстремума</span>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="47" mcd:aligny="1584" 
+ style="position:absolute;top:1572;left:32;width:32">
+<layer width=32>
+<comment mcd:mmldata="<math>
+  <ci>Given</ci>
+</math>"></comment>
+<img src="./Курс_images/IMG0175.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="134" mcd:aligny="1608" 
+ style="position:absolute;top:1596;left:32;width:156">
+<layer width=156>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EQUALS</ci>
+    <apply>
+      <ci>grad</ci>
+      <ci>f</ci>
+      <apply>
+        <selector/>
+        <ci>v</ci>
+        <cn>0</cn>
+      </apply>
+      <apply>
+        <selector/>
+        <ci>v</ci>
+        <cn>1</cn>
+      </apply>
+      <apply>
+        <selector/>
+        <ci>v</ci>
+        <cn>2</cn>
+      </apply>
+    </apply>
+    <cn>0.000001</cn>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0176.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+ style="position:absolute;top:1620;left:32">
+<layer >
+<img src="./Курс_images/IMG0177.PNG" mcd:base64encoded=
+"DAAAAAEAAABcAAAACgAAAAQAAwAAAAhlcVJlZ2lvbgIAAAAAAEIAAAAJZG9jUmVnaW9uAgAAAAAARwAA
+AAhtY09iamVjdAAAAAAAAFsAAAABAAIAAAAGc2hwQm94AAAAAAAAVQAAAAdzaHBSZWN0AAAAAAAAVgAA
+ACAAAABUBgAApAAAAGwGAABFAAAAYAYAAAAAAACxAAAAAAEAAAAAAgUAAQAAAAR0cmVlEAAAAAAAQAAA
+AA1wAAAAAAAGQEALwQAAgAUHQEACDwAAZAYAAAUEQW5zMwAIQEASzgAAgAYJQEACDwAAZAgAAAUERmlu
+ZAIAAAA4J/oJAApAQI5wAACACAALQEAKwwAAgAoMQEAKwwAAQAsNQEAE/QAAQAwOQEACDwAAZA0AAAIB
+dgAPQEACDwAAtA0AAAIBATAAABBAQAT9AACADBFAQAIPAABkEAAAAgF2ABJAQAIPAAC0EAAAAgEBMQAA
+ABNAQAT9AACACxRAQAIPAABkEwAAAgF2ABVAQAIPAAC0EwAAAgEBMgAAAAAAAAAAAAAAAAAAAA=="
+ border=0>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="68" mcd:aligny="1680" 
+ style="position:absolute;top:1646;left:32;width:85">
+<layer width=85>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <ci>Ans3</ci>
+    <vector>
+      <cn>2</cn>
+      <cn>1</cn>
+      <apply>
+        <minus/>
+        <cn>1</cn>
+      </apply>
+    </vector>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0178.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties="hilight:true;color:#c0c0c0"
+class="equation"
+;mcd:eqproperties=""
+mcd:alignx="105" mcd:aligny="1728" 
+ style="position:absolute;top:1716;left:32;width:96">
+<layer width=96>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <apply>
+      <ci>Func</ci>
+      <ci>Ans3</ci>
+    </apply>
+    <cn>5</cn>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0179.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="97" mcd:aligny="1792" 
+ style="position:absolute;top:1750;left:32;width:283">
+<layer width=283>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <apply>
+      <ci>H</ci>
+      <ci>f</ci>
+      <ci>Ans3</ci>
+    </apply>
+    <matrix>
+      <matrixrow>
+        <cn>2</cn>
+        <apply>
+          <ci>-mult-times-in</ci>
+          <cn>1.205</cn>
+          <apply>
+            <ci>-better_POWER</ci>
+            <cn>10</cn>
+            <apply>
+              <minus/>
+              <cn>14</cn>
+            </apply>
+          </apply>
+        </apply>
+        <cn>4</cn>
+      </matrixrow>
+      <matrixrow>
+        <apply>
+          <ci>-mult-times-in</ci>
+          <cn>3.928</cn>
+          <apply>
+            <ci>-better_POWER</ci>
+            <cn>10</cn>
+            <apply>
+              <minus/>
+              <cn>15</cn>
+            </apply>
+          </apply>
+        </apply>
+        <cn>6</cn>
+        <cn>6</cn>
+      </matrixrow>
+      <matrixrow>
+        <cn>4</cn>
+        <cn>6</cn>
+        <cn>16</cn>
+      </matrixrow>
+    </matrix>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0180.PNG" align=absmiddle>
+</layer>
+</div>
+<div mcd:region="EQN" 
+mcd:properties=""
+class="equation"
+mcd:eqproperties=""
+mcd:alignx="155" mcd:aligny="1856" 
+ style="position:absolute;top:1844;left:32;width:174">
+<layer width=174>
+<comment mcd:mmldata="<math>
+  <apply>
+    <ci>-EVAL</ci>
+    <apply>
+      <ci>IsPologit</ci>
+      <apply>
+        <ci>H</ci>
+        <ci>f</ci>
+        <ci>Ans3</ci>
+      </apply>
+    </apply>
+    <ci>'Yes'</ci>
+  </apply>
+</math>"></comment>
+<img src="./Курс_images/IMG0181.PNG" align=absmiddle>
+</layer>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+ARA:‡¡š‘ˆ­‰-‡¡££¡Ÿ‰ ‡¡š‘ˆ­‰ ‡¡“š¦­‰
+BGR:¡ê«£ àáª¨-ê«£ à¨ï
+CAT:catal -Espanya
+CHT:ııı¥(c…©)-_x†W
+CSY:¨e_tina-ˆesk¡ÿrepublika
+DAN:dansk-Danmark
+DEU:Deutsch-Deutschland
+ELL:¥««§­©ªœ-…««œ¤¡
+ENU:English-United States
+ESP:espaáol-Espaáa
+FIN:suomi-Suomi
+FRA:fran§ais-France
+HEB:â¡è©ê-©éè ¬
+HUN:magyar-Magyarorsz¡g
+ISL:­slenska-sland
+ITA:italiano-Italia
+JPN:"ê-{_ª-"ê-{
+KOR:‡‘+ü_®-_«‡‘ü+ü
+NLD:Nederlands-Nederland
+NOR:norsk (bokm¥l)-Norge
+PLK:polski-Polska
+PTB:Portuguªs-Brasil
+ROM:rom¢n£-Rom¢nia
+RUS:àãááª¨©-®áá¨ï
+HRV:hrvatski-Hrvatska
+SKY:sloven¨ina-Slovensk¡ republika
+SQI:shqipe-Shqip«ria
+SVE:svenska-Sverige
+THA:¤ú‚-¤ú‚
+TRK:Tìrk§e-Tìrkiye
+URD:?‘¦-_‡_“Š‡¤
+IND:Bahasa Indonesia-Indonesia
+UKR:ãªà õ­ìáª -“ªà õ­ 
+BEL:¥« àãáª_-¥« àãáì
+SLV:slovenski-Slovenija
+ETI:eesti-Eesti
+LVI:latvieàu-Latvija
+LTH:lietuviè-Lietuva
+FAR:‡‘“¬-‡­‘‡¤
+VIT:Tiª¬ng Viªât Nam-Viªât Nam
+HYE:???????-????????
+AZE:Az?rbaycan-ílí-Az?rbaycanca
+EUQ:euskara-Espainia
+MKI:¬ ª¥¤®­áª¨ _ §¨ª-Œ ª¥¤®­¨_ 
+AFK:Afrikaans-Suid Afrika
+KAT:???????-??????????
+FOS:fèroyskt-Fèroyar
+HIN:?????-????
+MSL:Bahasa Malaysia-Malaysia
+KKZ:? § éb-? § ?áâ ­
+SWK:Kiswahili-Kenya
+UZB:U'zbek-U'zbekiston Respublikasi
+TTT:’ â à-’ â àáâ ­
+TAM:?????-???????
+MAR:?????-????
+SAN:???????-??????
+KNK:??????-????
+ARI:‡¡š‘ˆ­‰-‡¡š‘‡
+CHS:–„(_âŒ¥)-–>òˆ‹ƒáü_óüê
+DES:Deutsch-Schweiz
+ENG:English-United Kingdom
+ESM:Espaáol-M©xico
+FRB:fran§ais-Belgique
+ITS:italiano-Svizzera
+NLB:Nederlands-Belgi«
+NON:norsk (nynorsk)-Noreg
+PTG:portuguªs-Portugal
+SRL:srpski-Srbija
+SVF:svenska-Finland
+AZE:€§?à¡ _? ­-€§?à¡ _? ­
+MSB:Bahasa Malaysia-Brunei Darussalam
+UZB:ö§¡¥ª-ö§¡¥ª¨áâ®­
+ARE:‡¡š‘ˆ­‰-£•‘
+ZHH:ııı¥(?Š^)-->_¤
+DEA:Deutsch-–sterreich
+ENA:English-Australia
+ESN:espaáol-Espaáa
+FRC:fran§ais-Canada
+SRB:áà¯áª¨-_ã£®á« ¢¨_ 
+ARL:‡¡š‘ˆ­‰-¡­ˆ­‡
+ZHI:–„(_âŒ¥)-‚_“†‚
+DEL:Deutsch-Luxemburg
+ENC:English-Canada
+ESG:Espaáol-Guatemala
+FRS:fran§ais-Suisse
+ARG:‡¡š‘ˆ­‰-‡¡Œ’‡†‘
+ZHM:ııı¥(?Š^)-õDòé
+DEC:Deutsch-Liechtenstein
+ENZ:English-New Zealand
+ESC:Espaáol-Costa Rica
+FRL:fran§ais-Luxembourg
+ARM:‡¡š‘ˆ­‰-‡¡££¡Ÿ‰ ‡¡£›‘ˆ­‰
+ENI:English-Eire
+ESA:Espaáol-Panam¡
+FRM:fran§ais-Principaut© de Monaco
+ART:‡¡š‘ˆ­‰-Š¦¤“
+ENS:English-South Africa
+ESD:Espaáol-Repêblica Dominicana
+ARO:‡¡š‘ˆ­‰-š£‡¤
+ENJ:English-Jamaica
+ESV:Espaáol-Venezuela
+ARY:‡¡š‘ˆ­‰-‡¡­£¤
+ENB:English-Caribbean
+ESO:Espaáol-Colombia
+ARS:‡¡š‘ˆ­‰-“¦‘­‡
+ENL:English-Belize
+ESR:Espaáol-Perê
+ARJ:‡¡š‘ˆ­‰-‡¡ƒ‘¤
+ENT:English-Trinidad y Tobago
+ESS:Espaáol-Argentina
+ARB:‡¡š‘ˆ­‰-¡ˆ¤‡¤
+ENW:English-Zimbabwe
+ESF:Espaáol-Ecuador
+ARK:‡¡š‘ˆ­‰-‡¡Ÿ¦­Š
+ENP:English-Philippines
+ESL:Espaáol-Chile
+ARU:‡¡š‘ˆ­‰-‡¡…£‡‘‡Š ‡¡š‘ˆ­‰ ‡¡£Š‰
+ESY:Espaáol-Uruguay
+ARH:‡¡š‘ˆ­‰-‡¡ˆ‘­¤
+ESZ:Espaáol-Paraguay
+ARQ:‡¡š‘ˆ­‰-˜‘
+ESB:Espaáol-Bolivia
+ESE:Espaáol-El Salvador
+ESH:Espaáol-Honduras
+ESI:Espaáol-Nicaragua
+ESU:Espaáol-Puerto Rico

@@ -1,0 +1,40 @@
+PROGRAM d8r8(input,output,dfile);
+(* driver for routine QCKSRT *)
+CONST
+   np = 100;
+TYPE
+   glarray = ARRAY [1..np] OF real;
+VAR
+   i,j : integer;
+   a : glarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I QCKSRT.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to 100 DO BEGIN
+      read(dfile,a[i])
+   END;
+   close(dfile);
+(* print original array *)
+   writeln('original array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+(* writeln sorted array *)
+   qcksrt(np,a);
+   writeln;
+   writeln ('sorted array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END
+END.

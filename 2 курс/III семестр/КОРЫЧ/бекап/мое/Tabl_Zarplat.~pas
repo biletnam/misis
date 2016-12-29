@@ -1,0 +1,24 @@
+unit Tabl_Zarplat;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TTabl_Zarplata = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Tabl_Zarplata: TTabl_Zarplata;
+
+implementation
+
+{$R *.dfm}
+
+end.

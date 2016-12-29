@@ -1,0 +1,103 @@
+PROGRAM d7r13 (input,output,dfile);
+(* driver for routine DES *)
+LABEL 5,10,99;
+TYPE
+   gl32array = ARRAY [1..32] OF integer;
+   gl48array = ARRAY [1..48] OF integer;
+   gl56array = ARRAY [1..56] OF integer;
+   gl64array = ARRAY [1..64] OF integer;
+VAR
+   glicd,ipc1 : gl56array;
+   i,idirec,idum,j,jdum,k,l : integer;
+   m,mm,nciphr,newkey,twopwr : integer;
+   icmp,iin,iout,key,ip,ipm : gl64array;
+   hin,hkey,hout,hcmp : string[17];
+   verdct : string[8];
+   txt : string[60];
+   txt2 : string[6];
+   ipc2,iet : gl48array;
+   ipp : gl32array;
+   is : ARRAY [1..16,1..4,1..8] OF integer;
+   ibin : ARRAY [1..4,1..16] OF integer;
+   ksflg,cyflg,desflg : boolean;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+
+(*$I DESKS.PAS *)
+
+(*$I DES.PAS *)
+
+FUNCTION hex2int(ch:char) : integer;
+(* Coverts character representing hexadecimal number to its integer
+value in a machine-independent way. *)
+BEGIN
+   IF (ch >= '0') AND (ch <= '9') THEN
+      hex2int := ord(ch)-ord('0')
+   ELSE
+      hex2int := ord(ch)-ord('A')+10
+END;
+FUNCTION int2hex(i:integer) : char;
+(* Inverse of hex2int *)
+BEGIN
+   IF i <= 9 THEN
+      int2hex := chr(i+ord('0'))
+   ELSE
+      int2hex := chr(i-10+ord('A'))
+END;
+
+BEGIN
+   ksflg := true;
+   cyflg := true;
+   desflg := true;
+   glopen(dfile,'destst.dat');
+   readln (dfile,txt);
+   writeln (txt);
+5:   readln (dfile,txt);
+   IF eof(dfile) THEN GOTO 99;
+   writeln (txt);
+   readln (dfile,nciphr);
+   readln (dfile,txt2);
+   IF (txt2 = 'encode') THEN idirec := 0;
+   IF (txt2 = 'decode') THEN idirec := 1;
+10:   writeln ('key':10,'plaintext':20,
+      'expected cipher':21,'actual cipher':15);
+   mm := 16;
+   IF (nciphr < 16) THEN mm := nciphr;
+   nciphr := nciphr-16;
+   FOR m := 1 to mm DO BEGIN
+      readln(dfile,hkey,hin,hcmp);
+      FOR i := 1 to 16 DO BEGIN
+         j := i+1;
+         idum := hex2int(hin[j]);
+         jdum := hex2int(hkey[j]);
+         FOR k := 1 to 4 DO BEGIN
+            l := 4*i+1-k;
+            iin[l] := idum MOD 2;
+            idum := idum DIV 2;
+            key[l] := jdum MOD 2;
+            jdum := jdum DIV 2
+         END
+      END;
+      newkey := 1;
+      des(iin,key,newkey,idirec,iout);
+      hout := '                 ';
+      FOR i := 1 to 16 DO BEGIN
+         jdum := 0;
+         twopwr := 16;
+         FOR j := 1 to 4 DO BEGIN
+            twopwr := twopwr DIV 2;
+            jdum := jdum+twopwr*iout[4*(i-1)+j]
+         END;
+         hout[i+1] := int2hex(jdum)
+      END;
+      verdct := 'wrong   ';
+      IF (hcmp = hout) THEN verdct := 'o.k.    ';
+      writeln(hkey,hin,hcmp,hout,verdct:10)
+   END;
+   writeln ('press RETURN to continue ...');
+   readln;
+   IF (nciphr <= 0) THEN GOTO 5;
+   GOTO 10;
+99:
+END.

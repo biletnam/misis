@@ -1,0 +1,76 @@
+unit LogicClasses;
+
+interface
+uses classes, Sysutils, Contnrs, Myclasses, Forms;
+
+Type TLogicNode=Class(TObject)
+private
+  mQueue: integer;
+  mActive: Boolean;
+  mWaitTime: integer;
+  mWorkTime: integer;
+  mInfoControls: TInfoControls;
+public
+  Constructor Create(cName: string; cForm: TForm);
+  Destructor Destroy; override;
+  property Ctrl: TInfoControls read mInfoControls write mInfoControls;
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+end;
+
+Type TClient=Class(TObject)
+private
+  mNumber: integer;
+  mWaitTime: integer;
+  mTotalTime: integer;
+public
+  Constructor Create(cNumber: integer);
+  Destructor Destroy; override;
+  property TotalTime: integer read mTotalTime write mTotalTime;
+  property WaitTime: integer read mWaitTime write mWaitTime;
+end;
+
+implementation
+
+Constructor TLogicNode.Create(cName: string; cForm: TForm);
+begin
+  mInfoControls := TInfoControls.Create(cName, cForm);
+  mQueue := 0;
+  mActive := false;
+  mWaitTime := 0;
+  mWorkTime := 0;
+end;
+
+Destructor TLogicNode.Destroy;
+begin
+  inherited;
+end;
+
+procedure TLogicNode.UpdateInfo;
+begin
+  mInfoControls.QueueInfo.Edit.Text := IntToStr(mQueue)+ ' чел.';
+  if mActive then mInfoControls.StateInfo.Edit.Text := 'Работа'
+  else mInfoControls.StateInfo.Edit.Text := 'Ожидание';
+  mInfoControls.WaitInfo.Edit.Text := FloatToStrF(mWaitTime/60,ffFixed,3,2) + ' мин.';
+  mInfoControls.WorkInfo.Edit.Text := FloatToStrF(mWorkTime/60,ffFixed,3,2) + ' мин.';
+end;
+
+procedure TLogicNode.Tick(dt: integer);
+begin
+  if mActive then mWorkTime := mWorkTime + dt
+  else mWaitTime := mWaitTime + dt;
+end;
+
+Constructor TClient.Create(cNumber: integer);
+begin
+  mNumber := cNumber;
+  mWaitTime := 0;
+  mTotalTime := 0;
+end;
+
+Destructor TClient.Destroy;
+begin
+  inherited;
+end;
+
+end.

@@ -1,0 +1,9 @@
+label=Siemens S55
+vendor=siemens
+
+skin.image = siemensS55.jpg
+skin.screen = 13x28x101x80
+
+jar=sm_bookreader.jar
+
+TextBlockSize=8000

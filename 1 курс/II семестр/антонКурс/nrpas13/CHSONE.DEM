@@ -1,0 +1,52 @@
+PROGRAM d13r8(input,output);
+(* driver for routine CHSONE *)
+CONST
+   nbins=10;
+   npts=2000;
+TYPE
+   barray = ARRAY [0..nbins] OF real;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   chsq,df,prob,x : real;
+   i,ibin,idum,j : integer;
+   bins,ebins : barray;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I GCF.PAS *)
+
+(*$I GSER.PAS *)
+
+(*$I GAMMQ.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I EXPDEV.PAS *)
+
+(*$I CHSONE.PAS *)
+
+BEGIN
+   idum := -15;
+   FOR j := 1 to nbins DO BEGIN
+      bins[j] := 0.0
+   END;
+   FOR i := 1 to npts DO BEGIN
+      x := expdev(idum);
+      ibin := trunc(x*nbins/3.0)+1;
+      IF (ibin <= nbins) THEN
+         bins[ibin] := bins[ibin]+1.0
+   END;
+   FOR i := 1 to nbins DO BEGIN
+      ebins[i] := 3.0*npts/nbins*exp(-3.0*(i-0.5)/nbins)
+   END;
+   chsone(bins,ebins,nbins,-1,df,chsq,prob);
+   writeln('expected':15,'observed':15);
+   FOR i := 1 to nbins DO BEGIN
+      writeln(ebins[i]:14:2,bins[i]:15:2)
+   END;
+   writeln;
+   writeln('chi-squared:':19,chsq:10:4);
+   writeln('probability:':19,prob:10:4)
+END.

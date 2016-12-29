@@ -1,0 +1,9 @@
+label=Siemens sl45i
+vendor=siemens
+
+skin.image = siemens-sl45i.png
+skin.screen = 13x28x101x80
+
+jar=sm_bookreader.jar
+
+TextBlockSize=8000

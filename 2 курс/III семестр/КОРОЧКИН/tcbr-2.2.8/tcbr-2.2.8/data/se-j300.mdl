@@ -1,0 +1,4 @@
+label = J300, K300
+jar=midp2_se2_bookreader.jar
+skin.screen=31x55x128x128
+skin.image=se-J300.png

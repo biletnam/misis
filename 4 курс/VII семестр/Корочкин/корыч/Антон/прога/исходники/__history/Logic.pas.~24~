@@ -1,0 +1,368 @@
+unit Logic;
+
+interface
+uses classes, Sysutils, Contnrs, Myclasses, Forms,Controls,StdCtrls,ComCtrls,ExtCtrls,Graphics,Math,Grids;
+
+Type TClient=Class(TObject)
+  Name: string;
+  PurchaseTime: Integer;
+  WaitTime: Integer;
+  RemainPurchaseTime: Integer;
+  EatTime: Integer;
+  Constructor Create(cName: string);
+end;
+
+Type TSellerSettings=Class(TObject)
+  Panel: TPanel;
+  NameEdit: TEdit;
+  MinServeTime: TIntegerInput;
+  MaxServeTime: TIntegerInput;
+  Constructor Create(cName: string; cParent: TWinControl);
+  procedure ChangeCoord(X,Y:integer);
+  procedure RightTo(S: TSellerSettings; delta:integer);
+end;
+
+Type TSeller=Class(TObject)
+  Log: TLog;
+  Name:string;
+  Active: Boolean;
+  WaitTime: integer;
+  WorkTime: integer;
+  InfoControls: TInfoControls;
+  ClientList: TObjectList;
+  ServedClientsList: TObjectList;
+  Settings: TSellerSettings;
+  Constructor Create(cName: string; cParent: TWinControl; cLog: TLog; cServedClientsList: TObjectList);
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+  procedure SetWaitTime(Cl: TClient);
+  procedure CreateSettings(cParent: TWinControl);
+end;
+
+Type TTable=Class(TObject)
+  Log: TLog;
+  Places: integer;
+  Clients:TObjectList;
+  EndClientsList: TObjectList;
+  MinTime,MaxTime:integer;
+  Constructor Create(cPlaces:integer; cMin,cMax:integer; cLog: TLog);
+  procedure Tick(dt:integer);
+end;
+
+Type TSellerMan=Class(TObject)
+  Log:TLog;
+  Parent:TWinControl;
+  Sellers: TObjectList;
+  ServedClientsList: TObjectList;
+  Constructor Create(cParent: TWinControl; cLog: TLog; cServedClientsList: TObjectList);
+  procedure AddSeller(cName:string);
+  procedure UpdateInfos;
+  function FindMinQueue:TSeller;
+  procedure Tick(dt: integer);
+end;
+
+Type TSceneMan=Class(TObject)
+  Log:TLog;
+  SellerMan: TSellerMan;
+  TotalClients: integer;
+  ServedClientsList: TObjectList;
+  Table: TTable;
+  Stat:TStringGrid;
+  Constructor Create(cLog: TLog);
+  procedure CreateSellerMan(cParent: TWinControl);
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+  procedure FindTableTick(dt: integer);
+  procedure NewClient;
+  procedure UpdateStat;
+end;
+
+implementation
+
+Constructor TSellerSettings.Create(cName: string; cParent: TWinControl);
+var lbl6,lbl7,lbl8: TLabel;
+begin
+   Panel := TPanel.Create(cParent);
+   Panel.Parent := cParent;
+   Panel.BevelKind := bkTile;
+   Panel.BevelOuter := bvNone;
+   Panel.Height := 140;
+   Panel.Width := 170;
+   Panel.Color := clRed;
+
+   NameEdit := TEdit.Create(Panel);
+   NameEdit.Parent := Panel;
+   NameEdit.Text := cName;
+   NameEdit.Left := 5;
+   NameEdit.Top := 5;
+   NameEdit.Font.Color := clRed;
+
+   lbl6 := TLabel.Create(Panel);
+   lbl6.Parent := Panel;
+   lbl6.AutoSize := true;
+   lbl6.Caption := 'Время обслуживания'+#10+#13+'клиента:';
+   lbl6.Top := NameEdit.Top + NameEdit.Height + 5;
+   lbl6.Left := NameEdit.Left;
+
+   MinServeTime := TIntegerInput.Create(45,Panel);
+   MinServeTime.Edit.Top := lbl6.Top + lbl6.Height + 5;
+   MinServeTime.Edit.Left := NameEdit.Left;
+
+   lbl7 := TLabel.Create(Panel);
+   lbl7.Parent := Panel;
+   lbl7.AutoSize := true;
+   lbl7.Caption := '-';
+   lbl7.Top := MinServeTime.Edit.Top + 2;
+   lbl7.Left := MinServeTime.Edit.Left + MinServeTime.Edit.Width +5;
+
+   MaxServeTime := TIntegerInput.Create(120,Panel);
+   MaxServeTime.Edit.Top := MinServeTime.Edit.Top;
+   MaxServeTime.Edit.Left := lbl7.Left + lbl7.Width + 5;
+
+   lbl8 := TLabel.Create(Panel);
+   lbl8.Parent := Panel;
+   lbl8.AutoSize := true;
+   lbl8.Caption := 'сек.';
+   lbl8.Top := lbl7.Top + 5;
+   lbl8.Left := MaxServeTime.Edit.Left + MaxServeTime.Edit.Width + 5;
+end;
+
+procedure TSellerSettings.ChangeCoord(X,Y:integer);
+begin
+  Panel.Top := Y;
+  Panel.Left := X;
+end;
+
+procedure TSellerSettings.RightTo(S: TSellerSettings; delta:integer);
+begin
+  Panel.Top := S.Panel.Top;
+  Panel.Left := S.Panel.Left + S.Panel.Width + delta;
+end;
+
+Constructor TSeller.Create(cName: string; cParent: TWinControl; cLog: TLog; cServedClientsList: TObjectList);
+begin
+  Log:=cLog;
+  Name:=cName;
+  ServedClientsList := cServedClientsList;
+  InfoControls := TInfoControls.Create(cName, cParent);
+  Active := false;
+  WaitTime := 0;
+  WorkTime := 0;
+  ClientList := TObjectList.Create;
+end;
+
+procedure TSeller.UpdateInfo;
+begin
+  InfoControls.QueueInfo.Edit.Text := IntToStr(ClientList.Count)+ ' чел.';
+  if Active then InfoControls.StateInfo.Edit.Text := 'Работа'
+  else InfoControls.StateInfo.Edit.Text := 'Ожидание';
+  InfoControls.WaitInfo.Edit.Text := FloatToStrF(WaitTime/60,ffFixed,3,0) + ' мин.';
+  InfoControls.WorkInfo.Edit.Text := FloatToStrF(WorkTime/60,ffFixed,3,0) + ' мин.';
+  if (WorkTime + WaitTime)<>0 then InfoControls.WaitPercent.Edit.Text := FloatToStrF(100 - 100*WaitTime/(WorkTime + WaitTime),ffFixed,3,0) + ' %';
+end;
+
+procedure TSeller.SetWaitTime(Cl: TClient);
+var Time:integer;
+begin
+  Time := RandomRange(Settings.MinServeTime.Value,Settings.MaxServeTime.Value);
+  Cl.RemainPurchaseTime := Time;
+  Cl.PurchaseTime := Time;
+end;
+
+procedure TSeller.CreateSettings(cParent: TWinControl);
+begin
+  Settings:=TSellerSettings.Create(Name, cParent);
+  //Settings.NameEdit.OnChange := NewName;
+end;
+
+procedure TSeller.Tick(dt: integer);
+var buf:TClient;
+    i:Integer;
+begin
+  if ClientList.Count<>0 then buf:=(ClientList.First as TClient) else buf:=nil;
+  if (not(Active))and(buf<>nil) then
+  begin
+    Active:=true;
+    SetWaitTime(buf);
+    Log.Add(Name+' начал обслуживать '+buf.Name);
+  end;
+  if Active then buf.RemainPurchaseTime := buf.RemainPurchaseTime - dt;
+  if Active then WorkTime := WorkTime + dt else WaitTime := WaitTime + dt;
+  if ((Active)and(buf.RemainPurchaseTime=0)) then
+  begin
+    Log.Add(Name+' закончил обслуживать '+buf.Name+'. Время обслуживания: '+IntToStr(buf.PurchaseTime)+' сек.');
+
+    buf:=ClientList.Extract(ClientList.First) as TClient;
+    ServedClientsList.Add(buf);
+    //ClientList.Remove(ClientList.First);
+    Active:=False;
+  end;
+
+  // Очередь
+  for i := 1 to ClientList.Count - 1 do (ClientList[i] as TClient).WaitTime := (ClientList[i] as TClient).WaitTime + dt;
+end;
+
+procedure TSellerMan.AddSeller(cName:string);
+var buf: TSeller;
+begin
+   buf:= TSeller.Create(cName,Parent,Log,ServedClientsList);
+   if Sellers.Count=0 then buf.InfoControls.ChangeCoord(10,20)
+   else buf.InfoControls.RightTo((Sellers.Last as TSeller).InfoControls, 5);
+   Sellers.Add(buf);
+end;
+
+Constructor TSellerMan.Create(cParent: TWinControl; cLog: TLog; cServedClientsList: TObjectList);
+begin
+  Log:=cLog;
+  ServedClientsList:=cServedClientsList;
+  Sellers:= TObjectList.Create;
+  Parent:=cParent;
+  AddSeller('Кассир 1');
+  AddSeller('Кассир 2');
+  AddSeller('Кассир 3');
+end;
+
+procedure TSellerMan.UpdateInfos;
+var i: integer;
+begin
+   for i := 0 to Sellers.Count - 1 do (Sellers[i] as TSeller).UpdateInfo;
+end;
+
+procedure TSellerMan.Tick(dt: integer);
+var i: integer;
+begin
+   for i := 0 to Sellers.Count - 1 do (Sellers[i] as TSeller).Tick(dt);
+end;
+
+function TSellerMan.FindMinQueue:TSeller;
+var i:integer;
+    Res,buf: TSeller;
+begin
+  Res:=nil;
+  for i := 0 to Sellers.Count - 1 do
+    begin
+      buf:=Sellers[i] as TSeller;
+      if i=0 then Res:=buf else if buf.ClientList.Count<Res.ClientList.Count then Res:=buf;
+    end;
+  Result:=Res;
+end;
+
+Constructor TSceneMan.Create(cLog: TLog);
+begin
+  Log := cLog;
+  TotalClients := 0;
+  ServedClientsList:=TObjectList.Create;
+  Table:=TTable.Create(25,200,600,Log);
+end;
+
+procedure TSceneMan.CreateSellerMan(cParent: TWinControl);
+begin
+  SellerMan := TSellerMan.Create(cParent,Log,ServedClientsList);
+end;
+
+procedure TSceneMan.UpdateStat;
+var i:integer;
+    buf:TClient;
+begin
+  Stat.RowCount := Table.EndClientsList.Count;
+
+  for i:= 1 to Table.EndClientsList.Count do
+    begin
+      buf := Table.EndClientsList[i-1] as TClient;
+
+      Stat.Cells[0,i] := buf.Name;
+      Stat.Cells[1,i] := 'Пришел в';
+      Stat.Cells[2,i] := IntToStr(buf.WaitTime)+' сек.';
+      Stat.Cells[3,i] := IntToStr(buf.PurchaseTime)+' сек.';
+      Stat.Cells[4,i] := IntToStr(buf.EatTime)+' сек.';
+      Stat.Cells[5,i] := IntToStr(buf.WaitTime + buf.PurchaseTime + buf.EatTime)+' сек.';
+      Stat.Cells[6,i] := 'Ушел в';
+    end;
+end;
+
+procedure TSceneMan.UpdateInfo;
+begin
+  SellerMan.UpdateInfos;
+  UpdateStat;
+end;
+
+procedure TSceneMan.FindTableTick(dt: integer);
+var i:integer;
+    buf:TClient;
+begin
+   while (Table.Clients.Count<Table.Places)and(ServedClientsList.Count>0) do
+   begin
+      buf:=ServedClientsList.Extract(ServedClientsList.First) as TClient;
+      Table.Clients.Add(buf);
+      //ServedClientsList.Remove(ServedClientsList.First);
+      buf.EatTime:=RandomRange(Table.MinTime,Table.MaxTime);
+
+      Log.Add(buf.Name+' сел за стол и начал есть. Свободно мест: '+IntToStr(Table.Places - Table.Clients.Count)+'/'+IntToStr(Table.Places)+'.');
+   end;  
+
+   for i := 0 to ServedClientsList.Count - 1 do
+     begin
+       buf:= ServedClientsList[i] as TClient;
+       buf.WaitTime := buf.WaitTime + dt;
+     end;
+end;
+
+procedure TSceneMan.Tick(dt: integer);
+begin
+  Log.Tick(dt);
+  SellerMan.Tick(dt);
+  FindTableTick(dt);
+  Table.Tick(dt);
+end;
+
+procedure TSceneMan.NewClient;
+var Min:TSeller;
+    cl:TClient;
+begin
+  TotalClients := TotalClients + 1;
+  cl:=TClient.Create('Клиент №'+IntToStr(TotalClients));
+  Log.Add(cl.Name + ' пришел в кафе.');
+  Min:=SellerMan.FindMinQueue;
+  Min.ClientList.Add(cl);
+end;
+
+Constructor TClient.Create(cName: string);
+begin
+  Name:=cName;
+  PurchaseTime:=0;
+  WaitTime:=0;
+  RemainPurchaseTime:=-1;
+  EatTime:=-1;
+end;
+
+Constructor TTable.Create(cPlaces:integer; cMin,cMax:integer; cLog: TLog);
+begin
+  Log:=cLog;
+  Places:=cPlaces;
+  MinTime:=cMin;
+  MaxTime:=cMax;
+  Clients:=TObjectList.Create;
+  EndClientsList:=TObjectList.Create;
+end;
+
+procedure TTable.Tick(dt:integer);
+var i:integer;
+    buf:TClient;
+begin
+  i:=0;
+  while (i <> Clients.Count) do
+    begin
+      buf:=Clients[i] as TClient;
+      buf.EatTime := buf.EatTime - dt;
+      if buf.EatTime = 0 then
+      begin
+        Log.Add(buf.Name+' закончил есть и покидает кафе.');
+        buf := Clients.Extract(Clients[i]) as TClient;
+        EndClientsList.Add(buf);
+        i:=i-1;
+      end;
+      i:=i+1;
+    end;
+end;
+
+end.

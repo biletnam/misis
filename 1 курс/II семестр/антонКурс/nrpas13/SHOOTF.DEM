@@ -1,0 +1,142 @@
+PROGRAM d16r2(input,output);
+(* driver for routine SHOOTF *)
+LABEL 1;
+CONST
+   nvar=3;
+   n1=2;
+   n2=1;
+   delta=1.0e-3;
+   eps=1.0e-6;
+   dx=1.0e-4;
+TYPE
+   gl1array = ARRAY [1..1] OF real;
+   gln2array = gl1array;
+   gl2array = ARRAY [1..2] OF real;
+   gln1array = gl2array;
+   gl3array = ARRAY [1..3] OF real;
+   glnarray = gl3array;
+   glarray = gl3array;
+   glnvar = gl3array;
+   glnpbynp = ARRAY [1..3,1..3] OF real;
+   glnvarbynvar = glnpbynp;
+   glindx = ARRAY [1..3] OF integer;
+VAR
+   c2,factr,h1,hmin : real;
+   q1,x1,x2,xf : real;
+   i,m,n : integer;
+   v1,delv1,dv1 : gln2array;
+   v2,delv2,dv2 : gln1array;
+   f : glnvar;
+   kmax,kount : integer;
+   dxsav : real;
+   xp : ARRAY [1..200] OF real;
+   yp : ARRAY [1..10,1..200] OF real;
+
+PROCEDURE load1(x1: real; v1: gl1array; VAR y: gl3array);
+(* Programs using routine LOAD1 must define the types
+TYPE
+   gl1array = ARRAY [1..1] OF real;
+   gl3array = ARRAY [1..3] OF real;
+and must declare the variables
+VAR
+   c2,factr : real;
+   m : integer;
+in the main routine. *)
+BEGIN
+   y[3] := v1[1];
+   y[2] := -(y[3]-c2)*factr/2.0/(m+1.0);
+   y[1] := factr+y[2]*dx
+END;
+
+PROCEDURE load2(x2: real; v2: gl2array; VAR y: gl3array);
+(* Programs using routine LOAD2 must define the types
+TYPE
+   gl2array = ARRAY [1..2] OF real;
+   gl3array = ARRAY [1..3] OF real;
+and must declare the variables
+   c2 : real;
+   m : integer;
+in the main routine. *)
+BEGIN
+   y[3] := v2[2];
+   y[1] := v2[1];
+   y[2] := (y[3]-c2)*y[1]/2.0/(m+1.0)
+END;
+
+PROCEDURE score(xf: real; y: gl3array; VAR f: gl3array);
+(* Programs using routine SCORE must define the type
+TYPE
+   gl3array = ARRAY [1..3] OF real;
+in the main routine. *)
+VAR
+   i : integer;
+BEGIN
+   FOR i := 1 to 3 DO BEGIN
+      f[i] := y[i]
+   END
+END;
+
+PROCEDURE derivs(x: real; y: gl3array; VAR dydx: gl3array);
+(* Programs using routine DERIVS must define the type
+TYPE
+   gl3array = ARRAY [1..3] OF real;
+and must declare the variables
+   c2 : real;
+   m : integer;
+in the main routine. *)
+BEGIN
+   dydx[1] := y[2];
+   dydx[3] := 0.0;
+   dydx[2] := (2.0*x*(m+1.0)*y[2]-(y[3]-c2*x*x)*y[1])/(1.0-x*x)
+END;
+
+(*$I MODFILE.PAS *)
+(*$I LUBKSB.PAS *)
+
+(*$I LUDCMP.PAS *)
+
+(*$I RK4.PAS *)
+
+(*$I RKQC.PAS *)
+
+(*$I ODEINT.PAS *)
+
+(*$I SHOOTF.PAS *)
+
+BEGIN
+1:   write('Input M,N,C-SQUARED: ');
+   readln(m,n,c2);
+   IF ((n < m) OR (m < 0)) THEN BEGIN
+      writeln('Improper arguments');
+      GOTO 1
+   END;
+   factr := 1.0;
+   IF (m <> 0) THEN BEGIN
+      q1 := n;
+      FOR i := 1 to m DO BEGIN
+         factr := -0.5*factr*(n+i)*(q1/i);
+         q1 := q1-1.0
+      END
+   END;
+   v1[1] := n*(n+1)-m*(m+1)+c2/2.0;
+   IF (((n-m) MOD 2) = 0) THEN v2[1] := factr
+   ELSE v2[1] := -factr;
+   v2[2] := v1[1];
+   delv1[1] := delta*v1[1];
+   delv2[1] := delta*factr;
+   delv2[2] := delv1[1];
+   h1 := 0.1;
+   hmin := 0.0;
+   x1 := -1.0+dx;
+   x2 := 1.0-dx;
+   xf := 0.0;
+   writeln;
+   writeln('mu(-1)':26,'y(1-dx)':20,'mu(+1)':19);
+   REPEAT
+      shootf(nvar,v1,v2,delv1,delv2,n1,n2,x1,x2,
+         xf,eps,h1,hmin,f,dv1,dv2);
+      writeln;
+      writeln('v ':6,v1[1]:20:6,v2[1]:20:6,v2[2]:20:6);
+      writeln('dv':6,dv1[1]:20:6,dv2[1]:20:6,dv2[2]:20:6);
+   UNTIL (abs(dv1[1]) <= abs(eps*v1[1]))
+END.

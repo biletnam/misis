@@ -1,0 +1,72 @@
+generated 09.11.2009 10:06:03
+
+Neuron:'~' connected with:
+W(1)=1
+W()=1
+W(2)=1
+W()=1
+W(3)=1
+
+Neuron:'|' connected with:
+W(1)=1
+W()=1
+W(4)=1
+W()=1
+W(7)=1
+
+Neuron:'       |' connected with:
+W(3)=1
+W()=1
+W(6)=1
+W()=1
+W(9)=1
+
+Neuron:'_' connected with:
+W(7)=1
+W()=1
+W(8)=1
+W()=1
+W(9)=1
+
+Neuron:'----' connected with:
+W(4)=1
+W()=1
+W(5)=1
+W()=1
+W(6)=1
+
+Neuron:'Е' connected with:
+W(~)=0,25
+W(|)=0,25
+W(_)=0,25
+W(----)=0,25
+
+Neuron:'квадрат' connected with:
+W(~)=1
+W(|)=1
+W(       |)=1
+W(_)=1
+
+Neuron:'П' connected with:
+W(~)=0,34
+W(|)=0,34
+W(       |)=0,34
+
+Neuron:'С' connected with:
+W(|)=0,33
+W(_)=0,33
+W(~)=0,34
+
+Neuron:'Е' connected with:
+W(Е)=1
+W(С)=0
+
+Neuron:'С' connected with:
+W(Е)=-1
+W(С)=1
+W(квадрат)=-1
+
+Neuron:'П' connected with:
+W(П)=1
+W(квадрат)=-1
+

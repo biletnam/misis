@@ -1,0 +1,29 @@
+unit matrixop;
+
+interface
+Type
+    TVector=array[0..1] of double;
+    TMatrix=array[0..1] of TVector;
+
+implementation
+
+procedure VecVecT(u,v:TVector;var r:TMatrix);
+begin
+r[0][0]:=u[0]*v[0];
+r[0][1]:=u[0]*v[1];
+r[1][0]:=u[1]*v[0];
+r[1][1]:=u[1]*v[1];
+end;
+
+procedure MatrixToMatrix(a,b:Tmatrix;var c:TMatrix);
+var i,j,k,l:integer;
+    s:double;
+begin
+for i:=0 to 1 do
+ for j:=0 to 1 do
+     for k:=0 to 1 do
+         for l:=0 to 1 do
+
+end;
+
+end.

@@ -1,0 +1,62 @@
+BookReader Szerzõi-jog védelmi nyilatkozat
+Jogvédve (c) 2003 Alexey Vdovichenko alias tequilacat
+----------------------------------------
+
+1. A BookReader Freeware (ingyenes).
+   ---------------------
+Részletes információkat és a szoftver legfrissebb verzióját a következõ oldalon találhatod meg:
+http://tequilacat.narod.ru/dev/br
+
+Ha megjegyzésed, ötleted van, vagy hibát találtál a szoftverben, 
+kérlek írj levelet a tequilacat@mail.ru címre
+
+
+2. Szoftver csomag
+   ----------------
+A BookReader szoftvercsomagnak legalább a lenti fájlokat kell tartalmaznia :
+
+- 'licence.txt', a licenc fájl
+- BookReader fájlok
+
+
+3. Licenc
+   -------
+A Szoftvercsomag a 2. pontban van részletesen ismertetve. 
+A program a Szerzõ tulajdonában marad. A program felhasználása számodra 
+freeware licenc alapján történik.
+
+Szabadon engedélyezett számodra a Szoftvercsomag használata.
+
+
+4. Terjesztés
+   ------------
+A Szoftvercsomag, a 2. pontban részletesen ismertetve, szabadon terjeszthetõ,
+a következõ pontokat betartva:
+
+- A Szoftver bármely másolatának tartalmaznia kell a 2. pontban 
+  leírt fájlok összességét. Nem terjesztheted a Szoftvercsomag 
+  fájljait, vagy fájljainak részeit különállóan.
+
+- A Szoftver bármely másolatának tartalmznia kell ezt a fájlt, és 
+  utalást a Szerzõ, Alexey Vdovichenko tulajdonosi mivoltára  .
+  A felhasználó kötelezettséget vállal azért, hogy a Szoftver 
+  terjesztéséért NEM ró ki semmiféle DÍJAT.
+
+Jogodban áll reprodukálni a Szoftvercsomagot a terjesztés 
+érdekében, egyetértésben a megegyezõ szándékokkal és helyzetekkel, 
+amelyek a 3. pontban vannak részletezve.
+
+
+5. Lemondási nyilatkozat
+   =====================
+Ez a Szoftver úgy van `ahogy van', különálló vagy velejáró garancia nélkül.
+
+Mivel a program ingyenesen felhasználható, a Szerzõ nem vállal kötelezettséget
+bármilyen hiba vagy hiányosság kijavításáért. A Szerzõ semmilyen esetben sem 
+felelõs bármilyen sérülés, kár létrejöttében , a különleges, közvetett vagy
+közvetlen károkat is beleértve, melyek létrejötte a Szoftver használatával 
+magyarázható.
+
+A program használatával elfogadtad a fent részletezett kijelentéseket.
+
+

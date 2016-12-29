@@ -1,0 +1,4 @@
+label = SE T610,T630,Z600
+jar=se_bookreader.jar
+skin.image = SE-T610-16.png
+skin.screen=39x45x127x128

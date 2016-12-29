@@ -1,0 +1,9 @@
+label = Nokia S40
+vendor=nokia
+
+skin.screen = 45x89x128x128
+skin.image = nokiaS40.jpg
+
+jar = nk_bookreader.jar
+
+MaxJarSize = 64000

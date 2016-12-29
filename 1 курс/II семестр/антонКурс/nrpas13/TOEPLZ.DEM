@@ -1,0 +1,40 @@
+PROGRAM d2r7(input,output);
+(* driver for routine TOEPLZ *)
+CONST
+   n=5;
+   twon=10;    (* twon=2*n *)
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   gltwon = ARRAY [1..twon] OF real;
+VAR
+   i,j : integer;
+   sum : real;
+   r : gltwon;
+   x,y : glnarray;
+
+(*$I MODFILE.PAS *)
+(*$I TOEPLZ.PAS *)
+
+BEGIN
+   FOR i := 1 to n DO BEGIN
+      y[i] := 0.1*i
+   END;
+   FOR i := 1 to 2*n-1 DO BEGIN
+      r[i] := 0.1*i
+   END;
+   toeplz(r,x,y,n);
+   writeln('Solution vector:');
+   FOR i := 1 to n DO BEGIN
+      writeln('x[':7,i:1,'] :=',x[i]:13)
+   END;
+   writeln;
+   writeln('Test of solution:');
+   writeln('mtrx*soln':13,'original':12);
+   FOR i := 1 to n DO BEGIN
+      sum := 0.0;
+      FOR j := 1 to n DO BEGIN
+         sum := sum+r[n+i-j]*x[j]
+      END;
+      writeln(sum:12:4,y[i]:12:4)
+   END
+END.

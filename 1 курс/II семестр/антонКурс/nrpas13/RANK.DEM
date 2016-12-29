@@ -1,0 +1,58 @@
+PROGRAM d8r7(input,output,dfile);
+(* driver for routine RANK *)
+CONST
+   np=100;
+TYPE
+   gliarray = ARRAY [1..np] OF integer;
+   glsarray = ARRAY [1..np] OF real;
+VAR
+   i,j,k,l : integer;
+   a : glsarray;
+   b : ARRAY [1..10] OF real;
+   indx,irank : gliarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I INDEXX.PAS *)
+
+(*$I RANK.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to 100 DO BEGIN
+      read(dfile,a[i])
+   END;
+   close(dfile);
+   indexx(np,a,indx);
+   rank(np,indx,irank);
+   writeln('original array is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write (a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+   writeln('table of ranks is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(irank[10*(i-1)+j]:6)
+      END;
+      writeln
+   END;
+   writeln('press return to continue...');
+   readln;
+   writeln('array sorted according to rank table:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         k := 10*(i-1)+j;
+         FOR l := 1 to 100 DO BEGIN
+            IF (irank[l] = k) THEN b[j] := a[l]
+         END
+      END;
+      FOR j := 1 to 10 DO BEGIN
+         write(b[j]:6:2)
+      END;
+   writeln
+   END
+END.

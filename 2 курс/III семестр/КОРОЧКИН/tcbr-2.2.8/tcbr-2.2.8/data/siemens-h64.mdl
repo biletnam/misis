@@ -1,0 +1,9 @@
+label = Siemens C55,M50
+vendor=siemens
+
+skin.image = siemensM55.jpg
+skin.screen = 18x40x101x64
+
+jar=sm_bookreader.jar
+
+TextBlockSize=8000

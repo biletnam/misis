@@ -1,0 +1,49 @@
+PROGRAM d13r11(input,output);
+(* driver for routine KSTWO *)
+CONST
+   n1=500;
+   n2=100;
+   eps=0.2;
+TYPE
+   glarray1 = ARRAY [1..n1] OF real;
+   glarray2 = ARRAY [1..n2] OF real;
+   glsarray = glarray1;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   i,idum,j : integer;
+   d,factr,prob,varnce : real;
+   data1 : glarray1;
+   data2 : glarray2;
+
+(*$I MODFILE.PAS *)
+(*$I PROBKS.PAS *)
+
+(*$I SORT.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I KSTWO.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -1357;
+   FOR i := 1 to n1 DO BEGIN
+      data1[i] := gasdev(idum)
+   END;
+   writeln('variance ratio':18,'k-s statistic':15,'probability':14);
+   idum := -2468;
+   FOR i := 1 to 11 DO BEGIN
+      varnce := 1.0+(i-1)*eps;
+      factr := sqrt(varnce);
+      FOR j := 1 to n2 DO BEGIN
+         data2[j] := factr*gasdev(idum)
+      END;
+      kstwo(data1,n1,data2,n2,d,prob);
+      writeln(varnce:15:6,d:15:6,prob:15:6)
+   END
+END.

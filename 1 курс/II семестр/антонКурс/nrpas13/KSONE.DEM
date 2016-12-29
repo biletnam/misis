@@ -1,0 +1,53 @@
+PROGRAM d13r10(input,output);
+(* driver for routine KSONE *)
+CONST
+   npts=1000;
+   eps=0.1;
+TYPE
+   gldarray = ARRAY [1..npts] OF real;
+   glsarray = gldarray;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   i,idum,j : integer;
+   d,factr,prob,varnce : real;
+   data : gldarray;
+
+(*$I MODFILE.PAS *)
+(*$I SORT.PAS *)
+
+(*$I PROBKS.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I ERFCC.PAS *)
+
+FUNCTION func(x: real): real;
+VAR
+   y : real;
+BEGIN
+   y := x/sqrt(2.0);
+   func := 1.0 - erfcc(y)
+END;
+
+(*$I KSONE.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -5;
+   writeln('variance ratio':19,'k-s statistic':16,'probability':15);
+   writeln;
+   FOR i := 1 to 11 DO BEGIN
+      varnce := 1.0+(i-1)*eps;
+      factr := sqrt(varnce);
+      FOR j := 1 to npts DO BEGIN
+         data[j] := factr*abs(gasdev(idum))
+      END;
+      ksone(data,npts,d,prob);
+      writeln(varnce:16:6,d:16:6,prob:16:6)
+   END
+END.

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Name: ИНФА_ЭТАПЫ
+MIDlet-Vendor: tequilacat
+MIDlet-1: ИНФА_ЭТАПЫ, jaricon.png, BookReaderMidlet
+MIDlet-Version: 2.2.8
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Jar-Size: 49426
+MIDlet-Jar-URL: Infa2.jar

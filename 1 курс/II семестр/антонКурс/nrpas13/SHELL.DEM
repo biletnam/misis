@@ -1,0 +1,34 @@
+PROGRAM d8r9(input,output,dfile);
+(* driver for routine SHELL *)
+CONST
+   npt=100;
+TYPE
+   glnarray = ARRAY [1..npt] OF real;
+VAR
+   i,j : integer;
+   a : glnarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SHELL.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to npt DO read(dfile,a[i]);
+   close(dfile);
+(* write original array *)
+   writeln('Original array:');
+   FOR i := 1 to (npt DIV 10) DO BEGIN
+      FOR j := 1 to 10 DO write(a[10*(i-1)+j]:6:2);
+      writeln
+   END;
+(* write sorted array *)
+   shell(npt,a);
+   writeln;
+   writeln('Sorted array:');
+   FOR i := 1 to (npt DIV 10) DO BEGIN
+      FOR j := 1 to 10 DO write(a[10*(i-1)+j]:6:2);
+      writeln
+   END;
+END.

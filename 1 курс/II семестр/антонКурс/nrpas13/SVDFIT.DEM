@@ -1,0 +1,74 @@
+PROGRAM d14r4(input,output);
+(* driver for routine SVDFIT *)
+(* polynomial fit *)
+CONST
+   npt=100;
+   spread=0.02;
+   npol=5;
+   mp=npt;
+   np=npol;
+   ncvm=npol;
+TYPE
+   glndata = ARRAY [1..npt] OF real;
+   glmma = ARRAY [1..npol] OF real;
+   glnpbynp = ARRAY [1..np,1..np] OF real;
+   glmpbynp = ARRAY [1..mp,1..np] OF real;
+   glnparray = glmma;
+   glmparray = glndata;
+   (* The previous 2 declarations are required because of the absence *)
+   (* of conformant arrays in most Pascal implementations. *)
+   glcvm = ARRAY [1..ncvm,1..ncvm] OF real;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   chisq : real;
+   i,idum : integer;
+   x,y,sig : glndata;
+   a : glmma;
+   cvm : glcvm;
+   u : glmpbynp;
+   v : glnpbynp;
+   w : glnparray;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I SVDCMP.PAS *)
+
+(*$I SVBKSB.PAS *)
+
+(*$I SVDVAR.PAS *)
+
+PROCEDURE func(x: real; VAR p: glmma; mma: integer);
+(* This is essentially FPOLY renamed. *)
+VAR
+   j: integer;
+BEGIN
+   p[1] := 1.0;
+   FOR j := 2 to mma DO p[j] := p[j-1]*x
+END;
+
+(*$I SVDFIT.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -911;
+   FOR i := 1 to npt DO BEGIN
+      x[i] := 0.02*i;
+      y[i] := 1.0+x[i]*(2.0+x[i]*(3.0+x[i]*(4.0+x[i]*5.0)));
+      y[i] := y[i]*(1.0+spread*gasdev(idum));
+      sig[i] := y[i]*spread
+   END;
+   svdfit(x,y,sig,npt,a,npol,u,v,w,mp,np,chisq);
+   svdvar(v,npol,np,w,cvm,npol);
+   writeln;
+   writeln('Polynomial fit:');
+   FOR i := 1 to npol DO BEGIN
+      writeln(a[i]:12:6,'  +-',sqrt(cvm[i,i]):10:6)
+   END;
+   writeln('Chi-squared',chisq:12:6);
+END.

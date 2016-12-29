@@ -1,0 +1,75 @@
+PROGRAM d13r18(input,output);
+(* driver for routine KENDL1 *)
+(* look for correlations in ran0, ran3 and ran4 *)
+CONST
+   ndat=200;
+TYPE
+   gl32array = ARRAY [1..32] OF integer;
+   gl48array = ARRAY [1..48] OF integer;
+   gl56array = ARRAY [1..56] OF integer;
+   gl64array = ARRAY [1..64] OF integer;
+   glnarray = ARRAY [1..ndat] OF real;
+   name = PACKED ARRAY [1..4] OF char;
+   gl65reals = ARRAY [1..65] OF real;
+VAR
+   glnewkey : integer;
+   glinp,glkey,ip,ipm : gl64array;
+   glpow : gl65reals;
+   glicd,ipc1 : gl56array;
+   ipc2,iet : gl48array;
+   ipp : gl32array;
+   is : ARRAY [1..16,1..4,1..8] OF integer;
+   ibin : ARRAY [1..4,1..16] OF integer;
+   ksflg,cyflg,desflg : boolean;
+   gliseed : integer;
+   gly : real;
+   glv : ARRAY [1..97] OF real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   i,idum,j : integer;
+   prob,tau,z : real;
+   data1,data2 : glnarray;
+   txt : ARRAY [1..3] OF name;
+
+(*$I MODFILE.PAS *)
+(*$I RAN0.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I DESKS.PAS *)
+
+(*$I DES.PAS *)
+
+(*$I RAN4.PAS *)
+
+(*$I ERFCC.PAS *)
+
+(*$I KENDL1.PAS *)
+
+BEGIN
+   ksflg := true;
+   cyflg := true;
+   desflg := true;
+   txt[1] := 'RAN0'; txt[2] := 'RAN3'; txt[3] := 'RAN4';
+   writeln;
+   writeln('Pair correlations of RAN0, RAN3 and RAN4');
+   writeln;
+   writeln('Program':9,'Kendall tau':17,'Std. Dev.':16,'Probability':18);
+   FOR i := 1 to 3 DO BEGIN
+      idum := -1357;
+      FOR j := 1 to ndat DO BEGIN
+         IF (i = 1) THEN BEGIN
+            data1[j] := ran0(idum);
+            data2[j] := ran0(idum)
+         END ELSE IF (i = 2) THEN BEGIN
+            data1[j] := ran3(idum);
+            data2[j] := ran3(idum)
+         END ELSE IF (i = 3) THEN BEGIN
+            data1[j] := ran4(idum);
+            data2[j] := ran4(idum)
+         END
+      END;
+      kendl1(data1,data2,ndat,tau,z,prob);
+      writeln (txt[i]:8,tau:17:6,z:17:6,prob:17:6)
+   END
+END.

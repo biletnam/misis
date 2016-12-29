@@ -1,0 +1,84 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, XPMan, StdCtrls, Logic, myclasses, InputForm, Stat;
+
+type
+  TForm1 = class(TForm)
+    XPManifest1: TXPManifest;
+    Panel1: TPanel;
+    LogListBox: TListBox;
+    Button1: TButton;
+    InfoTimer: TTimer;
+    TickTimer: TTimer;
+    Panel2: TPanel;
+    Button2: TButton;
+    TimeLabel: TLabel;
+    Button3: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure InfoTimerTimer(Sender: TObject);
+    procedure TickTimerTimer(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Log: TLog;
+  SceneMan:TSceneMan;
+  test: TIntegerInput;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form2.Show;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  (SceneMan.ClientMan.Clients[Random(SceneMan.ClientMan.Clients.Count)] as Tclient).AddRequest(Random(400)+300);
+  //(SceneMan.CarMan.Cars[0] as TCar).SetRequest(SceneMan.ClientMan.Clients[1] as Tclient,10,500);
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Randomize;
+  Log := TLog.Create(LogListBox);
+  SceneMan := TSceneMan.Create(Log);
+  SceneMan.CreateCarMan(Panel1);
+  SceneMan.CreateClientMan(Panel2);
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  test:= TIntegerInput.Create(200,Form2.GroupBox1);
+end;
+
+procedure TForm1.InfoTimerTimer(Sender: TObject);
+begin
+  SceneMan.UpdateInfo;
+  TimeLabel.Caption := Log.MakeTimeString(Log.Time);
+end;
+
+procedure TForm1.TickTimerTimer(Sender: TObject);
+begin
+  SceneMan.Tick(1); // шаг времени 1 мин
+end;
+
+end.

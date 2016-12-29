@@ -1,0 +1,54 @@
+PROGRAM d12r12(input,output);
+(* driver for routine PREDIC *)
+CONST
+   npts=300;
+   npoles=10;
+   twonp2=22;   (* twonp2=2*npoles+2 *)
+   nfut=20;
+   pi=3.1415926;
+TYPE
+   glnarray = ARRAY [1..npts] OF real;
+   gldarray = glnarray;
+   glmarray = ARRAY [1..npoles] OF real;
+   glnparray = glmarray;
+   glnfarray = ARRAY [1..nfut] OF real;      
+   glcarray = ARRAY [1..twonp2] OF real;
+   gl2array = ARRAY [1..2] OF real;
+VAR
+   i : integer;
+   dum : real;
+   d,wkm : glmarray;
+   data,wk1,wk2 : glnarray;
+   future : glnfarray;
+
+FUNCTION f(n,npts: integer): real;
+CONST
+   pi=3.1415926;
+BEGIN
+   f := exp(-1.0*n/npts)*sin(2.0*pi*n/50.0)
+      +exp(-2.0*n/npts)*sin(2.2*pi*n/50.0)
+END;
+
+(*$I MODFILE.PAS *)
+(*$I LAGUER.PAS *)
+
+(*$I ZROOTS.PAS *)
+
+(*$I MEMCOF.PAS *)
+
+(*$I FIXRTS.PAS *)
+
+(*$I PREDIC.PAS *)
+   
+BEGIN
+   FOR i := 1 to npts DO BEGIN
+      data[i] := f(i,npts)
+   END;
+   memcof(data,npts,npoles,dum,d,wk1,wk2,wkm);
+   fixrts(d,npoles);
+   predic(data,npts,d,npoles,future,nfut);
+   writeln('I':6,'Actual':11,'PREDIC':12);
+   FOR i := 1 to nfut DO BEGIN
+      writeln (i:6,f(i+npts,npts):12:6,future[i]:12:6)
+   END
+END.

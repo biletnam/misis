@@ -1,0 +1,35 @@
+PROGRAM d12r10(input,output,dfile);
+(* driver for routine EVLMEM *)
+CONST
+   n=1000;
+   m=10;
+   nfdt=16;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   glmarray = ARRAY [1..m] OF real;
+VAR
+   i : integer;
+   fdt,pm : real;
+   cof,wkm : glmarray;
+   data,wk1,wk2 : glnarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I MEMCOF.PAS *)
+
+(*$I EVLMEM.PAS *)
+
+BEGIN
+   glopen(dfile,'spctrl.dat');
+   FOR i := 1 to n DO BEGIN
+      read(dfile,data[i])
+   END;
+   close(dfile);
+   memcof(data,n,m,pm,cof,wk1,wk2,wkm);
+   writeln('Power spectum estimate of data in SPCTRL.DAT');
+   writeln(' ':4,'f*delta',' ':7,'power');
+   FOR i := 0 to nfdt DO BEGIN
+      fdt := 0.5*i/nfdt;
+      writeln (fdt:12:6,evlmem(fdt,cof,m,pm):12:6)
+   END
+END.

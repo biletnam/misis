@@ -1,0 +1,64 @@
+DOMAINS
+ str=string
+ symb=char
+ listS=string*
+ int=integer
+PREDICATES
+ del(str,symb,str)
+ tolist(str,listS)
+ findmin(listS,str)
+ delel(listS,str,listS,int)
+ sortlist(listS,listS)
+ sort(str,listS)
+CLAUSES
+ del("",_,"") if
+   !.
+ del(S,C,S3) if
+   frontchar(S,C,S2),
+   del(S2,C,S3),
+   !.
+ del(S,C,S4) if
+   frontchar(S,X,S2),
+   del(S2,C,S3),
+   frontchar(S4,X,S3).
+   
+ tolist("",[]) if
+   !.
+ tolist(S,[H|T]) if
+   fronttoken(S,H,S1),
+   tolist(S1,T).
+ 
+ findmin([],"") if
+   !.
+ findmin([X],X) if
+   !.
+ findmin([H|T],H) if
+   findmin(T,M),
+   str_len(H,L1),
+   str_len(M,L2),
+   L1<L2,
+   !.
+ findmin([_|T],M) if
+   findmin(T,M).
+ 
+ delel([],X,[],0) if
+   delel([],X,[],1).
+ delel([H|T],H,T,0) if
+   !.
+ delel([H|T],X,[H|T2],N) if
+   delel(T,X,T2,N).
+       
+   
+ sortlist([],[]) if
+   !.
+ sortlist(L1,[H|T]) if
+   findmin(L1,H),
+   delel(L1,H,L2,0),
+   sortlist(L2,T).
+ 
+ sort(S,L) if
+   tolist(S,L1),
+   sortlist(L1,L).
+    
+     
+   

@@ -1,0 +1,121 @@
+PROGRAM d14r2(input,output);
+(* driver for routine LFIT *)
+CONST
+   npt=100;
+   spread=0.1;
+   nterm=3;   
+TYPE
+   glcovar = ARRAY [1..nterm,1..nterm] OF real;
+   glnpbynp = glcovar;
+   glnpbymp = ARRAY [1..nterm,1..1] OF real;
+   gllista = ARRAY [1..nterm] OF integer;
+   glndata = ARRAY [1..npt] OF real;
+   glmma = ARRAY [1..nterm] OF real;
+VAR
+   gliset : integer;
+   glgset : real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   chisq : real;
+   i,ii,idum,j,mfit : integer;
+   lista : gllista;
+   a : glmma;
+   covar : glcovar;
+   x,y,sig : glndata;
+
+PROCEDURE funcs(x: real; VAR afunc: glmma; mma: integer);
+(* Programs using FUNCS must define the type
+TYPE
+   glmma = ARRAY [1..mma] OF real;
+in the main routine. *)
+VAR
+   i : integer;
+BEGIN
+   afunc[1] := 1.0;
+   FOR i := 2 to mma DO BEGIN
+      afunc[i] := x*afunc[i-1]
+   END
+END;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I GAUSSJ.PAS *)
+
+(*$I COVSRT.PAS *)
+
+(*$I LFIT.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -911;
+   FOR i := 1 to npt DO BEGIN
+      x[i] := 0.1*i;
+      y[i] := nterm;
+      FOR j := nterm-1 DOWNTO 1 DO BEGIN
+         y[i] := j+y[i]*x[i]
+      END;
+      y[i] := y[i]+spread*gasdev(idum);
+      sig[i] := spread
+   END;
+   mfit := nterm;
+   FOR i := 1 to mfit DO BEGIN
+      lista[i] := i
+   END;
+   lfit(x,y,sig,npt,a,nterm,lista,mfit,covar,nterm,chisq);
+   writeln;
+   writeln('parameter':9,'uncertainty':23);
+   FOR i := 1 to nterm DO BEGIN
+      writeln('a[':4,i:1,'] = ',a[i]:8:6,sqrt(covar[i,i]):12:6)
+   END;
+   writeln('chi-squared = ',chisq:12);
+   writeln('full covariance matrix');
+   FOR i := 1 to nterm DO BEGIN
+      FOR j := 1 to nterm DO write(covar[i,j]:12);
+      writeln
+   END;
+   writeln;
+   writeln('press RETURN to continue...');
+   readln;
+(* now test the LISTA feature *)
+   FOR i := 1 to nterm DO BEGIN
+      lista[i] := nterm+1-i
+   END;
+   lfit(x,y,sig,npt,a,nterm,lista,mfit,covar,nterm,chisq);
+   writeln('parameter':9,'uncertainty':23);
+   FOR i := 1 to nterm DO BEGIN
+      writeln('a[':4,i:1,'] = ',a[i]:8:6,sqrt(covar[i,i]):12:6)
+   END;
+   writeln('chi-squared = ',chisq:12);
+   writeln('full covariance matrix');
+   FOR i := 1 to nterm DO BEGIN
+      FOR j := 1 to nterm DO write(covar[i,j]:12);
+      writeln
+   END;
+   writeln;
+   writeln('press RETURN to continue...');
+   readln;
+(* now check results of restricting fit parameters *)
+   ii := 1;
+   FOR i := 1 to nterm DO BEGIN
+      IF ((i MOD 2) = 1) THEN BEGIN
+         lista[ii] := i;
+         ii := ii+1
+      END
+   END;
+   mfit := ii-1;
+   lfit(x,y,sig,npt,a,nterm,lista,mfit,covar,nterm,chisq);
+   writeln('parameter':9,'uncertainty':23);
+   FOR i := 1 to nterm DO BEGIN
+      writeln('a[':4,i:1,'] = ',a[i]:8:6,sqrt(covar[i,i]):12:6)
+   END;
+   writeln('chi-squared = ',chisq:12);
+   writeln('full covariance matrix');
+   FOR i := 1 to nterm DO BEGIN
+      FOR j := 1 to nterm DO write(covar[i,j]:12);
+      writeln
+   END;
+   writeln
+END.

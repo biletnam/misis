@@ -1,0 +1,28 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, MedCommis;
+
+type
+  TMyForm = class(TForm)
+  procedure FormCreate(Sender: TObject);
+ end;
+
+var
+  Form: TMyForm;
+  MedCom: TMedCom;
+
+implementation
+
+procedure TMyForm.FormCreate(Sender: TObject);
+begin
+  Randomize;
+  Form.Width := 800;
+  Form.Height := 600;
+  MedCom := TMedCom.Create(Form);
+end;
+
+end.

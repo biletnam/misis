@@ -1,0 +1,26 @@
+PROGRAM d6r22(input,output,dfile);
+(* driver for routine BESSK0 *)
+VAR
+   i,nval : integer;
+   val,x : real;
+   txt : string[27];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I BESSI0.PAS *)
+
+(*$I BESSK0.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Modified Bessel Function K0');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln;
+   writeln('x':5,'actual':16,'bessk0(x)':17);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,x,val);
+      writeln(x:6:2,val:16:7,bessk0(x):16:7)
+   END;
+   close(dfile)
+END.

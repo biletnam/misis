@@ -1,0 +1,418 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta name="keywords" content="tequilacat bookreader midlets ebook e-book read free book reader for mobile phones download j2me midlet read books java mobile cellular phone бесплатный мидлет апплет джава читать книги на мобиле сотовом мобильном телефоне ">
+  <meta http-equiv="Content-Type" Content="text/html; charset=windows-1251">
+<!--   <LINK TYPE="text/css" HREF="help-new.css" REL="STYLESHEET">   -->
+  
+  <LINK TYPE="text/css" HREF="main.css" REL="STYLESHEET">  
+  <LINK TYPE="text/css" HREF="help.css" REL="STYLESHEET">  
+   <title>TequilaCat BookReader user manual</title>
+</head>
+<BODY >
+
+<div align="right">
+TequilaCat BookReader home page: <a href="http://tequilacat.nm.ru/dev/br/index-en.html">http://tequilacat.nm.ru/dev/br/index-en.html</a>
+</div>
+
+<hr>
+<H1>TequilaCat BookReader user manual</H1>
+
+<P>This document explains how to read books on your mobile phone, using 
+TequilaCat BookReader.</P>
+<P>Bookreader understands number of frequently used e-book formats like RTF, 
+TCR, MS Office formats, Adobe PDF etc. Still Bookreader is optimized to view 
+plain text format (TXT), and does not display colors/font styles etc.</P>
+<P>This help file explains usage of latest version on moment of its writing, 
+<em>TequilaCat BookReader 2.2.5</em>. The contents could be generally applied to all 2.x versions, with some 
+restrictions. Some described features are missing in older versions, other ones 
+are mentioned shortly, another ones are not described, since (I may hope) 
+they’re self-evident.</P>
+<P>Please explore the program by clicking buttons options pressing phone buttons 
+etc. I tried to follow user feedback to provide as much user friendliness as I 
+could.</P>
+<H1>General usage</H1>
+<OL>
+  <LI>You convert e-books on your computer from original format (text, RTF, PDF 
+  etc) into Java format, suitable for mobile phones. 
+  <LI>Then you install these java files you’ve created into your mobile phone, 
+  in a way recommended for your mobile phone. 
+  <LI>As these files are installed, they become Java applications on your phone, 
+  each application for each java file you’ve installed. These are books - when 
+  you run them you see the text, can scroll and read. </LI></OL>
+<P>Created Java books are in format of <B>J</B>ava Application <B>Ar</B>chive 
+(<B>JAR</B>). Below I frequently use JAR, it means the same as Java application 
+file, or Java book file.</P>
+<P>Also (optionally) a JAD file can be created for each JAR file. JAD is short 
+text file containing its JAR file name and size plus some additional info. Some 
+phones require this short JAD file to install created JAR books, some phones do 
+not – refer to documentation to your phone.</P>
+<P>Each JAR file created by BookReader shell contains the book text, the fonts 
+you selected and the BookReader Mobile Java program (so called MIDlet) that 
+actually displays the book text.</P>
+<P><B>Please note:</B> separate jar files available on BookReader’ site are 
+demonstration programs only. They contain short demo texts and do not allow you 
+to view your own books.</P>
+<H1>Creation of Java books</H1>
+<P>Creation of Java Books is done using TequilaCat BookReader shell.</P>
+<P>This is MS Windows program that you downloaded. This program allows you to 
+choose e-books stored on your computer, to set desired options and to generate 
+java files for your mobile phone.</P>
+<P>Most important features of the shell are:</P>
+<UL>
+  <LI>Selecting books for conversion into Java format 
+  <LI>Editing table of contents 
+  <LI>Selecting various options of books you’re gonna create 
+  <LI>Choosing fonts and colors to display text with 
+  <LI>Configuring phone key actions if needed </LI></UL>
+<P>They are explained in details along with other options.</P>
+<H2>BookReader shell window</H2>
+<P>BookReader shell window is split onto several areas.</P>
+<P>Left top corner contains fields where you fill in a book name you’re gonna 
+create, and allows you to select a model of your phone.</P>
+<P>Below you see the task tree where all actions and settings of the BookReader 
+are available. The tasks in the tree are grouped. The first group deals with 
+e-books you convert into BookReader java format, the second group allows 
+changing various options and settings, and the third group allows setting fonts 
+for books,</P>
+<P>Clicking tasks in the tree brings up related controls at the right side of 
+the window, and performs related tasks.</P>
+<P>At right side you see options and controls corresponding to the task you’ve 
+selected in the task tree.</P>
+<P>At bottom you access the main actions: conversion of books, viewing this help 
+file and exiting the BookReader.</P>
+<H2>Adding books</H2>
+<P>When you start shell first time it contains no books. Now you’re ready to add 
+new books to convert them into the phone format.</P>
+<P>BookReader shell understands frequently used e-book formats: plain text, RTF, 
+Adobe Acrobat PDF, MS Office, PDB/PRC (Palm e-books), HLP ? HTML. They are 
+converted into the plain text when creating books, so no colors/font 
+styles/embedded images are displayed on the phone (yet).</P>
+<P>Also BookReader shell understands frequently used archive formats: ZIP, RAR, 
+HA, ARJ. When you add an archive, all contained books of supported formats are 
+added. Archives may be nested, e.g. RAR may contain ZIP, and ZIP may contain 
+e.g. PDF or PDB e-books.</P>
+<P>Please note: some formats are optional (require downloads), to keep 
+installation small.</P>
+<P>You may click an “Add books” task, or drag and drop files from the Windows 
+explorer. The books are added then, and optionally split into chapters if this 
+option is enabled.</P>
+<P>All the added books are displayed as tree, chapters nodes attached to the 
+book node.</P>
+<P>When a node is selected its text is displayed at right side, in content 
+preview area. Large books take long time to preview on slow machines, so by 
+default only 2000 symbols are displayed. Checking the corresponding checkbox 
+displays whole text or selected chapter.</P>
+<P>When you close the BookReader shell, all selected books, their tables of 
+contents and the selected options are stored till next time.</P>
+
+<h3>Reading text files from flash card</h3>
+<P>If your phone model supports “file system”
+(Siemens, Nokia 6230i, SE K750 W800 and similar, latest Motorola phones), 
+you may set up and install BookReader once, and read books stored on 
+your phone' flash card or in memory. Thus you don't need a PC with shell to compose 
+a new book - just send a text file to the phone via IRDA|Bluetooth 
+or copy it to the flash card. <p/>
+When creating a JAR file in shell, select appropriate model 
+(labeled with "file access" or FS) select fonts, configure options, create JAR and
+install it into the phone. <p/>
+When started, it will display a file and folder view where you can select and open 
+text files like in file explorer. When a book is opened, enter main menu, there will be
+an "Open file..." item that brings up file/folder view again.<p/>
+
+<P><B>Please note</B>: Books in the phone folder should be in plain text only. 
+All text book format conversion is done in the shell, before JAR file creation. 
+The Java BookReader understands plain text only.</P>
+
+<H2>Splitting book onto chapters</H2>
+<P>Chapter splitting pane is located above the list of books. It defines how the 
+text will be split into the chapters. If enabled, every added book is split onto 
+chapters. Otherwise you can always re-split chapters with “Reformat chapters” 
+task or small “recycle” button on the pane.</P>
+<P>The most important option is the list of words starting chapter headers, like 
+prologue, epilogue, and part. &nbsp;By default also Roman and Arabic letters 
+with dot are considered as chapter headers, like <B>12. title</B> or <B>XXI. 
+title</B> .</P>
+<P>Also you may specify that line containing a single number is a chapter 
+header.</P>
+<P>If the original e-book file has been changed by external program, it is 
+reloaded. So you may edit the file in some word processor to fix the correct 
+chapters, and reformat the text after saving changes.</P>
+<P>Sometimes default chapter splitting is not good. To make clear table of 
+contents you may merge and rename chapters and books.</P>
+<P><B>Note to expert users:</B> </P>
+<P>Chapter headers are treated as regexp template. Before book splitting, commas 
+are replaced with pipes, and () are added. So <I>Chapter,Part,Foreword</I> is 
+converted into the ^((?:\d+$)|Chapter|Part|Foreword) </P>
+<P>\d+$ are added if “use single numbers as chapter headers” is opted.</P>
+<P>Looks familiar, yeah? When “Use regexps” is clicked the field content is not 
+converted – use direct PerlRE, and Power be with you.</P>
+<H2>Selecting various options</H2>
+<P>Most important fields are in top left corners. These are <B>Phone model</B>, 
+<B>Midlet name</B> and <B>Jar file name</B>.</P>
+<P><B>Phone model</B> should match your phone. Each phone has its own features 
+and selecting correct model is important.</P>
+<P>If your exact phone is not listed, try selecting a phone of the same brand. 
+If this does not work, select MIDP1.0 for older phones and MIDP2.0 for newer 
+ones.&nbsp; MIDP is a version of Java installed in your phone. You can find your 
+exact Java version in tech. manual on your phone.</P>
+<P>Selecting <B>Phone model</B> affects some options, enabling features 
+available for particular models only, and setting model-dependent fields. Also 
+this defines font preview page appearance.</P>
+<P><B>Midlet name</B> is name of book. This is how the java book will be labeled 
+in the list of installed java applications, in the phone.</P>
+<P>If the book name is too long or contains non-English national letters, the 
+phone may refuse to install it. If you have problems with installation of such 
+books, try renaming them with Latin letters no more than 8-10 characters 
+length.</P>
+<P><B>Jar file name</B> is how the created Java book files will be named on your 
+computer. If you opt “create each book in its folder” this is also the name of 
+the folder.</P>
+<P>Clicking on <B>“Configure”</B> group caption you see the controls defining 
+where Java books will be created, and how.</P>
+<P>You choose where books will be created: in the specific folder or in the 
+folder of source book.</P>
+<P>You may protect your books with password.</P>
+<P>You may choose what to do when the java books are created: open folder, run 
+some program or just do nothing, and define whether the program should exit on 
+successful book conversion.</P>
+<P><B>“Change appearance”</B> task brings up selection of icons for java book 
+folders on computer, and for a book in phone. If you opt “create each book in 
+its folder”, these folders are optionally pictured with the icon you select.</P>
+<P><B>“Set options”</B> item allows selection of java book properties. Most 
+important are <B>Max Jar Size</B> and T<B>ext block size</B>.</P>
+<P><B>Max Jar Size</B> is maximal size of Java application (Jar file) accepted 
+by your phone. For some phones this information is predefined, but for some 
+newer or rare phones you should try to find it manually.</P>
+<P>Usually the allowed jar sizes are 50.000 and more. E.g. Nokia 6310 is limited 
+to 32000, Nokia S40 (most their non-smartphones are S40) is limited to 
+64.000.</P>
+<P>When a book can’t fit into the maximal allowed JAR size, it’s split into 
+several JAR files like book_1, book_2 etc (instead of <B>book_</B>, given JAR 
+file name is used). These files can be installed into phone one by one, or all 
+together.</P>
+<P>If the java book is created OK but <U>you cannot install it in your 
+phon</U>e, the chances are big you’ve exceeded Jar size limit. Typical reported 
+errors are “Bad Jar File”, “Jar file too big”.</P>
+<P><B>Text block size</B> is a size of a single text fragment. It sounds quite 
+mystic, so I’ll try to explain this. When the book is converted into the Java 
+book the original text is split onto smaller fragments, which is done to 
+increase performance and convenience of reading.</P>
+<P>Typically most phones allow for text fragments 30.000 to 100.000 bytes. Old 
+Siemens’s (up to 45<SUP>th</SUP> series, and CF62) allow for maximum 8000 
+only.</P>
+<P>When the fragment size is set too small, the number of text fragments grows 
+big; this results in bigger Java book sizes. Also when you read the text 
+fragments are read one by one, freezing book reading for some moments. The 
+smaller the fragment is the more frequent freezes you meet.</P>
+<P>When the fragment size is set too big there’s a risk your phone has not 
+enough free memory. In this case the book will crash when you try to open it 
+(run it) in the list of installed java programs. If you experience crashes when 
+you <U>run successfully installed (downloaded)</U> book, try decreasing this 
+size.</P>
+<P>There’s no point to make it less than 8000, since errors may occur, and all 
+phones should allow this size at least.</P>
+<H2>Configuring phone keys</H2>
+<P>“<B>Change key mapping</B>” task brings up the key configuration pane.</P>
+
+
+<P>Initially it shows default mapping of phone keys to the actions available in 
+BookReader MIDlet in the phone.</P>
+<P>You can override existing mapping by right-clicking on key mapping or on empty cell.
+In the popup menu you can select desired key to bind to the clicked action, 
+or enter key code, or select top menu item "-" to unbind a key from an action.
+All overridden bindings (different from default ones) are shown in bold. You may also  
+reset key bindings to default keys.</P>
+<P>You can select standard keys (0-9, *, #, DIAL/Joystick and directions keys), 
+and the key codes for phone specific buttons (Soft keys). If you select the “Key 
+code:” in the “Keys” dropdown list, fill in the key code for the key you want to 
+assign. Actual key codes are shown by BookReader MIDlet in the phone (Info 
+menu-&gt;Show key codes).</P>
+
+
+
+<H2>Text preview</H2>
+<P>Clicking on “<B>Fonts/Preview</B>” group caption you see the “Fonts” page. 
+There you define fonts with which a book is displayed, and preview how it looks 
+on your phone.</P>
+<P>The preview displays <B>roughly</B> how the text will look on your phone. 
+Exactly same text display is hard to achieve, I am sorry but I write BookReader 
+for mobile phones, not for Windows boxes. But still you can estimate how much 
+lines you’ll see on phone screen, in a given font.</P>
+<P>By default you see default text in preview. Select a text in text preview on 
+“Books” page, and it will be shown in “Fonts preview” page.</P>
+<P>If your phone configuration is known to BookReader shell, you’ll see screen 
+of same size, optionally with the “skin” of your phone. If your phone is not 
+listed, it’s not a problem - the BookReader Java program automatically retrieves 
+size from the phone, except for some Samsungs and old Motorola models.</P>
+<P>If you own such Samsung or old Motorola, and there’s a white strip under the 
+text in the phone, try entering correct height and clicking “suppress white 
+line”.</P>
+<P>Also you can select color of background and letters (for each font), page 
+margins, word wrap style, position and type of scrollbar.</P>
+<H2>Choosing fonts and colors</H2>
+<P>You may select several fonts for a book, and switch between them later when 
+you read the book on your phone.</P>
+<P>For each font you select its face, size, color, bold/italic style and 
+orientation (rotation). <B>To read books with phone rotated in your hand, create 
+one or more rotated fonts!</B> </P>
+<P>Font may be rotated left and right. Displaying a text with rotated font 
+allows better usage of a screen space on screens whose height is bigger than 
+width. Also on some phones the manual scrolling is better when they’re 
+rotated.</P>
+<P>For each font an interline distance can be changed, negative values allow for 
+much more compact text (more lines on the screen).</P>
+<P>There are 2 types of fonts BookReader can display: phone fonts, and windows 
+fonts.</P>
+<H3>Windows fonts</H3>
+<P>1) Windows fonts are the fonts installed in your Windows OS. When you create 
+book with Windows font selected, its copy is put in every jar, taking space as 
+5-20 kilobytes of text or even more depending on character size.</P>
+<P>The advantage of the Windows fonts:</P>
+<P><U>On WinXP</U>, if the “use smooth screen fonts” desktop option is enabled, 
+<U>Windows fonts are “smooth”</U> (MS ClearType technology) which gives much 
+better reading experience on mobile phone screens.</P>
+<P>Also, <U>only Windows fonts can be rotated.</U> </P>
+<H3>Phone fonts </H3>
+<P>2) Phone fonts are fonts built into every phone. They don’t take much space 
+in JAR files, so you’ll have more text per JAR file. Also, Unicode books 
+(Chinese, Japanese, and other South-Asian languages) can be displayed in phone 
+fonts only.</P>
+<P>They are of 3 sizes possible in phones: small, regular and big. Their actual 
+pixel size and availability depend on a phone. Some phones have no big or small 
+fonts, so all the phone fonts are rendered as regular.</P>
+<P><U>Sizes in the shell are given only as example.</U> </P>
+<P>BookReader shell cannot know each font pixel size in every model, so you may 
+test it on the phone and adjust a pixel height in the shell for each phone font 
+(by trial and error).</P>
+<P><U>Phone fonts cannot be made “smooth”, and cannot be rotated.</U> </P>
+<H2>Saving and restoring state of BookReader shell</H2>
+<P>You can save your current state of the shell anytime into the file. 
+Bookreader shell stores settings in BKS files (<B>B</B>oo<B>k</B> <B>S</B>et); 
+they contain options, fonts and books, including table of contents (chapter 
+list).</P>
+<P>Later on you may restore the book list and options by opening BKS file or 
+drag’n’dropping it, just like opening any book.</P>
+<P>If you read books on several phones you may create several templates - BKS 
+files without books, with configured fonts/options for each phone, and load them 
+before adding actual books.</P>
+<P>Please note, the very book texts are not stored into BKS files, only book 
+file paths and chapter list. If the book file has been renamed or removed, next 
+time you start the shell or load BKS file this book will not be loaded. If the 
+book has been modified its table of contents will be reset.</P>
+
+
+  
+  <h1>Optional text formats intallation</h1>
+    To keep installation compact, and to avoid license issues, the BookReader installation includes only several of supported format convertors. But still the BookReader is preconfigured to use all of supported formats: all you have to do is to download 
+  the converters yourself (URLs are provided below), and to put these converters into <code>plugins</code> subfolder of the shell installation folder.
+  <p/>
+  How to install: <p/>
+  <ul>
+    <li>download a convertor from an URL listed below
+  <li>install (unpack) it to temporary directory
+    <li>copy essential files to the <code>plugins</code> subfolder of the shell installation folder. 
+  Or, copy them to the folder included in PATH variable.
+    <li>restart shell, the convertor should be listed in the "Plugins" page of the shell.
+  </ul>
+  Some of the converters , e.g. archive software, may already be installed on your computer. Check shell's "Plugins" page before downloading converters, they may be already available in BookReader shell.
+  
+  <h2>Supported formats</h2>
+ 
+  <table border="0" class="plugintable">
+    <tr> <td colspan="2" class="pluginheader">  RAR archives support (Unrar.dll)  </td> </tr>
+    <tr> <td>(c)</td> <td> Alexander Roshal </td></tr>
+    <tr> <td colspan="2"> Built-in, no need to download</td></tr>
+    
+    <tr> <td colspan="2" class="pluginheader"> ZIP archives support: ZipBuilder </td> </tr>
+    <tr> <td>(c)</td> <td> InfoZip group, Roger Aelbrecht</td></tr>
+    <tr> <td colspan="2"> Built-in, no need to download</td></tr>
+    
+    <tr> <td colspan="2" class="pluginheader">Recode - Automatic cyrillic encoding recognition </td> </tr>
+    <tr> <td>(c)</td> <td>Algorithm by S.Znamenskii, Interface by W.Zudilin, 09.04.98 </td></tr>
+    <tr> <td colspan="2"> Built-in, no need to download</td></tr>
+  
+    
+    <tr> <td colspan="2" class="pluginheader"> 
+      GetText: <code>hlp,html,pdf,rtf,wpd,xls,doc,ppt</code> -&gt; TXT </td> </tr>
+    <tr> <td>(c)</td> <td> Kryloff Technologies, Inc. <a href="http://www.kryltech.com">www.kryltech.com</a> </td></tr>
+    <tr> <td>URL:</td>  <td>
+	<a href="http://www.kryltech.com/download/gettext.zip">
+	http://www.kryltech.com/download/gettext.zip
+	</a><br/>
+    <a href="http://tequilacat.nm.ru/dev/br/plugins/gettext.zip">
+      http://tequilacat.nm.ru/dev/br/plugins/gettext.zip</a><br>
+  </td></tr>
+    <tr> <td>Files:</td>  <td>
+      <code>Filters\</code> folder <br>
+      <code>GetText.exe</code>
+    </td> </tr>
+  
+    
+    <tr> <td colspan="2" class="pluginheader"> TCR for Win32: TCR convertor (Psion, Symbian)  </td> </tr>
+    <tr> <td>(c)</td> <td>(c) UK Andrew Giddings 2000 </td></tr>
+    <tr> <td>URL:</td>  <td> 
+    <a href="http://tequilacat.nm.ru/dev/br/plugins/untcr.zip">
+      http://tequilacat.nm.ru/dev/br/plugins/untcr.zip</a><br>
+  </td></tr>
+    <tr> <td>Files:</td>  <td>
+      <code>TCR.exe</code><br>
+    <code>untcr.bat</code>
+    </td> </tr>
+    
+    <tr> <td colspan="2" class="pluginheader"> Makedoc7: PDB/PRC convertor (Palm)</td> </tr>
+    <tr> <td>(c)</td> <td>  Pat Beirne </td></tr>
+    <tr> <td>URL:</td>  <td> 
+     <a href="http://tequilacat.nm.ru/dev/br/plugins/Makedoc.exe">
+      http://tequilacat.nm.ru/dev/br/plugins/Makedoc.exe</a>  <br>
+   </td></tr>
+    <tr> <td>Files:</td>  <td>
+      <code>Makedoc.exe</code>
+    </td> </tr>
+    
+    
+    <tr> <td colspan="2" class="pluginheader"> ARJ archives support  </td> </tr>
+    <tr> <td>(c)</td> <td> ARJ Software, Inc. <a href="http://www.ARJSOFTWARE.com">http://www.ARJSOFTWARE.com</a> </td></tr>
+    <tr> <td>URL:</td>  <td> 
+    <a href="http://mysite.verizon.net/vze3nqpn/files/unarj265.exe">
+      http://mysite.verizon.net/vze3nqpn/files/unarj265.exe</a> <br>
+    <a href="http://tequilacat.nm.ru/dev/br/plugins/unarj32.EXE">
+      http://tequilacat.nm.ru/dev/br/plugins/unarj32.EXE</a>
+
+  </td></tr>
+    <tr> <td>Files:</td>  <td>
+      <code>unarj32.EXE</code>
+    </td> </tr>
+    
+    <tr> <td colspan="2" class="pluginheader"> HA archives support  </td> </tr>
+    <tr> <td>(c)</td> <td> 1995 Harri Hirvola </td></tr>
+    <tr> <td>URL:</td>  <td> 
+    <a href="ftp://sac-ftp.gratex.sk/pack/ha_nt.zip">ftp://sac-ftp.gratex.sk/pack/ha_nt.zip</a> <br>
+    <a href="http://tequilacat.nm.ru/dev/br/plugins/ha.exe">http://tequilacat.nm.ru/dev/br/plugins/ha.exe</a>
+  </td></tr>
+    <tr> <td>Files:</td>  <td>
+      <code>ha.exe</code>
+    </td> </tr>
+  </table>
+  <p/>
+<!--  
+    <a href="http://tequilacat.nm.ru/dev/br/plugins/">http://tequilacat.nm.ru/dev/br/plugins/</a><br>
+  -->
+  <b>Please note:</b> some of these links point to other sites, which can be inavailable on the moment you try to access them.
+  In such case, use google to find appropriate package, as I did.
+  
+  <h2>Adding new formats support</h2>
+  
+  Any archive or text format support may be added into BookReader shell, given that you have an EXE file of converter
+  working from command line. <br>
+  For details refer to the <code>plugins\*.pd</code> files. PD stands for Plugin Description.
+  <p/>
+  Also text postprocessors could be configured, that process plain text changing its formatting or encoding. E.g. russian users can enjoy automatic cyrillic encoding recognition.<br>
+  If you want you may configure external text formatters for plain text rectification (removal of empty lines, ends of lines etc).
+  To define a converter as plain text postprocessor, omit extension list from the plugin description.
+
+<HR> <div style="float:right; font-style:italic">Page design by Tequilacat, Panya</div>
+
+
+</BODY>
+</html>

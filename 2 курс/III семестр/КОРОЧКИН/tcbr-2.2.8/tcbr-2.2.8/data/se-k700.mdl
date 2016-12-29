@@ -1,0 +1,4 @@
+label = K700, Z1010
+jar=midp2_se2_bookreader.jar
+skin.image = se_K700-16.png
+skin.screen=25x55x176x220

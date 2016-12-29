@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.12.20 15:49:48.130.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Project1.bdsproj=C:\Users\Евгений\Documents\Borland Studio Projects\Conv.bdsproj</Transaction>
+    <Transaction>2009.12.20 15:49:54.408.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.pas=C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas</Transaction>
+    <Transaction>2009.12.20 15:49:54.408.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.dfm=C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm</Transaction>
+    <Transaction>2009.12.20 15:50:09.752.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas=D:\Code\Conw\Main.pas</Transaction>
+    <Transaction>2009.12.20 15:50:09.752.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm=D:\Code\Conw\Main.dfm</Transaction>
+    <Transaction>2009.12.20 15:50:11.034.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Conv.bdsproj=D:\Code\Conw\Conv.bdsproj</Transaction>
+    <Transaction>2009.12.20 15:56:25.895.pas,D:\Code\Conw\Unit1.pas=D:\Code\Conw\Logic.pas</Transaction>
+    <Transaction>2009.12.20 20:22:28.526.pas,D:\Code\Conw\Unit2.pas=D:\Code\Conw\Input.pas</Transaction>
+    <Transaction>2009.12.20 20:22:28.526.dfm,D:\Code\Conw\Unit2.dfm=D:\Code\Conw\Input.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

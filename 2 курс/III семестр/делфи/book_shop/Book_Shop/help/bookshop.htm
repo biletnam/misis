@@ -1,0 +1,215 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href=styles00.css>
+<meta name=Description content="Программисты Корабелки (СПбГМТУ). Программы. Курсовики. Лабораторные работы. Творчество. Преподаватели. Юмор. Форум">
+<meta name=Keywords content="программисты, программы, Корабелка, СПбГМТУ, базы данных, ER-диаграмма, Схема отношений, Delphi, BDE, Paradox, Книжный магазин, описание, скачать, Санкт-Петербургский Государственный Морской Технический Университет ">
+<title>Книжный магазин | Базы данных | Программы | Программисты Корабелки</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+
+<body bgcolor=#4B5B6D text=#FFFFFF link=#FFFFFF vlink=#FFFFFF alink=#FFFFFF>
+
+<center>
+<table border=0 cellpadding=0 cellspacing=0 width=720>
+
+<tr>
+<td align=center colspan=5 class=sm>
+Программисты Корабелки - СПбГМТУ - Санкт-Петербургский Государственный Морской Технический Университет</td>
+</tr>
+
+<tr>
+<td height=90 colspan=5><img src=spacer00.gif width=124 height=1><img src=title000.gif width=430 height=34></td>
+</tr>
+
+<tr>
+<td height=20 valign=top colspan=5><img height=1 width=720 src="gray0000.gif"></td>
+</tr>
+
+<tr>
+<td><img height=1 width=550 src="spacer00.gif"></td>
+<td><img height=1 width=10 src="spacer00.gif"></td>
+<td><img height=1 width=1 src="spacer00.gif"></td>
+<td><img height=1 width=9 src="spacer00.gif"></td>
+<td><img height=1 width=150 src="spacer00.gif"></td>
+</tr>
+
+<tr>
+<td valign=top>
+
+<table border=0 cellpadding=0 cellspacing=0 width=550>
+
+<tr><td><a href=http://vt.spbgmtu.ru/>vt.spbgmtu.ru</a> / <a href=http://vt.spbgmtu.ru/programs.htm>Программы</a> / <a href=http://vt.spbgmtu.ru/databases.htm>Базы данных</a></td></tr>
+
+<tr><td valign=top height=70 colspan=2><h1 class=h1sm><br>Книжный магазин</h1></td></tr>
+
+
+<tr><td align=center>
+
+<table border=0 cellpadding=0 cellspacing=0 width=480>
+<tr><td><img src="spacer00.gif" width=20 height=1></td><td><img src="spacer00.gif" width=20 height=1></td><td><img src="spacer00.gif" width=440 height=1></td></tr>
+
+<tr><td colspan=3 height=30>Задание:</td></tr>
+<tr><td></td><td colspan=2 height=40>Разработать структуру базы данных для книжного магазина, содержащую информацию о складах.</td></tr>
+
+<tr><td colspan=3 height=30>В базе данных должна храниться следующая информация:</td></tr>
+
+<tr><td></td><td colspan=2 height=30>1. Данные о складах:</td></tr>
+<tr><td colspan=2></td><td>- название склада</td></tr>
+<tr><td colspan=2></td><td>- адрес</td></tr>
+<tr><td colspan=2></td><td>- телефон</td></tr>
+<tr><td colspan=2></td><td>- ФИО директора</td></tr>
+
+<tr><td></td><td colspan=2 height=30>2. Данные о книгах:</td></tr>
+<tr><td colspan=2></td><td>- название книги</td></tr>
+<tr><td colspan=2></td><td>- автор</td></tr>
+<tr><td colspan=2></td><td>- издательство</td></tr>
+<tr><td colspan=2></td><td>- год выпуска</td></tr>
+<tr><td colspan=2></td><td>- тираж</td></tr>
+<tr><td colspan=2></td><td>- область знаний</td></tr>
+<tr><td colspan=2></td><td>- цена издательства</td></tr>
+
+<tr><td></td><td colspan=2 height=30>3. Наличие на складе:</td></tr>
+<tr><td colspan=2></td><td>- количество упаковок</td></tr>
+<tr><td colspan=2></td><td>- количество экземпляров в упаковке</td></tr>
+
+<tr><td></td><td colspan=2 height=30>4. Информация о продажах:</td></tr>
+<tr><td colspan=2></td><td>- дата продажи</td></tr>
+<tr><td colspan=2></td><td>- название книги</td></tr>
+<tr><td colspan=2></td><td>- автор</td></tr>
+<tr><td colspan=2></td><td>- отпускная цена за экземпляр</td></tr>
+<tr><td colspan=2></td><td>- количество экземпляров</td></tr>
+
+<tr><td></td><td colspan=2 height=50>Построить запросы, формы и отчеты, позволяющие получать следующую информацию:</td></tr>
+<tr><td colspan=2></td><td>- какие книги по конкретной тематике имеются на складе</td></tr>
+<tr><td colspan=2></td><td>- подготовить бланк заказа на приобретение конкретной книги</td></tr>
+<tr><td colspan=2></td><td>- сравнить отпускные цены по конкретной книге на различных складах</td></tr>
+<tr><td colspan=2></td><td>- какие книги конкретного автора имеются на складе</td></tr>
+<tr><td colspan=2></td><td>- подготовить выручку от реализации за день, месяц</td></tr>
+
+<tr><td colspan=3 height=50>ER-диаграмма:</td></tr>
+<tr><td colspan=3 align=center><img src="erbooksh.gif" width=400 height=368></td></tr>
+
+<tr><td colspan=3 height=50>Схема отношений:</td></tr>
+<tr><td colspan=3 align=center><img src="relbooks.gif" width=400 height=224></td></tr>
+
+<tr><td colspan=3 height=100>База данных Paradox. Программа написана в среде Delphi 4.0 с использованием BDE (Borland Database Engine).<br><br>Скачать исходники: <a href="http://vt.spbgmtu.ru/download/bookshop.zip">bookshop.zip</a> (105 Кб)</td></tr>
+
+</table>
+
+</td></tr>
+
+</table>
+
+</td>
+
+<td><br></td>
+
+<td bgcolor=#78858D >
+<br>
+</td>
+
+<td><br></td>
+
+<td align=left valign=top>
+
+<table border=0 cellpadding=0 cellspacing=0 width=150>
+<tr>
+<td><img height=1 width=20 src="spacer00.gif"></td>
+<td><img height=1 width=130 src="spacer00.gif"></td>
+</tr>
+
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/index.htm>О сайте</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/news.htm>Новости</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/list.htm>Списки групп</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/photos.htm>Фотоальбом</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/works.htm>Творчество</a></td></tr>
+
+<tr  height=26 valign=center bgcolor=#efa53a><td>&nbsp;<img src=arrow000.gif width=11 height=11></td><td height=26 align=left><font color=#4B5B6D>Программы</font></td></tr>
+
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/speciality.htm>Специальность</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/teachers.htm>Преподаватели</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/humor.htm>Юмор</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/forum/index.htm>Форум</a></td></tr>
+<tr><td height=26>&nbsp;</td><td align=left><a href=http://vt.spbgmtu.ru/guestbook.htm>Гостевая книга</a></td></tr>
+
+<tr><td height=30 valign=center colspan=2><img height=1 width=150 src="gray0000.gif"></td></tr>
+
+<tr><td colspan=2><b><font class=sm>ПОСЛЕДНИЕ НОВОСТИ:</font><br><br></b></td></tr>
+
+<tr><td valign=top><font class=orange>&#149;</font></td><td valign=top align=left>[<b><font class=orange>29.08.03</font></b>]<br><a href="http://vt.spbgmtu.ru/list.htm">В список групп<br>добавлены ICQ</a><br><br></td></tr>
+
+<tr><td valign=top><font class=orange>&#149;</font></td><td valign=top align=left>[09.04.03]<br><a href="http://vt.spbgmtu.ru/gausscolleadcs.htm">Решение СЛАУ<br>методом Гаусса<br>на языке C#</a><br><br></td></tr>
+
+<tr><td valign=top><font class=orange>&#149;</font></td><td valign=top align=left>[04.04.03]<br><a href="http://vt.spbgmtu.ru/teachers.htm">Характеристики<br>преподавателей</a><br><br></td></tr>
+
+<tr><td valign=top><font class=orange>&#149;</font></td><td valign=top align=left>[15.02.03]<br><a href="http://vt.spbgmtu.ru/humor.htm">Обновление<br>в разделе &laquo;Юмор&raquo;</a><br><br></td></tr>
+
+<tr><td colspan=2>
+
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=14447&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<img src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1>")</script>
+<noscript><img src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=14447" border=0 
+width=1 height=1></noscript>
+
+</td></tr>
+
+
+</table>
+
+</td>
+</tr>
+
+<tr>
+<td height=20 valign=bottom colspan=5><img height=1 width=720 src="gray0000.gif"></td>
+</tr>
+
+</table>
+</center>
+
+
+<center>
+<table border=0 cellpadding=0 cellspacing=0 width=720>
+
+<tr>
+<td valign=bottom height=45>
+
+<script language="javascript"><!--
+Mu="u2906.50.spylog.com";Md=document;Mnv=navigator;Mp=1;
+Mn=(Mnv.appName.substring(0,2)=="Mi")?0:1;Mrn=Math.random();
+Mt=(new Date()).getTimezoneOffset();
+Mz="p="+Mp+"&rn="+Mrn+"&t="+Mt;
+My="";
+My+="<a href='http://"+Mu+"/cnt?cid=290650&f=3&p="+Mp+"&rn="+Mrn+"' target=_blank>";
+My+="<img src='http://"+Mu+"/cnt?cid=290650&"+Mz+"&r="+escape(Md.referrer)+"&pg="+escape(window.location.href)+"' border=0  width=88 height=31  alt='SpyLOG'>";
+My+="</a>";Md.write(My);//--></script><noscript>
+<a href="http://u2906.50.spylog.com/cnt?cid=290650&f=3&p=1" target=_blank>
+<img src="http://u2906.50.spylog.com/cnt?cid=290650&p=1" alt='SpyLOG' border='0'  width=88 height=31 >
+</a></noscript></td>
+
+<td align=right valign=bottom>
+<a href="mailto:xstazz@hotbox.ru">Веб-м@стер</a></td>
+</tr>
+
+</table>
+</center>
+
+</body>
+</html>
+
+<!-- This document saved from http://vt.spbgmtu.ru/bookshop.htm -->

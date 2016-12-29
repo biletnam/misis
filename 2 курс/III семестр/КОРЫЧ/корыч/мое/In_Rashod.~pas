@@ -1,0 +1,51 @@
+unit In_Rashod;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Tabl_Rashod, StdCtrls, Mask, DBCtrls, ComCtrls;
+
+type
+  TIn_Rashodi = class(TForm)
+    Rashod_Data: TDateTimePicker;
+    DBEdit1: TDBEdit;
+    Rashod_KontrAgent: TDBEdit;
+    Rashod_Summa: TDBEdit;
+    Label_Rashod_Data: TLabel;
+    Label_Rashod_Vid: TLabel;
+    Label_Rashod_KontrAgent: TLabel;
+    Label_Rashod_Summa: TLabel;
+    Button_Add_Rashod: TButton;
+    procedure Button_Add_RashodClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  In_Rashodi: TIn_Rashodi;
+
+implementation
+
+{$R *.dfm}
+
+procedure TIn_Rashodi.Button_Add_RashodClick(Sender: TObject);
+begin
+   with Tabl_Rashodi.Rashodi_Table do
+     begin
+       FieldByName('Data').Value :=  In_Rashodi.Rashod_Data.Date;
+       Post;
+       Append;
+       Post;
+     end; 
+end;
+
+procedure TIn_Rashodi.FormCreate(Sender: TObject);
+begin
+   Tabl_Rashodi.Rashodi_Table.Last;
+end;
+
+end.

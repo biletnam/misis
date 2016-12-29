@@ -1,0 +1,66 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Myclasses, XPMan, ExtCtrls, MedCommis, logicclasses,
+  ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    XPManifest1: TXPManifest;
+    Timer1: TTimer;
+    InfoTimer: TTimer;
+    Button2: TButton;
+    TrackBar1: TTrackBar;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure InfoTimerTimer(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  MedCom: TMedCom;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+   MedCom.AddClient;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Timer1.Enabled := not Timer1.Enabled;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  MedCom := TMedCom.Create(Form1);
+  Form1.Width := 800;
+  Form1.Height := 600;
+  Randomize;
+end;
+
+procedure TForm1.InfoTimerTimer(Sender: TObject);
+begin
+  MedCom.UpdateInfo;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+var i: Integer;
+begin
+  for i:= 1 to TrackBar1.Position do MedCom.Tick(1);
+end;
+
+end.

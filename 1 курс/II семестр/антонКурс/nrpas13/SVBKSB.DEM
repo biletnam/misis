@@ -1,0 +1,90 @@
+PROGRAM d2r8(input,output,dfile);
+(* driver for routine SVBKSB *)
+LABEL 10,99;
+CONST
+   np=20;
+   mp=20;
+TYPE
+   glnparray = ARRAY [1..np] OF real;
+   glmparray = ARRAY [1..mp] OF real;
+   glnpbynp = ARRAY [1..np,1..np] OF real;
+   glmpbynp = ARRAY [1..mp,1..np] OF real;
+VAR
+   j,k,l,m,n : integer;
+   wmax,wmin : real;
+   a,b,u : glmpbynp;
+   v : glnpbynp;
+   w,x : glnparray;
+   c : glmparray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SVDCMP.PAS *)
+
+(*$I SVBKSB.PAS *)
+
+BEGIN
+   glopen(dfile,'matrx1.dat');
+10:   readln(dfile);
+   readln(dfile);
+   readln(dfile,n,m);
+   readln(dfile);
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n-1 DO read(dfile,a[k,l]);
+      readln(dfile,a[k,n])
+   END;
+   readln(dfile);
+   FOR l := 1 to m DO BEGIN
+      FOR k := 1 to n-1 DO read(dfile,b[k,l]);
+      readln(dfile,b[n,l])
+   END;
+(* copy a into u *)
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         u[k,l] := a[k,l]
+      END
+   END;
+(* decompose matrix a *)
+   svdcmp(u,n,n,np,np,w,v);
+(* find maximum singular value *)
+   wmax := 0.0;
+   FOR k := 1 to n DO BEGIN
+      IF  (w[k] > wmax) THEN  wmax := w[k]
+   END;
+(* define "small" *)
+   wmin := wmax*(1.0e-6);
+(* zero the "small" singular values *)
+   FOR k := 1 to n DO BEGIN
+      IF  (w[k] < wmin) THEN  w[k] := 0.0
+   END;
+(* backsubstitute for each right-hand side vector *)
+   FOR l := 1 to m DO BEGIN
+      writeln;
+      writeln('Vector number ',l:2);
+      FOR k := 1 to n DO BEGIN
+         c[k] := b[k,l]
+      END;
+      svbksb(u,w,v,n,n,np,np,c,x);
+      writeln ('    solution vector is:');
+      FOR k := 1 to n-1 DO write(x[k]:12:6);
+      writeln(x[n]:12:6);
+      writeln ('    original right-hand side vector:');
+      FOR k := 1 to n-1 DO write(c[k]:12:6);
+      writeln(c[n]:12:6);
+      writeln ('    result of (matrix)*(sol''n vector):');
+      FOR k := 1 to n DO BEGIN
+         c[k] := 0.0;
+         FOR j := 1 to n DO BEGIN
+            c[k] := c[k]+a[k,j]*x[j]
+         END
+      END;
+      FOR k := 1 to n-1 DO write(c[k]:12:6);
+      writeln(c[n]:12:6)
+   END;
+   writeln ('***********************************');
+   IF eof(dfile) THEN GOTO 99;
+   writeln ('press RETURN for next problem');
+   readln;
+   GOTO 10;
+99:   close(dfile)
+END.

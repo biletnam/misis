@@ -1,0 +1,45 @@
+PROGRAM d10r10(input,output);
+(* driver for routine DF1DIM *)
+CONST
+   ndim=3;
+TYPE
+   glnarray = ARRAY [1..ndim] OF real;
+VAR
+   i,j,ncom : integer;
+   p,xi : glnarray;
+   pcom,xicom : glnarray;
+
+PROCEDURE dfunc(x : glnarray; VAR df : glnarray);
+VAR
+   i : integer;
+BEGIN
+   FOR i := 1 to 3 DO BEGIN
+      df[i] := sqr(x[i]-1.0)
+   END
+END;
+
+(*$I MODFILE.PAS *)
+(*$I DF1DIM.PAS *)
+
+FUNCTION fx(x: real): real;
+BEGIN
+   fx := df1dim(x)
+END;
+
+(*$I SCRSHO.PAS *)
+
+BEGIN
+   p[1] := 0.0; p[2] := 0.0; p[3] := 0.0;
+   ncom := ndim;
+   writeln;
+   writeln('Enter vector direction along which to');
+   writeln('plot the function. Minimum is in the');
+   writeln('direction 1.0 1.0 1.0 - enter x y z:');
+   read(xi[1],xi[2],xi[3]);
+   writeln;
+   FOR j := 1 to ndim DO BEGIN
+      pcom[j] := p[j];
+      xicom[j] := xi[j]
+   END;
+   scrsho
+END.

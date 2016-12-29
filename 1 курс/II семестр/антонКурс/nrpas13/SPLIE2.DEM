@@ -1,0 +1,51 @@
+PROGRAM d3r12(input,output);
+(* driver for routine SPLIE2 *)
+CONST
+   m=10;
+   n=10;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   glmbyn = ARRAY [1..m,1..n] OF real;
+VAR
+   i,j : integer;
+   x1x2 : real;
+   x1,x2 : glnarray;
+   y,y2 : glmbyn;
+
+(*$I MODFILE.PAS *)
+(*$I SPLINE.PAS *)
+
+(*$I SPLIE2.PAS *)
+
+BEGIN
+   FOR i := 1 to m DO BEGIN
+      x1[i] := 0.2*i
+   END;
+   FOR i := 1 to n DO BEGIN
+      x2[i] := 0.2*i
+   END;
+   FOR i := 1 to m DO BEGIN
+      FOR j := 1 to n DO BEGIN
+         x1x2 := x1[i]*x2[j];
+         y[i,j] := sqr(x1x2)
+      END
+   END;
+   splie2(x1,x2,y,m,n,y2);
+   writeln;
+   writeln('second derivatives from SPLIE2');
+   writeln('natural spline assumed');
+   FOR i := 1 to 5 DO BEGIN
+      FOR j := 1 to 5 DO write(y2[i,j]:12:6);
+      writeln
+   END;
+   writeln;
+   writeln('actual second derivatives');
+   FOR i := 1 to 5 DO BEGIN
+      FOR j := 1 to 5 DO BEGIN
+         x1x2 := x1[i]*x2[i];
+         y2[i,j] := 2.0*sqr(x1[i])
+      END;
+      FOR j := 1 to 5 DO write(y2[i,j]:12:6);
+      writeln
+   END
+END.

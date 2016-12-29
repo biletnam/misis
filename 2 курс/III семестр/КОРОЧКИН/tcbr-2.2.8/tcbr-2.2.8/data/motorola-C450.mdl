@@ -1,0 +1,5 @@
+label=Motorola C450,C550 
+skin.screen = 12x47x96x65 
+skin.image=motorola-C450.png
+jar=mot_bookreader.jar 
+overridePhoneScreenSize=true

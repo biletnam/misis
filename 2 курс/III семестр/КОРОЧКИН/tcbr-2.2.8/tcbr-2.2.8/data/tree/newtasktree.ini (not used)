@@ -1,0 +1,54 @@
+item id=showBooksPage label=${LBL_TASK_ADDBOOKS} page=BooksTabSheet
+item id=addBook label=${LBL_TASK_ADDBOOK} icon=book-add.png page=BooksTabSheet
+item id=renameText  label=${LBL_TASK_BOOKRENAME} icon=book-rename.png page=BooksTabSheet
+item id=reparse label=${LBL_TASK_BOOKREPARSE} icon=book-reformat.png  page=BooksTabSheet
+item id=mergeChapters label=${LBL_TASK_BOOKMERGE} icon=book-merge.png  page=BooksTabSheet
+item id=shellEdit  label=${LBL_TASK_BOOKSHELLOPEN}  icon=book-sysopen.png  page=BooksTabSheet
+item id=removeBook  label=${LBL_TASK_BOOKREMOVE}  icon=book-delcurrent.png page=BooksTabSheet
+item id=removeAllBooks label=${LBL_TASK_BOOKREMOVEALL} icon=book-delall.png page=BooksTabSheet
+
+item id = showMidletPage  label = ${LBL_TASK_MIDLETPROPS} page = MidletPropertiesTabSheet
+item id = showAppearancePage  =  ${LBL_TASK_APPEARANCE} icon = props-appearance.png page = MidletDescriptionTabSheet
+item id = showOptionsPage label =  ${LBL_TASK_OPTIONS} icon = props-change.png page = OptionsTabSheet
+item id = showKeyMappingsPage label =  ${LBL_TASK_KEYMAPPING} icon = props-remapkeys.png page = KeySettingsTabSheet
+item id = showPreProcessPage label  =  ${LBL_TASK_PREPROCESSBOOK} page = PluginsTabSheet
+item id = saveSetup  label=  ${LBL_TASK_SAVESETUP} icon = props-save.png
+item id = readSetup  label=  ${LBL_TASK_READSETUP} icon = props-open.png
+item id = showLogPage label = ${LBL_TASK_SHOWLOG} icon = props-showlog.png page = LogTabSheet
+
+item id = showFontPage label  = ${LBL_TASK_FONTS} page = FontTabSheet
+item id = addWindowsFont label =  ${LBL_TASK_FONT_ADDWINDOW}  icon = font-addwin.png page = FontTabSheet
+item id = addPhoneFontSmall label =  ${LBL_TASK_FONT_ADDSMALL}  icon = font-add1.png page = FontTabSheet
+item id = addPnoneFontMedium  label =  ${LBL_TASK_FONT_ADDMEDIUM}  icon = font-add2.png page = FontTabSheet
+item id = addPnoneFontLarge label =  ${LBL_TASK_FONT_ADDLARGE}  icon = font-add3.png page = FontTabSheet
+item id = removeSelectedFont label =  ${LBL_TASK_FONT_REMOVE}  icon = font-delcurrent.png page = FontTabSheet
+
+group id=booksGroup caption=showBooksPage
+groupItem id=addBook 
+-
+groupItem id=renameText  
+groupItem id=reparse 
+groupItem id=mergeChapters 
+groupItem id=shellEdit
+-
+groupItem id=removeBook  
+groupItem id=removeAllBooks
+
+group id=setUpGroup caption= showMidletPage
+groupItem id = showAppearancePage
+groupItem id = showOptionsPage 
+groupItem id = showKeyMappingsPage 
+groupItem id = showPreProcessPage 
+-
+groupItem id = saveSetup  
+groupItem id = readSetup  
+-
+groupItem id = showLogPage
+
+group id=fontGroup caption = showFontPage
+item id = addWindowsFont
+item id = addPhoneFontSmall
+item id = addPnoneFontMedium
+item id = addPnoneFontLarge
+-
+item id = removeSelectedFont

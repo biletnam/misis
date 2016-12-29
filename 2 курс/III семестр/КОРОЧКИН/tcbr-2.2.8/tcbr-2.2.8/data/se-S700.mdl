@@ -1,0 +1,4 @@
+label = S700, S710a
+jar=midp2_se2_bookreader.jar
+skin.screen=44x40x240x320
+skin.image=se-S700.png

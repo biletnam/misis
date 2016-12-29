@@ -1,0 +1,51 @@
+PROGRAM d7r9(input,output);
+(* driver for routine BNLDEV *)
+LABEL 10,99;
+CONST
+   n=20;
+   npts=1000;
+   iscal=200;
+   nn=100;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   i,j,k,idum,klim,llen : integer;
+   pp,xm : real;
+   dist : ARRAY [0..20] OF real;
+   txt : PACKED ARRAY [1..50] OF char;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GAMMLN.PAS *)
+
+(*$I BNLDEV.PAS *)
+
+BEGIN
+   idum := -133;
+   llen := 50;
+10:   FOR j := 0 to 20 DO BEGIN
+      dist[j] := 0.0
+   END;
+   writeln('Mean of binomial distribution (0 to 20) (neg to end)');
+   read(xm);
+   IF (xm < 0) THEN GOTO 99;
+   pp := xm/nn;
+   FOR i := 1 to npts DO BEGIN
+      j := round(bnldev(pp,nn,idum));
+      IF ((j >= 0) AND (j <= 20)) THEN dist[j] := dist[j]+1
+   END;
+   writeln('x':4,'p(x)':8,'graph:':10);
+   FOR j := 0 to 19 DO BEGIN
+      FOR k := 1 to llen DO txt[k] := ' ';
+      dist[j] := dist[j]/npts;
+      klim := round(iscal*dist[j])+1;
+      IF (klim > llen) THEN klim := llen;
+      FOR k := 1 to klim DO BEGIN
+         txt[k] := '*'
+      END;
+      writeln(j:4,dist[j]:9:4,'   ',txt)
+   END;
+   GOTO 10;
+99:   
+END.

@@ -1,0 +1,94 @@
+PROGRAM d2r9 (input,output,dfile);
+(* driver for routine SVDCMP *)
+LABEL 10,99;
+CONST
+   np = 20;
+   mp = 20;
+TYPE
+   glnparray = ARRAY [1..np] OF real;
+   glmpbynp = ARRAY [1..mp,1..np] OF real;
+   glnpbynp = ARRAY [1..np,1..np] OF real;
+VAR
+   j,k,l,m,n : integer;
+   a,u : glmpbynp;
+   v : glnpbynp;
+   w : glnparray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SVDCMP.PAS *)
+
+BEGIN
+(* read input matrices *)
+   glopen(dfile,'matrx3.dat');
+10:   readln(dfile);
+   readln(dfile);
+   readln(dfile,m,n);
+   readln(dfile);
+(* copy original matrix into u *)
+   FOR k := 1 to m DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         read(dfile,a[k,l]);
+         u[k,l] := a[k,l]
+      END;
+      readln(dfile)
+   END;
+   IF (n > m) THEN BEGIN
+      FOR k := m+1 to n DO BEGIN
+         FOR l := 1 to n DO BEGIN
+            a[k,l] := 0.0;
+            u[k,l] := 0.0
+         END
+      END;
+      m := n
+   END;
+(* perform decomposition *)
+   svdcmp(u,m,n,np,np,w,v);
+(* write results *)
+   writeln ('Decomposition matrices:');
+   writeln ('Matrix u');
+   FOR k := 1 to m DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         write (u[k,l]:12:6);
+      END;
+      writeln
+   END;
+   writeln ('Diagonal of matrix w');
+   FOR k := 1 to n DO BEGIN
+      write(w[k]:12:6)
+   END;
+   writeln;
+   writeln ('Matrix v-transpose');
+   FOR k := 1 to n DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         write(v[l,k]:12:6)
+      END;
+      writeln
+   END;
+   writeln;
+   writeln ('Check product against original matrix:');
+   writeln ('Original matrix:');
+   FOR k := 1 to m DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         write (a[k,l]:12:6)
+      END;
+      writeln
+   END;
+   writeln ('Product u*w*(v-transpose):');
+   FOR k := 1 to m DO BEGIN
+      FOR l := 1 to n DO BEGIN
+         a[k,l] := 0.0;
+         FOR j := 1 to n DO BEGIN
+            a[k,l] := a[k,l]+u[k,j]*w[j]*v[l,j]
+         END
+      END;
+      FOR l := 1 to n-1 DO write(a[k,l]:12:6);
+      writeln(a[k,n]:12:6);
+   END;
+   writeln ('***********************************');
+   IF eof(dfile) THEN GOTO 99;
+   writeln ('press RETURN for next problem');
+   readln;
+   GOTO 10;
+99:   close(dfile)
+END.

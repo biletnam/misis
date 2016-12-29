@@ -1,0 +1,67 @@
+PROGRAM d10r9(input,output);
+(* driver for routine FRPRMN *)
+CONST
+   ndim=3;
+   ftol=1.0e-6;
+   pio2=1.5707963;
+TYPE
+   glnarray = ARRAY [1..ndim] OF real;
+   glndim=glnarray;
+VAR
+   ncom : integer;
+   pcom,xicom : glnarray; 
+   angl,fret : real;
+   iter,k : integer;
+   p : glnarray;
+
+(*$I MODFILE.PAS *)
+(*$I BESSJ0.PAS *)
+
+(*$I BESSJ1.PAS *)
+
+FUNCTION fnc(x: glnarray): real;
+BEGIN
+   fnc := 1.0-bessj0(x[1]-0.5)*bessj0(x[2]-0.5)*bessj0(x[3]-0.5)
+END;
+
+PROCEDURE dfnc(x: glnarray; VAR df: glnarray);
+BEGIN
+   df[1] := bessj1(x[1]-0.5)*bessj0(x[2]-0.5)*bessj0(x[3]-0.5);
+   df[2] := bessj0(x[1]-0.5)*bessj1(x[2]-0.5)*bessj0(x[3]-0.5);
+   df[3] := bessj0(x[1]-0.5)*bessj0(x[2]-0.5)*bessj1(x[3]-0.5)
+END;
+
+(*$I F1DIM.PAS *)
+
+FUNCTION func(x: real): real;
+BEGIN
+   func := f1dim(x)
+END;
+
+(*$I MNBRAK.PAS *)
+
+(*$I BRENT.PAS *)
+
+(*$I LINMIN.PAS *)
+
+(*$I FRPRMN.PAS *)
+
+BEGIN
+   writeln('Program finds the minimum of a function');
+   writeln('with different trial starting vectors.');
+   writeln('True minimum is (0.5,0.5,0.5)');
+   FOR k := 0 to 4 DO BEGIN
+      angl := pio2*k/4.0;
+      p[1] := 2.0*cos(angl);
+      p[2] := 2.0*sin(angl);
+      p[3] := 0.0;
+      writeln;
+      writeln('Starting vector: (',
+         p[1]:6:4,',',p[2]:6:4,',',p[3]:6:4,')');
+      frprmn(p,ndim,ftol,iter,fret);
+      writeln('Iterations:',iter:3);
+      writeln('Solution vector: (',
+         p[1]:6:4,',',p[2]:6:4,',',p[3]:6:4,')');
+      writeln('Func. value at solution',fret:14)
+   END
+END.

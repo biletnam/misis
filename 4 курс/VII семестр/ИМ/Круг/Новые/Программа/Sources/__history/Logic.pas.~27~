@@ -1,0 +1,563 @@
+unit Logic;
+
+interface
+uses classes, Sysutils, Contnrs, myclasses,Forms, StdCtrls, ComCtrls, ExtCtrls, Controls, Math;
+
+Type TClientControls=class(Tobject)
+  Name:string;
+  GroupBox: TGroupBox;
+  NeedMassInfo: TInfoRecord;
+  TotalWaitTimeInfo: TInfoRecord;
+  Constructor Create(cName: string; cParent: TWinControl);
+  procedure ChangeCoord(X,Y: integer);
+  procedure NextTo(CC: TClientControls; delta: integer);
+end;
+
+Type TClientSettings=class(TObject)
+  Panel: TPanel;
+  NameEdit: TEdit;
+  MinRequest: TIntegerInput;
+  MaxRequest: TIntegerInput;
+  TimeRange: TIntegerInput;
+  MinGoingTime: TIntegerInput;
+  MaxGoingTime: TIntegerInput;
+  Constructor Create(cName: string; cParent: TWinControl);
+  procedure ChangeCoord(X,Y:integer);
+  procedure RightTo(S: TClientSettings; delta:integer);
+end;
+
+Type TClient=class(TObject)
+  Name:string;
+  Log:TLog;
+  Controls: TclientControls;
+  NeedMass: integer;
+  GoingMass: integer;
+  TotalWaitTime:integer;
+  Settings: TClientSettings;
+  Constructor Create(cName: string; cParent: TWinControl; cLog:TLog);
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+  procedure AddRequest(Mass: integer);
+  procedure CreateSettings(cParent: TWinControl);
+  procedure NewName(Sender: TObject);
+end;
+
+Type TClientMan=class(TObject)
+  Control: TWinControl;
+  Log:TLog;
+  Clients: TObjectList;
+  Constructor Create(cParent: TWinControl; cLog:TLog);
+  procedure AddClient(Name: string);
+  procedure UpdateClientsInfo;
+  procedure Tick(dt: integer);
+end;
+
+Type TCarSettings=class(TObject)
+  Panel: TPanel;
+  MassSelect: TIntegerInput;
+  Constructor Create(cName: string; cParent: TWinControl);
+  procedure ChangeCoord(X,Y:integer);
+  procedure NextTo(S: TCarSettings);
+end;
+
+Type TCar=Class(TObject)
+  Name: string;
+  Log:TLog;
+  Controls: TInfoControls;
+  Settings: TCarSettings;
+  Client:TClient;
+  MaxMass, СurrentMass:integer;
+  Active: Boolean;
+  InWay: Boolean;
+  TimeRemain: integer;
+  WaitTime: integer;
+  WorkTime: integer;
+  Constructor Create(cName: string; cParent: TWinControl; cLog:TLog);
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+  procedure SetRequest(cClient:TClient; cTime:integer; cMass:Integer);
+  procedure CreateSettings(cParent: TWinControl);
+end;
+
+Type TCarMan=class(TObject)
+  Control: TWinControl;
+  Log:TLog;
+  Cars: TObjectList;
+  Constructor Create(cParent: TWinControl; cLog:TLog);
+  procedure AddCar(Name: string);
+  procedure UpdateCarsInfo;
+  procedure Tick(dt: integer);
+end;
+
+Type TSceneMan=class(TObject)
+  Log:TLog;
+  CarMan: TCarMan;
+  ClientMan: TClientMan;
+  Constructor Create(cLog:TLog);
+  procedure CreateCarMan(cParent: TWinControl);
+  procedure CreateClientMan(cParent: TWinControl);
+  procedure UpdateInfo;
+  procedure Tick(dt: integer);
+  procedure LogicTick;
+  function SelectRandomClient(Clients: TObjectList):TClient;
+  function NeedToServe():TObjectList;
+end;
+
+implementation
+
+Constructor TCar.Create(cName: string; cParent: TWinControl; cLog:TLog);
+begin
+  Controls := TInfoControls.Create(cName,cParent);
+  Name:= cName;
+  MaxMass := 1500;
+  СurrentMass := 0;
+  Client := nil;
+  Active := true;
+  InWay := false;
+  TimeRemain := -1;
+  WaitTime:=0;
+  WorkTime:=0;
+  Log := cLog;
+end;
+
+procedure TCar.UpdateInfo();
+var kpd:integer;
+begin
+  with Controls do
+  begin
+    If Inway then StateInfo.Edit.Text := 'В пути'
+    else StateInfo.Edit.Text := 'Ожидание';
+    If Client<>nil then DestinationInfo.Edit.Text := Client.Name
+    else DestinationInfo.Edit.Text := 'нет';
+    WaitInfo.Edit.Text := IntToStr(WaitTime) + ' мин.';
+    WorkInfo.Edit.Text := IntToStr(WorkTime) + ' мин.';
+    if (WaitTime+WorkTime)<>0 then kpd:=Round(100*WorkTime/(WaitTime+WorkTime))
+    else kpd:=0;
+    WaitPercent.Edit.Text := IntToStr(kpd) + ' %';
+  end;
+end;
+
+procedure TCar.SetRequest(cClient:TClient; cTime:integer; cMass:Integer);
+begin
+  Client := cClient;
+  Client.GoingMass := Client.GoingMass + cMass;
+  TimeRemain := cTime;
+  InWay := true;
+  СurrentMass := cMass;
+  Log.Add(Name + ' отправляется в ' + cClient.Name +'. Погружено: '+IntToStr(СurrentMass)+' кг.');
+end;
+
+procedure TCar.Tick(dt: integer);
+begin
+  if InWay then WorkTime:=WorkTime+dt
+  else WaitTime:=WaitTime+dt;
+
+  if InWay then TimeRemain := TimeRemain - 1;  
+
+  if TimeRemain = 0 then
+  begin
+    Log.Add(Name + ' прибыла в ' + Client.Name +'. Разгружено: '+IntToStr(СurrentMass)+' кг.');
+    TimeRemain := -1;
+    InWay := false;
+    Client.NeedMass := Client.NeedMass - СurrentMass;
+    Client.GoingMass := Client.GoingMass - СurrentMass;
+    Client := nil;
+    СurrentMass := 0;
+  end; 
+
+end;
+
+Constructor TClientControls.Create(cName: string; cParent: TWinControl);
+var mDelta,mLeft:integer;
+    Last:TInfoRecord;
+begin
+  Name := cName;
+  mDelta := 20;
+  mLeft := 10;
+  GroupBox := TGroupBox.Create(cParent);
+  GroupBox.Parent := cParent;
+  GroupBox.Caption := cName;
+
+  NeedMassInfo := TInfoRecord.Create('Заказ:',GroupBox,150);
+  NeedMassInfo.ChangeCoord(mLeft,25);
+
+  TotalWaitTimeInfo := TInfoRecord.Create('Общее время ожидания:',GroupBox,150);
+  TotalWaitTimeInfo.NextTo(NeedMassInfo, mDelta);
+
+  Last:=TotalWaitTimeInfo;
+  GroupBox.Height := Last.InfoLabel.Top + 30;
+  GroupBox.Width := Last.Edit.Left + Last.Edit.Width + 10;
+end;
+
+procedure TClientControls.ChangeCoord(X,Y: integer);
+begin
+  GroupBox.Left := X;
+  GroupBox.Top := Y;
+end;
+
+procedure TClientControls.NextTo(CC: TClientControls; delta: integer);
+begin
+  GroupBox.Top := CC.GroupBox.Top + CC.GroupBox.Height + delta;
+  GroupBox.Left := CC.GroupBox.Left;
+end;
+
+Constructor TClient.Create(cName: string; cParent: TWinControl; cLog:TLog);
+begin
+  Name := cName;
+  Controls := TclientControls.Create(cName,cParent);
+  NeedMass := 0;
+  GoingMass := 0;
+  TotalWaitTime:=0;
+  Log:=cLog;
+end;
+
+procedure TClient.UpdateInfo;
+begin
+  with Controls do
+  begin
+    NeedMassInfo.Edit.Text := IntToStr(NeedMass) + ' кг.';
+    TotalWaitTimeInfo.Edit.Text := IntToStr(TotalWaitTime) + ' мин.';
+  end;
+end;
+
+procedure TClient.AddRequest(Mass: integer);
+begin
+  NeedMass := NeedMass + Mass;
+  Log.Add('Поступил заказ от ' + Name + ' на ' + IntToStr(Mass)+' кг. хлебобулочных изделий.');
+end;
+
+procedure TClient.Tick(dt: integer);
+begin
+  if NeedMass<>0 then TotalWaitTime := TotalWaitTime + dt;
+  if Random(Settings.TimeRange.Value)=0 then
+  begin
+    AddRequest(RandomRange(Settings.MinRequest.Value,Settings.MaxRequest.Value));
+  end;
+end;
+
+procedure TClient.NewName(Sender: TObject);
+begin
+  Name := Settings.NameEdit.Text;
+  Controls.GroupBox.Caption := Name;
+end;
+
+procedure TClientMan.AddClient(Name: string);
+var buf: TClient;
+begin
+  buf:=TClient.Create(Name,Control,Log);
+  if Clients.Count=0 then
+  begin
+    buf.Controls.ChangeCoord(10,5);
+    Clients.Add(buf);
+  end
+  else
+  begin
+    buf.Controls.NextTo((Clients.Last as TClient).Controls,5);
+    Clients.Add(buf);
+  end;
+end;
+
+Constructor TClientMan.Create(cParent: TWinControl; cLog:TLog);
+begin
+  Control := cParent;
+  Log:=cLog;
+  Clients := TObjectList.Create;
+
+  AddClient('Булочная 1');
+  AddClient('Булочная 2');
+  AddClient('Булочная 3');
+  AddClient('Булочная 4');
+  AddClient('Булочная 5');
+end;
+
+procedure TClientMan.UpdateClientsInfo;
+var i:integer;
+begin
+   for i := 0 to Clients.Count - 1 do
+   begin
+     (Clients[i] as Tclient).UpdateInfo;
+   end;
+end;
+
+procedure TClientMan.Tick(dt: integer);
+var i:integer;
+begin
+   for i := 0 to Clients.Count - 1 do
+   begin
+     (Clients[i] as Tclient).Tick(dt);
+   end;
+end;
+
+procedure TCarMan.AddCar(Name: string);
+var buf: TCar;
+begin
+  buf:=TCar.Create(Name,Control,Log);
+  if Cars.Count=0 then
+  begin
+    buf.Controls.ChangeCoord(10,5);
+    Cars.Add(buf);
+  end
+  else
+  begin
+    buf.Controls.RightTo((Cars.Last as TCar).Controls,25);;
+    Cars.Add(buf);
+  end;
+end;
+
+Constructor TCarMan.Create(cParent: TWinControl; cLog:TLog);
+begin
+  Control := cParent;
+  Log:=cLog;
+  Cars := TObjectList.Create;
+
+  AddCar('Машина 1');
+  AddCar('Машина 2');
+end;
+
+procedure TCarMan.UpdateCarsInfo;
+var i:integer;
+begin
+   for i := 0 to Cars.Count - 1 do
+   begin
+     (Cars[i] as TCar).UpdateInfo;
+   end;
+end;
+
+procedure TCarMan.Tick(dt: integer);
+var i:integer;
+begin
+   for i := 0 to Cars.Count - 1 do
+   begin
+     (Cars[i] as TCar).Tick(dt);
+   end;
+end;
+
+Constructor TSceneMan.Create(cLog:TLog);
+begin
+  Log:=cLog;
+end;
+
+procedure TSceneMan.CreateCarMan(cParent: TWinControl);
+begin
+  CarMan := TCarMan.Create(cParent, Log);
+end;
+
+procedure TSceneMan.CreateClientMan(cParent: TWinControl);
+begin
+  ClientMan := TClientMan.Create(cParent,Log);
+end;
+
+procedure TSceneMan.UpdateInfo;
+begin
+  CarMan.UpdateCarsInfo;
+  ClientMan.UpdateClientsInfo;
+end;
+
+procedure TSceneMan.Tick(dt: integer);
+begin
+  LogicTick;
+  Log.Tick(dt * 60);
+  ClientMan.Tick(dt);
+  CarMan.Tick(dt);
+end;
+
+function TSceneMan.SelectRandomClient(Clients: TObjectList):TClient;
+var Res: TClient;  
+begin
+   Res:=nil;
+   if Clients.Count>0 then Res:=Clients[Random(Clients.Count)] as TClient;
+   Result:=Res;
+end;
+
+function TSceneMan.NeedToServe():TObjectList;
+var List: TObjectList;
+    i:integer;
+    Clbuf: TClient;
+begin
+  List := TObjectList.Create;
+  for i := 0 to ClientMan.Clients.Count - 1 do
+    begin
+       Clbuf := (ClientMan.Clients[i] as TClient);
+       if (Clbuf.NeedMass - Clbuf.GoingMass)>0 then List.Add(Clbuf);
+    end;
+  Result:=List;  
+end;
+
+procedure TSceneMan.LogicTick;
+var i:integer;
+    Clbuf: TClient;
+    Carbuf: TCar;
+    Mass:integer;
+    Time:integer;
+begin
+  for i := 0 to CarMan.Cars.Count - 1 do
+    begin
+       Carbuf := (CarMan.Cars[i] as TCar);
+       if not(Carbuf.InWay) then
+       begin
+         Clbuf := SelectRandomClient(NeedToServe);
+         If Clbuf<>nil then
+         begin
+            if (Clbuf.NeedMass - Clbuf.GoingMass)>Carbuf.MaxMass then Mass:=Carbuf.MaxMass
+            else Mass:=Clbuf.NeedMass - Clbuf.GoingMass;
+            Time := RandomRange(Clbuf.Settings.MinGoingTime.Value,Clbuf.Settings.MaxGoingTime.Value);
+            Carbuf.SetRequest(Clbuf,Time,Mass);
+         end;
+       end;
+    end;
+end;
+
+procedure TClient.CreateSettings(cParent: TWinControl);
+begin
+  Settings:=TClientSettings.Create(Name, cParent);
+  Settings.NameEdit.OnChange := NewName;
+end;
+
+Constructor TClientSettings.Create(cName: string; cParent: TWinControl);
+var lbl1,lbl2,lbl3, lbl4, lbl5, lbl6, lbl7,lbl8:TLabel;
+begin
+   Panel := TPanel.Create(cParent);
+   Panel.Parent := cParent;
+   Panel.BevelKind := bkTile;
+   Panel.BevelOuter := bvNone;
+   Panel.Height := 150;
+   Panel.Width := 150;
+
+   NameEdit := TEdit.Create(Panel);
+   NameEdit.Parent := Panel;
+   NameEdit.Text := cName;
+   NameEdit.Left := 5;
+   NameEdit.Top := 5;
+
+   lbl1 := TLabel.Create(Panel);
+   lbl1.Parent := Panel;
+   lbl1.AutoSize := true;
+   lbl1.Caption := 'Интенсивность заявок:';
+   lbl1.Top := NameEdit.Top + NameEdit.Height + 5;
+   lbl1.Left := NameEdit.Left;
+
+   MinRequest := TIntegerInput.Create(500,Panel);
+   MinRequest.Edit.Top := lbl1.Top + lbl1.Height + 5;
+   MinRequest.Edit.Left := NameEdit.Left;
+
+   lbl2 := TLabel.Create(Panel);
+   lbl2.Parent := Panel;
+   lbl2.AutoSize := true;
+   lbl2.Caption := '-';
+   lbl2.Top := MinRequest.Edit.Top + 2;
+   lbl2.Left := MinRequest.Edit.Left + MinRequest.Edit.Width +5;
+
+   MaxRequest := TIntegerInput.Create(800,Panel);
+   MaxRequest.Edit.Top := MinRequest.Edit.Top;
+   MaxRequest.Edit.Left := lbl2.Left + lbl2.Width + 5;
+
+   lbl3 := TLabel.Create(Panel);
+   lbl3.Parent := Panel;
+   lbl3.AutoSize := true;
+   lbl3.Caption := 'кг.';
+   lbl3.Top := MinRequest.Edit.Top + 7;
+   lbl3.Left := MaxRequest.Edit.Left + MaxRequest.Edit.Width +5;
+
+   lbl4 := TLabel.Create(Panel);
+   lbl4.Parent := Panel;
+   lbl4.AutoSize := true;
+   lbl4.Caption := 'каждые';
+   lbl4.Top := MaxRequest.Edit.Top + MaxRequest.Edit.Height + 12;
+   lbl4.Left := NameEdit.Left;
+
+   TimeRange := TIntegerInput.Create(20,Panel);
+   TimeRange.Edit.Top := MaxRequest.Edit.Top + MaxRequest.Edit.Height + 5;
+   TimeRange.Edit.Left := lbl4.Left + lbl4.Width + 5;
+
+   lbl5 := TLabel.Create(Panel);
+   lbl5.Parent := Panel;
+   lbl5.AutoSize := true;
+   lbl5.Caption := 'мин.';
+   lbl5.Top := lbl4.Top;
+   lbl5.Left := TimeRange.Edit.Left + TimeRange.Edit.Width + 5;
+
+   lbl6 := TLabel.Create(Panel);
+   lbl6.Parent := Panel;
+   lbl6.AutoSize := true;
+   lbl6.Caption := 'Время выполнения заявки:';
+   lbl6.Top := TimeRange.Edit.Top + TimeRange.Edit.Height + 5;
+   lbl6.Left := NameEdit.Left;
+
+   MinGoingTime := TIntegerInput.Create(12,Panel);
+   MinGoingTime.Edit.Top := lbl6.Top + lbl6.Height + 5;
+   MinGoingTime.Edit.Left := NameEdit.Left;
+
+   lbl7 := TLabel.Create(Panel);
+   lbl7.Parent := Panel;
+   lbl7.AutoSize := true;
+   lbl7.Caption := '-';
+   lbl7.Top := MinGoingTime.Edit.Top + 2;
+   lbl7.Left := MinGoingTime.Edit.Left + MinGoingTime.Edit.Width +5;
+
+   MaxGoingTime := TIntegerInput.Create(15,Panel);
+   MaxGoingTime.Edit.Top := MinGoingTime.Edit.Top;
+   MaxGoingTime.Edit.Left := lbl7.Left + lbl7.Width + 5;
+
+   lbl8 := TLabel.Create(Panel);
+   lbl8.Parent := Panel;
+   lbl8.AutoSize := true;
+   lbl8.Caption := 'мин.';
+   lbl8.Top := lbl7.Top + 5;
+   lbl8.Left := MaxGoingTime.Edit.Left + MaxGoingTime.Edit.Width + 5;
+end;
+
+procedure TClientSettings.ChangeCoord(X,Y:integer);
+begin
+  Panel.Top := Y;
+  Panel.Left := X;
+end;
+
+procedure TClientSettings.RightTo(S: TClientSettings; delta:integer);
+begin
+  Panel.Top := S.Panel.Top;
+  Panel.Left := S.Panel.Left + S.Panel.Width + delta;
+end;
+
+Constructor TCarSettings.Create(cName: string; cParent: TWinControl);
+var lbl1,lbl2:TLabel;
+begin
+  Panel := TPanel.Create(cParent);
+  Panel.Parent := cParent;
+  Panel.BevelKind := bkNone;
+  Panel.BevelOuter := bvNone;
+  Panel.Height := 26;
+  Panel.Width := 250;
+
+  lbl1 := TLabel.Create(Panel);
+  lbl1.Parent := Panel;
+  lbl1.AutoSize := true;
+  lbl1.Caption := cName+':    Грузоподъемность';
+  lbl1.Top := 5;
+  lbl1.Left := 5;
+
+  MassSelect := TIntegerInput.Create(1500,Panel);
+  MassSelect.Edit.Top := 0;
+  MassSelect.Edit.Left := lbl1.Left + lbl1.Width + 5;
+
+  lbl2 := TLabel.Create(Panel);
+  lbl2.Parent := Panel;
+  lbl2.AutoSize := true;
+  lbl2.Caption := 'кг.';
+  lbl2.Top := lbl1.Top;
+  lbl2.Left := MassSelect.Edit.Left+MassSelect.Edit.Width+5;
+
+end;
+
+procedure TCarSettings.ChangeCoord(X,Y:integer);
+begin
+  Panel.Top := Y;
+  Panel.Left := X;
+end;
+
+procedure TCarSettings.NextTo(S: TCarSettings);
+begin
+  Panel.Left := S.Panel.Left;
+  Panel.Top := S.Panel.Top + S.Panel.Height;
+end;
+
+END.

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.11.16 18:22:43.423.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.pas=D:\Code\MedCom\Main.pas</Transaction>
+    <Transaction>2009.11.16 18:22:43.433.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.dfm=D:\Code\MedCom\Main.dfm</Transaction>
+    <Transaction>2009.11.16 18:22:54.464.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Project1.bdsproj=D:\Code\MedCom\MedCom.bdsproj</Transaction>
+    <Transaction>2009.11.16 18:40:03.261.pas,D:\Code\MedCom\Unit1.pas=D:\Code\MedCom\Myclasses.pas</Transaction>
+    <Transaction>2009.11.16 19:50:36.567.pas,D:\Code\MedCom\Unit1.pas=D:\Code\MedCom\LogicClasses.pas</Transaction>
+    <Transaction>2009.11.16 20:26:07.314.pas,D:\Code\MedCom\Unit1.pas=D:\Code\MedCom\MedCom.pas</Transaction>
+    <Transaction>2009.11.16 20:35:47.825.pas,D:\Code\MedCom\MedCom.pas=D:\Code\MedCom\MedCommis.pas</Transaction>
+    <Transaction>2009.12.06 14:19:32.029.pas,D:\Code\MedCom\Main.pas=D:\Code\MedCom\Main2.pas</Transaction>
+    <Transaction>2009.12.06 14:19:32.035.dfm,D:\Code\MedCom\Main.dfm=D:\Code\MedCom\Main2.dfm</Transaction>
+    <Transaction>2009.12.06 14:19:48.382.pas,D:\Code\MedCom\Unit1.pas=D:\Code\MedCom\Main.pas</Transaction>
+    <Transaction>2009.12.06 14:21:29.318.pas,D:\Code\MedCom\Main2.pas=</Transaction>
+    <Transaction>2009.12.06 14:21:29.318.dfm,D:\Code\MedCom\Main2.dfm=</Transaction>
+    <Transaction>2009.12.06 14:32:09.218.pas,D:\Code\MedCom\Main.pas=</Transaction>
+    <Transaction>2009.12.06 14:32:17.269.pas,D:\Code\MedCom\Main2.pas=D:\Code\MedCom\Main.pas</Transaction>
+    <Transaction>2009.12.06 14:32:17.269.dfm,D:\Code\MedCom\Main2.dfm=D:\Code\MedCom\Main.dfm</Transaction>
+    <Transaction>2009.12.06 14:32:17.292.pas,D:\Code\MedCom\Main.pas=D:\Code\MedCom\Main2.pas</Transaction>
+    <Transaction>2009.12.06 14:32:17.292.dfm,D:\Code\MedCom\Main.dfm=D:\Code\MedCom\Main2.dfm</Transaction>
+    <Transaction>2009.12.06 14:32:42.766.pas,D:\Code\MedCom\Main2.pas=D:\Code\MedCom\Main.pas</Transaction>
+    <Transaction>2009.12.06 14:32:42.766.dfm,D:\Code\MedCom\Main2.dfm=D:\Code\MedCom\Main.dfm</Transaction>
+    <Transaction>2009.12.19 17:57:06.026.bdsproj,D:\Code\Stomatolog\MedCom.bdsproj=D:\Code\Stomatolog\StomClinic.bdsproj</Transaction>
+    <Transaction>2009.12.19 17:57:17.005.pas,D:\Code\Stomatolog\MedCommis.pas=D:\Code\Stomatolog\Stomatolog.pas</Transaction>
+    <Transaction>2009.12.19 18:02:14.512.bdsproj,D:\Code\Stomatolog\StomClinic.bdsproj=D:\Code\Stomatolog\StomClinic.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

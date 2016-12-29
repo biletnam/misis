@@ -1,0 +1,21 @@
+unit MedCom;
+
+interface
+uses classes, Sysutils, Contnrs, Myclasses, logicclasses;
+
+Type TMedCom=Class(TObject)
+private
+  mQueue: integer;
+  mActive: Boolean;
+  mWaitTime: integer;
+  mWorkTime: integer;
+  mInfoControls: TInfoControls;
+public
+  Constructor Create(cInfoControls: TInfoControls);
+  Destructor Destroy; override;
+  procedure UpdateInfo;
+end;
+
+implementation
+
+end.

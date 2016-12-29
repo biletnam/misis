@@ -1,0 +1,8 @@
+label = Nokia 6230i
+vendor=nokia
+
+skin.screen = 0x0x208x208
+
+jar = nk_fs_bookreader.jar
+
+MaxJarSize = 300.000

@@ -1,0 +1,4 @@
+// plugin.description = Russian encoding auto-recognition (C) Algorithm by S.Znamenskii, Interface by W.Zudilin, 09.04.98
+plugin.description = Авто-распознавание русских кодировок (C) Алгоритм: С.Знаменский, интерфейс: В.Зудилин, 09.04.98
+plugin.cmdline = recode.com -w %~in "%basename.txt"
+

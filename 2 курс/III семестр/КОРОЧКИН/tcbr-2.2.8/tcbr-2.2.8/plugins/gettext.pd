@@ -1,0 +1,9 @@
+plugin.description = GetText by Kryloff Technologies, Inc. www.kryltech.com
+plugin.extlist = hlp,html,htm,pdf,rtf,wpd,xls,doc,ppt
+
+#plugin.cmdline = "c:\bin\get text\GetText1.exe" %aa "%tt"
+
+#plugin.cmdline =GetText.exe %aa "%tt"
+plugin.cmdline =GetText.exe %~in "%basename.txt"
+
+

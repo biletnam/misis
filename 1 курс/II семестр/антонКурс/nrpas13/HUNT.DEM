@@ -1,0 +1,39 @@
+PROGRAM d3r6 (input,output);
+(* driver for routine HUNT *)
+CONST
+   n=100;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+VAR
+   i,j,ji : integer;
+   x : real;
+   xx : glnarray;
+
+(*$I MODFILE.PAS *)
+(*$I HUNT.PAS *)
+
+BEGIN
+(* create array to be searched *)
+   FOR i := 1 to n DO begin
+      xx[i] := exp(i/20.0)-74.0
+   END;
+   writeln ('  result of:',' ':3,'j := 0 indicates x too small');
+   writeln (' ':15,'j := 100 indicates x too large');
+   writeln ('locate:':12,'guess':8,'j':4,'xx(j)':11,'xx(j+1)':13);
+(* do test *)
+   FOR i := 1 to 19 DO begin
+      x := -100.0+200.0*i/20.0;
+(* trial parameter *)
+      ji := 5*i;
+      j := ji;
+(* begin search *)
+      hunt(xx,n,x,j);
+      IF ((j<n) AND (j>0)) THEN BEGIN
+         writeln (x:12:5,ji:6,j:6,xx[j]:12:6,xx[j+1]:12:6)
+      END ELSE IF (j=n) THEN BEGIN
+         writeln (x:12:5,ji:6,j:6,xx[j]:12:6,'   upper lim')
+      END ELSE BEGIN
+         writeln (x:12:5,ji:6,j:6,'   lower lim',xx[j+1]:12:6)
+      END
+   END
+END.

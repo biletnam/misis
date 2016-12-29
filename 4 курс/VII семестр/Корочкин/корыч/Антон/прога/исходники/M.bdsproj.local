@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.12.19 18:35:47.912.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Project1.bdsproj=C:\Users\Евгений\Documents\Borland Studio Projects\M.bdsproj</Transaction>
+    <Transaction>2009.12.19 18:35:53.930.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.pas=C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas</Transaction>
+    <Transaction>2009.12.19 18:35:53.930.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.dfm=C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm</Transaction>
+    <Transaction>2009.12.19 18:36:03.762.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas=D:\Code\M\Main.pas</Transaction>
+    <Transaction>2009.12.19 18:36:03.762.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm=D:\Code\M\Main.dfm</Transaction>
+    <Transaction>2009.12.19 18:36:05.106.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\M.bdsproj=D:\Code\M\M.bdsproj</Transaction>
+    <Transaction>2009.12.19 18:42:22.079.pas,D:\Code\M\Unit1.pas=D:\Code\M\Logic.pas</Transaction>
+    <Transaction>2009.12.19 20:07:18.628.pas,D:\Code\M\Unit2.pas=D:\Code\M\Input.pas</Transaction>
+    <Transaction>2009.12.19 20:07:18.628.dfm,D:\Code\M\Unit2.dfm=D:\Code\M\Input.dfm</Transaction>
+    <Transaction>2009.12.20 11:02:09.689.pas,D:\Code\M\Unit3.pas=D:\Code\M\Stat.pas</Transaction>
+    <Transaction>2009.12.20 11:02:09.689.dfm,D:\Code\M\Unit3.dfm=D:\Code\M\Stat.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

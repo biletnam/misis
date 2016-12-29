@@ -1,0 +1,69 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, logic, StdCtrls, myclasses, input;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    InfoTimer: TTimer;
+    ListBox1: TListBox;
+    Label1: TLabel;
+    TickTimer: TTimer;
+    Button1: TButton;
+    Label2: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure InfoTimerTimer(Sender: TObject);
+    procedure TickTimerTimer(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  test:TConvMan;
+  test2:TTimeControls;
+  log:TLog;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form2.Show;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  log:=TLog.Create(ListBox1);
+
+  test := TConvMan.Create(Panel1, log);
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  //test2 := TTimeControls.Create('Станок1',Form2.GroupBox1);
+  test.CreateControls(Form2.Panel1);
+end;
+
+procedure TForm1.InfoTimerTimer(Sender: TObject);
+begin
+  test.UpdateInfo;
+  Label1.Caption := log.MakeTimeString(log.time);
+end;
+
+procedure TForm1.TickTimerTimer(Sender: TObject);
+begin
+  log.Tick(60);
+  test.Tick(1);
+end;
+
+end.

@@ -1,0 +1,40 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Hill, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    Memo2: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+const 
+  k_2: Tkey = ((1, 7), (3, 6));
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+
+  Memo2.Text := EncodeHill(k_2, 'AFINEAFTERNOON'); 
+
+
+end;
+
+end.

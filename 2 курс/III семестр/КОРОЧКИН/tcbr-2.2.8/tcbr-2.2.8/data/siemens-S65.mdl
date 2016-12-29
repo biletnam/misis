@@ -1,0 +1,7 @@
+label = Siemens S65
+vendor=siemens
+
+skin.screen = 8x23x132x176
+skin.image = siemensS65.jpg
+
+jar=sm_fs_bookreader.jar

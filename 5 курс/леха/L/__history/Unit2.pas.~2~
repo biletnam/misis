@@ -1,0 +1,28 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBTables, ExtCtrls, DBCtrls, Grids, DBGrids;
+
+type
+  TForm2 = class(TForm)
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    Table1: TTable;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+end.

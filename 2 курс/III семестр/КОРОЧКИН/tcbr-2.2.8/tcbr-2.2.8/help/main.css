@@ -1,0 +1,173 @@
+/*
+bg: #f7f7ff
+font: #637dad
+maintitle: #dedfef;
+header: #eff3ff;
+*/
+body {
+  padding: 20px;
+    font: 12px arial, verdana, helvetica, "sans serif";
+    background: #f7f7ff;
+    color: #637dad;
+}
+
+td {
+    font: 12px arial, verdana, helvetica, "sans serif";
+    color: #637dad;
+}
+
+.maintitle {
+  background: #dedfef;
+} 
+
+h1.maintitle-h1 {
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+img { border:0; }
+
+/*
+#2B2FB3 #0531B3       #FF1141
+*/
+a {
+  color: #2B2FB3;
+/*      text-decoration: none;*/
+}
+
+a:visited {
+  color: #FF1141;
+}
+
+code {
+  font-weight:bold;
+}
+
+
+
+.title-text {
+  background: #dedfef;
+  font-weight: bold;
+  font: 14px arial black, verdana, helvetica, "sans serif";
+  text-transform: uppercase;
+}
+
+.page-block {
+  width: 35%;  
+  float:right;  
+  padding: 5px;
+  margin: 5px;
+/*  margin-left:10px; */
+/*  margin-bottom:10px; */
+/*  margin-top: 10px;*/
+  border: solid 1 #637dad;
+  
+  /* top, right, bottom and left */
+/*  padding: 2px 0px 0px 12px;*/
+}
+
+.page-block-header {
+  background: #dedfef;
+  font-weight: bold;
+  font: 14px arial black, verdana, helvetica, "sans serif";
+  text-transform: uppercase;
+  
+/*  position:relative;  left:-10px;*/
+}
+
+h3 {
+  font-size: 14pt;
+  font-weight:bold;
+}
+
+/********************
+specific elememnts
+*********************/
+td.optionName { 
+  font-weight:bold;
+}
+td.optionKey {
+  font-family: Courier;
+  text-align:center;
+}
+
+table.phonekeytable {
+  background: A5BCCC;
+}
+table.phonekeytable tr{
+  background: A5BCCC;
+}
+
+table.phonekeytable tr td{
+  background: silver;
+  font-family: arial;
+  text-align:center;
+  vertical-align:top;
+  width:30%;
+}
+
+.fontheader {
+  background: #dedfef;
+  padding:3px;
+}
+
+.lastupdated {
+  padding-bottom: 15px; 
+  padding-top:5px; 
+  font-style: italic;
+}
+
+/********       DOWNLOAD PAGE ********/
+table.download-table {
+
+  border: solid #637dad 1; 
+  float:right;
+  width: 40%;
+  
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+
+a.stableversion-link {
+  font-weight:bold;
+  text-decoration: none;
+}
+
+a.betaversion-link {
+  color:red;
+  text-decoration: none;
+}
+
+a.betaversion-last-link {
+  text-decoration: none;
+  font-weight:bold;
+  color:red;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+.quote {
+  margin-left: 20px;
+}
+
+em {
+  font-weight:bold;
+}
+
+.new {
+  font-weight:bold;
+  color:red;
+}
+
+ul.featurelist li {
+  padding-bottom: 4px; 
+}
+
+  h1 { background: #dedfef; }
+  h2 { background: #dedfef; }
+/*  h3 { background: #dedfef; }*/
+

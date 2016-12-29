@@ -1,0 +1,37 @@
+PROGRAM D10R13(input,output);
+CONST
+        ncity=10;
+TYPE
+        cityarray = ARRAY [1..ncity] OF real;
+        iarray = ARRAY [1..ncity] OF integer;
+VAR
+        glinext,glinextp,gljdum,idum,i,ii : integer;
+        glma : ARRAY [1..55] OF real;
+        x,y : cityarray;
+        iorder : iarray;
+
+(*$I MODFILE.PAS*)
+
+(*$I RAN3.PAS*)
+
+(*$I IRBIT1.PAS*)
+
+(*$I ANNEAL.PAS*)
+ 
+BEGIN
+        gljdum := 1;
+        idum := -1;
+        FOR i := 1 TO ncity DO BEGIN
+                x[i] := ran3(idum);
+                y[i] := ran3(idum);
+                iorder[i] := i;
+        END;
+        anneal(x,y,iorder,ncity);
+        writeln('*** System Frozen ***');
+        writeln('Final path:');
+        writeln(' ':3,'city',' ':6,'x',' ':9,'y');
+        FOR i := 1 TO ncity DO BEGIN
+                ii := iorder[i];
+                writeln(ii:4,x[ii]:10:4,y[ii]:10:4)
+        END
+END.

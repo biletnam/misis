@@ -1,0 +1,61 @@
+unit Unit12;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBTables, TeEngine, Series, ExtCtrls, TeeProcs, Chart, StdCtrls;
+
+type
+  TForm12 = class(TForm)
+    Table1: TTable;
+    GroupBox1: TGroupBox;
+    Chart1: TChart;
+    Series1: TBarSeries;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form12: TForm12;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm12.FormShow(Sender: TObject);
+var kkk, year, count : integer;
+i,r,t,d,s: double;
+r1,r2,r3,r4,r5,r6: double;
+str: string;
+begin
+  Table1.Last;
+  count := Table1.RecordCount;
+
+  for kkk := count downto 1 do
+    begin
+      year := Table1.FieldByName('god').Value;
+      i := Table1.FieldByName('i').Value;
+      r := Table1.FieldByName('r').Value;
+      t := Table1.FieldByName('t').Value;
+      d := Table1.FieldByName('d').Value;
+      s := Table1.FieldByName('c').Value;
+
+
+
+
+
+      r1 := r+i+r*i;
+      r2 := (s*d)/t;
+
+
+
+      Chart1.Series[0].Add(r1, IntToStr(year));
+      Table1.Prior;
+    end;
+end;
+
+end.

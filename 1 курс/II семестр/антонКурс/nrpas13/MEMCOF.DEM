@@ -1,0 +1,31 @@
+PROGRAM d12r9(input,output,dfile);
+(* driver for routine MEMCOF *)
+CONST
+   n=1000;
+   m=10;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   glmarray = ARRAY [1..m] OF real;
+VAR
+   i : integer;
+   pm : real;
+   cof,wkm : glmarray;
+   data,wk1,wk2 : glnarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I MEMCOF.PAS *)
+
+BEGIN
+   glopen(dfile,'spctrl.dat');
+   FOR i := 1 to n DO BEGIN
+      read(dfile,data[i])
+   END;
+   close(dfile);
+   memcof(data,n,m,pm,cof,wk1,wk2,wkm);
+   writeln('Coefficients for spectral estimation of SPCTRL.DAT');
+   writeln;
+   FOR i := 1 to m DO writeln('a[',i:2,'] =',cof[i]:12:6);
+   writeln;
+   writeln('b0 =',pm:12:6)
+END.

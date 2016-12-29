@@ -1,0 +1,102 @@
+object Form_Main: TForm_Main
+  Left = 639
+  Top = 202
+  Width = 535
+  Height = 318
+  Caption = #1044#1086#1093#1086#1076#1099' '#1080' '#1088#1072#1089#1093#1086#1076#1099
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainFormMenu
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainFormMenu: TMainMenu
+    Top = 240
+    object dd1: TMenuItem
+      Caption = #1058#1072#1073#1083#1080#1094#1099
+      object N6: TMenuItem
+        Caption = #1044#1086#1093#1086#1076#1099
+        OnClick = N6Click
+      end
+      object N7: TMenuItem
+        Caption = #1056#1072#1089#1093#1086#1076#1099
+        OnClick = N7Click
+      end
+      object N8: TMenuItem
+        Caption = #1042#1099#1087#1083#1072#1090#1099' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072#1084
+        OnClick = N8Click
+      end
+    end
+    object N1: TMenuItem
+      Caption = #1057#1083#1086#1074#1072#1088#1080' '#1076#1072#1085#1085#1099#1093
+      object N11: TMenuItem
+        Caption = #1050#1086#1085#1090#1088#1072#1075#1077#1085#1090#1099
+        OnClick = N11Click
+      end
+      object N12: TMenuItem
+        Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082#1080
+        OnClick = N12Click
+      end
+    end
+    object N2: TMenuItem
+      Caption = #1042#1074#1086#1076' '#1076#1072#1085#1085#1099#1093
+      object N13: TMenuItem
+        Caption = #1044#1086#1093#1086#1076#1099
+        OnClick = N13Click
+      end
+      object N14: TMenuItem
+        Caption = #1056#1072#1089#1093#1086#1076#1099
+        OnClick = N14Click
+      end
+      object N15: TMenuItem
+        Caption = #1042#1099#1087#1083#1072#1090#1099' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072#1084
+        OnClick = N15Click
+      end
+    end
+    object N3: TMenuItem
+      Caption = #1047#1072#1087#1088#1086#1089#1099
+      object N16: TMenuItem
+        Caption = #1044#1086#1093#1086#1076#1099
+        object N18: TMenuItem
+          Caption = #1042#1080#1076'/'#1087#1077#1088#1080#1086#1076
+          OnClick = N18Click
+        end
+      end
+      object N17: TMenuItem
+        Caption = #1056#1072#1089#1093#1086#1076#1099
+        object N20: TMenuItem
+          Caption = #1042#1080#1076'/'#1087#1077#1088#1080#1086#1076
+        end
+      end
+    end
+    object N4: TMenuItem
+      Caption = #1054#1090#1095#1077#1090#1099
+      object N22: TMenuItem
+        Caption = #1057#1087#1080#1089#1086#1082' '#1076#1086#1093#1086#1076#1086#1074' '#1079#1072' '#1087#1077#1088#1080#1086#1076
+      end
+      object N23: TMenuItem
+        Caption = #1057#1087#1080#1089#1086#1082' '#1076#1086#1093#1086#1076#1086#1074' '#1079#1072' '#1087#1077#1088#1080#1086#1076' '#1087#1086' '#1074#1080#1076#1091' '#1076#1086#1093#1086#1076#1072
+      end
+      object N24: TMenuItem
+        Caption = #1057#1087#1080#1089#1086#1082' '#1088#1072#1089#1093#1086#1076#1086#1074' '#1079#1072' '#1087#1077#1088#1080#1086#1076
+      end
+      object N25: TMenuItem
+        Caption = #1057#1087#1080#1089#1086#1082' '#1088#1072#1089#1093#1086#1076#1086#1074' '#1079#1072' '#1087#1077#1088#1080#1086#1076' '#1087#1086' '#1074#1080#1076#1091' '#1088#1072#1089#1093#1086#1076#1072
+      end
+    end
+    object N5: TMenuItem
+      Caption = #1057#1087#1088#1072#1074#1082#1072
+      object N9: TMenuItem
+        Caption = #1055#1086#1084#1086#1097#1100
+      end
+      object N10: TMenuItem
+        Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
+        OnClick = N10Click
+      end
+    end
+  end
+end

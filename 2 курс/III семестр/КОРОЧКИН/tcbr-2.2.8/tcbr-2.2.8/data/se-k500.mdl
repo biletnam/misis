@@ -1,0 +1,5 @@
+label = K500, F500, Z500
+jar=midp2_se2_bookreader.jar
+skin.screen=22x33x128x160
+skin.image=se-K500.png
+

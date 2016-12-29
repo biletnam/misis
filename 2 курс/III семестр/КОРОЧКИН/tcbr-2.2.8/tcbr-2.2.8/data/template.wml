@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml"> 
+<wml> 
+<card title="Knigi"> 
+<p align="center"><anchor title="Back">Nazad v biblioteku<prev/></anchor></p> 
+<p align="center"><b>Soderjanie</b>: %BOOK_NAME%</p> 
+<p align="center">Versija midleta: %MIDLET_VERSION%</p> 
+<p align="center">----------------- </p> 
+<p align="left"> 
+%NUMBER_OF_BOOKS% ishodnyh knig obshim razmerom %BOOKS_TOTAL_SIZE% bayt<br/><br/> 
+1. kniga 1 (%BOOK_SIZE1% bayt)<br/> 
+2. kniga 2 (%BOOK_SIZE2% bayt)<br/> 
+3. kniga 3 (%BOOK_SIZE3% bayt)<br/> 
+sozdano %NUMBER_OF_JARS% jar faylov obshim razmerom %JARS_TOTAL_SIZE% bayt<br/><br/> 
+<p align="center">----------------- </p> 
+* <a href="book_1.jad">book_1.jad</a> (%JAR_SIZE% Kb)<br/> 
+<b>kniga 1</b>:<br/> 
+glava 1.... (%CHAPTER_SIZE1% bayt)<br/> 
+glava 2.... (%CHAPTER_SIZE2% bayt)<br/> 
+glava 3.... (%CHAPTER_SIZE3% bayt)<br/> 
+* <a href="book_2.jad">book_2.jad</a> (%JAR_SIZE% Kb)<br/> 
+<b>kniga 2:</b><br/> 
+glava 1.... (%CHAPTER_SIZE1% bayt)<br/> 
+glava 2.... (%CHAPTER_SIZE2% bayt)<br/> 
+glava 3.... (%CHAPTER_SIZE3% bayt)<br/> 
+* <a href="book_3.jad">book_3.jad</a> (%JAR_SIZE% Kb)<br/> 
+<b>kniga 3:</b><br/> 
+glava 1.... (%CHAPTER_SIZE1% bayt)<br/> 
+glava 2.... (%CHAPTER_SIZE2% bayt)<br/> 
+glava 3.... (%CHAPTER_SIZE3% bayt)<br/> 
+</p> 
+<p align="center">----------------- </p> 
+<p align="center"><anchor title="Back">Nazad v biblioteku<prev/></anchor></p> 
+</card> 
+</wml> 

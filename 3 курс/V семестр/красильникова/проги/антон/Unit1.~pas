@@ -1,0 +1,146 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, Unit2;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Memo2: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Button1: TButton;
+    SaveDialog1: TSaveDialog;
+    procedure Button1Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+function Translit(s: string): string;
+var
+ i: integer;
+ t: string;
+begin
+ for i:=1 to Length(s) do
+  begin
+   case s[i] of
+        'à': t:=t+'a';
+        'á': t:=t+'b';
+        'â': t:=t+'v';
+        'ã': t:=t+'g';
+        'ä': t:=t+'d';
+        'å': t:=t+'e';
+        '¸': t:=t+'ye';
+        'æ': t:=t+'zh';
+        'ç': t:=t+'z';
+        'è': t:=t+'i';
+        'é': t:=t+'y';
+        'ê': t:=t+'k';
+        'ë': t:=t+'l';
+        'ì': t:=t+'m';
+        'í': t:=t+'n';
+        'î': t:=t+'o';
+        'ï': t:=t+'p';
+        'ð': t:=t+'r';
+        'ñ': t:=t+'s';
+        'ò': t:=t+'t';
+        'ó': t:=t+'u';
+        'ô': t:=t+'f';
+        'õ': t:=t+'ch';
+        'ö': t:=t+'z';
+        '÷': t:=t+'ch';
+        'ø': t:=t+'sh';
+        'ù': t:=t+'ch';
+        'ú': t:=t+'''';
+        'û': t:=t+'y';
+        'ü': t:=t+'''';
+        'ý': t:=t+'e';
+        'þ': t:=t+'yu';
+        'ÿ': t:=t+'ya';
+        'À': t:=t+'A';
+        'Á': t:=t+'B';
+        'Â': t:=t+'V';
+        'Ã': t:=t+'G';
+        'Ä': t:=t+'D';
+        'Å': t:=t+'E';
+        '¨': t:=t+'Ye';
+        'Æ': t:=t+'Zh';
+        'Ç': t:=t+'Z';
+        'È': t:=t+'I';
+        'É': t:=t+'Y';
+        'Ê': t:=t+'K';
+        'Ë': t:=t+'L';
+        'Ì': t:=t+'M';
+        'Í': t:=t+'N';
+        'Î': t:=t+'O';
+        'Ï': t:=t+'P';
+        'Ð': t:=t+'R';
+        'Ñ': t:=t+'S';
+        'Ò': t:=t+'T';
+        'Ó': t:=t+'U';
+        'Ô': t:=t+'F';
+        'Õ': t:=t+'Ch';
+        'Ö': t:=t+'Z';
+        '×': t:=t+'Ch';
+        'Ø': t:=t+'Sh';
+        'Ù': t:=t+'Ch';
+        'Ú': t:=t+'''';
+        'Û': t:=t+'Y';
+        'Ü': t:=t+'''';
+        'Ý': t:=t+'E';
+        'Þ': t:=t+'Yu';
+        'ß': t:=t+'Ya';
+      else t:=t+s[i];
+   end;
+  end;
+ Result:=t;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var i:integer;
+begin
+    Memo2.Lines.Clear;
+    for i:=0 to (Memo1.Lines.Count-1) do
+        Memo2.Lines.Add(Translit(Memo1.Lines.Strings[i]));
+end;
+
+procedure TForm1.N5Click(Sender: TObject);
+begin
+  Form2.Show;
+end;
+
+procedure TForm1.N6Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+end.

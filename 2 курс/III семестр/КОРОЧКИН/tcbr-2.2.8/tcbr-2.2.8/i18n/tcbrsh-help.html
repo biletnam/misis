@@ -1,0 +1,105 @@
+<HTML>
+
+<BODY >
+<pre>
+Please read this if you have questions about the program.
+
+This program (TCBR Shell) purpose is to prepare books for reading on mobile phones, using TequilaCat BookReader midlet.
+
+Below, the shell program is described. You can find more details and information on the BookReader midlet itself on the program's homepage:
+http://tequilacat.narod.ru/dev/br/
+I recommend you to check the program's web page for new version, with more features and bug fixes.
+
+The BookReader shell features are:
+1. The books prepared with the shell can be split onto chapters, by chapter header or by maximal size you specifiy
+2. Various brands of mobile phones are supported: Nokia, Siemens etc
+3. When preparing book, you may choose a font to read on your phone, amongst all fixed width fonts installed in your Windows.
+  So far only fixed fonts are supported like Courier, in next versions the proportional fonts will be available too.
+4. You may choose background and foreground colors, for most comfortable reading.
+5. You may set numerous options for reading.
+6. If the shell includes midlet localization file, you may opt to localize the midlet, so all the commands and menus in phone application will be shown in your native language.
+
+================================================
+How to use BookReader shell:
+================================================
+1. Press "+" button to add text file(s) to include into book
+2. Press "-" to remove texts from the list
+3. Rename the texts using "Rename" button to change labels you will see in the phone
+4. On "Option" tab, select version for your phone brand and model
+5. Set desired options and size restrictions (see more on size restrictions below)
+  Option "Extend Screen Height by" is applicable to Motorola and Samsung phones only, to enable fullscreen display using lower strip of the screen where commands are usually displayed.
+
+6. On "Fonts" tab, select font and colors. Select "Use phone fonts" to save space for books (1-2 kilobytes of text), if your phone places size restrictions (again, see below)
+7. Enter book name at bottom of the window. This name will be used in phone, so please use only latin numbers, digits and underscores.
+8. Select the directory where books will be generated, by pressing "..." button. After you create books, you may open this directory by clicking on its highlighted path.
+9. Click "Build!" to generate books
+
+Please note: The BookReader midlet supports only text files. To read MS Word files you first have to convert them to text format by saving them with "Save As..." and selecting "Text format"
+
+The program generates books: pairs of files of types JAD and JAR, their number depends on options and text sizes. Each book is a pair of JAR and JAD files.
+
+JAR files are the very books - each includes text files and the BookReader midlet. In fact the JAR files are ZIP archives with .JAR extension, and they can be examined with any archiver supporting ZIP compression.
+JAD files are short text files describing midlets. Generally each JAR file should have corresponding JAD describing its details. Some phones do not need JAD files althought, e.g. SE T6x0 and Motorola Accompli families.
+
+Then as you have your books generated, install them on your mobile phone and enjoy reading.
+To find more details on midlet installation refer to phone manual or internet forums - there is a lot of info on this subject. For some models (like Nokia 3410) which do not support direct Java midlet installation via cable, IRDA or BlueTooth, you still may install them over the air, uploading the generated books to some WAP site first.
+
+====================================
+FAQ (Important!)
+====================================
+
+Why restrict sizes of JAR files and text chapters ?
+
+Mobile phones are small devices with restricted capabilities. Amongst other restrictions, the memory size of such devices is sometimes quite small. As a result, mobile phone vendors place restrictions on accepted size of applications, on per model basis.
+
+Also due to small memory, there are restrictions on how big text file can be opened at once. If a single chapter size is too big, the device will fail to load it, whether displaying an error or silently loading only part of the chapter.
+
+To bypass these restrictions, TCBR Shell allows for restricting separate chapter sizes, and resulting JAR size.
+
+So, if you have following problems:
+
+Problem:
+The JAD and JAR files cannot be installed on your mobile phone, or cannot be run after successful installation (with errors like "Application error", "file too big" etc)
+
+Solution 1:
+The produced JAR file is too big to fit your phone - please restrict size of JAR file in options tab.
+
+Solution 2:
+You have choosen wrong midlet version - for different phone vendor, or for different phone model. Phone models differ in support of various features used by bookreader. Installing a bookreader version designed for different model will likely fail.
+
+Problem:
+JAR file installs successfully and runs, but contained books cannot be open. Or, books are open but parts of text disappear in them (compared to text files you may find inside the JAR archives)
+
+Solution:
+The generated chapters are way too big to fit in memory of your phone. Please restrict chapter size in options.
+
+Problem:
+There are lot of chapters generated, or lot of JAR files.
+
+Solution:
+You specified sizes in kilobytes (eg 60) but sizes should be entered in bytes (here, 60000).
+
+The recommended sizes for some phones are:
+
+Nokia S40 (these are most wide spread Nokia phones) - JAR max 64000, Chapter max 60000
+
+SonyEricsson T6x0 and Motorola T720 - JAR size seems not restricted (or 200-300 kilos), max chapter is 120000-150000.
+
+If your phone is not listed above, and you experience problems similar to described ones, try to spot suitable numbers yourself.
+Take Nokia sizes (max JAR size or max chapter size depending on what your problems look like), and rise them to find the range of compatibility.
+I will be grateful (and other Bookreader users, too) if you send me these sizes to list them here.
+
+
+
+This program is copyrighted by TequilaCat, see license.txt for details.
+
+Includes other free software (as DLL):
+* FreeImage library
+* infozip' zip library
+* ZipBuilder library built on infozip' zip library
+Thanx to their authors, I will add license info soon.
+
+</pre>
+</BODY>
+
+</HTML>

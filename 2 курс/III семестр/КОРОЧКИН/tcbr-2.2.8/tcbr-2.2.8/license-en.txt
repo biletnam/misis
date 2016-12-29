@@ -1,0 +1,61 @@
+BookReader Copyright Notice
+Copyright (c) 2003 by Alexey Vdovichenko aka tequilacat
+----------------------------------------
+
+1. BookReader is Freeware.
+   ---------------------
+You can get detailed info and latest version of this software at the
+following page :
+     http://tequilacat.narod.ru/dev/br
+
+If you have comments, ideas or find bugs in this software, 
+please send an email to tequilacat@mail.ru
+
+
+2. Software package
+   ----------------
+The BookReader software package must contain at least the following files :
+
+- 'licence.txt', the license file
+- BookReader files
+
+
+3. Licence
+   -------
+The Software package detailed in Section 2. remains the property
+of the Author. It is licensed to you under a freeware license.
+
+You are freely granted the right to use this Software package.
+
+
+4. Distribution
+   ------------
+The Software package as detailed in Section 2. can be freely distributed,
+provided that:
+
+- Any copy of the Software must include all the files listed in the
+  above Section 2, Software Package. You cannot deliver individual
+  files of the Software Package, nor parts of these files.
+
+- Any copy of the Software package must include reference to the
+  ownership of Alexey Vdovichenko, the Author and the present file.
+  The user undertakes NOT to carry out any PAYING distribution for
+  the Software.
+
+You are granted the right to reproduce the Software package in
+order to circulate it, in accordance with the same purposes and
+conditions as those defined by the licence in Section 3.
+
+
+5. Disclaimer
+   ==========
+This Software is provided `as is', without express or implied warranty.
+
+As this software is delivered as freeware, the Author will not be
+responsible for the correction of any bugs or other deficiencies. In no event the
+Author shall be liable for any damage of any kind, including special, indirect or
+consequent damages, arising in connection with the use of this Software.
+
+By using the program, you have agreed on all the conditions stated here.
+
+

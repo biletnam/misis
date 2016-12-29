@@ -1,0 +1,2 @@
+label = MIDP 2.0 phone + JSR75
+jar = midp2fs_bookreader.jar

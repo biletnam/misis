@@ -1,0 +1,39 @@
+//AUTHOR_MODE=on
+//Traducido por Theliel
+ 
+ShellForm = Shell para // form caption
+ShellForm.TabSheet1 = Libro // TTabSheet
+ShellForm.myTBAddTxt = Anadir texto // TToolButton
+ShellForm.myTBRenameTxt = Renombrar texto en el archivo Jar // TToolButton
+ShellForm.myTBEditTxt = Abrir en el bloc de notas // TToolButton
+ShellForm.myTBRemoveTxt = Eliminar texto // TToolButton
+ShellForm.TabSheet2 = Opciones // TTabSheet
+ShellForm.EncodingLabel = Codificacion del texto // TLabel
+ShellForm.MidletTypeLabel = Tipo de Midlet // TLabel
+ShellForm.HasDirButtonsCheckBox = El telefono tiene botones de direccion // TCheckBox
+ShellForm.ExtendHeightCheckBox = Extender la pantalla a la altura  // TCheckBox
+ShellForm.DivideChaptersCheckBox = Usar cabecera en capitulos // TCheckBox
+ShellForm.AltDirButtonsCheckBox = Botones de direccion alternativos (Arriba/Abajo scroll por pagina) // 
+TCheckBox
+ShellForm.UseSeT610SideKeysCheckBox = Scroll para las teclas de volumen del SE T610 // TCheckBox
+ShellForm.RestrictChapterCheckBox = Maximo tamano del capitulo (bytes) // TCheckBox
+ShellForm.RestrictJarCheckBox = Maximo tamano del archivo Jar (bytes) // TCheckBox
+ShellForm.LocalizeMidletCheckBox = Traducir a tu lenguaje // TCheckBox
+ShellForm.TabSheet3 = Fuente // TTabSheet
+ShellForm.SelFGColorBtn = Seleccionar el color de la fuente // TToolButton
+ShellForm.SelBGColorBtn = Seleccionar el color del fondo // TToolButton
+ShellForm.InvertFontButton = Invertir colores // TToolButton
+ShellForm.SelRotatedFontTButton = Seleccionar fuente apaisada // TBitBtn
+ShellForm.SelNormalFontTButton = Seleccionar fuente // TBitBtn
+ShellForm.myLogTabSheet = Registro // TTabSheet
+ShellForm.myClearLogButton = Limpiar el registro // TButton
+ShellForm.myCBShowZipDebug = Mostrar mensajes ZIP // TCheckBox
+ShellForm.aboutTabSheet = Acerca de... // TTabSheet
+ShellForm.LocalizationAuthorNameLabel = Traducido por Theliel
+ShellForm.BitBtn1 = S&alir // TBitBtn
+ShellForm.buildButton = &Construir ! // TBitBtn
+ 
+SelectFontImageForm = Seleccionar imagen de fuente: // form caption
+SelectFontImageForm.AddFontBtn = Anadir fuente de Windows // TSpeedButton
+SelectFontImageForm.RemoveFontButton = Eliminar imagen de fuente // TSpeedButton
+SelectFontImageForm.NoFontButton = Usar fuente del movil // TButton

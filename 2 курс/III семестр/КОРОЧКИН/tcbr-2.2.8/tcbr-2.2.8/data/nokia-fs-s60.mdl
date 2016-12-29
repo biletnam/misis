@@ -1,0 +1,8 @@
+label = Nokia S60
+vendor=nokia
+
+skin.screen = 0x0x176x220
+
+jar = nk_fs_bookreader.jar
+
+MaxJarSize = 128000

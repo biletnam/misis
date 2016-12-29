@@ -1,0 +1,80 @@
+PROGRAM d12r11(input,output);
+(* driver for routine FIXRTS *)
+CONST
+   npoles=6;
+   twonp=12;   (* twonp=2*npoles *)
+   twonp2=14;   (* twonp2=twonp+2 *)
+TYPE
+   gl2array = ARRAY [1..2] OF real;
+   glnparray = ARRAY [1..npoles] OF real;
+   glcarray = ARRAY [1..twonp2] OF real;
+VAR
+   i,j : integer;
+   dum : real;
+   polish : boolean;
+   d : glnparray;
+   sixth : gl2array;
+   zcoef,zeros : glcarray;
+
+(*$I MODFILE.PAS *)
+(*$I LAGUER.PAS *)
+
+(*$I ZROOTS.PAS *)
+
+(*$I FIXRTS.PAS *)
+
+BEGIN
+   d[1] := 6.0; d[2] := -15.0; d[3] := 20.0;
+   d[4] := -15.0; d[5] := 6.0; d[6] := 0.0;
+   polish := true;
+   (* finding roots of (z-1.0)^6 := 1.0 *)
+   (* first write roots *)
+   zcoef[2*npoles+1] := 1.0;
+   zcoef[2*npoles+2] := 0.0;
+   FOR i := npoles DOWNTO 1 DO BEGIN
+      zcoef[2*i-1] := -d[npoles+1-i];
+      zcoef[2*i] := 0.0
+   END;
+   zroots(zcoef,npoles,zeros,polish);
+   writeln('Roots of (z-1.0)^6 = 1.0');
+   writeln('Root':22,'(z-1.0)^6':27);
+   FOR i := 1 to npoles DO BEGIN
+      sixth[1] := 1.0;
+      sixth[2] := 0.0;
+      FOR j := 1 to 6 DO BEGIN
+         dum := sixth[1];
+         sixth[1] := sixth[1]*(zeros[2*i-1]-1.0)
+            -sixth[2]*zeros[2*i];
+         sixth[2] := dum*zeros[2*i]
+            +sixth[2]*(zeros[2*i-1]-1.0)
+      END;
+      writeln(i:6,zeros[2*i-1]:12:6,zeros[2*i]:12:6,
+         sixth[1]:12:6,sixth[2]:12:6)
+   END;
+   (* now fix them to lie within unit circle *)
+   fixrts(d,npoles);
+   (* check results *)
+   zcoef[2*npoles+1] := 1.0;
+   zcoef[2*npoles+2] := 0.0;
+   FOR i := npoles DOWNTO 1 DO BEGIN
+      zcoef[2*i-1] := -d[npoles+1-i];
+      zcoef[2*i] := 0.0
+   END;
+   zroots(zcoef,npoles,zeros,polish);
+   writeln;
+   writeln('Roots reflected in unit circle');
+   writeln('Root':22,'(z-1.0)^6':27);
+   FOR i := 1 to npoles DO BEGIN
+      sixth[1] := 1.0;
+      sixth[2] := 0.0;
+      FOR j := 1 to 6 DO BEGIN
+         dum := sixth[1];
+         sixth[1] := sixth[1]*(zeros[2*i-1]-1.0)
+            -sixth[2]*zeros[2*i];
+         sixth[2] := dum*zeros[2*i]
+            +sixth[2]*(zeros[2*i-1]-1.0)
+      END;
+      writeln(i:6,zeros[2*i-1]:12:6,zeros[2*i]:12:6,
+         sixth[1]:12:6,sixth[2]:12:6)
+   END
+END.

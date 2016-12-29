@@ -1,0 +1,55 @@
+// This is a localization file for 'magyar' language, for the TCBR shell
+// Translate the messages below and rename this file to hun-shellmsg.txt
+
+// The line below enables useful localization-related diagnostic messages 
+// remove it as you finish localization
+
+AUTHOR_MODE=on
+
+// if you localize the shell for your language, please consider contributing
+//  - send it to me and you'll be credited each time the shell runs in your language:
+
+
+
+// Localize Form ShellForm 'ShellForm'
+
+ShellForm = Shell for // form caption
+
+ShellForm.TabSheet1 = Könyv // TTabSheet
+ShellForm.myTBAddTxt = Szöveg hozzáadása // TToolButton
+ShellForm.myTBRenameTxt = Szöveg átnevezése a Jar-fájlban // TToolButton
+ShellForm.myTBEditTxt = Megnyitás Notepad-dal // TToolButton
+ShellForm.myTBRemoveTxt = Szöveg eltávolítása // TToolButton
+ShellForm.TabSheet2 = Beállítások // TTabSheet
+ShellForm.EncodingLabel = Szöveg-kódolás // TLabel
+ShellForm.MidletTypeLabel = Midlet típusa // TLabel
+ShellForm.HasDirButtonsCheckBox = A telefon rendelkezik irány-gombokkal // TCheckBox
+ShellForm.ExtendHeightCheckBox = Kijelzõ magasságának kiterjesztése  // TCheckBox
+ShellForm.DivideChaptersCheckBox = Fejezet-fejléc használata // TCheckBox
+ShellForm.AltDirButtonsCheckBox = Alternatív irány-gombok (Fel/Le lapozás oldalanként) // TCheckBox
+ShellForm.UseSeT610SideKeysCheckBox = Sony Ericson T610 hangerõ-gombok használata // TCheckBox
+ShellForm.RestrictChapterCheckBox = Fejezet maximális mérete (bájtban) // TCheckBox
+ShellForm.RestrictJarCheckBox = Jar fájl maximális mérete (bájtban) // TCheckBox
+ShellForm.LocalizeMidletCheckBox = Saját nyelvre váltás (magyar) // TCheckBox
+ShellForm.TabSheet3 = Betûtípus // TTabSheet
+ShellForm.SelFGColorBtn = Betû színének kiválasztása // TToolButton
+ShellForm.SelBGColorBtn = Háttérszín kiválasztása // TToolButton
+ShellForm.InvertFontButton = Színek megfordítása // TToolButton
+ShellForm.SelRotatedFontTButton = Elforgatott betûtípus kiválasztása // TBitBtn
+ShellForm.SelNormalFontTButton = Normál betûtípus kiválasztása // TBitBtn
+ShellForm.myLogTabSheet = Napló // TTabSheet
+ShellForm.myClearLogButton = Napló törlése // TButton
+ShellForm.myCBShowZipDebug = A Zip üzeneteinek mutatása // TCheckBox
+ShellForm.aboutTabSheet = Névjegy // TTabSheet
+ShellForm.LocalizationAuthorNameLabel = Magyar fordítás: Biró Gergely (birogeri@freemail.hu) 2004 // TLabel
+ShellForm.BitBtn1 = &Kilépés // TBitBtn
+ShellForm.buildButton = &Csináld ! // TBitBtn
+
+// Localize Form SelectFontImageForm 'Select Font Image:'
+
+SelectFontImageForm = Betûtípus (font) kiválasztása: // form caption
+
+SelectFontImageForm.AddFontBtn = Windows font hozzáadása // TSpeedButton
+SelectFontImageForm.RemoveFontButton = Betûtípus eltávolítása // TSpeedButton
+SelectFontImageForm.NoFontButton = A mobilod fontja // TButton
+// SelectFontImageForm.SelFontButton = Kiválasztás // TButton

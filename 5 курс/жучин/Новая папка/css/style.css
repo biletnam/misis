@@ -1,0 +1,63 @@
+.text, .header
+{
+	font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;
+	font-size: 16px;
+	color: black;	
+	
+}
+.header
+{	
+	color: #1C94C4;
+	font-weight: bold;	
+}
+td.header {vertical-align: bottom; height: 30px}
+
+form label
+{
+	display: block;
+	line-height: 1.8;
+	vertical-align: top;
+}
+
+label.error
+{
+	color: red;
+	font-style: italic;
+}
+
+div.doc_item
+{
+	margin-top: 5px;
+	font-size: 14px;
+}
+
+a.download
+{
+	color: #1C94C4;
+	font-weight: bold;
+}
+
+div.doc_item a:hover, span.delete:hover
+{
+	text-decoration: none;
+}
+
+span.delete
+{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#user
+{
+	padding-left: 15px;
+}
+
+#main_form table td {padding: 0px; height: 40px; vertical-align: bottom; border-bottom: 1px dotted #DDD}
+#main_form table td.noborder {border: 0px;}
+
+table.templ td{ border: 1px solid #DDD}
+
+#tbl td{padding-right: 15px; border: 1px solid #DDD}
+
+select {height: 27px; max-width: 580px;}

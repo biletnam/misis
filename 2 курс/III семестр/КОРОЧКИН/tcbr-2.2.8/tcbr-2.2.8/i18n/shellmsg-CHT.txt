@@ -1,0 +1,55 @@
+// This is a localization file for '中文(繁體)' language, for the TCBR shell
+// To localize the shell, you may translate the messages below 
+// and rename this file to shellmsg-CHT.txt
+
+// The line below (AUTHOR_MODE entry) enables useful localization-related diagnostic messages
+// remove it as you finish localization
+
+// AUTHOR_MODE=on
+
+// if you localize the shell for your language, please consider contributing
+//  - send it to me and you'll be credited each time the shell runs in your language:
+
+
+
+// Localize Form ShellForm 'Shell for'
+
+ShellForm = Shell for // form caption
+
+ShellForm.TabSheet1 = 書本 // TTabSheet
+ShellForm.myTBAddTxt = 加入文件 // TToolButton
+ShellForm.myTBRenameTxt = 重新命名 // TToolButton
+ShellForm.myTBEditTxt = 記事本開啟 // TToolButton
+ShellForm.myTBRemoveTxt = 移除文件 // TToolButton
+ShellForm.TabSheet2 = 選項 // TTabSheet
+ShellForm.EncodingLabel = 文字編碼 // TLabel
+ShellForm.MidletTypeLabel = 電話型號 // TLabel
+ShellForm.HasDirButtonsCheckBox = 電話有方向鍵 // TCheckBox
+ShellForm.ExtendHeightCheckBox = 延長螢幕長度至  // TCheckBox
+ShellForm.DivideChaptersCheckBox = 分成章節 // TCheckBox
+ShellForm.AltDirButtonsCheckBox = 其他目錄鍵 (翻 上/下頁) // TCheckBox
+ShellForm.UseSeT610SideKeysCheckBox = 使用SE T610 聲音鍵翻頁 // TCheckBox
+ShellForm.RestrictChapterCheckBox = 最大章節大小 (bytes) // TCheckBox
+ShellForm.RestrictJarCheckBox = 最大 Jar 大小 (bytes) // TCheckBox
+ShellForm.LocalizeMidletCheckBox = 選擇你的語言 // TCheckBox
+ShellForm.TabSheet3 = 字型 // TTabSheet
+ShellForm.SelFGColorBtn = 選擇字型顏色 // TToolButton
+ShellForm.SelBGColorBtn = 選擇背景顏色 // TToolButton
+ShellForm.InvertFontButton = 倒轉顏色 // TToolButton
+ShellForm.SelRotatedFontTButton = 使用已旋轉字型 // TBitBtn
+ShellForm.SelNormalFontTButton = 使用一般字型 // TBitBtn
+ShellForm.myLogTabSheet = 記錄 // TTabSheet
+ShellForm.myClearLogButton = 清除記錄 // TButton
+ShellForm.myCBShowZipDebug = 顯示 Zip 信息 // TCheckBox
+ShellForm.aboutTabSheet = 關於 // TTabSheet
+ShellForm.LocalizationAuthorNameLabel = Traditional Chinese, ScHmEiChUnG (schmeichung@yahoo.com) // TLabel
+ShellForm.BitBtn1 = 離開 // TBitBtn
+ShellForm.buildButton = 建立 ! // TBitBtn
+
+// Localize Form SelectFontImageForm 'Select Font Image:'
+
+SelectFontImageForm = 選擇字型圖片: // form caption
+
+SelectFontImageForm.AddFontBtn = 新增視窗字型 // TSpeedButton
+SelectFontImageForm.RemoveFontButton = 移除字型圖片 // TSpeedButton
+SelectFontImageForm.NoFontButton = 使用電話字型 // TButton

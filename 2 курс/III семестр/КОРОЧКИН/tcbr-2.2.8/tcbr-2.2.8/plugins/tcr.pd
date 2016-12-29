@@ -1,0 +1,7 @@
+plugin.description = TCR (de)compressor by Andrew Giddings (gidds@cix.co.uk) and Simon Quinn
+plugin.extlist = tcr
+
+#plugin.showwindow = true
+
+plugin.cmdline = untcr.bat %in "%basename"
+#plugin.cmdline = tcr.exe -d %in

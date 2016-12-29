@@ -1,0 +1,47 @@
+PROGRAM d3r13(input,output);
+(* driver for routine SPLIN2 *)
+CONST
+   m=10;
+   n=10;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+   glmbyn = ARRAY [1..m,1..n] OF real;
+VAR
+   f,ff,x1x2,xx1,xx2 : real;
+   i,j : integer;
+   x1,x2 : glnarray;
+   y,y2 : glmbyn;
+
+(*$I MODFILE.PAS *)
+(*$I SPLINT.PAS *)
+
+(*$I SPLINE.PAS *)
+
+(*$I SPLIE2.PAS *)
+
+(*$I SPLIN2.PAS *)
+
+BEGIN
+   FOR i := 1 to m DO BEGIN
+      x1[i] := 0.2*i
+   END;
+   FOR i := 1 to n DO BEGIN
+      x2[i] := 0.2*i
+   END;
+   FOR i := 1 to m DO BEGIN
+      FOR j := 1 to n DO BEGIN
+         x1x2 := x1[i]*x2[j];
+         y[i,j] := x1x2*exp(-x1x2)
+      END
+   END;
+   splie2(x1,x2,y,m,n,y2);
+   writeln('x1':9,'x2':12,'splin2':14,'actual':12);
+   FOR i := 1 to 10 DO BEGIN
+      xx1 := 0.1*i;
+      xx2 := sqr(xx1);
+      splin2(x1,x2,y,y2,m,n,xx1,xx2,f);
+      x1x2 := xx1*xx2;
+      ff := x1x2*exp(-x1x2);
+      writeln(xx1:12:6,xx2:12:6,f:12:6,ff:12:6)
+   END
+END.

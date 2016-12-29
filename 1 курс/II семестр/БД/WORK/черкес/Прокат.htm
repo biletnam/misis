@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:x = 
+"urn:schemas-microsoft-com:office:excel" xmlns:a = 
+"urn:schemas-microsoft-com:office:access" xmlns:dt = 
+"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><LINK 
+href="Прокат.files/filelist.xml" type=text/xml 
+rel=File-List><TITLE>Прокат</TITLE>
+<META content=Access.Application name=ProgId>
+<META name=VBSForEventHandlers VALUE="TRUE">
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=10.00.3420 name=DesignerVersion>
+<META content="HTML 4.0" name=vs_targetSchema>
+<OBJECT id=MSODSC tabIndex=-1 
+classid=CLSID:0002E553-0000-0000-C000-000000000046><PARAM NAME="XMLData" VALUE="<xml xmlns:a=&quot;urn:schemas-microsoft-com:office:access&quot;>&#13;&#10; <a:DataSourceControl>&#13;&#10;  <a:OWCVersion>10.0.0.5605         </a:OWCVersion>&#13;&#10;  <a:ConnectionString>Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Прокат комп игр.mdb;Mode=Share Deny None;Extended Properties=&amp;quot;&amp;quot;;Persist Security Info=False;Jet OLEDB:System database=&amp;quot;&amp;quot;;Jet OLEDB:Registry Path=&amp;quot;&amp;quot;;Jet OLEDB:Database Password=&amp;quot;&amp;quot;;Jet OLEDB:Engine Type=0;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password=&amp;quot;&amp;quot;;Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False</a:ConnectionString>&#13;&#10;  <a:MaxRecords>10000</a:MaxRecords>&#13;&#10;  <a:GridX>10</a:GridX>&#13;&#10;  <a:GridY>10</a:GridY>&#13;&#10;  <a:OfflineType>2</a:OfflineType>&#13;&#10;  <a:XMLLocation>0</a:XMLLocation>&#13;&#10;  <a:XMLDataTarget></a:XMLDataTarget>&#13;&#10;  <a:ConnectionFile></a:ConnectionFile>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>ПрокатNavLabel</a:ElementID>&#13;&#10;   <a:RecordsetLabel>Прокат |0 из |2;Прокат |0-|1 из |2</a:RecordsetLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Прокат-КодКлиентаNavLabel</a:ElementID>&#13;&#10;   <a:RecordsetLabel>Прокат-КодКлиента |0 из |2;Прокат-КодКлиента |0-|1 из |2</a:RecordsetLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>КодКлиента</a:ElementID>&#13;&#10;   <a:ControlSource>Группа_Прокат-КодКлиента</a:ControlSource>&#13;&#10;   <a:ChildLabel>КодКлиента_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>КодИгры</a:ElementID>&#13;&#10;   <a:ControlSource>КодИгры</a:ControlSource>&#13;&#10;   <a:ChildLabel>КодИгры_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Дата</a:ElementID>&#13;&#10;   <a:ControlSource>Дата</a:ControlSource>&#13;&#10;   <a:ChildLabel>Дата_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Период</a:ElementID>&#13;&#10;   <a:ControlSource>Период</a:ControlSource>&#13;&#10;   <a:ChildLabel>Период_метка</a:ChildLabel>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:ElementExtension>&#13;&#10;   <a:ElementID>Стоимость</a:ElementID>&#13;&#10;   <a:ControlSource>Стоимость</a:ControlSource>&#13;&#10;   <a:ChildLabel>Стоимость_метка</a:ChildLabel>&#13;&#10;   <a:Format>#,##0.00&amp;quot;р.&amp;quot;;-#,##0.00&amp;quot;р.&amp;quot;</a:Format>&#13;&#10;  </a:ElementExtension>&#13;&#10;  <a:GroupLevel>&#13;&#10;   <a:RecordSource>Прокат-КодКлиента</a:RecordSource>&#13;&#10;   <a:DefaultSort>[Группа_Прокат-КодКлиента]</a:DefaultSort>&#13;&#10;   <a:HeaderElementId>ЗаголовокПрокатКодКлиента</a:HeaderElementId>&#13;&#10;   <a:FooterElementId></a:FooterElementId>&#13;&#10;   <a:CaptionElementId></a:CaptionElementId>&#13;&#10;   <a:RecordNavigationElementId>КнопкиПереходаПрокатКодКлиента</a:RecordNavigationElementId>&#13;&#10;   <a:DataPageSize>1</a:DataPageSize>&#13;&#10;   <a:GroupFilterControl></a:GroupFilterControl>&#13;&#10;   <a:NoAllowEdits/>&#13;&#10;   <a:NoAllowAdditions/>&#13;&#10;   <a:NoAllowDeletions/>&#13;&#10;  </a:GroupLevel>&#13;&#10;  <a:GroupLevel>&#13;&#10;   <a:RecordSource>Прокат</a:RecordSource>&#13;&#10;   <a:DefaultSort></a:DefaultSort>&#13;&#10;   <a:HeaderElementId>ЗаголовокПрокат</a:HeaderElementId>&#13;&#10;   <a:FooterElementId></a:FooterElementId>&#13;&#10;   <a:CaptionElementId></a:CaptionElementId>&#13;&#10;   <a:RecordNavigationElementId>КнопкиПереходаПрокат</a:RecordNavigationElementId>&#13;&#10;   <a:DataPageSize>1</a:DataPageSize>&#13;&#10;   <a:GroupFilterControl></a:GroupFilterControl>&#13;&#10;  </a:GroupLevel>&#13;&#10;  <a:Datamodel a:version=&quot;0816&quot;>&#13;&#10;   <a:SchemaRowsource a:id=&quot;Прокат&quot; a:type=&quot;dscTable&quot;>&#13;&#10;    <a:SchemaField a:id=&quot;КодКлиента&quot; a:datatype=&quot;130&quot; a:size=&quot;50&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;КодИгры&quot; a:datatype=&quot;130&quot; a:size=&quot;50&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;Дата&quot; a:datatype=&quot;7&quot; a:size=&quot;0&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;Период&quot; a:datatype=&quot;3&quot; a:size=&quot;0&quot;/>&#13;&#10;    <a:SchemaField a:id=&quot;Стоимость&quot; a:datatype=&quot;6&quot; a:size=&quot;0&quot;/>&#13;&#10;   </a:SchemaRowsource>&#13;&#10;   <a:RecordsetDef a:id=&quot;Прокат&quot;>&#13;&#10;    <a:PageField a:id=&quot;КодКлиента&quot;/>&#13;&#10;    <a:PageField a:id=&quot;КодИгры&quot;/>&#13;&#10;    <a:PageField a:id=&quot;Дата&quot;/>&#13;&#10;    <a:PageField a:id=&quot;Период&quot;/>&#13;&#10;    <a:PageField a:id=&quot;Стоимость&quot;/>&#13;&#10;    <a:GroupingDef a:id=&quot;Прокат-КодКлиента&quot;>&#13;&#10;     <a:PageField a:id=&quot;Группа_Прокат-КодКлиента&quot; a:source=&quot;КодКлиента&quot;&#13;&#10;      a:groupon=&quot;dscEachValue&quot; a:interval=&quot;1.0&quot;/>&#13;&#10;    </a:GroupingDef>&#13;&#10;   </a:RecordsetDef>&#13;&#10;  </a:Datamodel>&#13;&#10; </a:DataSourceControl>&#13;&#10;</xml>"></OBJECT>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<STYLE id=MSODAPDEFAULTS type=text/css>.MSTheme-Label {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: visible; BORDER-LEFT: 0px; WIDTH: 2.539cm; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; HEIGHT: 0.396cm; TEXT-ALIGN: left
+}
+.MsoTextbox {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; WIDTH: 2.539cm; FONT-FAMILY: Tahoma; HEIGHT: 0.502cm
+}
+.MsoBoundSpan {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; TEXT-ALIGN: left
+}
+.MsoHyperlinkDisplayText {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 3px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: 0px; CURSOR: hand; BORDER-BOTTOM: 0px; FONT-FAMILY: Tahoma; TEXT-ALIGN: left
+}
+.Mso2dSection {
+	LEFT: 0px; BEHAVIOR: url(#DEFAULT#Mso2dSection); OVERFLOW: hidden; POSITION: relative; TOP: 0px; BACKGROUND-COLOR: transparent
+}
+.Mso2dSectionBanner {
+	PADDING-RIGHT: 4px; DISPLAY: none; PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 8pt; LEFT: 0px; BEHAVIOR: url(#DEFAULT#Mso2dSectionBanner); OVERFLOW: visible; PADDING-TOP: 2px; FONT-FAMILY: Tahoma; TOP: 0px; HEIGHT: 0.507cm; BACKGROUND-COLOR: buttonface
+}
+.MsoRectangle {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; OVERFLOW: hidden; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.MsoTitle {
+	DISPLAY: none; FONT-WEIGHT: normal; COLOR: inactivecaptiontext
+}
+.MsoExpandCollapse {
+	CURSOR: hand
+}
+.MsoNavContainer {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; Z-INDEX: -1; BORDER-LEFT: gainsboro 1px solid; CURSOR: hand; BORDER-BOTTOM: gainsboro 1px solid; HEIGHT: 25px; BACKGROUND-COLOR: gainsboro
+}
+.MsoNavButton {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; BORDER-LEFT: gainsboro 1px solid; CURSOR: auto; BORDER-BOTTOM: gainsboro 1px solid; BACKGROUND-REPEAT: no-repeat
+}
+.MsoNavButtonMouseOver {
+	BORDER-RIGHT: highlight 1px solid; BORDER-TOP: highlight 1px solid; BORDER-LEFT: highlight 1px solid; BORDER-BOTTOM: highlight 1px solid; BACKGROUND-COLOR: buttonhighlight
+}
+.MsoNavToggleButtonMouseOver {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: buttonshadow
+}
+.MsoNavButtonMouseDown {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 1px solid; CURSOR: hand; BORDER-BOTTOM: buttonshadow 1px solid; BACKGROUND-COLOR: buttonshadow
+}
+.MsoNavRecordsetLabel {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-LEFT: gainsboro 1px solid; WIDTH: 100%; CURSOR: default; PADDING-TOP: 0px; BORDER-BOTTOM: gainsboro 1px solid; FONT-FAMILY: Tahoma; POSITION: relative
+}
+.MsoRecordSelector {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; OVERFLOW: hidden; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; HEIGHT: 100%; BACKGROUND-COLOR: gainsboro
+}
+.MsoRecordSelectorCurrent {
+	BACKGROUND-POSITION: 1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11240); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorSelectedImage {
+	BACKGROUND-POSITION: 1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11241); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorSelected {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid; TOP: 0px; HEIGHT: 100%; BACKGROUND-COLOR: buttonshadow
+}
+.MsoRecordSelectorDirtyCurrent {
+	BACKGROUND-POSITION: -1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11242); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorDirty {
+	BACKGROUND-POSITION: -1px 0px; BACKGROUND-IMAGE: url(owc://GIF/#11245); BACKGROUND-REPEAT: no-repeat
+}
+.MsoRecordSelectorTransparent {
+	LEFT: 0px; OVERFLOW: hidden; TOP: 0px
+}
+HR {
+	COLOR: black
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+INPUT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma
+}
+MARQUEE {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+LEGEND {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+BUTTON {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+TEXTAREA {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+</STYLE>
+
+<SCRIPT language=Javascript id=MSODSC_Validation>
+validateBrowser();
+
+function validateBrowser() {
+	strVers=navigator.appVersion
+	strName=navigator.appName
+	strPlat=navigator.platform
+	intIndex1=strVers.indexOf("MSIE");
+	intIndex1=intIndex1+5
+	intIndex2=strVers.lastIndexOf(";");
+	intVer=strVers.substring(intIndex1, intIndex2)
+	intVer=parseInt(intVer)
+	if (strName=="Microsoft Internet Explorer" && strPlat=="Win32" && intVer>="5") {
+	validateOWC();
+	}
+	else {
+		strMsgGetIE="<TABLE cellSpacing=0 cellPadding=0 width='95%' border=0 height='8'><TR>"
+		strMsgGetIE+="<TD bgColor='#336699' height=25 width=15>&nbsp;</TD><TD bgColor='#666666' width=500px><FONT face=Tahoma "
+		strMsgGetIE+="size=4 color=white><b>&nbsp;Уведомление страницы доступа к данным</B></FONT></TD></TR>"
+		strMsgGetIE+="<TR><TD bgColor='#cccccc' width=15>&nbsp;</TD><TD bgColor='#cccccc' width=500px><BR>"
+		strMsgGetIE+="<p><font face='Tahoma' size='2'>"
+		strMsgGetIE+="Для отображения страницы требуется Windows IE 5.0 или более поздней версии.</p>"
+		strMsgGetIE+="<a href='http://www.microsoft.com/isapi/redir.dll?Prd=Office&Sbp=Access&Pver=10&Ar=DPdesigner&Sba=IEhome&Plcid=1049'><p align='center'>"
+		strMsgGetIE+="Выберите эту ссылку для установки последней версии Internet Explorer.</a></font></p><br></TD></TR></TABLE>"
+		document.write(strMsgGetIE)
+	}
+}
+
+function validateOWC() {
+	if (MSODSC.object==null) {
+		strMsgGetOWC="<TABLE width='95%' cellpadding=0 cellspacing=0 border=0 height='8'>"
+		strMsgGetOWC+="<TR><TD bgColor='#336699' height=25 width=15>&nbsp;</TD><TD bgColor='#666666' width=500px>"
+		strMsgGetOWC+="<FONT face=Tahoma color=white size=4><B>&nbsp;&nbsp;"
+		strMsgGetOWC+="Уведомление страницы доступа к данным</B></FONT></TD></TR><TR><TD bgColor='#cccccc' width=15>&nbsp;</TD>"
+		strMsgGetOWC+="<TD bgColor='#cccccc' width='500px'><BR>"
+		strMsgGetOWC+="<p><font face='Tahoma' size='2'>Для отображения страницы требуется наличие веб-компонентов Microsoft Office.</p>"
+		strMsgGetOWC+="</font><p><font face='Tahoma' size='2'>See the <a HRef='http://r.office.microsoft.com/r/rlidmsowcpub?clid=1049&p1=Microsoft Access&HelpLCID=1049'>Microsoft Office Web site</a> for more information. "
+		strMsgGetOWC+="</font></p><BR></TD></TR></TABLE>"
+		document.write(strMsgGetOWC)
+	}
+}
+
+</SCRIPT>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Женя</o:Author>
+  <o:LastAuthor>Женя</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-06-13T16:26:47Z</o:Created>
+  <o:LastSaved>2007-06-13T16:26:52Z</o:LastSaved>
+  <o:Company>Дом</o:Company>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:DownloadComponents/>
+  <o:LocationOfComponents HRef="file:///C:\Documents%20and%20Settings\Женя\Рабочий%20стол\Soft\MS%20Office%202003%20SR2\"/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--></HEAD>
+<BODY style="OVERFLOW: auto" vLink=#800080 link=#0000ff>
+<CENTER>
+<H1 class=MsoTitle id=ТекстЗаголовка>Название страницы</H1></CENTER>
+<P>&nbsp;</P>
+<DIV class=Mso2dSectionBanner id=ЗаголовокПрокатКодКлиентаBanner 
+style="MARGIN-LEFT: 0px; WIDTH: 15.238cm" tabIndex=-1><SPAN 
+id=ЗаголовокПрокатКодКлиентаBannerCaption>Заголовок: 
+Прокат-КодКлиента</SPAN></DIV>
+<DIV class=Mso2dSection id=ЗаголовокПрокатКодКлиента 
+style="VISIBILITY: hidden; MARGIN-LEFT: 0px; WIDTH: 15.029cm; HEIGHT: 0.528cm"><IMG 
+class=MsoExpandCollapse id=Прокат-КодКлиентаРазвертывание 
+style="LEFT: 0.105cm; POSITION: absolute; TOP: 0.211cm" tabIndex=1 
+src="owc://GIF/#11250"><SPAN class=MSTheme-Label id=КодКлиента_метка 
+style="LEFT: 0.795cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0cm; HEIGHT: 0.45cm">КодКлиента</SPAN><TEXTAREA class=MsoTextbox id=КодКлиента style="LEFT: 3.546cm; WIDTH: 154px; POSITION: absolute; TOP: 0cm; HEIGHT: 17px" tabIndex=29 MsoTextAlign="General"></TEXTAREA></DIV>
+<DIV class=Mso2dSectionBanner id=ЗаголовокПрокатBanner 
+style="MARGIN-LEFT: 24px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=ЗаголовокПрокатBannerCaption>Заголовок: Прокат</SPAN></DIV>
+<DIV class=Mso2dSection id=ЗаголовокПрокат 
+style="VISIBILITY: hidden; MARGIN-LEFT: 24px; WIDTH: 15.133cm; HEIGHT: 2.065cm"><SPAN 
+class=MSTheme-Label id=КодИгры_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0cm; HEIGHT: 0.45cm">КодИгры:</SPAN><TEXTAREA class=MsoTextbox id=КодИгры style="LEFT: 3.599cm; WIDTH: 154px; POSITION: absolute; TOP: 0cm; HEIGHT: 17px" tabIndex=30 MsoTextAlign="General"></TEXTAREA><SPAN 
+class=MSTheme-Label id=Дата_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 0.503cm; HEIGHT: 0.45cm">Дата:</SPAN><TEXTAREA class=MsoTextbox id=Дата style="LEFT: 3.599cm; WIDTH: 69px; POSITION: absolute; TOP: 0.503cm; HEIGHT: 17px" tabIndex=31 MsoTextAlign="General"></TEXTAREA><SPAN 
+class=MSTheme-Label id=Период_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 1.006cm; HEIGHT: 0.45cm">Период:</SPAN><TEXTAREA class=MsoTextbox id=Период style="LEFT: 3.599cm; WIDTH: 70px; POSITION: absolute; TOP: 1.006cm; HEIGHT: 17px" tabIndex=32 MsoTextAlign="General"></TEXTAREA><SPAN 
+class=MSTheme-Label id=Стоимость_метка 
+style="LEFT: 0.846cm; OVERFLOW: hidden; WIDTH: 2.751cm; POSITION: absolute; TOP: 1.534cm; HEIGHT: 0.45cm">Стоимость:</SPAN><TEXTAREA class=MsoTextbox id=Стоимость style="LEFT: 3.599cm; WIDTH: 154px; POSITION: absolute; TOP: 1.534cm; HEIGHT: 17px" tabIndex=33 MsoTextAlign="General"></TEXTAREA></DIV>
+<DIV class=Mso2dSectionBanner id=КнопкиПереходаПрокатBanner 
+style="MARGIN-LEFT: 24px; WIDTH: 15.133cm" tabIndex=-1><SPAN 
+id=КнопкиПереходаПрокатBannerCaption>КнопкиПерехода: Прокат</SPAN></DIV>
+<DIV class=Mso2dSection id=КнопкиПереходаПрокат 
+style="VISIBILITY: hidden; MARGIN-LEFT: 24px; WIDTH: 15.133cm; HEIGHT: 0.846cm; BACKGROUND-COLOR: gainsboro">
+<TABLE class=MsoNavContainer id=ПрокатПереход 
+style="LEFT: 4px; WIDTH: 568px; POSITION: absolute; TOP: 4px; HEIGHT: 18px" 
+cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFirst id=ПрокатNavFirst tabIndex=1 height=20 
+      src="owc://GIF/#11200" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavPrevious id=ПрокатNavPrevious tabIndex=2 height=20 
+      src="owc://GIF/#11202" width=20></TD>
+    <TD style="VERTICAL-ALIGN: middle; WIDTH: 100%; TEXT-ALIGN: center" 
+      noWrap><SPAN class=MsoNavRecordsetLabel id=ПрокатNavLabel 
+      style="VISIBILITY: hidden" tabIndex=3>Прокат |0 из |2</SPAN></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavNext id=ПрокатNavNext tabIndex=4 height=20 
+      src="owc://GIF/#11204" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavLast id=ПрокатNavLast tabIndex=5 height=20 
+      src="owc://GIF/#11206" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavAddNew id=ПрокатNavNew tabIndex=6 height=20 
+      src="owc://GIF/#11208" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavDelete id=ПрокатNavDelete tabIndex=7 height=20 
+      src="owc://GIF/#11210" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSave id=ПрокатNavSave tabIndex=8 height=20 
+      src="owc://GIF/#11214" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavUndo id=ПрокатNavUndo tabIndex=9 height=20 
+      src="owc://GIF/#11212" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortAsc id=ПрокатNavSortAscending tabIndex=10 height=20 
+      src="owc://GIF/#11216" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortDesc id=ПрокатNavSortDescending tabIndex=11 height=20 
+      src="owc://GIF/#11218" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFilter id=ПрокатNavFilterBySelection tabIndex=12 height=20 
+      src="owc://GIF/#11220" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavToggleFilter id=ПрокатNavFilterToggle tabIndex=13 height=20 
+      src="owc://GIF/#11222" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavHelp id=ПрокатNavHelp tabIndex=14 height=20 
+      src="owc://GIF/#11224" width=20></TD></TR></TBODY></TABLE></DIV>
+<DIV class=Mso2dSectionBanner id=КнопкиПереходаПрокатКодКлиентаBanner 
+style="MARGIN-LEFT: 0px; WIDTH: 15.238cm" tabIndex=-1><SPAN 
+id=КнопкиПереходаПрокатКодКлиентаBannerCaption>КнопкиПерехода: 
+Прокат-КодКлиента</SPAN></DIV>
+<DIV class=Mso2dSection id=КнопкиПереходаПрокатКодКлиента 
+style="VISIBILITY: hidden; MARGIN-LEFT: 0px; WIDTH: 15.238cm; HEIGHT: 0.846cm; BACKGROUND-COLOR: gainsboro">
+<TABLE class=MsoNavContainer id=Прокат-КодКлиентаПереход 
+style="LEFT: 4px; WIDTH: 568px; POSITION: absolute; TOP: 4px; HEIGHT: 18px" 
+cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFirst id=Прокат-КодКлиентаNavFirst tabIndex=15 height=20 
+      src="owc://GIF/#11200" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavPrevious id=Прокат-КодКлиентаNavPrevious tabIndex=16 height=20 
+      src="owc://GIF/#11202" width=20></TD>
+    <TD style="VERTICAL-ALIGN: middle; WIDTH: 100%; TEXT-ALIGN: center" 
+      noWrap><SPAN class=MsoNavRecordsetLabel id=Прокат-КодКлиентаNavLabel 
+      style="VISIBILITY: hidden" tabIndex=17>Прокат-КодКлиента |0 из 
+|2</SPAN></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavNext id=Прокат-КодКлиентаNavNext tabIndex=18 height=20 
+      src="owc://GIF/#11204" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavLast id=Прокат-КодКлиентаNavLast tabIndex=19 height=20 
+      src="owc://GIF/#11206" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavAddNew id=Прокат-КодКлиентаNavNew tabIndex=20 height=20 
+      src="owc://GIF/#11208" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavDelete id=Прокат-КодКлиентаNavDelete tabIndex=21 height=20 
+      src="owc://GIF/#11210" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSave id=Прокат-КодКлиентаNavSave tabIndex=22 height=20 
+      src="owc://GIF/#11214" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavUndo id=Прокат-КодКлиентаNavUndo tabIndex=23 height=20 
+      src="owc://GIF/#11212" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortAsc id=Прокат-КодКлиентаNavSortAscending tabIndex=24 
+      height=20 src="owc://GIF/#11216" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavSortDesc id=Прокат-КодКлиентаNavSortDescending tabIndex=25 
+      height=20 src="owc://GIF/#11218" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavFilter id=Прокат-КодКлиентаNavFilterBySelection tabIndex=26 
+      height=20 src="owc://GIF/#11220" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavToggleFilter id=Прокат-КодКлиентаNavFilterToggle tabIndex=27 
+      height=20 src="owc://GIF/#11222" width=20></TD>
+    <TD class=MsoNavButton style="WIDTH: 20px; HEIGHT: 20px"><IMG 
+      class=MsoNavHelp id=Прокат-КодКлиентаNavHelp tabIndex=28 height=20 
+      src="owc://GIF/#11224" width=20></TD></TR></TBODY></TABLE></DIV>
+<P>&nbsp;</P></BODY></HTML>

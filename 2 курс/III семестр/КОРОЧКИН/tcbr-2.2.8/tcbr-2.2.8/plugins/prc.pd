@@ -1,0 +1,5 @@
+plugin.description = Makedoc: PRC/PDB decompressor by Pat Beirne
+plugin.extlist = prc,pdb
+plugin.filetype=Palm books
+
+plugin.cmdline = makedoc.exe -d %in "%basename.txt"

@@ -1,0 +1,57 @@
+PROGRAM d9r10(input,output);
+(* driver for routine LAGUER *)
+CONST
+   m=4;
+   twomp2=10;   (* twomp2=2*m+2 *)
+   ntry=21;
+   twontry=42;   (* twontry=2*ntry *)
+   eps=1.0e-6;
+TYPE
+   glcarray = ARRAY [1..twomp2] OF real;
+   gl2array = ARRAY [1..2] OF real;
+VAR
+   i,iflag,j,n : integer;
+   polish : boolean;
+   x : gl2array;
+   a : glcarray;
+   y : ARRAY [1..twontry] OF real;
+
+(*$I MODFILE.PAS *)
+(*$I LAGUER.PAS *)
+
+BEGIN
+   a[1] := 0.0; a[2] := 2.0;
+   a[3] := 0.0; a[4] := 0.0;
+   a[5] := -1.0; a[6] := -2.0;
+   a[7] := 0.0; a[8] := 0.0;
+   a[9] := 1.0; a[10] := 0.0;
+   writeln;
+   writeln('Roots of polynomial x^4-(1+2i)*x^2+2i');
+   writeln('real':15,'complex':13);
+   n := 0;
+   polish := false;
+   FOR i := 1 to ntry DO BEGIN
+      x[1] := (i-11.0)/10.0;
+      x[2] := (i-11.0)/10.0;
+      laguer(a,m,x,eps,polish);
+      IF (n = 0) THEN BEGIN
+         n := 1;
+         y[1] := x[1];
+         y[2] := x[2];
+         writeln(n:5,x[1]:12:6,x[2]:12:6)
+      END ELSE BEGIN
+         iflag := 0;
+         FOR j := 1 to n DO BEGIN
+            IF (sqrt(sqr(x[1]-y[2*j-1])+sqr(x[2]-y[2*j]))
+               <= eps*sqrt(sqr(x[1])+sqr(x[2]))) THEN
+               iflag := 1            
+         END;
+         IF (iflag = 0) THEN BEGIN
+            n := n+1;
+            y[2*n-1] := x[1];
+            y[2*n] := x[2];
+            writeln(n:5,x[1]:12:6,x[2]:12:6)
+         END
+      END
+   END
+END.

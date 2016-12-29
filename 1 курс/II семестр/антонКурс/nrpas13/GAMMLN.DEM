@@ -1,0 +1,32 @@
+PROGRAM d6r1(input,output,dfile);
+(* driver for routine GAMMLN *)
+CONST
+   pi = 3.1415926;
+VAR
+   i,nval : integer;
+   actual,calc,x : real;
+   txt : string[14];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Gamma Function');
+   readln(dfile,nval);
+   writeln ('log of gamma function:');
+   writeln ('x':10,'actual':21,'gammln(x)':22);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,x,actual);
+      IF (x > 0.0) THEN BEGIN
+         IF (x >= 1.0) THEN BEGIN
+            calc := gammln(x)
+         END ELSE BEGIN
+            calc := gammln(x+1.0)-ln(x)
+         END;
+         writeln (x:12:2,ln(actual):20:6,calc:20:6)
+      END
+   END;
+   close(dfile)
+END.

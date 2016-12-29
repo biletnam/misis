@@ -1,0 +1,5 @@
+plugin.description = ARJ decompressor (c) ARJSOFT
+plugin.extlist = arj
+
+plugin.cmdline = unarj32.exe x %in
+

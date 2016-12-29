@@ -1,0 +1,4 @@
+label = FS: V600, K750, D750, W800, K600, W600, W550, W900, K600, K608
+jar=midp2_se2_fs_bookreader.jar
+skin.image = se_K700-16.png
+skin.screen=25x55x176x220

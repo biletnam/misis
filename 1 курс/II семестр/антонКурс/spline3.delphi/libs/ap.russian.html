@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>Библиотека AP для Delphi</title>
+<style type="text/css">
+<!--
+h1 { font-family: Tahoma,sans-serif; font-size : larger; }
+h2 { font-family: Arial,sans-serif; font-size : 12pt; }
+h3 { font-family: Arial,sans-serif; font-size : 9pt; }
+pre { font-family: Courier New, monospace; color:#222222; }
+.const { color:#222222; }
+.func  { color:#111111; }
+-->
+</style>
+</head>
+<body>
+
+<h1>Библиотека AP для Delphi</h1>
+
+<p align=justify>
+Этот документ описывает библиотеку AP, адаптированную для Delphi. Библиотека AP для Delphi содержит базовый набор математических функций и констант, которые требуются для работы программ с сайта <a href="http://alglib.manual.ru/">"Библиотека алгоритмов"</a>.
+</p>
+
+<h2>Совместимость</h2>
+
+<p align=justify>
+Данная библиотека должна быть совместима с любым компилятором Object Pascal, начиная с версии, поставляемой вместе с Borland Delphi 4.0 (Примечание: если несовместимость всё-таки замечена, просьба сообщить об этом мне, указав версию компилятора и тип ошибки). Под Kylix эти исходники не тестировались, буду рад любым сообщениям о результатах, если кто-то такое тестирование проведет.
+</p>
+
+<h2>Состав и использование</h2>
+
+<p align=justify>
+В состав библиотеки входит единственный модуль <code>ap.pas</code> Для использования библиотеки достаточно подключить этот модуль к проекту.
+</p>
+
+<h1>Описание библиотеки AP</h1>
+
+<font size=-1>
+<a href="#const">Константы</a><br>
+<a href="#funct">Функции</a><br>
+<a href="#array">Массивы</a><br>
+<a href="#complex">Операции с комплексными числами</a><br>
+</font>
+
+<a name="const"><h1>Константы</h1></a>
+
+<p align=justify>
+<span class=const>MachineEpsilon</span><br>
+Эта константа определяет точность машинных операций, т.е. минимальное число, такое, что <code>1+MachineEpsilon&ne;1</code> на данной разрядной сетке. Константа может быть взята "с запасом", т.е. реальная точность может быть ещё выше.
+</p>
+
+<p align=justify>
+<span class=const>MaxRealNumber</span><br>
+Эта константа определяет максимальное положительное вещественное число, представимое на данной машине. Константа может быть взята "с запасом", т.е. реальная граница может быть ещё выше.
+</p>
+
+<p align=justify>
+<span class=const>MinRealNumber</span><br>
+Эта константа определяет минимальное положительное вещественное число, представимое на данной машине. Константа может быть взята "с запасом", т.е. реальная граница может быть ещё ниже.
+</p>
+
+<a name="funct"><h1>Функции</h1></a>
+
+<p align=justify>
+<span class=func><b>function</b> AbsReal(X : Extended):Extended;</span><br>
+Возвращает модуль вещественного числа. Эквивалентна стандартной функции Abs.
+</p>
+
+
+<p align=justify>
+<span class=func><b>function</b> AbsInt (I : Integer):Integer;</span><br>
+Возвращает модуль целого числа. Эквивалентна стандартной функции Abs.
+</p>
+
+
+<p align=justify>
+<span class=func><b>function</b> RandomReal():Extended;</span><br>
+Возвращает случайное вещественное число в полуинтервале [0,1).
+</p>
+
+
+<p align=justify>
+<span class=func><b>function</b> RandomInteger(I : Integer):Integer;</span><br>
+Возвращает случайное целое число в полуинтервале [0, I).
+</p>
+
+
+<p align=justify>
+<span class=func><b>function</b> Sign(X:Extended):Integer;</span><br>
+Возвращает:<br>
++1, если X&gt;0<br>
+-1, если X&lt;0<br>
+ 0, если X=0
+</p>
+
+<p align=justify>
+<span class=func>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TInteger1DArray):TInteger1DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TReal1DArray):TReal1DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TComplex1DArray):TComplex1DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TBoolean1DArray):TBoolean1DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TInteger2DArray):TInteger2DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TReal2DArray):TReal2DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TComplex2DArray):TComplex2DArray;<b>overload</b>;<br>
+<b>function</b> DynamicArrayCopy(<b>const</b> A: TBoolean2DArray):TBoolean2DArray;<b>overload</b>;
+</span><br>
+Это семейство функций служит для создания копий одномерных и двухмерных динамических массивов.
+</p>
+
+<a name="array"><h1>Массивы</h1></a>
+
+<p align=justify>
+В стандартной библиотеке AP определены следующие типы динамических массивов:
+</p>
+
+<pre>
+<b>type</b>
+    TInteger1DArray     = array of LongInt;
+    TReal1DArray        = array of Double;
+    TComplex1DArray     = array of Complex;
+    TBoolean1DArray     = array of Boolean;
+
+    TInteger2DArray     = array of array of LongInt;
+    TReal2DArray        = array of array of Double;
+    TComplex2DArray     = array of array of Complex;
+    TBoolean2DArray     = array of array of Boolean;
+</pre>
+
+<a name="complex"><h1>Операции с комплексными числами</h1></a>
+
+<p align=justify>
+Поскольку язык Object Pascal не поддерживает перегрузку операторов (что является предметом справедливой критики со стороны адептов С++), операции с комплексными числами не могут осуществляться так же легко, как и со встроенными типами данных. Поэтому в библиотеке определен тип данных <code>Complex</code>, представляющий собой запись с двумя вещественными полями <code>x</code> и <code>y</code>, операции с которым осуществляются путем вызова функций, реализующих операции сложения, умножения, вычитания и деления, и принимающих как комплексные, так и вещественные параметры, и возвращающих комплексные результаты. Список этих функций приведен ниже.
+</p>
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Add(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Complex;<br>
+<b>function</b> C_AddR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Complex;
+</span><br>
+Эти функции вычисляют суммы <i>Z1+Z2</i> или <i>Z1+R</i>.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Sub(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Complex;<br>
+<b>function</b> C_SubR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Complex;<br>
+<b>function</b> C_RSub(<b>const</b> R : Double; <b>const</b> Z1 : Complex):Complex;
+</span><br>
+Эти функции вычисляют разности <i>Z1-Z2</i>, <i>Z1-R</i> или <i>R-Z1</i>.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Mul(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Complex;<br>
+<b>function</b> C_MulR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Complex;
+</span><br>
+Эти функции вычисляют произведения <i>Z1*Z2</i> или <i>Z1*R</i>.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Div(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Complex;<br>
+<b>function</b> C_DivR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Complex;<br>
+<b>function</b> C_RDiv(<b>const</b> R : Double; <b>const</b> Z2 : Complex):Complex;
+</span><br>
+Эти функции вычисляют отношения <i>Z1/Z2</i>, <i>Z1/R</i> или <i>R/Z2</i>.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Equal(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Boolean;<br>
+<b>function</b> C_EqualR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Boolean;<br>
+<b>function</b> C_NotEqual(<b>const</b> Z1 : Complex; <b>const</b> Z2 : Complex):Boolean;<br>
+<b>function</b> C_NotEqualR(<b>const</b> Z1 : Complex; <b>const</b> R : Double):Boolean;
+</span><br>
+Эти функции сравнивают <i>Z1</i> и <i>Z2</i> или <i>Z1</i> и <i>R</i>.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Complex(<b>const</b> X : Double):Complex;
+</span><br>
+Эта функция конвертирует вещественное число в равное ему комплексное.
+</p>
+
+
+<p align=justify>
+<span class=func>
+<b>function</b> C_Opposite(<b>const</b> Z : Complex):Complex;
+</span><br>
+Эта функция возвращает <i>-Z</i>.
+</p>
+
+<p align=justify>
+<span class=func>
+<b>function</b> AbsComplex(<b>const</b> Z : Complex):Double;
+</span><br>
+Эта функция возвращает модуль комплексного числа. Вычисление модуля осуществляется с использованием т.н. "безопасного" алгоритма, который никогда не приводит к переполнению при вычислении промежуточных результатов. 
+</p>
+
+<p align=justify>
+<span class=func>
+<b>function</b> Conj(<b>const</b> Z : Complex):Complex;
+</span><br>
+Эта функция возвращает комплексное число, сопряженное своему аргументу. 
+</p>
+
+<p align=justify>
+<span class=func>
+<b>function</b> CSqr(<b>const</b> Z : Complex):Complex;
+</span><br>
+Эта функция возвращает квадрат аргумента.
+</p>
+
+
+</body>
+</html>

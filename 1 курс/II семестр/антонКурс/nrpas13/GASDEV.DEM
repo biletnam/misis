@@ -1,0 +1,52 @@
+PROGRAM d7r6 (input,output);
+(* driver for routine GASDEV *)
+CONST
+   n=20;
+   nover2=10;   (* n/2 *)
+   npts=1000;
+   iscal=400;
+   llen=50;
+VAR
+   i,idum,iset,j,k,klim : integer;
+   gset : real;
+   words : ARRAY [1..50] OF char;
+   dist : ARRAY [-nover2..nover2] OF real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+BEGIN
+   gliset := 0;   (* initializes routine gasdev *)
+   idum := -13;   (* initializes ran3 *)
+   FOR j := -nover2 to nover2 DO BEGIN
+      dist[j] := 0.0
+   END;
+   FOR i := 1 to npts DO BEGIN
+      j := round(0.25*n*gasdev(idum));
+      IF ((j >= -nover2) AND (j <= nover2)) THEN dist[j] := dist[j]+1
+   END;
+   writeln ('normally distributed deviate of ',npts:6,' points');
+   writeln ('x':5,'p(x)':10,'graph:':9);
+   FOR j := -nover2 to nover2 DO BEGIN
+      dist[j] := dist[j]/npts;
+      FOR k := 1 to 50 DO BEGIN
+         words[k] := ' '
+      END;
+      klim := trunc(iscal*dist[j]);
+      IF  (klim > llen) THEN  klim := llen;
+      FOR k := 1 to klim DO BEGIN
+         words[k] := '*'
+      END;
+      write (j/(0.25*n):8:4,dist[j]:8:4,'  ');
+      FOR k := 1 to 50 DO BEGIN
+         write (words[k])
+      END;
+      writeln
+   END
+END.

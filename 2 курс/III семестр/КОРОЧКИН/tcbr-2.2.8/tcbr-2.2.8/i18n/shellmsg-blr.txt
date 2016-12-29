@@ -1,0 +1,374 @@
+AUTHOR_MODE = on
+
+ShellForm = Паковщик книг для
+ShellForm.BitBtn1 = Выход
+ShellForm.buildButton = Создать
+ShellForm.RestrictJarCheckBox = Макс. размер JAR файла (Байт)
+ShellForm.LocalizationAuthorNameLabel = Русификация by автор - Alexey Vdovichenko aka tequilacat
+ShellForm.myClearLogButton = Очистить сообщения
+ShellForm.myCBShowZipDebug = Показывать сообщения ZIPa
+
+ShellForm.MidletTypeLabel = Выберите модель телефона
+
+ShellForm.EncodingLabel = Кодировка // TLabel
+
+ShellForm.DivideChaptersCheckBox = Разбивать по главам // TCheckBox
+ShellForm.ExtendHeightCheckBox = Увеличить высоту экрана на: // TCheckBox
+ShellForm.NumericChaptersCheckBox = Считать одиночные числа заголовками глав
+
+ShellForm.WrapModeLabel = Форматирование
+ShellForm.AutoscrollLabel = Автопрокрутка
+ShellForm.NokiaBacklightIntensityLabel = Яркость подсветки (Nokia) // TStaticText
+ShellForm.WidthJustifyCheckBox = Выравнивать по ширине
+
+ShellForm.ShowHyphSignCheckBox = Показывать знак переноса
+ShellForm.TiBRHyphCountLabel = Мин. ширина слога в TiBR
+
+LBL_DEFAULT_ENCODING = По умолчанию
+
+LBL_WRAP_NOWRAP = Нет
+LBL_WRAP_BYCHAR = По символам
+LBL_WRAP_BYWORD = По словам
+LBL_WRAP_RUSSIAN_HYPHENATION = Переносы
+LBL_WRAP_TIBR = Переносы в стиле TiBR
+
+
+LBL_GENERIC_VERSION=Для всех телефонов
+MSG_SUCCESSFULLY_GENERATED_FILES = Успешно сгенерированы следующие файлы:
+MSG_BUILD_FAILED = Ошибка при создании мидлетов.
+
+MSG_UNSUPPORTED_IMAGE_FILE = Неизвестный формат изображения:
+MSG_CANTLOAD_IMAGE_FILE = Не могу загрузить изображение:
+MSG_CANT_OPEN_FILE = Не могу открыть файл $1
+MSG_CANT_SAVE_FILE = Не могу сохранить файл: $1
+
+MSG_CANT_COPY_FILE = Не могу скопировать $1 в $2:
+MSG_CANT_EXTRACT_MFT = Не могу извлечь файл-манифест:
+MSG_NOJARS = В поддиректории 'jars' не найдены Jar файлы
+MSG_NO_PROJECT_ID = Введите имя проекта
+MSG_BAD_PROJECT_ID = Имя проекта должно содержать только лат. буквы и цифры:
+MSG_BAD_SIZE = Введён неправильный размер
+LBL_SELECT_OUTDIR = Выберите путь, куда сохранять мидлеты
+
+
+//ShellForm.CreateFolderSpeedButton = Создавать свою папку для каждой книги
+ShellForm.CutHeaderFromTitleCheckbox = Не включать начала заголовков в названия глав
+
+ShellForm.NewProjectToolButton = Очистить список книг
+ShellForm.OpenProjectToolButton = Добавить...
+ShellForm.SaveProjectToolButton = Сохранить настройки
+ShellForm.ProjectNameLabel = Название книги в телефоне:
+ShellForm.ResplitToolButton = Переразбить главы
+
+ShellForm.AllowSmoothFontsCheckBox = Сглаженный шрифт (увеличит размер)
+// ShellForm.AutoAdvanceChapterCheckBox = Автопереход к следующей главе
+ShellForm.ShowIncompleteLineCheckBox = Показывать неполную последнюю строку
+
+LBL_TYPE_ALL = Все файлы
+LBL_TYPE_BKS = Проекты (списки книг)
+LBL_TYPE_TXT = Тексты
+MSG_JARSIZE_TOO_SMALL = Макс. размер Jar файла слишком мал, чтобы вместить всё\nДолжен быть не меньше :
+
+LBL_PREVIEW_FAILURE = Ошибка препросмотра (слишком большой текст?)
+LBL_PREVIEW_OFF = Препросмотр отключен
+LBL_PREVIEW_SELECT_NODE = Выберите текст...
+ShellForm.EnablePreviewCheckBox = Включить препросмотр
+ShellForm.MergeToolButton = Объединить главы // выбранные 
+ShellForm.AddChapterLenCheckBox = Добавлять длину главы к её названию
+
+ShellForm.DefFontLabel = Шрифт по умолчанию
+ShellForm.InterLineInterleaveLabel = Межстрочный интервал
+ShellForm.PageMarginsGroupBox = Поля страницы
+ShellForm.ScrollbarPosLabel = Полоса прокрутки
+
+LBL_TYPE_ALL_SUPPORTED = Все поддерживаемые форматы
+
+// MSG_FILTERFORMAT_ERROR = Неправильное описание формата конвертора
+// MSG_FILTER_NOT_AVAILABLE = Команда преобразователя не найдена
+
+MSG_TEXTCONVERT_ERROR = Не могу преобразовать текстовый файл
+MSG_TEXTFORMAT_UNKNOWN = Этот формат не поддерживается
+
+LBL_DEFFONT_PHONEBIG = Большой шрифт телефона
+LBL_DEFFONT_PHONEMEDIUM = Средний шрифт телефона
+LBL_DEFFONT_PHONESMALL = Малый шрифт телефона
+
+// LBL_DEFFONT_SELECTED = Нормальный шрифт
+// LBL_DEFFONT_SELECTEDROTATED = Повёрнутый шрифт
+
+LBL_SCROLLBAR_BOTTOM = Полоса прокрутки снизу
+LBL_SCROLLBAR_NONE = Не показывать
+LBL_SCROLLBAR_RIGHT = Полоса прокрутки справа
+LBL_SCROLLBAR_STATUSBAR = Статус-строка снизу
+
+LBL_PHONEKEY_LBLNAME = Действие
+LBL_PHONEKEY_LBLVALUE = Код клавиши
+LBL_PHONEKEY_PAGEDOWN = Страница вниз
+LBL_PHONEKEY_PAGEUP = Страница вверх
+
+MSG_BAD_SAVE_FORMAT = Неправильный формат опций
+MSG_NOSUCHFONT = Шрифт не найден, используем шрифт по умолчанию  
+
+
+MSG_NOSUCHRESOURCEIMAGE = Нет картинки в данных приложения
+ShellForm.AddLargeFontToolButton = Добавить большой шрифт телефона
+ShellForm.AddMiddleFontToolButton = Добавить средний шрифт телефона
+ShellForm.AddSmallFontToolButton = Добавить малый шрифт телефона
+ShellForm.MinChapterLinesCheckBox = Создавать главу не меньше(строк):
+ShellForm.DontIncludeChapterTitleCheckBox = Не включать в главу её заголовок
+
+ShellForm.OnlyLocalFontsCheckBox = Только русские шрифты
+ShellForm.OrientationNormalToolButton = Направление текста
+ShellForm.SampleScreenSizeLabel = Размер экрана
+ShellForm.GenerateWmlCheckBox = Создать index.wml (WAP-страницу для загрузки книги с сайта)
+
+
+
+ShellForm.AddBookCoverCheckBox = Добавить обложку книги
+ShellForm.AddMidletIconCheckBox = Добавить иконку мидлета (в телефоне)
+
+ShellForm.CurrentlyPackedBookLabel = Книга:
+ShellForm.CurrentlyPackedJarLabel = Jars:
+ShellForm.DescriptionTabSheet = Описание
+ShellForm.FolderPerBookCheckBox = Книги в отдельных папках
+ShellForm.IncrementalLoadCheckBox = Загружать по меере прочтения
+// ShellForm.LightWeightMidletCheckBox = Ужать максимум текста
+
+ShellForm.PackProgressGroupBox = Стадия упаковки
+ShellForm.SelectBookCoverButton = Выберите обложку
+ShellForm.SelectMidletIconButton = Выберите иконку мидлета
+ShellForm.UseRegExpCheckBox = Использовать регулярные выражения
+ShellForm.MinChapterLinesLabel = Минимум строк в главе:
+ShellForm.CaseInsensitiveCheckBox = Не различать регистр символов
+
+
+
+
+ShellForm.CreateFolderForJarCheckBox = Создавать каждый JAR в отдельной папке
+ShellForm.CreateFolderForProjectCheckBox = Создавать свою папку для каждой книги
+ShellForm.DontAddCompletionMarksCheckBox = Не добавлять картинки "книга прочитана" для компактности
+ShellForm.DragAndDropHintLabel = Шрифты можно перетаскивать мышкой
+ShellForm.InvertColorsToolButton = Инвертировать цвета
+
+MSG_ACTION_REQUIRES_SELECTION = Выбран объект, не подходящий для этого действия
+MSG_CANT_VIEW_THE_UNICODE = Этот текст - Unicode, и не может быть отображён при данных настройках системы Windows
+
+ShellForm.FontBoldToolButton = Жирный шрифт
+ShellForm.FontItalicToolButton = Наклонный шрифт
+ShellForm.TargetDirGroupBox = Где создавать книги
+ShellForm.MidletTargetDirFromSourceRadioButton = Создавать рядом с исходной книгой
+ShellForm.SelectTargetDirSpeedButton = Выберите, где создавать книги
+ShellForm.HelpButton = Помощь
+ShellForm.ProjectFileNameLabel = Имя JAR файла
+ShellForm.SelectFontColorToolButton = Выбрать цвет текста
+ShellForm.SelectPaperColorToolButton = Выбрать цвет "бумаги"
+ShellForm.AutoScrollMilliSecondsLabel = мс/страницу
+
+ShellForm.RunPostprocedureNowButton = Запустить
+ShellForm.ExitOnSuccessCheckBox = Выйти по завершении
+ShellForm.OnSuccessCreationGroupBox = После создания выполнять следующие действия:
+ShellForm.OnSuccessDoNothingRadioButton = Ничего не делать
+ShellForm.OnSuccessOpenFolderRadioButton = Открыть папку с созданными файлами
+ShellForm.OnSuccessRunAppRadioButton = Запустить программу:
+ShellForm.SelectPostprocessorSpeedButton = Выбрать программу
+
+LBL_AUTOSCROLL_BYLINE = По строкам
+LBL_AUTOSCROLL_BYPAGE = По страницам
+LBL_AUTOSCROLL_SMOOTH = Плавная
+
+ShellForm.PasswordWarnLabel = Заметьте, этот пароль не защитит вашу информацию от умелого хакера!
+ShellForm.PasswordProtectCheckBox = Защитить паролем
+ShellForm.TypePwdLabel = Введите пароль:
+ShellForm.RetypePwdLabel = Подтвердите пароль:
+
+LBL_PASSWORD_REQUIRED_NONEMPTY = Требуется непустой пароль
+LBL_PASSWORD_NOMATCH = Введённые пароли не совпадают
+
+LBL_TASK_ADDBOOK = Добавить книгу
+LBL_TASK_ADDBOOKS = Книги
+LBL_TASK_APPEARANCE = Изменить оформление
+LBL_TASK_BOOKMERGE = Объединить книги // выбранные
+LBL_TASK_CHAPTERSPLIT = Разбить главу здесь 
+LBL_TASK_CHAPTERMERGE = Объединить главы // выбранные
+LBL_TASK_BOOKREMOVE = Удалить выбранную книгу
+LBL_TASK_BOOKREMOVEALL = Удалить ВСЕ книги
+LBL_TASK_BOOKRENAME = Переименовать
+LBL_TASK_BOOKREPARSE = Переформатировать
+LBL_TASK_BOOKSHELLOPEN = Просмотреть// системной программой
+LBL_TASK_FONTS = Шрифты / страница 
+LBL_TASK_FONT_ADDLARGE = Добавить большой шрифт
+LBL_TASK_FONT_ADDMEDIUM = Добавить средний шрифт
+LBL_TASK_FONT_ADDSMALL = Добавить малый шрифт
+LBL_TASK_FONT_ADDWINDOW = Добавить шрифт Windows
+LBL_TASK_FONT_REMOVE = Удалить выбранный шрифт
+LBL_TASK_MIDLETPROPS = Настройки
+LBL_TASK_OPTIONS = Установить параметры
+LBL_TASK_SAVESETUP = Сохранить настройки
+LBL_TASK_READSETUP = Прочитать настройки
+LBL_TASK_SHOWLOG = Показать сообщения
+
+LBL_TASK_KEYMAPPING = Переназначить клавиши
+LBL_TASK_PREPROCESSBOOK = Препроцессоры
+LBL_TASK_MANUALPROPERTIES = Конфиги
+
+
+LBL_OPTIONS_SE_VOLKEYS = Прокрутка боковыми кнопками SE T610 (только для старых прошивок!)
+LBL_OPTIONS_AMPM = Время в 12-часовом формате
+LBL_OPTIONS_HAS_DIRBUTTONS = Телефон имеет кнопки направления
+
+
+LBL_OPTIONS_FOLDER_PER_JAR = Создавать папку для каждого JAR файла
+LBL_OPTIONS_FOLDER_PER_PROJECT = Создавать каждую книгу в своей папке
+LBL_OPTIONS_INTCHAPTERS = Не разрывать главу на границе JAR-а
+LBL_OPTIONS_LOCALIZE = Русифицировать мидлет
+LBL_OPTIONS_MIDLET_CREATION = Создание мидлета
+LBL_OPTIONS_MIDLET_OPTIONS = Настройки мидлета
+LBL_OPTIONS_CREATE_JAD = Создавать JAD файлы
+LBL_OPTIONS_SPARELINE = Оставлять одну строку при прокрутке страницы
+LBL_OPTIONS_CREATE_WML=Создавать WAP-страницу для загрузки через GPRS
+
+
+KeyMapEntryForm = Переопределить кнопку
+KeyMapEntryForm.KeyToItemsRb = как пункт меню
+KeyMapEntryForm.KeyToKeyRb = как другую кнопку
+KeyMapEntryForm.RedefineCharLabel = Переопределить кнопку телефона
+KeyMapEntryForm.RedefineCharTabSheet = по кнопке
+KeyMapEntryForm.RedefineKeyCodeLabel = Переопределить код кнопки
+KeyMapEntryForm.RedefineKeyItemsLabel = как пункт меню
+KeyMapEntryForm.RedefineKeyTabSheet = по коду
+KeyMapEntryForm.RedefineKeysCancelBtn = Отмена
+KeyMapEntryForm.RedefineKeysOkBtn = OK
+ShellForm.AddKeyMappingButton = +//Добавить
+ShellForm.RemoveKeyMappingButton = Удалить назначение
+MSG_KEYDEF_BADKEYCODE = Код кнопки не может быть нулевым
+MSG_KEYDEF_BADMENUITEM = Пункт меню задаётся последовательностью цифр, #, * (горячих клавиш)
+ShellForm.EditKeyMappingButton = Изменить назначение кнопки
+
+MSG_MISSINGPROJECTNAME = Не указано имя книги
+MSG_USEFIRSTFILENAME = Назвать как исходный текстовый файл? \n'$1'
+ShellForm.RememberPasswordCheckBox = Запоминать пароль
+
+ERR_CANNOT_CREATE = Не могу создать '$1'
+LBL_OPTIONS_CREATE_TEXTDESCRIPTION = Создавать файл описания созданных книг
+MSG_BAD_BLOCKSIZE = Неправильный размер текстового блока: '$1'
+MSG_CANTMOVEFILE = Не могу переместить файл\n$1\nв $2
+ShellForm.BlockSizeLabel = Размер текстового блока
+LBL_AUTOSCROLL_WAVE = Волной
+MSG_OLDVERSION_SETTINGS = Версия сохранённых параметров слишком старая ($1)\nВозможны ошибки
+
+LBL_ACTION_CLOSEMENU = Выйти из меню
+LBL_ACTION_LINEDOWN = Строка вниз
+LBL_ACTION_LINEUP = Строка вверх
+LBL_ACTION_PAGEDOWN = Страница вниз
+LBL_ACTION_PAGEUP = Страница вверх
+LBL_ACTION_SHOWMENU = Открыть главное меню
+LBL_PHONEKEY_CODE = Выбрать код...
+ShellForm.PhoneActionLabel = Действие
+ShellForm.PhoneKeyLabel = Кнопка
+
+LBL_PHONEKEYCODE_LABEL = Код #$1
+LBL_PHONEKEY_ARROW_DOWN = Стрелка 'Вниз'
+LBL_PHONEKEY_ARROW_LEFT = Стрелка 'Влево'
+LBL_PHONEKEY_ARROW_RIGHT = Стрелка 'Вправо'
+LBL_PHONEKEY_ARROW_UP = Стрелка 'Вверх'
+LBL_PHONEKEY_LABEL = Кнопка '$1'
+LBL_PHONEKEY_SELECT = Кнопка 'Выбрать'
+ShellForm.ResetKeyBindingsButton = По умолчанию
+
+ShellForm.FileSystemRootLabel = Папка
+ShellForm.FileSystemSupportedCheckBox = Читать файлы в телефоне
+
+LBL_SCREENSIZE_NOTSPECIFIED = Не указано
+ShellForm.AutoscrollDelayLabel = Задержка
+ShellForm.AutoscrollStepLabel = Шаг
+ShellForm.ScreenSizeGroupBox = Размер экрана
+ShellForm.UseManualSizeRadioButton = Вручную
+LBL_USE_SKINSCREENSIZE = Автоматически [$1]
+ShellForm.OverrideScreenHeightCheckBox = Убрать белую полосу внизу
+ShellForm.ScrollbarWhenDemandedCheckBox = Показывать по требованию
+
+LBL_BOOK_NOT_SELECTED = Выберите книгу
+LBL_OPTIONS_ADD_FOLDERICON = Присвоить созданной папке иконку
+
+MSG_PREVIEW_ENABLED = Показать весь текст
+MSG_PREVIEW_ENABLED_SEEMORE = Показать весь текст (показано %1 из %2 байт)
+
+MSG_CREATE_TARGETDIR = Создаём папку '$1' 
+MSG_TARGETDIR_ALREADY_EXISTS = Папка '$1' уже существует, создаём новую:\n'$2'
+ShellForm.CurTextPathLabel = Путь:
+ShellForm.CurTextSizeLabel = Размер:
+LBL_OPTIONS_DONT_ADD_ICON = Не добавлять иконку
+ShellForm.AddFolderIconLabel = Иконка папки
+ShellForm.AddMidletIconLabel = Иконка книги в телефоне
+
+LBL_OPTIONS_JAR_PER_BOOK = Каждая книга в своём JAR файле
+MSG_INVALID_OUTPUTDIR_SPECIFIED = Папка, где создавать книги, не указана или не существует\n"$1"
+MSG_NO_OUTPUTDIR_SPECIFIED = Не указана папка, где создавать книги
+ShellForm.InfoBarTemplateLabel = Формат строки статуса (t-время, %-процент)
+MSG_FILEEXISTS_MAKEUNIQUE = Файл существует: $1\nСоздаём похожий файл:\n$2
+
+LBL_OPTION_JARLABELS_DERIVE_FROM_TEXT = Назвать по имени первой книги
+LBL_OPTION_JARLABELS_FILTER_FILENAME = Транслитерировать имя JAR файла
+
+ShellForm.AltDirectionCheckBox = Прокручивать кнопками Вверх/Вниз постранично
+ShellForm.BacklightStateLabel = Подсветка
+ShellForm.AddManualPropertiesCheckBox = Добавить эти значения в props.ini
+// (только для продвинутых пользователей!)
+
+LBL_OPTIONS_ALTDIRECTION = Прокручивать кнопками Вверх/Вниз постранично
+
+
+LBL_BYTES_COUNT = $1 байт
+LBL_GENERATED_JARS = JARы: $1
+LBL_OPTIONS_SCROLL_ON_PRESSED_KEY = Прокручивать при нажатых клавишах
+ShellForm.ExitButton = Выход
+ShellForm.VibraLabel = Вибра
+ShellForm.VibraMessageLabel = мс (отключить - 0)
+
+
+ERR_ARCHIVE_BAD = Неправильный формат архива $1
+ERR_ARCHIVE_CANTREAD = Ошибка чтения архива $1: $2
+ERR_BAD_OPTION_FORMAT = Неправильный формат конфигурационных опций: $1
+ERR_BAD_PLUGIN_FORMAT = Неправильный формат файла описания плагина: $1
+
+ERR_COMMAND_NOT_AVAILABLE = Поддержка формата $3 требует установки дополнительного преобразователя/разархиватора: $1\nВы можете загрузить его по ссылкам, находящимся на странице помощи.
+
+
+LBL_HEADER_PLUGINS_FORMAT_CONVERTERS = Преобразователи форматов
+LBL_HEADER_PLUGINS_TEXT_FORMATTERS = Преобразователи простого текста
+
+LBL_FILESYSTEM_SUPPORTED = (поддержка файлов)
+MSG_FONTPREVIEW_SELECT_TEXT = Выделите текст книги для просмотра
+
+LBL_COMMON_DEFAULT = По умолчанию
+LBL_COMMON_OFF = Выключено
+LBL_COMMON_ON = Включено
+
+ShellForm.PreviewOptionsTabSheet = Опции
+ShellForm.PreviewScreenSizeTabSheet = Размер экрана
+ShellForm.PreviewScrollbarTabSheet = Полоса прокрутки
+ShellForm.PreviewWrapTabSheet = Переносы
+
+ShellForm.LoadedPluginsLabel = Заруженные преобразоваетели текста
+ShellForm.ReplaceCharactersCheckBox = Заменять при добавлении книги
+ShellForm.ApplyTextReplaceButton = Заменить сейчас
+MSG_BAD_REPLACECHAR_NOACTION = Замена символов не произведена
+MSG_BAD_REPLACECHAR_REF = Неправильно задан символ для замены:
+ShellForm.AddManualManifestCheckBox = Добавить эти значения в manifest.mf
+
+ERR_BADKEYCODE = Неправильный код клавиши
+LBL_PHONEKEY_ENTERCODE = Введите код клавиши...
+
+ShellForm.ResetKeyMappingButton = Исходные значения
+LBL_ACTION_SHOWLASTMENU = Открыть предыдущее меню
+ShellForm.ReplaceCharHelpLabel = Пример: "a" -символ, 0xff - hex код, 123 - десятичный код, // - комментарий
+
+LBL_KEYMAP_COLUMNHEADER = Кнопка №
+MSG_UNICODE_CREATE_DEFFONT = Тексты/сообщения в Unicode отображаются только шрифтами телефона\nсоздаём шрифт телефона
+MSG_UNICODE_NO_PNG_FONTS = Меню и сообщения в Unicode могут отображаться только шрифтами телефона\nШрифты Windows не будут доступны
+
+ShellForm.ScreenSizeMeaningInfoLabel = Размер экрана не влияет на чтение, он нужен только чтобы выбрать шрифт
+ERR_WRONG_TIMECOMPENSATE_FORMAT = Неправильный формат временной поправки: '$1'\nОна должна задаваться как ЧЧ:ММ напр. -2:30 или 1
+ShellForm.TimeCompensateLabel = Временная поправка (напр. -2:30)
+
+

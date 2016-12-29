@@ -1,0 +1,109 @@
+PROGRAM d14r9(input,output);
+(* driver for routine MRQCOF *)
+CONST
+   npt=100;
+   mma=6;
+   spread=0.1;
+TYPE
+   glndata = ARRAY [1..npt] OF real;
+   glmma = ARRAY [1..mma] OF real;
+   glnparam=glmma;
+   gllista = ARRAY [1..mma] OF integer;
+   glnalbynal = ARRAY [1..mma,1..mma] OF real;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   chisq : real;
+   i,j,idum,mfit : integer;
+   x,y,sig : glndata;
+   a,beta,gues : glmma;
+   lista : gllista;
+   covar,alpha : glnalbynal;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+PROCEDURE funcs(x: real; a: glnparam; VAR y: real;
+       VAR dyda: glnparam; na: integer);
+(* Programs using routine FGAUSS must define the type
+TYPE
+   glnparam = ARRAY [1..na] OF real;
+where na is the number of parameters. *)
+VAR
+   i,ii : integer;
+   fac,ex,arg : real;
+BEGIN
+   y := 0.0;
+   FOR ii := 1 to (na DIV 3) DO BEGIN
+      i := 3*ii-2;
+      arg := (x-a[i+1])/a[i+2];
+      ex := exp(-sqr(arg));
+      fac := a[i]*ex*2.0*arg;
+      y := y+a[i]*ex;
+      dyda[i] := ex;
+      dyda[i+1] := fac/a[i+2];
+      dyda[i+2] := fac*arg/a[i+2]
+   END
+END;
+
+(*$I MRQCOF.PAS *)
+
+BEGIN
+   gliset := 0;
+   a[1] := 5.0; a[2] := 2.0; a[3] := 3.0;
+   a[4] := 2.0; a[5] := 5.0; a[6] := 3.0;
+   gues[1] := 4.9; gues[2] := 2.1; gues[3] := 2.9;
+   gues[4] := 2.1; gues[5] := 4.9; gues[6] := 3.1;
+   idum := -911;
+(* first try sum of two gaussians *)
+   FOR i := 1 to 100 DO BEGIN
+      x[i] := 0.1*i;
+      y[i] := 0.0;
+      y[i] := y[i]+a[1]*exp(-sqr((x[i]-a[2])/a[3]));
+      y[i] := y[i]+a[4]*exp(-sqr((x[i]-a[5])/a[6]));
+      y[i] := y[i]*(1.0+spread*gasdev(idum));
+      sig[i] := spread*y[i]
+   END;
+   mfit := mma;
+   FOR i := 1 to mfit DO BEGIN
+      lista[i] := i
+   END;
+   FOR i := 1 to mma DO BEGIN
+      a[i] := gues[i]
+   END;
+   mrqcof(x,y,sig,npt,a,mma,lista,mfit,alpha,beta,mma,chisq);
+   writeln;
+   writeln('matrix alpha');
+   FOR i := 1 to mma DO BEGIN
+      FOR j := 1 to mma DO write(alpha[i,j]:12:4);
+      writeln
+   END;
+   writeln('vector beta');
+   FOR i := 1 to mma DO write(beta[i]:12:4);
+   writeln;
+   writeln('chi-squared:',chisq:12:4);
+   writeln;
+(* next fix one line and improve the other *)
+   FOR i := 1 to 3 DO BEGIN
+      lista[i] := i+3
+   END;
+   mfit := 3;
+   FOR i := 1 to mma DO BEGIN
+      a[i] := gues[i]
+   END;
+   mrqcof(x,y,sig,npt,a,mma,lista,mfit,alpha,beta,mma,chisq);
+   writeln('matrix alpha');
+   FOR i := 1 to mfit DO BEGIN
+      FOR j := 1 to mfit DO write(alpha[i,j]:12:4);
+      writeln
+   END;
+   writeln('vector beta');
+   FOR i := 1 to mfit DO write(beta[i]:12:4);
+   writeln;
+   writeln('chi-squared:',chisq:12:4);
+   writeln
+END.

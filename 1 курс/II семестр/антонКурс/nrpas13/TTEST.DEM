@@ -1,0 +1,49 @@
+PROGRAM d13r3(input,output);
+(* driver for routine TTEST *)
+(* generate gaussian distributed data *)
+CONST
+   npts=1024;   (* npts must be > mpts for TTEST.PAS *)
+   mpts=512;
+   eps=0.03;
+   nshft=10;
+TYPE
+   glnarray = ARRAY [1..npts] OF real;
+   glmarray = ARRAY [1..mpts] OF real;
+   glnparray = glnarray;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   data1 : glnarray;
+   data2 : glmarray;
+   i,idum,j : integer;
+   prob,t : real;
+
+(*$I MODFILE.PAS *)
+(*$I AVEVAR.PAS *)
+
+(*$I GAMMLN.PAS *)
+
+(*$I BETACF.PAS *)
+
+(*$I BETAI.PAS *)
+
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I TTEST.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -11;
+   FOR i := 1 to npts DO data1[i] := gasdev(idum);
+   FOR i := 1 to mpts DO data2[i] := (nshft DIV 2)*eps+gasdev(idum);
+   writeln('shift':6,'t':8,'probability':16);
+   FOR i := 1 to (nshft+1) DO BEGIN
+      ttest(data1,npts,data2,mpts,t,prob);
+      writeln((i-1)*eps:6:2,t:10:2,prob:10:2);
+      FOR j := 1 to npts DO data1[j] := data1[j]+eps
+   END
+END.

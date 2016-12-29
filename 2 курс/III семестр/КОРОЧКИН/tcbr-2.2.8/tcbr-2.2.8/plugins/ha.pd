@@ -1,0 +1,6 @@
+plugin.description = HA decompressor (c) 1995 Harri Hirvola
+plugin.extlist = ha
+plugin.filetype=HA archive file
+
+plugin.cmdline = ha.exe xy %in
+

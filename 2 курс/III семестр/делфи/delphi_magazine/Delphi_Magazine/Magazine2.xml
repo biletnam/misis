@@ -1,0 +1,1 @@
+<?xml version="1.0" standalone="yes"?>  <DATAPACKET Version="2.0"><METADATA><FIELDS><FIELD attrname="MagazineID" fieldtype="i4" required="true"/><FIELD attrname="Title" fieldtype="string" WIDTH="64"/><FIELD attrname="EditorID" fieldtype="i4"/></FIELDS><PARAMS/></METADATA><ROWDATA></ROWDATA></DATAPACKET>

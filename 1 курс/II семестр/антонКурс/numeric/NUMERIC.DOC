@@ -1,0 +1,46 @@
+          This archive contains the following files. They are all concerned 
+          with some aspect of numerical analysis. In most cases the 
+          programs include a reference to their source. Perhaps the most 
+          generally useful and understandable text is 'Applied Numerical 
+          Analysis', Curtis F. Gerald -- his sample programs are about as 
+          structured as it is possible to be in Fortran. Harley Flanders' 
+          'Scientific Pascal' has excellent sample programs, but is not 
+          very strong on the theory behind them. Whether you feel like 
+          looking up the theory or not, it usually a good idea to test the 
+          program by running it on a case where the analytic answer is 
+          known. 
+
+      LIKKER.PAS        Solves a heat transfer problem
+      LINSYS.PAS        System of linear equations
+      MATLIB.PAS        Collection matrix operations. Should be used with 
+                        discretion - calculating the inverse is NOT a good 
+                        way to solve a linear system.
+      MULTINT.PAS       Multiple definite integration
+      NEWTON.PAS        Finds a zero of a function
+      PANREIF2.PAS      Invert a real matrix
+      RK.PAS            Runge-Kutta solution of ordinary differential 
+                        equation. (o.d.e.)
+      TELE.PAS          Telescopes power series for efficient calculation 
+                        of transcendental functions
+      STATLIB.PAS       Statistical operations
+      RKF45.PAS         Adaptive Runge-Kutta-Fehlberg (~5th order accuracy)
+      RKNRLC.PAS        Runge-Kutta-Nystrom -- 2nd. order equations
+      RKSYS.PAS         System of o.d.e.'s
+      S3D3.PAS          Plot a 3d function
+      SIMPSON.PAS       Integration
+      TESTIV.PAS            "
+      ALLZERO.PAS       Finds all complex zeroes of a function
+      BESSEL.PAS        Bessel function
+      CFIT31.PAS        Least-squares curve fit, up to 7th. order curve
+      DFT.PAS           Discrete Fourier Transform
+      FFT.PAS           Fast ditto.
+      CMPLXLIB.PAS      Complex math routines
+      ERF.PAS           Error function
+      SIMPLEX1.PAS      Simplex optimization
+      SIMPLEX.PAS           ditto
+      RKV71.PAS         Runge-Kutta-Verner, o.d.e's with 7th order accuracy
+      PWRTEST.PAS       Recursively calculates integer powers
+
+    Submitted by MARK STEPHEN. 
+    Leave a message if you have any problems with this stuff, but any 
+    numerical analysis text will probably be more helpful than I can. 

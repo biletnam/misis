@@ -1,0 +1,60 @@
+PROGRAM d8r4(input,output,dfile);
+(* driver for routine SORT2 *)
+CONST
+   np=100;
+TYPE
+   glsarray=ARRAY [1..np] OF real;
+VAR
+   i,j : integer;
+   a,b : glsarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SORT2.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to 100 DO BEGIN
+      read(dfile,a[i])
+   END;
+   close(dfile);
+(* generate b-array *)
+   FOR i := 1 to 100 DO BEGIN
+      b[i] := i-1
+   END;
+(* sort a and mix b *)
+   sort2(100,a,b);
+   writeln('after sorting a and mixing b, array a is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+   writeln('... and array b is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(b[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+   writeln('press return to continue...');
+   readln;
+(* sort b and mix a *)
+   sort2(100,b,a);
+   writeln('after sorting b and mixing a, array a is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+   writeln ('... and array b is:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(b[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END
+END.

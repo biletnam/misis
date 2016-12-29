@@ -1,0 +1,53 @@
+PROGRAM d10r8(input,output);
+(* driver for routine F1DIM *)
+CONST
+   ndim=3;
+TYPE
+   glndim = ARRAY [1..ndim] OF real;
+VAR
+   i,j,ncom : integer;
+   p,xi : glndim;
+   pcom,xicom : glndim;
+
+FUNCTION fnc(x : glndim) : real;
+(* Programs using routine FNC must define the type
+TYPE
+   glndim = ARRAY [1..ndim] OF real;
+in the main routine, where ndim is the dimension of vector x. *)
+VAR
+   f : real;
+   i : integer;
+BEGIN
+   f := 0.0;
+   FOR i := 1 to 3 DO BEGIN
+      f := f+sqr(x[i]-1.0)
+   END;
+   fnc := f
+END;
+
+(*$I MODFILE.PAS *)
+(*$I F1DIM.PAS *)
+
+FUNCTION fx(x: real): real;
+BEGIN
+   fx := f1dim(x)
+END;
+
+(*$I SCRSHO.PAS *)
+
+BEGIN
+   p[1] := 0.0; p[2] := 0.0; p[3] := 0.0;
+   ncom := ndim;
+   writeln;
+   writeln('Enter vector direction along which to');
+   writeln('plot the function. Minimum is in the');
+   writeln('direction 1.0 1.0 1.0 - enter x y z:');
+   read(xi[1],xi[2],xi[3]);
+FOR i := 1 to 3 DO write(xi[i]);
+writeln;
+   FOR j := 1 to ndim DO BEGIN
+      pcom[j] := p[j];
+      xicom[j] := xi[j]
+   END;
+   scrsho
+END.

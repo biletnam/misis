@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002 (1.67)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Метод покоординатного спуска.</TITLE>
+<META NAME="description" CONTENT="Метод покоординатного спуска.">
+<META NAME="keywords" CONTENT="texfiles">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Метод покоординатного спуска._files/styles00.css">
+</HEAD>
+
+<BODY >
+<ADDRESS> </ADDRESS>
+<table width="100%" border="1" bordercolor="#000000">
+  <tr>
+    <td class="page"> 
+      <h2><a name="SECTION04021000000000000000"> Метод покоординатного спуска.</a> 
+      </h2>
+      Один из способов (далеко не самый удачный) поиска минимума функции нескольких 
+      переменных, опираясь на методы поиска минимума функции одной переменной. 
+      Пусть требуется отыскать минимум функции <img
+ width="19" height="14" align="BOTTOM" border="0"
+ src="Метод покоординатного спуска._files/img19000.gif"
+ alt="$ N$"> переменных <!-- MATH
+ $U(\vec{x}) = U(x_1,x_2,\ldots,x_N)$
+ --> <img
+ width="180" height="31" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30100.gif"
+ alt="$ U(\vec{x}) = U(x_1,x_2,\ldots,x_N)$"> и начальное приближение минимума 
+      <!-- MATH
+ $\vec{x}\,^{(0)}=\bigl(x_1^{(0)},\ldots,x_N^{(0)}\bigr)$
+ --> <img
+ width="156" height="41" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30200.gif"
+ alt="$ \vec{x} ^{(0)}=\bigl(x_1^{(0)},\ldots,x_N^{(0)}\bigr)$">.
+      <hr>
+      Метод покоординатного спуска состоит из применения последовательности шагов 
+      <ol>
+        <li>Ищется минимум функции одной переменной <!-- MATH
+ $f_1(x) = U(x,x_2^{0},\ldots,x_N^{0})$
+ --> <img
+ width="176" height="33" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30300.gif"
+ alt="$ f_1(x) = U(x,x_2^{0},\ldots,x_N^{0})$">, то есть функции <!-- MATH
+ $U(\vec{x})$
+ --> <img
+ width="38" height="31" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30400.gif"
+ alt="$ U(\vec{x})$"> при фиксированной первой переменной. Первое приближение 
+          для этой координаты помещается в точку минимума <!-- MATH
+ $x_1^{1}=x_{min}$
+ --> <img
+ width="75" height="33" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30500.gif"
+ alt="$ x_1^{1}=x_{min}$">. </li>
+        <li>Фиксируется вторая переменная, производится поиск минимума функции 
+          одной переменной <!-- MATH
+ $f_2(x) = U(x_1^{1},x,\ldots,x_N^{0})$
+ --> <img
+ width="176" height="33" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30600.gif"
+ alt="$ f_2(x) = U(x_1^{1},x,\ldots,x_N^{0})$">. Новое значение координаты <img
+ width="20" height="33" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30700.gif"
+ alt="$ x_2^1$"> присвоить значению минимума этой функции. </li>
+        <li>Продолжать минимизацию во всем координатам, придя к следующему приближению 
+          <!-- MATH
+ $\vec{x}\,^{(1)}=\bigl(x_1^{(1)},\ldots,x_N^{(1)}\bigr)$
+ --> <img
+ width="156" height="41" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30800.gif"
+ alt="$ \vec{x} ^{(1)}=\bigl(x_1^{(1)},\ldots,x_N^{(1)}\bigr)$">. </li>
+        <li>Аналогично вычислить <!-- MATH
+ $\vec{x}\,^{(2)},\vec{x}\,^{(3)},\ldots$
+ --> <img
+ width="95" height="36" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img30900.gif"
+ alt="$ \vec{x} ^{(2)},\vec{x} ^{(3)},\ldots$">, пока <!-- MATH
+ $\left|\vec{x}\,^{(k-1)}-\vec{x}\,^{(k)}\right|$
+ --> <img
+ width="109" height="36" align="MIDDLE" border="0"
+ src="Метод покоординатного спуска._files/img31000.gif"
+ alt="$ \left\vert\vec{x} ^{(k-1)}-\vec{x} ^{(k)}\right\vert$"> не станет меньше 
+          заданной точности. </li>
+      </ol>
+      Простой <a href="javascript:void(0)" onClick=window.open("../progs/ex_coord.html","_blank","width=500,height=350,resizable=no,directories=no,menubar=no,status=no,toolbar=no,location=no,scrollbars=no")>пример</a> 
+      показывает, насколько этот метод может быть неэффективным даже при поиске 
+      минимума простой функции двух переменных. Поэтому указанный алгоритм применять 
+      <i><u>не следует</u></i>! </td>
+  </tr>
+</table>
+</BODY>
+</HTML>
+
+<!-- This document saved from http://ktf.physics.usu.ru/~avvakumov/numerical/content/node49.html -->

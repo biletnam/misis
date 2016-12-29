@@ -1,0 +1,6 @@
+label=Motorola T720,T722 etc
+
+skin.screen = 28x28x120x160
+skin.image=MotorolaT720.jpg
+jar=bookreader.jar
+overridePhoneScreenSize=true

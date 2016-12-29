@@ -1,0 +1,75 @@
+PROGRAM d7r14(input,output);
+(* driver for routines KS and CYFUN in file DESKS.PAS *)
+TYPE
+   gl32array = ARRAY [1..32] OF integer;
+   gl48array = ARRAY [1..48] OF integer;
+   gl56array = ARRAY [1..56] OF integer;
+   gl64array = ARRAY [1..64] OF integer;
+VAR
+   glicd,ipc1 : gl56array;
+   i,k : integer;
+   iout,ir,ipp : gl32array;
+   kn,ipc2,iet : gl48array;
+   key,ip,ipm : gl64array;
+   is : ARRAY [1..16,1..4,1..8] OF integer;
+   ibin : ARRAY [1..4,1..16] OF integer;
+   ksflg,desflg,cyflg : boolean;
+   txt : PACKED ARRAY [1..64] OF char;
+
+(*$I MODFILE.PAS *)
+(*$I DESKS.PAS *)
+
+BEGIN
+(* test routine KS *)
+   desflg := true;
+   ksflg := true;
+   cyflg := true;
+   FOR i := 1 to 64 DO BEGIN
+      key[i] := i MOD 2;
+      IF (key[i] = 0) THEN txt[i] := '-';
+      IF (key[i] = 1) THEN txt[i] := '*'
+   END;
+   writeln('legend:');
+   writeln('-=0   *=1 ':25);
+   writeln('master key:');
+   write(' ':12);
+   FOR i := 1 to 56 DO write(txt[i]);
+   writeln;
+   writeln('sub-master keys:');
+   FOR i := 1 to 16 DO BEGIN
+      ks(key,i,kn);
+      FOR k := 1 to 48 DO BEGIN
+         IF (kn[k] = 0) THEN txt[k] := '-';
+         IF (kn[k] = 1) THEN txt[k] := '*'
+      END;
+      write(i:6,' ':6);
+      FOR k := 1 to 48 DO write(txt[k]);
+      writeln
+   END;
+   writeln('press RETURN to continue...');
+   readln;
+(* test routine CYFUN *)
+   FOR i := 1 to 32 DO BEGIN
+      ir[i] := (i MOD 3) MOD 2;
+      IF (ir[i] = 0) THEN txt[i] := '-';
+      IF (ir[i] = 1) THEN txt[i] := '*'
+   END;
+   writeln('legend:');
+   writeln('-=0   *=1 ':25);
+   writeln('input to cipher function:');
+   write(' ':12);
+   FOR i := 1 to 32 DO write(txt[i]);
+   writeln;
+   writeln('ciphered output:');
+   FOR i := 1 to 16 DO BEGIN
+      ks(key,i,kn);
+      cyfun(ir,kn,iout);
+      FOR k := 1 to 32 DO BEGIN
+         IF (iout[k] = 0) THEN txt[k] := '-';
+         IF (iout[k] = 1) THEN txt[k] := '*'
+      END;
+      write(i:6,' ':6);
+      FOR k := 1 to 32 DO write(txt[k]);
+      writeln
+   END
+END.

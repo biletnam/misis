@@ -1,0 +1,8 @@
+P {
+ text-align: justify;
+ text-indent: 25px;
+}
+
+A:link { color: #000 }
+A:visited { color: #000 }
+A { text-decoration: none; }

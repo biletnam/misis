@@ -1,0 +1,42 @@
+PROGRAM d8r5(input,output,dfile);
+(* driver for routine INDEXX *)
+CONST
+   np=100;
+TYPE
+   glsarray = ARRAY [1..np] OF real;
+   gliarray = ARRAY [1..np] OF integer;
+VAR
+   i,j : integer;
+   a : glsarray;
+   indx : gliarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I INDEXX.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to 100 DO BEGIN
+      read(dfile,a[i])
+   END;
+   close(dfile);
+(* generate index for sorted array *)
+   indexx(np,a,indx);
+(* writeln original array *)
+   writeln('original array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+(* writeln sorted array *)
+   writeln('sorted array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[indx[10*(i-1)+j]]:6:2)
+      END;
+      writeln
+   END
+END.

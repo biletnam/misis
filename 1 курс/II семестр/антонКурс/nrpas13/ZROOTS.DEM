@@ -1,0 +1,52 @@
+PROGRAM d9r11(input,output);
+(* driver for routine ZROOTS *)
+CONST
+   m=4;
+   twomp2=10;   (* twomp2=(2*m+2) *)
+TYPE
+   glcarray = ARRAY [1..twomp2] OF real;
+   gl2array = ARRAY [1..2] OF real;
+VAR
+   i : integer;
+   polish : boolean;
+   a,roots : glcarray;
+
+(*$I MODFILE.PAS *)
+(*$I LAGUER.PAS *)
+
+(*$I ZROOTS.PAS *)
+
+BEGIN
+   a[1] := 0.0; a[2] := 2.0;
+   a[3] := 0.0; a[4] := 0.0;
+   a[5] := -1.0; a[6] := -2.0;
+   a[7] := 0.0; a[8] := 0.0;
+   a[9] := 1.0; a[10] := 0.0;
+   writeln('Roots of the polynomial x^4-(1+2i)*x^2+2i');
+   polish := false;
+   zroots(a,m,roots,polish);
+   writeln;
+   writeln('Unpolished roots:');
+   writeln('root #':14,'real':13,'imag.':13);
+   FOR i := 1 to m DO BEGIN
+      writeln(i:11,' ':5,roots[2*i-1]:12:6,roots[2*i]:12:6)
+   END;
+   writeln;
+   writeln('Corrupted roots:');
+   FOR i := 1 to m DO BEGIN
+      roots[2*i-1] := roots[2*i-1]*(1+0.01*i);
+      roots[2*i] := roots[2*i]*(1+0.01*i)
+   END;
+   writeln('root #':14,'real':13,'imag.':13);
+   FOR i := 1 to m DO BEGIN
+      writeln(i:11,' ':5,roots[2*i-1]:12:6,roots[2*i]:12:6)
+   END;
+   polish := true;
+   zroots(a,m,roots,polish);
+   writeln;
+   writeln('Polished roots:');
+   writeln('root #':14,'real':13,'imag.':13);
+   FOR i := 1 to m DO BEGIN
+      writeln(i:11,' ':5,roots[2*i-1]:12:6,roots[2*i]:12:6)
+   END
+END.

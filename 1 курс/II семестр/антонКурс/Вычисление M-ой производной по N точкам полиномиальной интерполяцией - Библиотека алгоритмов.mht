@@ -1,0 +1,731 @@
+Content-Type: multipart/related; start=<op.mhtml.1180532981734.c29b1532441902e3@192.168.105.108>; boundary=----------z5eqeVlpNGnFsJ88DYEiEm
+Content-Location: http://alglib.sources.ru/interpolation/derivativenm.php
+Subject: =?utf-8?Q?=D0=92=D1=8B=D1=87=D0=B8=D1=81=D0=BB=D0=B5=D0=BD=D0=B8=D0=B5=20M-=D0=BE=D0=B9=20=D0=BF=D1=80=D0=BE=D0=B8=D0=B7=D0=B2=D0=BE=D0=B4=D0=BD=D0=BE=D0=B9=20=D0=BF=D0=BE=20N=20=D1=82=D0=BE=D1=87=D0=BA=D0=B0=D0=BC=20=D0=BF=D0=BE=D0=BB=D0=B8=D0=BD=D0=BE=D0=BC=D0=B8=D0=B0=D0=BB=D1=8C=D0=BD=D0=BE=D0=B9=20=D0=B8=D0=BD=D1=82=D0=B5=D1=80=D0=BF=D0=BE=D0=BB=D1=8F=D1=86=D0=B8=D0=B5=D0=B9=20-=20=D0=91=D0=B8=D0=B1=D0=BB=D0=B8=D0=BE=D1=82=D0=B5=D0=BA=D0=B0=20=D0=B0=D0=BB=D0=B3=D0=BE=D1=80=D0=B8=D1=82=D0=BC=D0=BE=D0=B2?=
+MIME-Version: 1.0
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=derivativenm.htm
+Content-Type: text/html; name=derivativenm.htm
+Content-Id: <op.mhtml.1180532981734.c29b1532441902e3@192.168.105.108>
+Content-Location: http://alglib.sources.ru/interpolation/derivativenm.php
+Content-Transfer-Encoding: 8bit
+
+
+<html>
+<head>
+<title>Вычисление M-ой производной по N точкам полиномиальной интерполяцией - Библиотека алгоритмов</title>
+
+<meta name="keywords" content="алгоритм c++ delphi visual basic интерполяционный полином кубический сплайн непрерывные дроби рациональная функция тригонометрический полином билинейная интерполяция ресемплирование">
+
+<style type="text/css">
+<!--
+h2 { font-family: Tahoma,sans-serif; font-size : larger; }
+h3 { font-family: Arial,sans-serif; font-size : 12pt;}
+input { font-family: Courier New,monospace; font-size : 9pt; }
+ul,ol { text-align:justify; }
+
+a.leftmenu { font-family: Tahoma,sans-serif; font-weight:none; font-size:8pt; text-decoration: none; color:#cc0000;}
+a.leftmenu:hover { text-decoration: underline;}
+a.artlist {color:#111177; text-decoration: none;}
+a.artlist:visited {color:#111177; text-decoration: none;}
+a.artlist:hover {color:#111177; text-decoration: underline;}
+a.special {color:#000066; font-size : 10pt;}
+a.special:visited {color:#000066; font-size : 10pt;}
+a.specialatt {color:#aa0000; font-size : 10pt; font-weight:bold; }
+a.specialatt:visited {color:#aa0000; font-size : 10pt; font-weight:bold; }
+
+.compact { margin-top:0; margin-bottom:0; }
+.code { font-family: Courier New, monospace; font-size : 9pt; color:#006699; }
+.smalltext { font-size : 10pt; }
+.halfsmalltext { font-size : 11pt; }
+.attention { color:#aa0000; font-weight:bold; }
+.leftmenusection { font-family: Tahoma,sans-serif; font-weight:bold; font-size:8pt; text-decoration: none; color:#bb0000;}
+-->
+</style>
+</head>
+
+<body bgcolor=F5F5F5 text="#333333" link="#000099" vlink="#222255" alink="#552255" bottommargin=0 topmargin=0 marginwidth=0 marginheight=0 rightmargin=0 leftmargin=0>
+
+<table cellpadding=0 cellspacing=0 border=0 width=100%>
+
+<!-- LOGO 
+<td bgcolor=#F5F5F5 background="/img/backf1.jpg"><img src="/img/topf1.jpg" width=600 height=119 border=0 alt="">
+-->
+<tr><td background="/img/nettopback.gif"><img src="/img/logoru1.png" width=500 height=119 border=0 alt=""><br>
+</td>
+</tr>
+
+<!-- LOGO BOTTOM LINE -->
+<tr>
+<td bgcolor=#0056A0 height=1>
+</td>
+</tr>
+
+<!-- NAV BOTTOM LINE -->
+<!-- <tr>
+<td bgcolor=#0056A0 height=1>
+</td>
+</tr> -->
+
+<!-- NAV, NAV2 AND CONTENT -->
+<tr>
+<td align=center bgcolor=white>
+<table cellpadding=0 cellspacing=0 border=0 width=100%>
+<tr>
+
+<!--
+<td bgcolor=white align=left valign=top width=10>
+<img src="/empty.gif" width=10 height=1 border=0 alt=""> 
+</td>
+-->
+
+<td bgcolor=#F0F0F8 align=left valign=top width=20>
+
+<table cellpadding=10 cellspacing=0 border=0 width=100%>
+<tr><td bgcolor=#F0F0F8 nowrap>
+
+
+<b><span class=leftmenusection>Содержание</span></b>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/">АЛГОРИТМЫ</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/articles/">Статьи</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="http://forum.sources.ru/index.php?showforum=43">Форум</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/links.php">Коллекция ссылок</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/sitemap.php">Карта сайта</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="http://www.alglib.net/">Английская версия</a>
+<br>
+
+<b><span class=leftmenusection>Сайт и автор</span></b>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/news.php">Новости</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="http://subscribe.ru/catalog/comp.prog.alglibnews">Рассылка новостей</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/aboutsite.php">О сайте</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/faq.php">FAQ</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/contact.php">Контакты</a>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="/copyrules.php">TERMS OF USE</a>
+<br>
+
+<b><span class=leftmenusection>Друзья</span></b>
+<br>
+
+<img src="/empty.gif" width=10 height=1 border=0 alt="">
+<a class=leftmenu href="http://www.sources.ru/">SOURCES.RU</a>
+
+
+
+</td></tr>
+</table>
+
+</td>
+
+
+<td bgcolor=#B0B0C0 align=left valign=top width=1>
+<img src="/empty.gif" width=1 height=1 border=0 alt="">
+</td>
+
+<td bgcolor=white align=left valign=top width=10>
+<img src="/empty.gif" width=40 height=1 border=0 alt=""> 
+</td>
+
+
+<td valign=top>
+<div style="margin-top:10px; margin-bottom:10px;"><span class=smalltext><a class=special href="/">Алгоритмы</a> - <a class=special href="/interpolation/">Интерполяция, аппроксимация и численное дифференцирование</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией</span></div><table cellpadding=6 cellspacing=0 border=0 width=100% bgcolor=E8E8E8 style="margin-top:10px; margin-bottom:10px;">
+<tr>
+<td>
+<h2 class=compact>Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией</h2>
+
+</td>
+</tr>
+</table>
+<p align=justify>
+Для вычисления производных высших порядков существует метод, который позволяет эффективно посчитать производную произвольного порядка <i>M</i> на основе произвольного числа точек <i>N</i>. Единственный недостаток метода - он требует специального выбора точек вычисления функции, а именно размещения их в корнях полинома Чебышева <i>N</i>-ой степени.
+</p>
+
+<p align=justify>
+Метод использует свойство дискретной ортогональности полиномов Чебышева: если <i>T<sub><small>n&nbsp;</small></sub>(x)</i> - полином Чебышева <i>n</i>-ой степени, <i>x<sub><small>k&nbsp;</small></sub></i> - его корни, а <i>i, j &lt; n</i>, то
+</p>
+
+<p><img src="/SMScripts/visualize.php?mode=normal&code=sum%28T_i_%28x_k_%29T_j_%28x_k_%29%2Ck%3D1%2Cn%29%20%3D%20choice%280%20%20%20%20i%26ne%3Bj%2Cn%2F2%20%20i%3Dj%26ne%3B0%2Cn%20%20%20%20i%3Dj%3D0%29" border=0 alt="
+sum(T_i_(x_k_)T_j_(x_k_),k=1,n) = choice(0    i&ne;j,n/2  i=j&ne;0,n    i=j=0)
+"></p>
+
+<p align=justify>
+Таким образом, узнав значения функции в указанных точках, легко построить её разложение по полиномам Чебышева, которое легко и быстро дифференцируется.
+</p>
+
+<p style="text-align: justify; margin-left: 100px;  margin-right: 60px; font-size: 90%; ">
+<b>Замечание #1</b><br>
+
+Есть два способа для повышения точности вычисления производной. Можно уменьшать шаг дифференцирования <i>h</i>, а можно увеличивать число точек <i>N</i>. Не рекомендуется делать <i>h</i> слишком малым, особенно для производных высших порядков - начинают проявляться погрешности операций с вещественными числами. В таких случаях лучше увеличить число точек <i>N</i>, оставив шаг <i>h</i> довольно-таки большим.
+
+</p>
+
+<p style="text-align: justify; margin-left: 100px;  margin-right: 60px; font-size: 90%; ">
+<b>Замечание #2</b><br>
+
+Следует быть осторожным при вычислении производных высших порядков. С ростом порядка производной растет число точек, которое требуется для её вычисления. Если вы вычисляете десятую производную, то будьте готовы, что для её вычисления вам потребуется двадцать точек, а при меньшем их числе погрешность будет слишком велика.
+
+</p>
+
+<h3><i>
+Описание программы
+</i></h3>
+
+<p align=justify>
+Алгоритм вычисляет производную функции <font face="Courier New"><b>F(x)</b></font>, которая должна быть определена в том же модуле. Если такой способ использования неудобен, то программист может переписать начало алгоритма и передавать в алгоритм таблицу значений функции, вычисленных в указанных точках.
+</p>
+
+<p align=justify>
+Входные параметры:
+</p>
+
+<ul><li><font face="Courier New"><b>X</b></font> - точка, в которой считаем производную</li>
+<li><font face="Courier New"><b>H</b></font> - шаг дифференцирования. Точки вычисления функции будут размещены на области <i>(X-H, X+H)</i></li>
+<li><font face="Courier New"><b>M</b></font> - порядок производной. <i>M >= 0</i></li>
+<li><font face="Courier New"><b>N</b></font> - число используемых точек, <i>N >= 1</i></li>
+</ul>
+
+<p align=justify>
+Результат - <i>M</i>-ая производная функции F в точке <i>X</i>
+</p>
+
+
+
+<p align=right><a class=specialatt href="/error.php?title=%C2%FB%F7%E8%F1%EB%E5%ED%E8%E5%20%7B%7BM%7D%7D-%EE%E9%20%EF%F0%EE%E8%E7%E2%EE%E4%ED%EE%E9%20%EF%EE%20%7B%7BN%7D%7D%20%F2%EE%F7%EA%E0%EC%20%EF%EE%EB%E8%ED%EE%EC%E8%E0%EB%FC%ED%EE%E9%20%E8%ED%F2%E5%F0%EF%EE%EB%FF%F6%E8%E5%E9">Если нашли ошибку в алгоритме - сообщите!</a></p><table cellpadding=6 cellspacing=0 border=0 width=100% bgcolor=E8E8E8 style="margin-top:10px; margin-bottom:10px;">
+<tr>
+<td>
+<h2 class=compact>Реализация алгоритма</h3>
+</td>
+</tr>
+</table>
+<p align=justify class=smalltext>
+<span class=attention>Перед использованием алгоритма:
+<ul class=compact>
+<li class=smalltext>
+Прочитайте <a class=special href="/faq.php">FAQ</a>. Обратите внимание на раздел, посвященный выбранному вами языку.
+</li>
+<li class=smalltext>
+Прочитайте комментарии. Сэкономите много времени, поскольку НУМЕРАЦИЯ ЭЛЕМЕНТОВ МАССИВОВ НЕ ВСЕГДА НАЧИНАЕТСЯ С НОЛЯ, а не все это замечают.
+</li>
+</ul>
+</span>
+</p>
+
+<h3 class=compact>C#</h3><p style="margin-top:0; margin-bottom:0; margin-left: 18pt;">
+<span class=smalltext>
+
+Исходный код на C# 1.0.<br>
+
+
+<a class=special href="/translator/dl/interpolation.derivativenm.csharp.zip"><img src="/img/i-download.gif" border=0 align=middle width=19 height=19 alt="">dernm.csharp.zip</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией
+</span>
+</p>
+<br><h3 class=compact>C++</h3><p style="margin-top:0; margin-bottom:0; margin-left: 18pt;">
+<span class=smalltext>
+
+Исходный код на C++.<br>
+
+
+<a class=special href="/translator/dl/interpolation.derivativenm.cpp.zip"><img src="/img/i-download.gif" border=0 align=middle width=19 height=19 alt="">dernm.cpp.zip</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией
+</span>
+</p>
+<br><h3 class=compact>Delphi</h3><p style="margin-top:0; margin-bottom:0; margin-left: 18pt;">
+<span class=smalltext>
+
+Исходный код на Delphi.<br>
+Возможна компиляция в Free Pascal (в режиме совместимости с Delphi).<br>
+
+
+<a class=special href="/translator/dl/interpolation.derivativenm.delphi.zip"><img src="/img/i-download.gif" border=0 align=middle width=19 height=19 alt="">dernm.delphi.zip</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией
+</span>
+</p>
+<br><h3 class=compact>Visual Basic 6</h3><p style="margin-top:0; margin-bottom:0; margin-left: 18pt;">
+<span class=smalltext>
+
+Исходный код на Visual Basic 6.<br>
+
+
+<a class=special href="/translator/dl/interpolation.derivativenm.vb6.zip"><img src="/img/i-download.gif" border=0 align=middle width=19 height=19 alt="">dernm.vb6.zip</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией
+</span>
+</p>
+<br><h3 class=compact>Zonnon <sup><font size=-1 color=blue>beta</font></sup></h3><p style="margin-top:0; margin-bottom:0; margin-left: 18pt;">
+<span class=smalltext>
+
+Исходный код на Zonnon.<br>
+Zonnon - экспериментальный язык, разработанный в ETH Zurich (см. www.zonnon.ethz.ch).<br>
+
+
+<a class=special href="/translator/dl/interpolation.derivativenm.zonnon.zip"><img src="/img/i-download.gif" border=0 align=middle width=19 height=19 alt="">dernm.zonnon.zip</a> - Вычисление <i>M</i>-ой производной по <i>N</i> точкам полиномиальной интерполяцией
+</span>
+</p>
+<br>
+
+<!-- END OF CONTENT -->
+<br>
+</td>
+<td width=40>
+ &nbsp; 
+</td>
+</tr>
+</table>
+
+<!-- FOOTER LINE 1 -->
+<tr>
+<td bgcolor=#0056A0 height=1>
+</td>
+</tr>
+
+<!-- FOOTER BAR -->
+<tr>
+<td bgcolor=#E2E2E2 height=30>
+&nbsp;
+</td>
+</tr>
+
+<!-- FOOTER LINE 2 -->
+<tr>
+<td bgcolor=#0056A0 height=1>
+</td>
+</tr>
+
+<!-- FOOTER -->
+<tr>
+<td height=30 nowrap valign=middle align=right>
+<table cellpadding=10 cellspacing=0 border=0><tr><td align=right>
+<font size=-1>
+
+
+
+Бочканов Сергей, Быстрицкий Владимир<br>Copyright &copy; 1999-2007<br>При поддержке проекта MANUAL.RU
+
+
+
+
+</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- END OF BODY -->
+</td>
+</tr>
+</table>
+
+
+
+</body>
+</html>
+
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=nettopback.gif
+Content-Type: image/gif; name=nettopback.gif
+Content-Location: http://alglib.sources.ru/img/nettopback.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODlhCgB3AJEAAABWof////Dw8AAAACwAAAAACgB3AAACMpSPqcvtD6OctNqL
+Hdi8hw+G4kiW5omm6sq27gvH8kzX9o3n+s73/g8MCofEovGIXBUAADs=
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=logoru1.png
+Content-Type: image/png; name=logoru1.png
+Content-Location: http://alglib.sources.ru/img/logoru1.png
+Content-Transfer-Encoding: Base64
+
+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
+SUVORK5CYII=
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=empty.gif
+Content-Type: image/gif; name=empty.gif
+Content-Location: http://alglib.sources.ru/empty.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw==
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=visualize.png
+Content-Type: image/png; name=visualize.png
+Content-Location: http://alglib.sources.ru/SMScripts/visualize.php?mode=normal&code=sum%28T_i_%28x_k_%29T_j_%28x_k_%29%2Ck%3D1%2Cn%29%20%3D%20choice%280%20%20%20%20i%26ne%3Bj%2Cn%2F2%20%20i%3Dj%26ne%3B0%2Cn%20%20%20%20i%3Dj%3D0%29
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAN4AAAAyAQMAAAAJL/cNAAAABlBMVEWAgIAAAADn
+aKu+AAAAAXRSTlMAQObYZgAAAaRJREFUeJyFlL1OwzAQx89uVGVAkIqFASFHdEaM
+3epKPEgGZsTIUIkLA8pYMfEYHRk79hEYQEpeAIXNXYA7p21SxwlnRSf5579zH7YB
+XHtozTQMe5joE/4DS3aKhgeK0PrIq6xgrspueGms9N0Llbbwtk9541fiHioIAEKb
+4zaVTRXuF30apA0eG0XY5+KBIt9B5DnFizzl64KPv2U3nPbBM0qhEx71wWE7oLpb
+A4AfhlOsYV41uwSB8MJwXMO4ko7ofyva5jkRAcSvoE9WUiwVwcKUMcGE4JMmqBas
+DGCtFW97uiF4TTBFhgkrQ8g0rYlNNAt5TQOyMkPcK/XhthKyNLKS1BZgwgEd24D4
+JHwKKqiBEafCfcWhgEAJtKlsa8T5SFshaSuE2ml2QLW9R1nAhYI3t7YhjQjlDKSC
+hQsjCwcpw9zX7E4lH5M5DguCovVPa3w0pXNuD+C5ByY0Dq+DtarZ7v2ulXSjruYO
+FEt2hfmmroxbynW1bUTKiauEjF1sRl5lVivvqHWd0DUhPtgZKnr7sWnfbA+sb3bT
+0De5s8Zj/AckEmz/66ybzQAAAABJRU5ErkJggg==
+
+------------z5eqeVlpNGnFsJ88DYEiEm
+Content-Disposition: inline; filename=i-download.gif
+Content-Type: image/gif; name=i-download.gif
+Content-Location: http://alglib.sources.ru/img/i-download.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODlhEwATAJEAAPX19f///wBUjP///yH5BAEAAAMALAAAAAATABMAAAI9nI+p
+yykPogRvPTHhVTfj7UCSVoXYFIHIxbYCF8TyHLwOjdsrTuuHwJv5DMBgbDgoGpHK
+INPlakin1GqiAAA7
+------------z5eqeVlpNGnFsJ88DYEiEm--

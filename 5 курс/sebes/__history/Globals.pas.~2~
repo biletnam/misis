@@ -1,0 +1,8 @@
+unit Globals;
+
+interface
+var CurrentProductId: string;
+NeedLoadProducts: Boolean;
+implementation
+
+end.

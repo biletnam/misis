@@ -1,0 +1,48 @@
+// AUTHOR_MODE = on
+
+ShellForm.LocalizationAuthorNameLabel = Polskie t³umaczenie: Wojtek Kowaluk
+
+ShellForm.myTargetDirLabel = Katalog docelowy // TLabel
+ShellForm.BitBtn1 = &Koniec // TBitBtn
+ShellForm.buildButton = &Utwórz ! // TBitBtn
+ShellForm.TabSheet1 = Ksi¹¿ka // TTabSheet
+ShellForm.myTBAddTxt = Dodaj tekst // TToolButton
+ShellForm.myTBRenameTxt = Tytu³ wyœwietlany w menu wyboru ksi¹zki  // TToolButton
+ShellForm.myTBEditTxt = Edytuj w notatniku // TToolButton
+ShellForm.myTBRemoveTxt = Usuñ tekst // TToolButton
+
+ShellForm.RestrictChapterCheckBox = Maks. rozmiar rozdzia³u (bajty) // TLabel
+ShellForm.RestrictJarCheckBox  = Maks. rozmiar archiwum .jar (bajty) // TLabel
+
+ShellForm.TabSheet3 = Czcionka // TTabSheet
+
+ShellForm.SelFGColorBtn = Kolor czcionki // TToolButton
+ShellForm.SelBGColorBtn = Kolor t³a // TToolButton
+
+ShellForm.aboutTabSheet = Informacje // TTabSheet
+ShellForm.myLogTabSheet = Log // TTabSheet
+ShellForm.myClearLogButton = Wyczyœæ log // TButton
+ShellForm.myCBShowZipDebug = Poka¿ komunikaty Zip-a // TCheckBox
+
+ShellForm.MidletTypeLabel = Wersja midletu // TLabel
+ShellForm.EncodingLabel = Kodowanie // TLabel
+
+ShellForm.DivideChaptersCheckBox = Rozpoznawaj rozdzia³y // TCheckBox 
+ShellForm.HasDirButtonsCheckBox = Telefon ma przyciski kierunkowe // TCheckBox
+ShellForm.ExtendHeightCheckBox = Rozszerz ekran o
+ShellForm.InvertFontButton = Odwróæ kolory // TToolButton
+ShellForm.SelRotatedFontTButton = Wybierz obrócon¹ czcionkê // TBitBtn
+ShellForm.SelNormalFontTButton = Wybierz normaln¹ czcionkê // TBitBtn
+SelectFontImageForm.NoFontButton = Czcionka telefonu // shorter: Natywna
+// SelectFontImageForm.SelFontButton = Wybierz  // shorter: OK
+
+ShellForm.TabSheet2 = Opcje // TTabSheet
+ShellForm.AltDirButtonsCheckBox = Alternatywne sterowanie (Góra/Dó³ przesuwa o stronê) // TCheckBox
+ShellForm.UseSeT610SideKeysCheckBox = U¿yj klawiszy g³oœnoœci T610 // TCheckBox
+ShellForm.LocalizeMidletCheckBox = Midlet w wersji polskiej // TCheckBox
+SelectFontImageForm.AddFontBtn = Utwórz now¹ czcionkê // TSpeedButton
+SelectFontImageForm.RemoveFontButton = Usuñ czcionkê // TSpeedButton
+
+
+
+

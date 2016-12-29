@@ -1,0 +1,60 @@
+PROGRAM d7r12(input,output);
+(* driver for routine RAN4 *)
+CONST
+   npt=50;
+TYPE
+   gl64array = ARRAY [1..64] OF integer;
+   gl56array = ARRAY [1..56] OF integer;
+   gl48array = ARRAY [1..48] OF integer;
+   gl32array = ARRAY [1..32] OF integer;
+   glnparray = ARRAY [1..npt] OF real;
+   gl65reals = ARRAY [1..65] OF real;
+VAR
+   glnewkey : integer;
+   glinp,glkey,ip,ipm : gl64array;
+   glpow : gl65reals;
+   glicd,ipc1 : gl56array;
+   ave,vrnce : real;
+   idum,j : integer;
+   y : glnparray;
+   ipc2,iet : gl48array;
+   ipp : gl32array;
+   is : ARRAY [1..16,1..4,1..8] OF integer;
+   ibin : ARRAY [1..4,1..16] OF integer;
+   ksflg,cyflg,desflg : boolean;
+
+(*$I MODFILE.PAS *)
+(*$I AVEVAR.PAS *)
+
+(*$I DESKS.PAS *)
+
+(*$I DES.PAS *)
+
+(*$I RAN4.PAS *)
+
+BEGIN
+   ksflg := true;
+   cyflg := true;
+   desflg := true;
+   idum := -123;
+   ave := 0.0;
+   writeln('First 10 Random Numbers with idum = ',idum:5);
+   writeln;
+   writeln('#':4,'RAN4':11);
+   FOR j := 1 to 10 DO y[j] := ran4(idum);
+   FOR j := 1 to 10 DO writeln(j:4,y[j]:12:6);
+   writeln;
+   writeln('Average and Variance of Next ',npt:3);
+   FOR j := 1 to npt DO BEGIN
+      y[j] := ran4(idum)
+   END;
+   avevar(y,npt,ave,vrnce);
+   writeln;
+   writeln('Average: ',ave:10:4);
+   writeln('Variance:',vrnce:10:4);
+   writeln;
+   writeln('Expected Result for an Infinite Sample:');
+   writeln;
+   writeln('Average: ',0.5:10:4);
+   writeln('Variance:',1.0/12.0:10:4)
+END.

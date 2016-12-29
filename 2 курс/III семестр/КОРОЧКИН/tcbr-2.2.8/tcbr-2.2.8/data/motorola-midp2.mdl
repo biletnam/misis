@@ -1,0 +1,4 @@
+label=Motorola MIDP2
+
+skin.screen = 0x0x176x220
+jar=midp2_mot_bookreader.jar

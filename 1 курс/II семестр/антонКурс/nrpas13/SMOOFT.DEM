@@ -1,0 +1,59 @@
+PROGRAM d13r20(input,output);
+(* driver for routine SMOOFT *)
+CONST
+   n=100;
+   hash=0.05;
+   scale=100.0;
+   pts=10.0;
+   m=258;  (* 2 + first integral power of 2 that is greater or
+         equal to (n+2*pts) *)
+TYPE
+   glyarray = ARRAY [1..m] OF real;
+   gldarray = glyarray;
+VAR
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+   gliset : integer;
+   glgset : real;
+   bar : real;
+   i,ii,idum,j,k,nstp : integer;
+   y : glyarray;
+   txt : PACKED ARRAY [1..50] OF char;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GASDEV.PAS *)
+
+(*$I FOUR1.PAS *)
+
+(*$I REALFT.PAS *)
+
+(*$I SMOOFT.PAS *)
+
+BEGIN
+   gliset := 0;
+   idum := -7;
+   FOR i := 1 to n DO BEGIN
+      y[i] := 3.0*i/n*exp(-3.0*i/n);
+      y[i] := y[i]+hash*gasdev(idum)
+   END;
+   FOR k := 1 to 3 DO BEGIN
+      nstp := n DIV 20;
+      writeln('data':8,'graph':11);
+      FOR i := 1 to 20 DO BEGIN
+         ii := nstp*(i-1)+1;
+         FOR j := 1 to 50 DO BEGIN
+            txt[j] := ' '
+         END;
+         bar := round(scale*y[ii]);
+         FOR j := 1 to 64 DO BEGIN
+            IF (j <= bar) THEN txt[j] := '*'
+         END;
+         writeln (y[ii]:10:6,' ':4,txt)
+      END;
+      writeln(' press return to smooth ...');
+      readln;
+      smooft(y,n,pts)
+   END
+END.

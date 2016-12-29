@@ -1,0 +1,8 @@
+label = Samsung E700
+jar=samsung_bookreader.jar
+
+skin.screen = 7x9x128x160
+skin.image = samsung-e700.png
+
+bpp=8
+overridePhoneScreenSize=true

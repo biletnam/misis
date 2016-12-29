@@ -1,0 +1,33 @@
+PROGRAM d6r2(input,output,dfile);
+(* driver for routine FACTRL *)
+VAR
+   actual : real;
+   glntop,i,n,nval : integer;
+   txt : string[11];
+   dfile : text;
+   gla : ARRAY [1..33] OF real;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I FACTRL.PAS *)
+
+BEGIN
+   glntop := 0;   (* initialize FACTRL *)
+   gla[1] := 1.0;
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'N-factorial');
+   readln(dfile,nval);
+   writeln (txt);
+   writeln ('n':6,'actual':19,'factrl(n)':21);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,n,actual);
+      IF (actual < (1.0e10)) THEN BEGIN
+         writeln (n:6,actual:20:0,factrl(n):20:0)
+      END else BEGIN
+         writeln (n:6,' ':7,actual:13,
+               ' ':7,factrl(n):13)
+      END
+   END;
+   close(dfile)
+END.

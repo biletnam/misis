@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<meta name="Description"
+content="Образовательный математический сайт Exponenta.ru. Раздел Другие Пакеты: Model Vision Studium.">
+<meta name="Keywords"
+content="Exponenta.ru, Раздел Другие Пакеты, Model Vision Studium">
+<link REL="STYLESHEET" HREF="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/default2.css" TYPE="text/css">
+<title>Безусловная минимизация функций многих
+переменных методом покоординатного спуска</title>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div align="center">
+<table width="740" height="120" border="0" cellspacing="0" cellpadding="0">
+<tr><!--begin of Top100-->
+<a href="http://top100.rambler.ru/top100/">
+<img src="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/top10000.gif" alt="Rambler's Top100" width=1 height=1 border=0></a>
+<!--end of Top100 code-->
+</tr>
+  <tr> 
+    <td colspan="2" width="740" height="66" valign="bottom" align="center" background="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/224_1000.gif">
+<a href="http://www.nsu.ru/matlab/Exponenta_RU/default.asp.htm" title="Образовательный математический сайт">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</a>
+    </td>
+  </tr>
+  <tr> 
+    <td width="611" height="20" valign="bottom" align="right" background="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/224_3000.gif">
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/matlab/matlab.asp.htm"  >Matlab</a>
+<font color="#6C0036">&nbsp;|&nbsp;</font>
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Mathcad/Mathcad.asp.htm" >Mathcad</a>
+<font color="#6C0036">&nbsp;|&nbsp;</font>
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Maple/Maple.asp.htm" >Maple</a>  
+<font color="#6C0036">&nbsp;|&nbsp;</font>
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Mathemat/Mathemat.asp.htm" >Mathematica</a> 
+<font color="#6C0036">&nbsp;|&nbsp;</font>
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Statist/Statist.asp.htm" >Statistica</a> 
+<font color="#6C0036">&nbsp;|&nbsp;</font>
+      <a class="anormal" href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Others/Others.asp.htm" >Другие пакеты</a>
+    </td>
+<!-- <td width="129" height="20" valign="bottom" align="left" ><a href="http://www.exponenta.ru/search/"><img
+    src="http://www.exponenta.ru/images/224_31.gif" alt="Поиск по сайту" width="129" height="20"
+    border="0"></td> -->
+  </tr>
+  <tr>
+    <td colspan="2" width="740" height="34" valign="top" align="center"  background="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/224_2000.gif">
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/class/class.asp.htm"  >Internet-класс</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/class/courses/student/courses.asp.htm"  >Примеры</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/systemat/systemat.asp.htm"  >Методики</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/referat/referat.asp.htm"  >Банк задач</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/forum/forum.asp.htm"  >Консультации & Форум</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/free/free.asp.htm"  >Download</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/links/links.asp.htm"  >Ссылки</a>
+<font color="white">&nbsp;|&nbsp;</font>
+      <a class="navbar" href="http://www.nsu.ru/matlab/Exponenta_RU/educat/competit/competit.asp.htm"  >Конкурсы</a>
+    </td>
+  </tr>
+</table>
+</div>
+<div align="center"><center>
+
+<table width="740" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="top"><!-- background="../../../images/bg41.gif"> --> &nbsp; <div align="center"><center><table border="0"
+    width="100%" cellpadding="5">
+      <tr>
+        <td width="100%" class="head">Безусловная минимизация функций
+        многих переменных методом покоординатного
+        спуска<br>
+        выполнили: Сидоров И.Ю., Гарин С.В., 3 курс<br>
+        Пензенский Государственный Университет<br>
+        Кафедра вычислительной техники<br>
+        2002</td>
+      </tr>
+      <tr>
+        <td width="100%" class="text1"><h2 align="right"><a href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Mathcad/studmin/dim1.asp.htm">В начало</a></h2>
+        <p><strong>Многомерная оптимизация. Метод
+        покоординатного спуска.</strong></p>
+        <p><strong>&nbsp;</strong></p>
+        <p>Для решения поставленной задачи методом
+        покоординатного спуска в качестве
+        вспомогательного будем использовать метод
+        Фибоначчи(для нахождения минимума функции
+        m-переменных, если все переменные, кроме одной,
+        фиксированы). Функция нахождения минимума по
+        методу Фибоначчи для случая нескольких
+        переменных будет иметь вид:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image135.gif" WIDTH="530" HEIGHT="433"></p>
+        <p>Параметры функции :</p>
+        <p>a,b - левая и правая границы отрезка, на котором
+        ищется минимум;</p>
+        <p>f - функция m-переменных (m&gt;=2);</p>
+        <p>v - вектор приближённых значений координат x1,
+        x2...xm минимума функции;</p>
+        <p>F - массив чисел Фибоначчи;</p>
+        <p>n - количество чисел Фибоначчи;</p>
+        <p>j - переменная, принимающая значения 0,1...m-1.</p>
+        <p>В методе покоординатного спуска в качестве
+        очередного направления поиска выбирают
+        направление одной из координатных осей.</p>
+        <p>На 1-ом шаге производим спуск по координате x1,
+        значения остальных переменных фиксируем. При
+        этом значение <img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image136.gif" WIDTH="32" HEIGHT="25">выбираем
+        из условия:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image137.gif" align="absmiddle"></p>
+        <p>На 2-ом шаге производим спуск по координате x2.
+        Значения переменных <img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image138.gif" align="absmiddle">фиксируем.
+        Значение <img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image139.gif" align="absmiddle">выбираем из
+        условия:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13A.gif" align="absmiddle"></p>
+        <p>Анологично осуществляются все остальные шаги.</p>
+        <p>Функция нахождения минимума функции
+        нескольких переменных методом покоординатного
+        спуска будет иметь вид:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13B.gif" WIDTH="447" HEIGHT="134"></p>
+        <p>Параметры функции Koord_spusk() :</p>
+        <p>a,b - левая и правая границы отрезка, на котором
+        ищется минимум;</p>
+        <p>f - функция m-переменных (m&gt;=2);</p>
+        <p>v - вектор приближённых значений координат x1,
+        x2...xm минимума функции;</p>
+        <p>F - массив чисел Фибоначчи;</p>
+        <p>Найдём минимумы функций m-переменных по методу
+        покоординатного спуска.</p>
+        <p>Квадратичная функция m- переменных будет иметь
+        вид:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13C.gif" WIDTH="275" HEIGHT="58"></p>
+        <p>Коэффиценты <img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13D.gif" align="absmiddle">
+        являются элементами симметричной матрицы А.</p>
+        <p>Сначала зададим функцию двух переменных:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13E.gif" WIDTH="426" HEIGHT="37"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13F.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13G.gif" WIDTH="236" HEIGHT="17"></p>
+        <p>значение v0, при котором достигается минимум.</p>
+        <p>значение v1, при котором достигается минимум.</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13H.gif" WIDTH="127" HEIGHT="39"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13I.gif" WIDTH="134" HEIGHT="17"></p>
+        <p>минимальное значение функции.</p>
+        <p>Проверка:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13J.gif"></p>
+        <p>Строим поверхность.</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13K.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13L.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13M.gif" align="top">&nbsp;&nbsp;&nbsp; <img
+        SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13N.gif" align="absbottom"></p>
+        <b><font><p>Рис.1 Линии
+        уровня.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Рис.2 Поверхность.</p>
+        </font></b><p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13O.gif" align="absmiddle">&nbsp;&nbsp;
+        -частная производная по x1</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13P.gif" align="absmiddle">&nbsp;&nbsp; -частная
+        производная по x2</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13Q.gif" WIDTH="35" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13R.gif" WIDTH="35" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13S.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13T.gif" WIDTH="103" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13U.gif" WIDTH="97" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13V.gif"> - координаты x1 и x2 точки
+        минимума</p>
+        <p>Зададим функцию трёх переменных:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13W.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13X.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13Y.gif" WIDTH="236" HEIGHT="17"></p>
+        <p>значение v0, при котором достигается минимум.</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13Z.gif" WIDTH="127" HEIGHT="61"></p>
+        <p>значение v1, при котором достигается минимум.</p>
+        <p>значение v2, при котором достигается минимум.</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image140.gif" align="absmiddle">- минимальное
+        значение функции.</p>
+        <p>Проверка:</p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image141.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image142.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image143.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image144.gif" WIDTH="149" HEIGHT="39"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image145.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image146.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image147.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image13S.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image148.gif" WIDTH="107" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image149.gif" WIDTH="101" HEIGHT="17"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image14A.gif"></p>
+        <p><img SRC="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/Image14B.gif" WIDTH="162" HEIGHT="61"> - координаты y1,y2
+        и y3 точки минимума</p>
+        <p align="right"><a href="http://www.nsu.ru/matlab/Exponenta_RU/soft/Mathcad/studmin/dim1.asp.htm">В начало</a></td>
+      </tr>
+    </table>
+    </center></div></td>
+  </tr>
+</table>
+</center></div><center>
+
+<table width="740" border="0" cellspacing="0" cellpadding="0" bgcolor="white">
+  <tr>
+    <td width="740" height="40" align="center" valign="middle">
+      <a href="http://www.nsu.ru/matlab/Exponenta_RU/default.asp.htm" class="blackbold"> На первую страницу</a>
+     <!-- |<a href="http://www.exponenta.ru/search/" class="blackbold"> Поиск</a> -->
+     |<a href="http://www.nsu.ru/matlab/Exponenta_RU/connect/project.asp.htm" class="blackbold">О проекте</a> 
+     |<a href="http://www.nsu.ru/matlab/Exponenta_RU/connect/collabor.asp.htm" class="blackbold">Сотрудничество</a> 
+    <!-- |<a href="http://www.exponenta.ru/connect/connect.asp" class="blackbold">Обратная связь</a> -->
+     |<a href="mailto:info@exponenta.ru" class="blackbold">e-mail</a> 
+    </td>
+  </tr>
+  <tr>
+    <td width="740" height="40" align="center" valign="middle">
+<p align="right"><a href="http://www.nsu.ru/matlab/Exponenta_RU/connect/banners.asp.htm">
+<font style="font-size:8pt">Наши баннеры</font></a></p>
+<hr>
+    </td>
+  </tr>
+
+</table>
+
+
+<table border="0" width="740">
+  <tr>
+    <td width="10%"><table border="0" width="100%">
+      <tr>
+        <td width="56%"><p align="left"><font size="-2"><a
+        href="http://www.nsu.ru/matlab/Exponenta_RU/connect/copyright.asp.htm">Copyright © 2000-2003.
+        Компания SoftLine. Все права защищены.</a></font></p>
+        <p><font style="font-size:8pt">Дата последнего обновления
+        информации на сайте: 14.01.03<br>
+        Сайт начал работу 1.09.00</font> </td>
+        <td width="44%"><p align="right"><a href="http://www.softline.ru/" target="_blank"><img
+        src="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/sl_logo2.gif" alt="www.softline.ru" width="130" height="25" border="0"></a></td>
+      </tr>
+    </table>
+
+<p><div align="center"><a href="http://www.nsu.ru/matlab/Exponenta_RU/journal/default.asp.htm"><img src="Безусловная минимизация функций многих переменных методом покоординатного спуска_files/e-pro000.gif" 
+alt="Научно-практический журнал: Exponenta Pro. Математика в приложениях" border="0" width="468" height="60"></a> </div></p>
+<p>&nbsp;</p>
+
+</div>
+
+    </td>
+  </tr>
+</table>
+</center>
+
+
+</body>
+</html>
+
+<!-- This document saved from http://www.nsu.ru/matlab/Exponenta_RU/soft/Mathcad/studmin/dim2.asp.htm -->

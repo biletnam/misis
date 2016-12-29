@@ -1,0 +1,12 @@
+label=Model label
+skin.image={skin image}.txt
+skin.screen=XxYxWxH
+
+jar=....jar
+
+midlet.properties=prop.file
+midlet.property.name=value # has more priority over prop file
+
+shell.properties=prop.file
+shell.property.name=value # has more priority over prop file
+

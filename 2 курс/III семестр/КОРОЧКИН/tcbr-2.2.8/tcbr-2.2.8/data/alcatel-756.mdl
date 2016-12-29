@@ -1,0 +1,9 @@
+label = Alcatel (756 etc)
+jar =midp2_bookreader.jar
+
+skin.screen = 12x30x128x160
+skin.image=alcatel-common.png
+TextBlockSize=100000
+MaxJarSize=250000
+
+

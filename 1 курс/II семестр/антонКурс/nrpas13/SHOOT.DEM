@@ -1,0 +1,132 @@
+PROGRAM d16r1(input,output);
+(* driver for routine SHOOT *)
+(* Solves for eigenvalues of spheroidal harmonics. Both
+prolate and oblate case are handled simultaneously, leading
+to six first-order equations. Unknown to shoot, it is
+actually two independent sets of three coupled equations,
+one set with c^2 positive and the other with c^2 negative.  *)
+LABEL 1,2;
+CONST
+   nvar=6;
+   n2=2;
+   np=2;
+   delta=1.0e-3;
+   eps=1.0e-6;
+   dx=1.0e-4;
+TYPE
+   gl2array = ARRAY [1..2] OF real;
+   gln2array = gl2array;
+   gl6array = ARRAY [1..6] OF real;
+   glnarray = gl6array;
+   glnvar = gl6array;
+   glarray = gl6array;
+   glindx = ARRAY [1..6] OF integer;
+   glinvar = glindx;
+   gln2byn2 = ARRAY [1..n2,1..n2] OF real;
+   glnpbynp = gln2byn2;
+VAR
+   c2,factr,h1,hmin,q1,x1,x2 : real;
+   i,m,n : integer;
+   delv,v : gl2array;
+   dv,f : glnarray;
+   kmax,kount : integer;
+   dxsav : real;
+   xp : ARRAY [1..200] OF real;
+   yp : ARRAY [1..10,1..200] OF real;
+
+PROCEDURE load(x1: real; v: gl2array; VAR y: gl6array);
+(* Programs using routine LOAD must define the types
+TYPE
+   gl2array = ARRAY [1..2] OF real;
+   gl6array = ARRAY [1..6] OF real;
+and must define the global variables
+VAR
+   c2,factr : real;
+   m : integer;
+in the main routine. *)
+BEGIN
+   y[3] := v[1];
+   y[2] := -(y[3]-c2)*factr/2.0/(m+1.0);
+   y[1] := factr+y[2]*dx;
+   y[6] := v[2];
+   y[5] := -(y[6]+c2)*factr/2.0/(m+1.0);
+   y[4] := factr+y[5]*dx
+END;
+
+PROCEDURE score(x2: real; y: gl6array; VAR f: gl6array);
+(* Programs using routine SCORE must define the types
+TYPE
+   gl6array = ARRAY [1..6] OF real;
+and must define the global variables
+VAR
+   m,n : integer;
+in the main routine. *)
+BEGIN
+   IF (((n-m) MOD 2) = 0) THEN BEGIN
+      f[1] := y[2];
+      f[2] := y[5]
+   END ELSE BEGIN
+      f[1] := y[1];
+      f[2] := y[4]
+   END
+END;
+
+PROCEDURE derivs(x: real; y: gl6array; VAR dydx: gl6array);
+(* Programs using routine DERIVS must define the type
+TYPE
+   gl6array = ARRAY [1..6] OF real;
+and must define the global variables
+VAR
+   c2 : real;
+   m : integer;
+in the main routine. *)
+BEGIN
+   dydx[1] := y[2];
+   dydx[3] := 0.0;
+   dydx[2] := (2.0*x*(m+1.0)*y[2]-(y[3]-c2*x*x)*y[1])/(1.0-x*x);
+   dydx[4] := y[5];
+   dydx[6] := 0.0;
+   dydx[5] := (2.0*x*(m+1.0)*y[5]-(y[6]+c2*x*x)*y[4])/(1.0-x*x)
+END;
+
+(*$I MODFILE.PAS *)
+(*$I LUBKSB.PAS *)
+
+(*$I LUDCMP.PAS *)
+
+(*$I RK4.PAS *)
+
+(*$I RKQC.PAS *)
+
+(*$I ODEINT.PAS *)
+
+(*$I SHOOT.PAS *)
+
+BEGIN
+1:   write('Input M,N,C-Squared:  ');
+   readln(m,n,c2);
+   IF ((n < m) OR (m < 0)) THEN GOTO 1;
+   factr := 1.0;
+   IF  (m <> 0)  THEN BEGIN
+      q1 := n;
+      FOR i := 1 to m DO BEGIN
+         factr := -0.5*factr*(n+i)*(q1/i);
+         q1 := q1-1.0
+      END
+   END;
+   v[1] := n*(n+1)-m*(m+1)+c2/2.0;
+   v[2] := n*(n+1)-m*(m+1)-c2/2.0;
+   delv[1] := delta*v[1];
+   delv[2] := delv[1];
+   h1 := 0.1;
+   hmin := 0.0;
+   x1 := -1.0+dx;
+   x2 := 0.0;
+   writeln;
+   writeln('Prolate':17,'Oblate':23);
+   writeln('Mu(m,n)':11,'Error Est.':14,'Mu(m,n)':10,'Error Est.':14);
+2:   shoot(nvar,v,delv,n2,x1,x2,eps,h1,hmin,f,dv);
+   writeln(v[1]:12:6,dv[1]:12:6,v[2]:12:6,dv[2]:12:6);
+   IF ((abs(dv[1]) > abs(eps*v[1])) OR 
+      ((dv[2]) > abs(eps*v[2]))) THEN GOTO 2
+END.

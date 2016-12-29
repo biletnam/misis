@@ -1,0 +1,31 @@
+PROGRAM d6r19(input,output,dfile);
+(* driver for routine BESSY *)
+VAR
+   i,n,nval : integer;
+   val,x : real;
+   txt : string[18];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I BESSJ0.PAS *)
+
+(*$I BESSJ1.PAS *)
+
+(*$I BESSY0.PAS *)
+
+(*$I BESSY1.PAS *)
+
+(*$I BESSY.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Bessel Function Yn');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln('n':4,'x':7,'actual':14,'bessy(n,x)':18);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,n,x,val);
+      writeln (n:4,x:8:2,'   ',val:13,'   ',bessy(n,x):13)
+   END;
+   close(dfile)
+END.

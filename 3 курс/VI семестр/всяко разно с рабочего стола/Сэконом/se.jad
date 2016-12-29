@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+MIDlet-Vendor: tequilacat
+MIDlet-Version: 2.2.20
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-1: СетеваяЭ, , BookReaderMidlet
+MIDlet-Name: СетеваяЭ
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Jar-Size: 100500
+MIDlet-Jar-URL: se.jar

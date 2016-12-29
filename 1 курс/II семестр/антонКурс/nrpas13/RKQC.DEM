@@ -1,0 +1,55 @@
+PROGRAM d15r3(input,output);
+(* driver for routine RKQC *)
+CONST
+   n=4;
+TYPE
+   glarray = ARRAY [1..n] OF real;
+   glnarray = glarray;
+VAR
+   eps,hdid,hnext,htry,x : real;
+   i : integer;
+   y,dydx,yscal : glarray;
+
+(*$I MODFILE.PAS *)
+(*$I BESSJ0.PAS *)
+
+(*$I BESSJ1.PAS *)
+
+(*$I BESSJ.PAS *)
+
+PROCEDURE derivs(x: real; y: glarray; VAR dydx: glarray);
+(* Programs using derivs must define type
+TYPE
+   glarray = ARRAY [1..4] OF real; *)
+BEGIN
+   dydx[1] := -y[2];
+   dydx[2] := y[1]-(1.0/x)*y[2];
+   dydx[3] := y[2]-(2.0/x)*y[3];
+   dydx[4] := y[3]-(3.0/x)*y[4]
+END;
+
+(*$I RK4.PAS *)
+
+(*$I RKQC.PAS *)
+
+BEGIN
+   x := 1.0;
+   y[1] := bessj0(x);
+   y[2] := bessj1(x);
+   y[3] := bessj(2,x);
+   y[4] := bessj(3,x);
+   dydx[1] := -y[2];
+   dydx[2] := y[1]-y[2];
+   dydx[3] := y[2]-2.0*y[3];
+   dydx[4] := y[3]-3.0*y[4];
+   FOR i := 1 to n DO BEGIN
+      yscal[i] := 1.0
+   END;
+   htry := 0.1;
+   writeln('eps':8,'htry':13,'hdid':12,'hnext':13);
+   FOR i := 1 to 15 DO BEGIN
+      eps := exp(-i);
+      rkqc(y,dydx,n,x,htry,eps,yscal,hdid,hnext);
+      writeln(eps:13,htry:8:2,hdid:14:6,hnext:12:6)
+   END
+END.

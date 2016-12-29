@@ -1,0 +1,72 @@
+PROGRAM d13r17(input,output,dfile);
+(* driver for routine CRANK *)
+CONST
+   ndat=20;
+   nmon=12;
+TYPE
+   narray = ARRAY [1..ndat] OF real;
+   glsarray = narray;
+   cityname = string[15];
+   monthname = string[4];
+VAR
+   i,j : integer;
+   data,order,s : narray;
+   rays : ARRAY [1..ndat,1..nmon] OF real;
+   city : ARRAY [1..ndat] OF cityname;
+   mon : ARRAY [1..12] OF monthname;
+   txt : string[64];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SORT2.PAS *)
+
+(*$I CRANK.PAS *)
+
+BEGIN
+   glopen(dfile,'table2.dat');
+   readln(dfile);
+   readln(dfile,txt);
+   read(dfile,city[1]);
+   FOR i := 1 to 12 DO read(dfile,mon[i]);
+   readln(dfile);
+   readln(dfile);
+   FOR i := 1 to ndat DO BEGIN
+      read(dfile,city[i]);
+      FOR j := 1 to 12 DO read(dfile,rays[i,j]);
+      readln(dfile)
+   END;
+   close(dfile);
+   writeln(txt);
+   write(' ':15);
+   FOR i := 1 to 12 DO write(mon[i]:4);
+   writeln;
+   FOR i := 1 to ndat DO BEGIN
+      write(city[i]);
+      FOR j := 1 to 12 DO write(round(rays[i,j]):4);
+      writeln
+   END;
+   writeln(' press return to continue ...');
+   readln;
+(* replace solar flux in each column by rank order *)
+   FOR j := 1 to 12 DO BEGIN
+      FOR i := 1 to ndat DO BEGIN
+         data[i] := rays[i,j];
+         order[i] := i
+      END;
+      sort2(ndat,data,order);
+      crank(ndat,data,s[i]);
+      FOR i := 1 to ndat DO BEGIN
+         rays[round(order[i]),j] := data[i]
+      END
+   END;
+   write(' ':15);
+   FOR i := 1 to 12 DO write(mon[i]:4);
+   writeln;
+   FOR i := 1 to ndat DO BEGIN
+      write(city[i]);
+      FOR j := 1 to 12 DO BEGIN
+         write(round(rays[i,j]):4)
+      END;
+      writeln
+   END
+END.

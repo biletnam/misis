@@ -1,0 +1,63 @@
+PROGRAM d10r6(input,output);
+(* driver for routine POWELL *)
+CONST
+   ndim=3;
+   ftol=1.0e-6;
+TYPE
+   glnarray = ARRAY [1..ndim] OF real;
+   glndim = glnarray;
+   glnpbynp = ARRAY [1..ndim,1..ndim] OF real;
+   gl3array = glnarray;
+VAR
+   ncom : integer;
+   pcom,xicom : glnarray; 
+   fret : real;
+   i,iter,j,np : integer;
+   p : glnarray;
+   xi : glnpbynp;
+
+(*$I MODFILE.PAS *)
+(*$I BESSJ0.PAS *)
+
+FUNCTION fnc(x: gl3array): real;
+(* Programs using FNC must define the type
+TYPE
+   gl3array = ARRAY [1..3] OF real;
+in the main routine. *)
+BEGIN
+   fnc := 0.5-bessj0(sqr(x[1]-1.0)+sqr(x[2]-2.0)+sqr(x[3]-3.0))
+END;
+
+(*$I F1DIM.PAS *)
+
+FUNCTION func(x: real): real;
+BEGIN
+   func := f1dim(x)
+END;
+
+(*$I MNBRAK.PAS *)
+
+(*$I BRENT.PAS *)
+
+(*$I LINMIN.PAS *)
+
+(*$I POWELL.PAS *)
+
+BEGIN
+   np := ndim;
+   xi[1,1] := 1.0; xi[1,2] := 0.0; xi[1,3] := 0.0;
+   xi[2,1] := 0.0; xi[2,2] := 1.0; xi[2,3] := 0.0;
+   xi[3,1] := 0.0; xi[3,2] := 0.0; xi[3,3] := 1.0;
+   p[1] := 1.5; p[2] := 1.5; p[3] := 2.5;
+   powell(p,xi,ndim,np,ftol,iter,fret);
+   writeln('Iterations:',iter:3);
+   writeln;
+   writeln('Minimum found at: ');
+   FOR i := 1 to ndim DO write(p[i]:12:6);
+   writeln;
+   writeln;
+   writeln('Minimum function value =',fret:12:6);
+   writeln;
+   writeln('True minimum of function is at:');
+   writeln(1.0:12:6,2.0:12:6,3.0:12:6)
+END.

@@ -1,0 +1,30 @@
+PROGRAM d6r9(input,output,dfile);
+(* driver for routine GCF *)
+VAR
+   a,gammcf,gln,val,x : real;
+   i,nval : integer;
+   txt : string[25];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I GCF.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Incomplete Gamma Function');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln('a':4,'x':11,'actual':14,'gcf(a,x)':13,
+      'gammln(a)':13,'gln':8);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,a,x,val);
+      IF (x >= (a+1.0)) THEN BEGIN
+         gcf(a,x,gammcf,gln);
+         writeln(a:6:2,x:12:6,(1.0-val):12:6,
+            gammcf:12:6,gammln(a):12:6,gln:12:6)
+      END
+   END;
+   close(dfile)
+END.

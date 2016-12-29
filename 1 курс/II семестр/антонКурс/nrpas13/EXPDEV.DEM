@@ -1,0 +1,46 @@
+PROGRAM d7r5 (input,output);
+(* driver for routine EXPDEV *)
+CONST
+   npts=1000;
+   ee=2.718281828;
+VAR
+   i,idum,j : integer;
+   expect,total,y : real;
+   trig,x : ARRAY [0..20] OF real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I EXPDEV.PAS *)
+
+BEGIN
+   FOR i := 0 to 20 DO BEGIN
+      trig[i] := i/20.0;
+      x[i] := 0.0
+   END;
+   idum := -1;
+   FOR i := 1 to npts DO BEGIN
+      y := expdev(idum);
+      FOR j := 1 to 20 DO BEGIN
+         IF ((y < trig[j]) AND (y > trig[j-1]))  THEN BEGIN
+            x[j] := x[j]+1.0
+         END
+      END
+   END;
+   total := 0.0;
+   FOR i := 1 to 20 DO BEGIN
+      total := total+x[i]
+   END;
+   writeln;
+   writeln ('exponential distribution with',npts:7,' points');
+   writeln ('   interval','     observed','    expected');
+   writeln;
+   FOR i := 1 to 20 DO BEGIN
+      x[i] := x[i]/total;
+      expect := exp(-(trig[i-1]+trig[i])/2.0);
+      expect := expect*0.05*ee/(ee-1);
+      writeln (trig[i-1]:6:2,trig[i]:6:2,x[i]:12:6,expect:12:6)
+   END
+END.

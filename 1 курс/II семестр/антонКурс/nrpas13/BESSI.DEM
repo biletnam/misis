@@ -1,0 +1,26 @@
+PROGRAM d6r26(input,output,dfile);
+(* driver for routine BESSI *)
+VAR
+   n,i,nval : integer;
+   val,x : real;
+   txt : string[27];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I BESSI0.PAS *)
+
+(*$I BESSI.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Modified Bessel Function In');
+   readln(dfile,nval);
+   writeln(txt);
+   writeln;
+   writeln('x':5,'actual':14,'bessi(n,x)':18);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,n,x,val);
+      writeln(x:6:2,'   ',val:13,'   ',bessi(n,x):13)
+   END;
+   close(dfile)
+END.

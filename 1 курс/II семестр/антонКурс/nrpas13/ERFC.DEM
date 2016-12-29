@@ -1,0 +1,34 @@
+PROGRAM d6r11(input,output,dfile);
+(* driver for routine ERFC *)
+VAR
+   i,nval : integer;
+   val,x : real;
+   txt : string[14];
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I GAMMLN.PAS *)
+
+(*$I GCF.PAS *)
+
+(*$I GSER.PAS *)
+
+(*$I GAMMQ.PAS *)
+
+(*$I GAMMP.PAS *)
+
+(*$I ERFC.PAS *)
+
+BEGIN
+   glopen(dfile,'fncval.dat');
+   REPEAT readln(dfile,txt) UNTIL (txt = 'Error Function');
+   readln(dfile,nval);
+   writeln ('complementary error function');
+   writeln ('x':5,'actual':12,'erfc(x)':12);
+   FOR i := 1 to nval DO BEGIN
+      readln(dfile,x,val);
+      val := 1.0-val;
+      writeln(x:6:2,val:12:7,erfc(x):12:7)
+   END;
+   close(dfile);
+END.

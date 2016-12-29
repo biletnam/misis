@@ -1,0 +1,139 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, SQLite3, SQLiteTable3, StdCtrls, Grids, DBGrids;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    ListBox1: TListBox;
+    StringGrid1: TStringGrid;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  DB : TSQLiteDatabase;
+
+implementation
+
+{$R *.dfm}
+
+procedure LoadComplect(product_id: string);
+var Table: TSQLiteTable;
+i: integer;
+id,name,prepack,price,count: string;
+norm: double;
+begin
+   Table := DB.GetTable('SELECT * FROM complect WHERE product_id='+product_id);
+   with Form2 do
+   begin
+    StringGrid1.ColCount := 5;
+    StringGrid1.RowCount := Table.Count+1;
+
+    StringGrid1.Cells[0,0] := 'id';
+    StringGrid1.Cells[1,0] := 'Наименование';
+    StringGrid1.Cells[2,0] := 'Полуфабрикат';
+    StringGrid1.Cells[3,0] := 'Норма на единицу';
+    StringGrid1.Cells[4,0] := 'Стоимость';
+    for i := 0 to Table.Count - 1 do
+    begin
+      id := Utf8ToAnsi(Table.FieldAsString(0)); StringGrid1.Cells[0,i+1] := id;
+      name := Utf8ToAnsi(Table.FieldAsString(2)); StringGrid1.Cells[1,i+1] := name;
+      prepack := Table.FieldAsString(3); StringGrid1.Cells[2,i+1] := prepack;
+      count := Utf8ToAnsi(Table.FieldAsString(4)); StringGrid1.Cells[3,i+1] := count;
+      price := Utf8ToAnsi(Table.FieldAsString(5)); StringGrid1.Cells[4,i+1] := price;
+
+      //norm := Table.FieldAsDouble(3);; StringGrid1.Cells[3,i+1] := FloatToStr(norm);
+      Table.Next;
+    end;
+   end;
+end;
+
+procedure LoadWorks(product_id: string);
+var Table: TSQLiteTable;
+i: integer;
+id,name,price: string;
+norm: double;
+begin
+   Table := DB.GetTable('SELECT * FROM works WHERE product_id='+product_id);
+   with Form2 do
+   begin
+    StringGrid1.ColCount := 4;
+    StringGrid1.RowCount := Table.Count+1;
+
+    StringGrid1.Cells[0,0] := 'id';
+    StringGrid1.Cells[1,0] := 'Наименование';
+    StringGrid1.Cells[2,0] := 'Стоимость(час)';
+    StringGrid1.Cells[3,0] := 'Норма на единицу(час)';
+     for i := 0 to Table.Count - 1 do
+    begin
+      id := Utf8ToAnsi(Table.FieldAsString(0)); StringGrid1.Cells[0,i+1] := id;
+      name := Utf8ToAnsi(Table.FieldAsString(1)); StringGrid1.Cells[1,i+1] := name;
+      price := Utf8ToAnsi(Table.FieldAsString(2)); StringGrid1.Cells[2,i+1] := price;
+      norm := Table.FieldAsDouble(3);; StringGrid1.Cells[3,i+1] := FloatToStr(norm);
+      Table.Next;
+    end;
+   end;
+end;
+
+procedure LoadProducts();
+var Table: TSQLiteTable;
+i: integer;
+id,name,podr,count,date: string;
+begin
+  Table := DB.GetTable('SELECT * FROM products');
+  with Form2 do
+  begin
+    StringGrid1.ColCount := Table.ColCount;
+    StringGrid1.RowCount := Table.Count+1;
+
+    StringGrid1.Cells[0,0] := 'id';
+    StringGrid1.Cells[1,0] := 'Наименование';
+    StringGrid1.Cells[2,0] := 'Подразделение';
+    StringGrid1.Cells[3,0] := 'Дата';
+    StringGrid1.Cells[4,0] := 'Выпущено';
+
+    StringGrid1.ColWidths[0] := 30;
+    StringGrid1.ColWidths[1] := 140;
+    StringGrid1.ColWidths[2] := 120;
+    StringGrid1.ColWidths[3] := 80;
+
+    for i := 0 to Table.Count - 1 do
+    begin
+      id := Utf8ToAnsi(Table.FieldAsString(0)); StringGrid1.Cells[0,i+1] := id;
+      name := Utf8ToAnsi(Table.FieldAsString(1)); StringGrid1.Cells[1,i+1] := name;
+      podr := Utf8ToAnsi(Table.FieldAsString(2)); StringGrid1.Cells[2,i+1] := podr;
+      date := Utf8ToAnsi(Table.FieldAsString(3)); StringGrid1.Cells[3,i+1] := date;
+      count := Utf8ToAnsi(Table.FieldAsString(4)); StringGrid1.Cells[4,i+1] := count;
+
+      Table.Next;
+    end;
+
+  end;
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  //LoadWorks('1');
+  LoadComplect('1');
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  DB := TSQLiteDatabase.Create('base.sqlite');
+  LoadProducts();
+end;
+
+
+
+end.

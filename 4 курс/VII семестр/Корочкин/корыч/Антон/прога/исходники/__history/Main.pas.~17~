@@ -1,0 +1,95 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Logic, ExtCtrls, Myclasses, Input, Stat;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    ListBox1: TListBox;
+    InfoTimer: TTimer;
+    Label1: TLabel;
+    TickTimer: TTimer;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure InfoTimerTimer(Sender: TObject);
+    procedure TickTimerTimer(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Log: TLog;
+  SceneMan: TSceneMan;
+
+implementation
+
+uses ComCtrls;
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form2.Show;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  SceneMan.NewClient;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Randomize;
+  Log:= TLog.Create(ListBox1);
+  SceneMan := TSceneMan.Create(Log);
+  SceneMan.CreateSellerMan(GroupBox1);
+
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+var i:Integer;
+    buf:TSeller;
+begin
+  for i:= 0 to SceneMan.SellerMan.Sellers.Count - 1 do
+  begin
+    buf := SceneMan.SellerMan.Sellers[i] as TSeller;
+    buf.CreateSettings(Form2.GroupBox1);
+    if i=0 then buf.Settings.ChangeCoord(10,30)
+    else buf.Settings.RightTo((SceneMan.SellerMan.Sellers[i-1] as TSeller).Settings,10);
+  end;
+
+  SceneMan.Stat := Form3.StringGrid1;
+end;
+
+procedure TForm1.InfoTimerTimer(Sender: TObject);
+begin
+  SceneMan.UpdateInfo;
+  Label1.Caption := Log.MakeTimeString(Log.Time);
+end;
+
+procedure TForm1.TickTimerTimer(Sender: TObject);
+var i:integer;
+begin
+  for i:= 1 to Form2.TrackBar1.Position do
+  SceneMan.Tick(1);
+end;
+
+end.

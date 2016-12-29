@@ -1,0 +1,100 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1061#1083#1077#1073#1086#1079#1072#1074#1086#1076
+  ClientHeight = 508
+  ClientWidth = 754
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object TimeLabel: TLabel
+    Left = 24
+    Top = 446
+    Width = 112
+    Height = 54
+    Caption = '12:55'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -48
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 24
+    Top = 24
+    Width = 417
+    Height = 209
+    BevelKind = bkTile
+    BevelOuter = bvNone
+    TabOrder = 0
+  end
+  object LogListBox: TListBox
+    Left = 24
+    Top = 239
+    Width = 417
+    Height = 194
+    ItemHeight = 13
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 272
+    Top = 463
+    Width = 75
+    Height = 25
+    Caption = #1042#1074#1086#1076' '#1076#1072#1085#1085#1099#1093
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Panel2: TPanel
+    Left = 473
+    Top = 24
+    Width = 273
+    Height = 476
+    BevelKind = bkTile
+    BevelOuter = bvNone
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 366
+    Top = 463
+    Width = 75
+    Height = 25
+    Caption = 'Test'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 175
+    Top = 463
+    Width = 75
+    Height = 25
+    Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
+    TabOrder = 5
+    OnClick = Button3Click
+  end
+  object XPManifest1: TXPManifest
+    Left = 720
+    Top = 480
+  end
+  object InfoTimer: TTimer
+    Interval = 100
+    OnTimer = InfoTimerTimer
+    Left = 688
+    Top = 344
+  end
+  object TickTimer: TTimer
+    OnTimer = TickTimerTimer
+    Left = 552
+    Top = 400
+  end
+end

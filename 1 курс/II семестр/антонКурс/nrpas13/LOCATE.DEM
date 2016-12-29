@@ -1,0 +1,36 @@
+PROGRAM d3r5 (input,output);
+(* driver for routine LOCATE *)
+CONST
+   n=100;
+TYPE
+   glnarray = ARRAY [1..n] OF real;
+VAR
+   i,j : integer;
+   x : real;
+   xx : glnarray;
+
+(*$I MODFILE.PAS *)
+(*$I LOCATE.PAS *)
+
+BEGIN
+(* create array to be searched *)
+   FOR i := 1 to n DO BEGIN
+      xx[i] := exp(i/20.0)-74.0
+   END;
+   writeln ('result of:  j := 0 indicates x too small');
+   writeln (' ':12,'j := 100 indicates x too large');
+   writeln;
+   writeln ('locate ':10,'j':6,'xx(j)':11,'xx(j+1)':12);
+(* do test *)
+   FOR i := 1 to 19 DO BEGIN
+      x := -100.0+200.0*i/20.0;
+      locate(xx,n,x,j);
+      IF ((j<n) AND (j>0)) THEN BEGIN
+         writeln (x:10:4,j:6,xx[j]:12:6,xx[j+1]:12:6)
+      END ELSE IF (j=n) THEN BEGIN
+         writeln (x:10:4,j:6,xx[j]:12:6,'   upper lim')
+      END ELSE BEGIN
+         writeln (x:10:4,j:6,'   lower lim',xx[j+1]:12:6)
+      END
+   END
+END.

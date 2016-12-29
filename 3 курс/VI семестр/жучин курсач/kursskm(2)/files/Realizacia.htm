@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Реализация выбранного способа решения...</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" background="Back.GIF">
+<div align="center">
+  <p><font face="Times New Roman, Times, serif" size="4">5. Реализация выбранного способа решения с учётом выбранных входных и выходных данных как системы программных единиц СКМ MatLab.</font></p>
+  <p align="left"> <font face="Times New Roman, Times, serif" size="4">    Далее представлены листинги основного и вспомогательных программных модулей. </font></p>
+  <p align="center"><font face="Times New Roman, Times, serif" size="4">Основной модуль (Kurs1.m)</font></p>
+  <p align="left"></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">
+    N = 50; 
+    <br>
+    IntX = pi; <br>
+    IntT = 50; <br>
+    a = 0.3; <br>
+    gamma = 0.1; <br>
+    h = IntX/N; <br>
+    tau = IntT/N; t<br>
+    a1 = 1;<br>
+    b = -a*a*tau*tau;<br>
+    c = h*h+2*a*a*tau*tau;<br>
+    d = -a*a*tau*tau;<br>
+    p = 1;<br>
+    q = -4;<br>
+    r = 3+2*h*gamma;<br>
+    A = zeros(N+1);<br>
+    for i=1:N+1<br>
+    for j=1:N+1<br>
+    A(i,i) = c;<br>
+    A(i,i+1) = d;<br>
+    A(i+1,i) = b;<br>
+    end<br>
+    end<br>
+    A = A(1:N+1,1:N+1);<br>
+    A(1,1) = a1;<br>
+    A(1,2) = 0;<br>
+    A(N+1,N+1) = r;<br>
+    A(N+1,N) = q;<br>
+    A(N+1,N-1) = p;<br>
+    Temp = -p;<br>
+    for i=1:N+1<br>
+    A(N,i) = A(N,i)/b;<br>
+    A(N+1,i) = A(N+1,i)+A(N,i)*Temp;<br>
+    end<br>
+    for j=1:N+1 <br>
+    x=h*(j-1);<br>
+    U(1,j) = Phi(x);<br>
+    U(2,j) = tau*Pci(x)+Phi(x);<br>
+    end</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="3"><br>
+    <font size="2">for i=2:N+1<br>
+    t = tau*(i-2);<br>
+    for j=1:N+1<br>
+    x = h*(j-1);<br>
+    W(j) = tau*tau*h*h*F(x,t)+2*U(i,j)*h*h-U(i-1,j)*h*h; <br>
+    end <br>
+    W(1) = Alfa(t)+in0(i); <br>
+    W(N+1) = 0; <br>
+    W(N) = W(N)/b; <br>
+    W(N+1) = W(N+1)+W(N)*Temp; <br>
+    Y = Progon(A,W,N); <br>
+    for jj=1:N+1<br>
+    U(i+1,jj) = Y(jj); <br>
+    end<br>
+    end;<br>
+    out0 = U; </font></font></p>
+  <p align="center"><font face="Times New Roman, Times, serif" size="4">Модуль, реализующий метод прогонки (Progon.m)</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">function 
+    Progon = Progon(A,d,N)</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2"><br>
+    for i=1:N+1<br>
+    for j=1:N+1<br>
+    if i==j<br>
+    b(i)=A(i,j);<br>
+    end<br>
+    if i-j==-1<br>
+    c(i)=A(i,j);<br>
+    end<br>
+    if i-j==1<br>
+    a(i)=A(i,j);<br>
+    end<br>
+    end<br>
+    end<br>
+    a(1) = 0;<br>
+    c(N+1) = 0;<br>
+    <br>
+    k(1) = 0;<br>
+    t(1) = 0;</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">for i=2:N+1<br>
+    k(i)= -c(i-1)/(b(i-1)+a(i-1)*k(i-1));<br>
+    t(i)= (d(i-1)-a(i-1)*t(i-1))/(b(i-1)+a(i-1)*k(i-1));<br>
+    end</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2"><br>
+    Y(N+2)=0;<br>
+    i = N+2;<br>
+    while i&gt;2<br>
+    Y(i-1)= k(i-1)*Y(i)+t(i-1);<br>
+    i = i-1;<br>
+    end<br>
+    Progon=Y;</font></p>
+  <p align="center"><font face="Times New Roman, Times, serif" size="4">Функция 
+    <img src="Alfa.gif" width="38" height="22" align="absmiddle">.</font></p>
+  <p align="left"><font size="2" face="Times New Roman, Times, serif">function 
+    Alfa = Alfa(t)</font></p>
+  <p align="left"><font size="2" face="Times New Roman, Times, serif">Alfa = 0;</font></p>
+  <p align="center"><font face="Times New Roman, Times, serif" size="4">Функция 
+    <img src="Phi.gif" width="42" height="22" align="absmiddle">.</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">function 
+    Phi = Phi(x)</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">Phi = sin(x);</font></p>
+  <p align="center"><br>
+    <font face="Times New Roman, Times, serif" size="4">Функция <img src="Pci.gif" width="43" height="22" align="absmiddle">.</font></p>
+  <p align="left"><font size="2" face="Times New Roman, Times, serif">function 
+    Pci = Pci(x)</font></p>
+  <p align="left"><font size="2" face="Times New Roman, Times, serif">Pci = 0;</font></p>
+  <p align="center"><font size="4" face="Times New Roman, Times, serif">Функция 
+    f(х,t).</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">function 
+    F = F(x,t)</font></p>
+  <p align="left"><font face="Times New Roman, Times, serif" size="2">F = 0;</font></p>
+  <p align="center"><a href="Razr_CB.htm"><img src="BKWD.gif" width="27" height="31" border="0"></a><a href="Block_Chema.htm"><img src="FRWD.gif" width="26" height="31" border="0"></a><br>
+  </p>
+  <p align="right"><a href="Cont.htm"><img src="ToCod.gif" width="114" height="13" border="0"></a><br>
+  </p>
+  </div>
+<div align="left"></div>
+</body>
+</html>

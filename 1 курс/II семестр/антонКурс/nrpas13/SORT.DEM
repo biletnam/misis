@@ -1,0 +1,39 @@
+PROGRAM d8r3(input,output,dfile);
+(* driver for routine SORT *)
+CONST
+   np=100;
+TYPE
+   glsarray= ARRAY [1..np] OF real;
+VAR
+   i,j : integer;
+   a : glsarray;
+   dfile : text;
+
+(*$I MODFILE.PAS *)
+(*$I SORT.PAS *)
+
+BEGIN
+   glopen(dfile,'tarray.dat');
+   readln(dfile);
+   FOR i := 1 to 100 DO BEGIN
+      read(dfile,a[i]);
+   END;
+   close(dfile);
+(* writeln original array *)
+   writeln ('original array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END;
+(* writeln sorted array *)
+   sort(np,a);
+   writeln ('sorted array:');
+   FOR i := 1 to 10 DO BEGIN
+      FOR j := 1 to 10 DO BEGIN
+         write(a[10*(i-1)+j]:6:2)
+      END;
+      writeln
+   END
+END.

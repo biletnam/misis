@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.12.14 21:49:12.637.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.pas=C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas</Transaction>
+    <Transaction>2009.12.14 21:49:12.648.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Unit1.dfm=C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm</Transaction>
+    <Transaction>2009.12.14 21:49:19.315.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Project1.bdsproj=C:\Users\Евгений\Documents\Borland Studio Projects\Hleb.bdsproj</Transaction>
+    <Transaction>2009.12.14 21:49:32.262.pas,C:\Users\Евгений\Documents\Borland Studio Projects\Main.pas=D:\Code\HLEB\Main.pas</Transaction>
+    <Transaction>2009.12.14 21:49:32.262.dfm,C:\Users\Евгений\Documents\Borland Studio Projects\Main.dfm=D:\Code\HLEB\Main.dfm</Transaction>
+    <Transaction>2009.12.14 21:49:34.093.bdsproj,C:\Users\Евгений\Documents\Borland Studio Projects\Hleb.bdsproj=D:\Code\HLEB\Hleb.bdsproj</Transaction>
+    <Transaction>2009.12.14 21:52:57.342.pas,D:\Code\HLEB\Unit1.pas=D:\Code\HLEB\Myclasses.pas</Transaction>
+    <Transaction>2009.12.14 21:59:54.720.pas,D:\Code\HLEB\Unit1.pas=D:\Code\HLEB\Logic.pas</Transaction>
+    <Transaction>2009.12.16 12:02:25.640.pas,D:\Code\HLEB\Unit2.pas=D:\Code\HLEB\InputForm.pas</Transaction>
+    <Transaction>2009.12.16 12:02:25.653.dfm,D:\Code\HLEB\Unit2.dfm=D:\Code\HLEB\InputForm.dfm</Transaction>
+    <Transaction>2009.12.16 12:16:15.845.pas,D:\Code\HLEB\Unit3.pas=D:\Code\HLEB\Stat.pas</Transaction>
+    <Transaction>2009.12.16 12:16:15.845.dfm,D:\Code\HLEB\Unit3.dfm=D:\Code\HLEB\Stat.dfm</Transaction>
+    <Transaction>2009.12.18 19:43:30.120.bdsproj,D:\Code\AZS\Hleb.bdsproj=D:\Code\AZS\AZS.bdsproj</Transaction>
+    <Transaction>2009.12.18 19:43:36.523.bdsproj,D:\Code\AZS\AZS.bdsproj=D:\Code\AZS\AZS.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

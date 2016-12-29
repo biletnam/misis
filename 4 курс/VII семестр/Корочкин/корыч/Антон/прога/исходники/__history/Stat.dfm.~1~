@@ -1,0 +1,43 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 451
+  ClientWidth = 866
+  Color = clRed
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StringGrid1: TStringGrid
+    Left = 8
+    Top = 8
+    Width = 841
+    Height = 233
+    Color = clRed
+    ColCount = 7
+    FixedColor = clRed
+    FixedCols = 0
+    RowCount = 20
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ColWidths = (
+      77
+      82
+      133
+      162
+      128
+      166
+      64)
+  end
+end

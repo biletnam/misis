@@ -1,0 +1,35 @@
+PROGRAM d3r2(input,output);
+(* driver for routine RATINT *)
+CONST
+   npt=6;
+   eps=1.0;
+TYPE
+   glnarray = ARRAY [1..npt] OF real;
+VAR
+   dyy,xx,yexp,yy : real;
+   i : integer;
+   x,y : glnarray;
+
+FUNCTION f(x,eps: real): real;
+BEGIN
+   f := x*exp(-x)/(sqr(x-1.0)+eps*eps)
+END;
+
+(*$I MODFILE.PAS *)
+(*$I RATINT.PAS *)
+
+BEGIN
+   FOR i := 1 to npt DO BEGIN
+      x[i] := i*2.0/npt;
+      y[i] := f(x[i],eps)
+   END;
+   writeln('Diagonal rational function interpolation');
+   writeln;
+   writeln('x':5,'interp.':13,'accuracy':14,'actual':12);
+   FOR i := 1 to 10 DO BEGIN
+      xx := 0.2*i;
+      ratint(x,y,npt,xx,yy,dyy);
+      yexp := f(xx,eps);
+      writeln(xx:6:2,yy:12:6,' ':4,dyy:11,yexp:12:6)
+   END
+END.

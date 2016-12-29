@@ -1,0 +1,1486 @@
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:mcd="urn:schemas-mathsoft-com:mathcad"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Generator" content="Mathcad Professional">
+<meta name="ProgID" content="Mathcad">
+<meta name="Version" content="11.0">
+<meta name="MathML" content="true">
+<title>
+Курс</title>
+<style type="text/css">
+body { background : #ffffff }
+.equation { margin-top: 0.5em; margin-bottom: 1em }
+.Normal { font-family:Arial,sans-serif; font-size:10pt }
+</style>
+<script id="clientEventHandlersJS" language="javascript">
+<!--
+//-->
+</script>
+</head><body mcd:mathfonts="id:0;name:Variables;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:1;name:Constants;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:2;name:Text;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:4;name:User 1;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:5;name:User 2;face:Courier New;size:10;bold:0;ital:0;ul:0;cid:-1
+id:6;name:User 3;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:7;name:User 4;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:8;name:User 5;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1
+id:9;name:User 6;face:Arial;size:10;bold:0;ital:0;ul:0;cid:-1
+id:10;name:User 7;face:Times New Roman;size:10;bold:0;ital:0;ul:0;cid:-1" mcd:numberformat="" mcd:displayoptions="" mcd:unitformat="" mcd:tolerance="" mcd:builtinvars="origin:0" mcd:calcoptions="auto:true;optimize:false;strict:true" mcd:mathdisplay="mult:4;deriv:deriv;litsub:small;define:colon;globeq:triple;local:arrow;equal:bold" mcd:unitsystem="default:4" mcd:dimnames="display:false;mass:mass;length:length;time:time;current:charge;temp:temperature;lum:luminosity;subst:substance" mcd:docprops="lrtag:181;lhbtag:181;status:8201;delorig:1;deluser:1;cp:1;cc:1;cs:1" mcd:ruler="visible:0;units:0" mcd:derivopts="ip:0;sc:0;dv:1;os:1" mcd:doccolors="eq:#000000;bg:#ffffff;rg:#ffff80" mcd:grfxy="0 1 1 21 15 0 0 3 0 " mcd:xaxisxy="0 0 1 1 1 0 0 1 1 " mcd:yaxisxy="0 0 1 1 1 0 0 1 1 " mcd:tracesxy="0 1 0 0 1 1 
+0 2 1 0 1 1 
+0 3 2 0 1 1 
+0 4 3 0 1 1 
+0 1 4 0 1 1 
+0 2 5 0 1 1 
+0 3 6 0 1 1 
+0 4 0 0 1 1 
+0 1 1 0 1 1 
+0 2 2 0 1 1 
+0 3 3 0 1 1 
+0 4 4 0 1 1 
+0 1 5 0 1 1 
+0 2 6 0 1 1 
+0 3 0 0 1 1 
+0 4 1 0 1 1 ">
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="8" mcd:aligny="32" style="position: absolute; top: 13px; left: 8px; width: 298px;">
+<layer width="298">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>Вариант 3<br><comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>n=4 Метод золотого сечения<br><comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+<comment mcd:chrprop="size:16;bold:1"></comment><font size="4"><b>m=5 Метод Ньютона<comment mcd:chrprop="size:10;bold:0"></comment></b></font></span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="99" mcd:aligny="168" style="position: absolute; top: 91px; left: 16px; width: 173px;">
+<layer width="173">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;grad&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;f&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;a&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;b&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;c&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;vector&gt;
+        &lt;apply&gt;
+          &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+          &lt;lambda&gt;
+            &lt;bvar&gt;
+              &lt;ci&gt;a&lt;/ci&gt;
+            &lt;/bvar&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;f&lt;/ci&gt;
+              &lt;ci&gt;a&lt;/ci&gt;
+              &lt;ci&gt;b&lt;/ci&gt;
+              &lt;ci&gt;c&lt;/ci&gt;
+            &lt;/apply&gt;
+          &lt;/lambda&gt;
+          &lt;ci&gt;a&lt;/ci&gt;
+        &lt;/apply&gt;
+        &lt;apply&gt;
+          &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+          &lt;lambda&gt;
+            &lt;bvar&gt;
+              &lt;ci&gt;b&lt;/ci&gt;
+            &lt;/bvar&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;f&lt;/ci&gt;
+              &lt;ci&gt;a&lt;/ci&gt;
+              &lt;ci&gt;b&lt;/ci&gt;
+              &lt;ci&gt;c&lt;/ci&gt;
+            &lt;/apply&gt;
+          &lt;/lambda&gt;
+          &lt;ci&gt;b&lt;/ci&gt;
+        &lt;/apply&gt;
+        &lt;apply&gt;
+          &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+          &lt;lambda&gt;
+            &lt;bvar&gt;
+              &lt;ci&gt;c&lt;/ci&gt;
+            &lt;/bvar&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;f&lt;/ci&gt;
+              &lt;ci&gt;a&lt;/ci&gt;
+              &lt;ci&gt;b&lt;/ci&gt;
+              &lt;ci&gt;c&lt;/ci&gt;
+            &lt;/apply&gt;
+          &lt;/lambda&gt;
+          &lt;ci&gt;c&lt;/ci&gt;
+        &lt;/apply&gt;
+      &lt;/vector&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0044.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true;color:#ffff80" mcd:textproperties="" mcd:alignx="200" mcd:aligny="168" style="position: absolute; top: 155px; left: 200px; width: 109px;">
+<layer width="109">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Градиент функции</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="71" mcd:aligny="256" style="position: absolute; top: 244px; left: 24px; width: 344px;">
+<layer width="344">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;H&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;F&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;apply&gt;
+        &lt;ci&gt;-sequence&lt;/ci&gt;
+        &lt;apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-localassign&lt;/ci&gt;
+            &lt;ci&gt;x&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;selector/&gt;
+              &lt;ci&gt;v&lt;/ci&gt;
+              &lt;cn&gt;0&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-localassign&lt;/ci&gt;
+            &lt;ci&gt;y&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;selector/&gt;
+              &lt;ci&gt;v&lt;/ci&gt;
+              &lt;cn&gt;1&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-localassign&lt;/ci&gt;
+            &lt;ci&gt;z&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;selector/&gt;
+              &lt;ci&gt;v&lt;/ci&gt;
+              &lt;cn&gt;2&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;matrix&gt;
+            &lt;matrixrow&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;x&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;x&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;x&lt;/ci&gt;
+              &lt;/apply&gt;
+            &lt;/matrixrow&gt;
+            &lt;matrixrow&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;y&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;y&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;y&lt;/ci&gt;
+              &lt;/apply&gt;
+            &lt;/matrixrow&gt;
+            &lt;matrixrow&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;z&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;y&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;z&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                &lt;lambda&gt;
+                  &lt;bvar&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/bvar&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-DERIVATIVE&lt;/ci&gt;
+                    &lt;lambda&gt;
+                      &lt;bvar&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/bvar&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;F&lt;/ci&gt;
+                        &lt;ci&gt;x&lt;/ci&gt;
+                        &lt;ci&gt;y&lt;/ci&gt;
+                        &lt;ci&gt;z&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/lambda&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/lambda&gt;
+                &lt;ci&gt;z&lt;/ci&gt;
+              &lt;/apply&gt;
+            &lt;/matrixrow&gt;
+          &lt;/matrix&gt;
+        &lt;/apply&gt;
+      &lt;/apply&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0153.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true;color:#ffff80" mcd:textproperties="" mcd:alignx="376" mcd:aligny="256" style="position: absolute; top: 243px; left: 376px; width: 103px;">
+<layer width="103">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Гессиан функции</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="91" mcd:aligny="480" style="position: absolute; top: 468px; left: 16px; width: 352px;">
+<layer width="352">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;IsPologit&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;H&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;apply&gt;
+        &lt;ci&gt;-sequence&lt;/ci&gt;
+        &lt;apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-for&lt;/ci&gt;
+            &lt;ci&gt;i&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;-NUMERIC_EVAL&lt;/ci&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-range&lt;/ci&gt;
+                &lt;cn&gt;0&lt;/cn&gt;
+                &lt;apply&gt;
+                  &lt;minus/&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;rows&lt;/ci&gt;
+                    &lt;ci&gt;H&lt;/ci&gt;
+                  &lt;/apply&gt;
+                  &lt;cn&gt;1&lt;/cn&gt;
+                &lt;/apply&gt;
+              &lt;/apply&gt;
+            &lt;/apply&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;if&lt;/ci&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-LTEQ&lt;/ci&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-abs&lt;/ci&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;submatrix&lt;/ci&gt;
+                    &lt;ci&gt;H&lt;/ci&gt;
+                    &lt;cn&gt;0&lt;/cn&gt;
+                    &lt;ci&gt;i&lt;/ci&gt;
+                    &lt;cn&gt;0&lt;/cn&gt;
+                    &lt;ci&gt;i&lt;/ci&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+                &lt;cn&gt;0&lt;/cn&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-return&lt;/ci&gt;
+                &lt;ci&gt;'No'&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;ci&gt;-not_available&lt;/ci&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;ci&gt;'Yes'&lt;/ci&gt;
+        &lt;/apply&gt;
+      &lt;/apply&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0155.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="376" mcd:aligny="480" style="position: absolute; top: 467px; left: 376px; width: 182px;">
+<layer width="182">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Проверка на положительную определенность матрицы Гессе</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" style="position: absolute; top: 564px; left: 8px;">
+<layer>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0157.PNG" mcd:base64encoded="DAAAAAEAAABcAAAACgAAAAQAAwAAAAhlcVJlZ2lvbgIAAAAAAEIAAAAJZG9jUmVnaW9uAgAAAAAARwAA
+AAhtY09iamVjdAAAAAAAAFsAAAABAAIAAAAGc2hwQm94AAAAAAAAVQAAAAdzaHBSZWN0AAAAAAAAVgAA
+AAgAAAA0AgAAoQAAAIgCAAB+AAAAQAIAAAAAAACdAAAAAAEAAAAAAgUAAQAAAAR0cmVlEAAAAAAAQAAA
+AA1wAAAAAAAGQEBe8QAAgAUHQEASzgAAQAYIQEACDwAAZAcAAAUER2V0VAAJQECOcAAAgAcACkBACsMA
+AIAJC0BAAg8AAGQKAAADAnhrAAxAQAIPAACkCgAAAwJkawAAAAANQECfwQAAgAYOQEA8AQAAQA0AAA8A
+AgAAAAlDVlNFcUl0ZW0BAAAAAAAMAAAABkVxSXRlbQEAAAAAAA0AAAAEDhAAAgAAAAxDVlNDb21ib0l0
+ZW0AAAAAAAAQAAAAB0NWU0l0ZW0AAAAAAAAPAAAAPAoAAF8AAABBAgAAQgAAACgAAAD//wAAEABDVlNP
+bGVDbGllbnRJdGVtAAEAAAEAAAABAAAAAAABAAAAAAoAANDPEeChsRrhAAAAAAAAAAAAAAAAAAAAAD4A
+AwD+/wkABgAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAABAAAAIAAAABAAAA/v///wAAAAAAAAAA////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////f////7////+/////v//////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////9SAG8AbwB0ACAARQBuAHQAcgB5AAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFgAFAP//////////AgAAAASj
+577vhNARppUAoCTPBdEAAAAAAAAAAAAAAADQjEzEZ2TJAQMAAAAAAQAAAAAAAEMAbwBuAHQAZQBuAHQA
+cwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAIA////////
+////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI4AAAAAAAAAAgBPAGwA
+ZQBQAHIAZQBzADAAMAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgA
+AgEBAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAHAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAP///////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAEAAAADAAAA/v////7/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////AAABANIGAAAiBAAAAAAAAAEA
+AAAAAAAAAAACAAAAAQAAAAEAAAAibWluID0gWm9sU2VjaCgtMC41LDAuNSwwLjA1LHhrLGRrKQJ4awNt
+aW4CZGsEb3V0MQNpbjIEb3V0MgNpbjMEb3V0MwNpbjQEb3V0NANpbjUEb3V0NQNpbjYAAAAABAAAAAEA
+AAD/////AgAAAE5BTkkAAAAAdABcAGIAaQBuADsAQwA6AFwAUAByAG8AZwByAGEAbQAgAEYABG91dDYD
+aW43BG91dDdpAGMAawBUAGkAbQBlAFwAUQBUAFMAeQBzAHQAZQBtAFwAOwBkADoAXABtAGEAdABsAGEA
+YgA2AHAANQBcAGIAaQBuAFwAdwBpAG4AMwAyADsAQwA6AFwARABvAGMAdQBtAGUAbgB0AHMAIABhAG4A
+ZAAgAFMAZQB0AHQAaQBuAGcAcwBcAEEAbABsACAAVQBzAGUAcgBzAFwAFAQ+BDoEQwQ8BDUEPQRCBEsE
+XABSAEEARAAgAFMAdAB1AGQAaQBvAFwANQAuADAAXABCAHAAbAA7AEQAOgBcAEEAcABwAFMAZQByAHYA
+XABBAHAAYQBjAGgAZQAyAC4AMgBcAGIAaQBuADsARAA6AFwAQQBwAHAAUwBlAHIAdgBcAHAAaABwADUA
+OwBEADoAXABBAHAAcAAAAAAAABFAQI5wAACADQASQEAwwQAAgRETQEAwwQAAQRIUQEAADwAAQBMAAAAV
+QEACDwAApBMAAAMCZGsAAgAAAAECABZAQAIPAACkEgAAAwJ4awACAAAAAQIAAAAAAAAAAAAAAAAAAA==" border="0">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="192" mcd:aligny="576" style="position: absolute; top: 563px; left: 192px; width: 131px;">
+<layer width="131">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Функция поиска шага</span>
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="8" mcd:aligny="680" style="position: absolute; top: 667px; left: 8px; width: 94px;">
+<layer width="94">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Метод Ньютона</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="140" mcd:aligny="704" style="position: absolute; top: 692px; left: 8px; width: 724px;">
+<layer width="724">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;Newton&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;f&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;e1&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;e2&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;M&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;apply&gt;
+        &lt;ci&gt;-sequence&lt;/ci&gt;
+        &lt;apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-localassign&lt;/ci&gt;
+            &lt;ci&gt;k&lt;/ci&gt;
+            &lt;cn&gt;0&lt;/cn&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-localassign&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;selector/&gt;
+              &lt;ci&gt;x&lt;/ci&gt;
+              &lt;ci&gt;k&lt;/ci&gt;
+            &lt;/apply&gt;
+            &lt;ci&gt;v&lt;/ci&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-while&lt;/ci&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;-and&lt;/ci&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-GTEQ&lt;/ci&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-abs&lt;/ci&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;grad&lt;/ci&gt;
+                    &lt;ci&gt;f&lt;/ci&gt;
+                    &lt;apply&gt;
+                      &lt;selector/&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-PARENS&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;x&lt;/ci&gt;
+                          &lt;ci&gt;k&lt;/ci&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;cn&gt;0&lt;/cn&gt;
+                    &lt;/apply&gt;
+                    &lt;apply&gt;
+                      &lt;selector/&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-PARENS&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;x&lt;/ci&gt;
+                          &lt;ci&gt;k&lt;/ci&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;cn&gt;1&lt;/cn&gt;
+                    &lt;/apply&gt;
+                    &lt;apply&gt;
+                      &lt;selector/&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-PARENS&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;x&lt;/ci&gt;
+                          &lt;ci&gt;k&lt;/ci&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;cn&gt;2&lt;/cn&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+                &lt;ci&gt;e1&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-LTEQ&lt;/ci&gt;
+                &lt;ci&gt;k&lt;/ci&gt;
+                &lt;ci&gt;M&lt;/ci&gt;
+              &lt;/apply&gt;
+            &lt;/apply&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;-sequence&lt;/ci&gt;
+              &lt;apply&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-ifblock&lt;/ci&gt;
+                  &lt;apply&gt;
+                    &lt;apply&gt;
+                      &lt;ci&gt;-pair&lt;/ci&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-sequence&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;-localassign&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;selector/&gt;
+                              &lt;ci&gt;d&lt;/ci&gt;
+                              &lt;ci&gt;k&lt;/ci&gt;
+                            &lt;/apply&gt;
+                            &lt;apply&gt;
+                              &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                              &lt;apply&gt;
+                                &lt;minus/&gt;
+                                &lt;apply&gt;
+                                  &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                  &lt;apply&gt;
+                                    &lt;ci&gt;-better_POWER&lt;/ci&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;H&lt;/ci&gt;
+                                      &lt;ci&gt;f&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;ci&gt;k&lt;/ci&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;apply&gt;
+                                      &lt;minus/&gt;
+                                      &lt;cn&gt;1&lt;/cn&gt;
+                                    &lt;/apply&gt;
+                                  &lt;/apply&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                              &lt;apply&gt;
+                                &lt;ci&gt;grad&lt;/ci&gt;
+                                &lt;ci&gt;f&lt;/ci&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;apply&gt;
+                                    &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                    &lt;apply&gt;
+                                      &lt;selector/&gt;
+                                      &lt;ci&gt;x&lt;/ci&gt;
+                                      &lt;ci&gt;k&lt;/ci&gt;
+                                    &lt;/apply&gt;
+                                  &lt;/apply&gt;
+                                  &lt;cn&gt;0&lt;/cn&gt;
+                                &lt;/apply&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;apply&gt;
+                                    &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                    &lt;apply&gt;
+                                      &lt;selector/&gt;
+                                      &lt;ci&gt;x&lt;/ci&gt;
+                                      &lt;ci&gt;k&lt;/ci&gt;
+                                    &lt;/apply&gt;
+                                  &lt;/apply&gt;
+                                  &lt;cn&gt;1&lt;/cn&gt;
+                                &lt;/apply&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;apply&gt;
+                                    &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                    &lt;apply&gt;
+                                      &lt;selector/&gt;
+                                      &lt;ci&gt;x&lt;/ci&gt;
+                                      &lt;ci&gt;k&lt;/ci&gt;
+                                    &lt;/apply&gt;
+                                  &lt;/apply&gt;
+                                  &lt;cn&gt;2&lt;/cn&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                            &lt;/apply&gt;
+                          &lt;/apply&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;-localassign&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;selector/&gt;
+                              &lt;ci&gt;t&lt;/ci&gt;
+                              &lt;ci&gt;k&lt;/ci&gt;
+                            &lt;/apply&gt;
+                            &lt;cn&gt;1&lt;/cn&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-EQUALS&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;ci&gt;IsPologit&lt;/ci&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;-better_POWER&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;ci&gt;H&lt;/ci&gt;
+                              &lt;ci&gt;f&lt;/ci&gt;
+                              &lt;apply&gt;
+                                &lt;selector/&gt;
+                                &lt;ci&gt;x&lt;/ci&gt;
+                                &lt;ci&gt;k&lt;/ci&gt;
+                              &lt;/apply&gt;
+                            &lt;/apply&gt;
+                            &lt;apply&gt;
+                              &lt;minus/&gt;
+                              &lt;cn&gt;1&lt;/cn&gt;
+                            &lt;/apply&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                        &lt;ci&gt;'Yes'&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-sequence&lt;/ci&gt;
+                    &lt;apply&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-localassign&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;d&lt;/ci&gt;
+                          &lt;ci&gt;k&lt;/ci&gt;
+                        &lt;/apply&gt;
+                        &lt;apply&gt;
+                          &lt;minus/&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;grad&lt;/ci&gt;
+                            &lt;ci&gt;f&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;selector/&gt;
+                              &lt;apply&gt;
+                                &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;ci&gt;x&lt;/ci&gt;
+                                  &lt;ci&gt;k&lt;/ci&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                              &lt;cn&gt;0&lt;/cn&gt;
+                            &lt;/apply&gt;
+                            &lt;apply&gt;
+                              &lt;selector/&gt;
+                              &lt;apply&gt;
+                                &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;ci&gt;x&lt;/ci&gt;
+                                  &lt;ci&gt;k&lt;/ci&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                              &lt;cn&gt;1&lt;/cn&gt;
+                            &lt;/apply&gt;
+                            &lt;apply&gt;
+                              &lt;selector/&gt;
+                              &lt;apply&gt;
+                                &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;ci&gt;x&lt;/ci&gt;
+                                  &lt;ci&gt;k&lt;/ci&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                              &lt;cn&gt;2&lt;/cn&gt;
+                            &lt;/apply&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-localassign&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;t&lt;/ci&gt;
+                          &lt;ci&gt;k&lt;/ci&gt;
+                        &lt;/apply&gt;
+                        &lt;apply&gt;
+                          &lt;ci&gt;GetT&lt;/ci&gt;
+                          &lt;apply&gt;
+                            &lt;selector/&gt;
+                            &lt;ci&gt;x&lt;/ci&gt;
+                            &lt;ci&gt;k&lt;/ci&gt;
+                          &lt;/apply&gt;
+                          &lt;apply&gt;
+                            &lt;selector/&gt;
+                            &lt;ci&gt;d&lt;/ci&gt;
+                            &lt;ci&gt;k&lt;/ci&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-localassign&lt;/ci&gt;
+                  &lt;apply&gt;
+                    &lt;selector/&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                    &lt;apply&gt;
+                      &lt;plus/&gt;
+                      &lt;ci&gt;k&lt;/ci&gt;
+                      &lt;cn&gt;1&lt;/cn&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                  &lt;apply&gt;
+                    &lt;plus/&gt;
+                    &lt;apply&gt;
+                      &lt;selector/&gt;
+                      &lt;ci&gt;x&lt;/ci&gt;
+                      &lt;ci&gt;k&lt;/ci&gt;
+                    &lt;/apply&gt;
+                    &lt;apply&gt;
+                      &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                      &lt;apply&gt;
+                        &lt;selector/&gt;
+                        &lt;ci&gt;t&lt;/ci&gt;
+                        &lt;ci&gt;k&lt;/ci&gt;
+                      &lt;/apply&gt;
+                      &lt;apply&gt;
+                        &lt;selector/&gt;
+                        &lt;ci&gt;d&lt;/ci&gt;
+                        &lt;ci&gt;k&lt;/ci&gt;
+                      &lt;/apply&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-ifblock&lt;/ci&gt;
+                  &lt;apply&gt;
+                    &lt;apply&gt;
+                      &lt;ci&gt;-pair&lt;/ci&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-return&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;selector/&gt;
+                          &lt;ci&gt;x&lt;/ci&gt;
+                          &lt;apply&gt;
+                            &lt;plus/&gt;
+                            &lt;ci&gt;k&lt;/ci&gt;
+                            &lt;cn&gt;1&lt;/cn&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                      &lt;apply&gt;
+                        &lt;ci&gt;-and&lt;/ci&gt;
+                        &lt;apply&gt;
+                          &lt;ci&gt;-PARENS&lt;/ci&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;-lthan&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;ci&gt;-abs&lt;/ci&gt;
+                              &lt;apply&gt;
+                                &lt;minus/&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;ci&gt;x&lt;/ci&gt;
+                                  &lt;apply&gt;
+                                    &lt;plus/&gt;
+                                    &lt;ci&gt;k&lt;/ci&gt;
+                                    &lt;cn&gt;1&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                &lt;/apply&gt;
+                                &lt;apply&gt;
+                                  &lt;selector/&gt;
+                                  &lt;ci&gt;x&lt;/ci&gt;
+                                  &lt;ci&gt;k&lt;/ci&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                            &lt;/apply&gt;
+                            &lt;ci&gt;e2&lt;/ci&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                        &lt;apply&gt;
+                          &lt;ci&gt;-PARENS&lt;/ci&gt;
+                          &lt;apply&gt;
+                            &lt;ci&gt;-lthan&lt;/ci&gt;
+                            &lt;apply&gt;
+                              &lt;ci&gt;-abs&lt;/ci&gt;
+                              &lt;apply&gt;
+                                &lt;minus/&gt;
+                                &lt;apply&gt;
+                                  &lt;ci&gt;f&lt;/ci&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;apply&gt;
+                                          &lt;plus/&gt;
+                                          &lt;ci&gt;k&lt;/ci&gt;
+                                          &lt;cn&gt;1&lt;/cn&gt;
+                                        &lt;/apply&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;0&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;apply&gt;
+                                          &lt;plus/&gt;
+                                          &lt;ci&gt;k&lt;/ci&gt;
+                                          &lt;cn&gt;1&lt;/cn&gt;
+                                        &lt;/apply&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;1&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;apply&gt;
+                                          &lt;plus/&gt;
+                                          &lt;ci&gt;k&lt;/ci&gt;
+                                          &lt;cn&gt;1&lt;/cn&gt;
+                                        &lt;/apply&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;2&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                &lt;/apply&gt;
+                                &lt;apply&gt;
+                                  &lt;ci&gt;f&lt;/ci&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;ci&gt;k&lt;/ci&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;0&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;ci&gt;k&lt;/ci&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;1&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                  &lt;apply&gt;
+                                    &lt;selector/&gt;
+                                    &lt;apply&gt;
+                                      &lt;ci&gt;-PARENS&lt;/ci&gt;
+                                      &lt;apply&gt;
+                                        &lt;selector/&gt;
+                                        &lt;ci&gt;x&lt;/ci&gt;
+                                        &lt;ci&gt;k&lt;/ci&gt;
+                                      &lt;/apply&gt;
+                                    &lt;/apply&gt;
+                                    &lt;cn&gt;2&lt;/cn&gt;
+                                  &lt;/apply&gt;
+                                &lt;/apply&gt;
+                              &lt;/apply&gt;
+                            &lt;/apply&gt;
+                            &lt;ci&gt;e2&lt;/ci&gt;
+                          &lt;/apply&gt;
+                        &lt;/apply&gt;
+                      &lt;/apply&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-localassign&lt;/ci&gt;
+                    &lt;ci&gt;k&lt;/ci&gt;
+                    &lt;apply&gt;
+                      &lt;plus/&gt;
+                      &lt;ci&gt;k&lt;/ci&gt;
+                      &lt;cn&gt;1&lt;/cn&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+              &lt;/apply&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;selector/&gt;
+            &lt;ci&gt;x&lt;/ci&gt;
+            &lt;ci&gt;k&lt;/ci&gt;
+          &lt;/apply&gt;
+        &lt;/apply&gt;
+      &lt;/apply&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0160.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="88" mcd:aligny="1112" style="position: absolute; top: 1099px; left: 88px; width: 148px;">
+<layer width="148">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Начальное приближение</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="39" mcd:aligny="1136" style="position: absolute; top: 1102px; left: 24px; width: 50px;">
+<layer width="50">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;v&lt;/ci&gt;
+    &lt;vector&gt;
+      &lt;cn&gt;0&lt;/cn&gt;
+      &lt;cn&gt;0&lt;/cn&gt;
+      &lt;cn&gt;0&lt;/cn&gt;
+    &lt;/vector&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0162.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="75" mcd:aligny="1192" style="position: absolute; top: 1172px; left: 24px; width: 315px;">
+<layer width="315">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;f&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;x&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;y&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;z&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;apply&gt;
+        &lt;plus/&gt;
+        &lt;apply&gt;
+          &lt;plus/&gt;
+          &lt;apply&gt;
+            &lt;plus/&gt;
+            &lt;apply&gt;
+              &lt;plus/&gt;
+              &lt;apply&gt;
+                &lt;plus/&gt;
+                &lt;apply&gt;
+                  &lt;plus/&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-better_POWER&lt;/ci&gt;
+                    &lt;ci&gt;x&lt;/ci&gt;
+                    &lt;cn&gt;2&lt;/cn&gt;
+                  &lt;/apply&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                    &lt;cn&gt;3&lt;/cn&gt;
+                    &lt;apply&gt;
+                      &lt;ci&gt;-better_POWER&lt;/ci&gt;
+                      &lt;ci&gt;y&lt;/ci&gt;
+                      &lt;cn&gt;2&lt;/cn&gt;
+                    &lt;/apply&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                  &lt;cn&gt;8&lt;/cn&gt;
+                  &lt;apply&gt;
+                    &lt;ci&gt;-better_POWER&lt;/ci&gt;
+                    &lt;ci&gt;z&lt;/ci&gt;
+                    &lt;cn&gt;2&lt;/cn&gt;
+                  &lt;/apply&gt;
+                &lt;/apply&gt;
+              &lt;/apply&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                &lt;apply&gt;
+                  &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                  &lt;cn&gt;6&lt;/cn&gt;
+                  &lt;ci&gt;y&lt;/ci&gt;
+                &lt;/apply&gt;
+                &lt;ci&gt;z&lt;/ci&gt;
+              &lt;/apply&gt;
+            &lt;/apply&gt;
+            &lt;apply&gt;
+              &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+              &lt;apply&gt;
+                &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+                &lt;cn&gt;4&lt;/cn&gt;
+                &lt;ci&gt;x&lt;/ci&gt;
+              &lt;/apply&gt;
+              &lt;ci&gt;z&lt;/ci&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+            &lt;cn&gt;2&lt;/cn&gt;
+            &lt;ci&gt;z&lt;/ci&gt;
+          &lt;/apply&gt;
+        &lt;/apply&gt;
+        &lt;cn&gt;6&lt;/cn&gt;
+      &lt;/apply&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0163.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="376" mcd:aligny="1192" style="position: absolute; top: 1179px; left: 376px; width: 112px;">
+<layer width="112">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Заданная функция</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="76" mcd:aligny="1216" style="position: absolute; top: 1204px; left: 24px; width: 127px;">
+<layer width="127">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;Func&lt;/ci&gt;
+    &lt;lambda&gt;
+      &lt;bvar&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+      &lt;/bvar&gt;
+      &lt;apply&gt;
+        &lt;ci&gt;f&lt;/ci&gt;
+        &lt;apply&gt;
+          &lt;selector/&gt;
+          &lt;ci&gt;v&lt;/ci&gt;
+          &lt;cn&gt;0&lt;/cn&gt;
+        &lt;/apply&gt;
+        &lt;apply&gt;
+          &lt;selector/&gt;
+          &lt;ci&gt;v&lt;/ci&gt;
+          &lt;cn&gt;1&lt;/cn&gt;
+        &lt;/apply&gt;
+        &lt;apply&gt;
+          &lt;selector/&gt;
+          &lt;ci&gt;v&lt;/ci&gt;
+          &lt;cn&gt;2&lt;/cn&gt;
+        &lt;/apply&gt;
+      &lt;/apply&gt;
+    &lt;/lambda&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0165.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="55" mcd:aligny="1248" style="position: absolute; top: 1236px; left: 24px; width: 177px;">
+<layer width="177">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;Ans&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;Newton&lt;/ci&gt;
+      &lt;ci&gt;f&lt;/ci&gt;
+      &lt;ci&gt;v&lt;/ci&gt;
+      &lt;cn&gt;0.1&lt;/cn&gt;
+      &lt;cn&gt;0.15&lt;/cn&gt;
+      &lt;cn&gt;10&lt;/cn&gt;
+    &lt;/apply&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0166.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="208" mcd:aligny="1248" style="position: absolute; top: 1235px; left: 208px; width: 197px;">
+<layer width="197">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Нахождение минимума методом Ньютона</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="54" mcd:aligny="1296" style="position: absolute; top: 1262px; left: 24px; width: 79px;">
+<layer width="79">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;ci&gt;Ans&lt;/ci&gt;
+    &lt;vector&gt;
+      &lt;cn&gt;2&lt;/cn&gt;
+      &lt;cn&gt;1&lt;/cn&gt;
+      &lt;apply&gt;
+        &lt;minus/&gt;
+        &lt;cn&gt;1&lt;/cn&gt;
+      &lt;/apply&gt;
+    &lt;/vector&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0168.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="91" mcd:aligny="1344" style="position: absolute; top: 1332px; left: 24px; width: 90px;">
+<layer width="90">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;Func&lt;/ci&gt;
+      &lt;ci&gt;Ans&lt;/ci&gt;
+    &lt;/apply&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0169.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true" mcd:textproperties="" mcd:alignx="120" mcd:aligny="1384" style="position: absolute; top: 1371px; left: 120px; width: 327px;">
+<layer width="327">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Нахождение минимума средствами системы MathCad</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="69" mcd:aligny="1408" style="position: absolute; top: 1396px; left: 32px; width: 145px;">
+<layer width="145">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;declare&gt;
+    &lt;ci&gt;Ans2&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;Minimize&lt;/ci&gt;
+      &lt;ci&gt;Func&lt;/ci&gt;
+      &lt;ci&gt;v&lt;/ci&gt;
+    &lt;/apply&gt;
+  &lt;/declare&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0171.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="68" mcd:aligny="1456" style="position: absolute; top: 1422px; left: 32px; width: 85px;">
+<layer width="85">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;ci&gt;Ans2&lt;/ci&gt;
+    &lt;vector&gt;
+      &lt;cn&gt;2&lt;/cn&gt;
+      &lt;cn&gt;1&lt;/cn&gt;
+      &lt;apply&gt;
+        &lt;minus/&gt;
+        &lt;cn&gt;1&lt;/cn&gt;
+      &lt;/apply&gt;
+    &lt;/vector&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0172.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="105" mcd:aligny="1504" style="position: absolute; top: 1492px; left: 32px; width: 96px;">
+<layer width="96">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;Func&lt;/ci&gt;
+      &lt;ci&gt;Ans2&lt;/ci&gt;
+    &lt;/apply&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0173.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="TXT" mcd:properties="hilight:true;color:#ffff80" mcd:textproperties="" mcd:alignx="88" mcd:aligny="1560" style="position: absolute; top: 1547px; left: 88px; width: 379px;">
+<layer width="379">
+<comment mcd:parprop="style:Normal"></comment>
+<span class="Normal">
+Классический метод решения задачи нахождения экстремума</span>
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="47" mcd:aligny="1584" style="position: absolute; top: 1572px; left: 32px; width: 32px;">
+<layer width="32">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;ci&gt;Given&lt;/ci&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0175.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="134" mcd:aligny="1608" style="position: absolute; top: 1596px; left: 32px; width: 156px;">
+<layer width="156">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EQUALS&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;grad&lt;/ci&gt;
+      &lt;ci&gt;f&lt;/ci&gt;
+      &lt;apply&gt;
+        &lt;selector/&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+        &lt;cn&gt;0&lt;/cn&gt;
+      &lt;/apply&gt;
+      &lt;apply&gt;
+        &lt;selector/&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+        &lt;cn&gt;1&lt;/cn&gt;
+      &lt;/apply&gt;
+      &lt;apply&gt;
+        &lt;selector/&gt;
+        &lt;ci&gt;v&lt;/ci&gt;
+        &lt;cn&gt;2&lt;/cn&gt;
+      &lt;/apply&gt;
+    &lt;/apply&gt;
+    &lt;cn&gt;0.000001&lt;/cn&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0176.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" style="position: absolute; top: 1620px; left: 32px;">
+<layer>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0177.PNG" mcd:base64encoded="DAAAAAEAAABcAAAACgAAAAQAAwAAAAhlcVJlZ2lvbgIAAAAAAEIAAAAJZG9jUmVnaW9uAgAAAAAARwAA
+AAhtY09iamVjdAAAAAAAAFsAAAABAAIAAAAGc2hwQm94AAAAAAAAVQAAAAdzaHBSZWN0AAAAAAAAVgAA
+ACAAAABUBgAApAAAAGwGAABFAAAAYAYAAAAAAACxAAAAAAEAAAAAAgUAAQAAAAR0cmVlEAAAAAAAQAAA
+AA1wAAAAAAAGQEALwQAAgAUHQEACDwAAZAYAAAUEQW5zMwAIQEASzgAAgAYJQEACDwAAZAgAAAUERmlu
+ZAIAAAA4J/oJAApAQI5wAACACAALQEAKwwAAgAoMQEAKwwAAQAsNQEAE/QAAQAwOQEACDwAAZA0AAAIB
+dgAPQEACDwAAtA0AAAIBATAAABBAQAT9AACADBFAQAIPAABkEAAAAgF2ABJAQAIPAAC0EAAAAgEBMQAA
+ABNAQAT9AACACxRAQAIPAABkEwAAAgF2ABVAQAIPAAC0EwAAAgEBMgAAAAAAAAAAAAAAAAAAAA==" border="0">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="68" mcd:aligny="1680" style="position: absolute; top: 1646px; left: 32px; width: 85px;">
+<layer width="85">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;ci&gt;Ans3&lt;/ci&gt;
+    &lt;vector&gt;
+      &lt;cn&gt;2&lt;/cn&gt;
+      &lt;cn&gt;1&lt;/cn&gt;
+      &lt;apply&gt;
+        &lt;minus/&gt;
+        &lt;cn&gt;1&lt;/cn&gt;
+      &lt;/apply&gt;
+    &lt;/vector&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0178.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="hilight:true;color:#c0c0c0" class="equation" ;mcd:eqproperties="" mcd:alignx="105" mcd:aligny="1728" style="position: absolute; top: 1716px; left: 32px; width: 96px;">
+<layer width="96">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;Func&lt;/ci&gt;
+      &lt;ci&gt;Ans3&lt;/ci&gt;
+    &lt;/apply&gt;
+    &lt;cn&gt;5&lt;/cn&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0179.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="97" mcd:aligny="1792" style="position: absolute; top: 1750px; left: 32px; width: 283px;">
+<layer width="283">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;H&lt;/ci&gt;
+      &lt;ci&gt;f&lt;/ci&gt;
+      &lt;ci&gt;Ans3&lt;/ci&gt;
+    &lt;/apply&gt;
+    &lt;matrix&gt;
+      &lt;matrixrow&gt;
+        &lt;cn&gt;2&lt;/cn&gt;
+        &lt;apply&gt;
+          &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+          &lt;cn&gt;1.205&lt;/cn&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-better_POWER&lt;/ci&gt;
+            &lt;cn&gt;10&lt;/cn&gt;
+            &lt;apply&gt;
+              &lt;minus/&gt;
+              &lt;cn&gt;14&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+        &lt;/apply&gt;
+        &lt;cn&gt;4&lt;/cn&gt;
+      &lt;/matrixrow&gt;
+      &lt;matrixrow&gt;
+        &lt;apply&gt;
+          &lt;ci&gt;-mult-times-in&lt;/ci&gt;
+          &lt;cn&gt;3.928&lt;/cn&gt;
+          &lt;apply&gt;
+            &lt;ci&gt;-better_POWER&lt;/ci&gt;
+            &lt;cn&gt;10&lt;/cn&gt;
+            &lt;apply&gt;
+              &lt;minus/&gt;
+              &lt;cn&gt;15&lt;/cn&gt;
+            &lt;/apply&gt;
+          &lt;/apply&gt;
+        &lt;/apply&gt;
+        &lt;cn&gt;6&lt;/cn&gt;
+        &lt;cn&gt;6&lt;/cn&gt;
+      &lt;/matrixrow&gt;
+      &lt;matrixrow&gt;
+        &lt;cn&gt;4&lt;/cn&gt;
+        &lt;cn&gt;6&lt;/cn&gt;
+        &lt;cn&gt;16&lt;/cn&gt;
+      &lt;/matrixrow&gt;
+    &lt;/matrix&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0180.PNG" align="absmiddle">
+</layer>
+</div>
+<div mcd:region="EQN" mcd:properties="" class="equation" mcd:eqproperties="" mcd:alignx="155" mcd:aligny="1856" style="position: absolute; top: 1844px; left: 32px; width: 174px;">
+<layer width="174">
+<comment mcd:mmldata="&lt;math&gt;
+  &lt;apply&gt;
+    &lt;ci&gt;-EVAL&lt;/ci&gt;
+    &lt;apply&gt;
+      &lt;ci&gt;IsPologit&lt;/ci&gt;
+      &lt;apply&gt;
+        &lt;ci&gt;H&lt;/ci&gt;
+        &lt;ci&gt;f&lt;/ci&gt;
+        &lt;ci&gt;Ans3&lt;/ci&gt;
+      &lt;/apply&gt;
+    &lt;/apply&gt;
+    &lt;ci&gt;'Yes'&lt;/ci&gt;
+  &lt;/apply&gt;
+&lt;/math&gt;"></comment>
+<img src="%D0%9A%D1%83%D1%80%D1%810_files/IMG0181.PNG" align="absmiddle">
+</layer>
+</div>
+</body></html>

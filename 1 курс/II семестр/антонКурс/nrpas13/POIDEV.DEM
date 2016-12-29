@@ -1,0 +1,56 @@
+PROGRAM d7r8 (input,output);
+(* driver for routine POIDEV *)
+LABEL 10,99;
+CONST
+   n = 20;
+   npts = 1000;
+   iscal = 200;
+   llen = 50;
+VAR
+   i,idum,j,k,klim : integer;
+   xm : real;
+   dist : ARRAY [0..20] OF real;
+   txt : PACKED ARRAY [1..50] OF char;
+   gloldm,glsq,glalxm,glg : real;
+   glinext,glinextp : integer;
+   glma : ARRAY [1..55] OF real;
+
+(*$I MODFILE.PAS *)
+(*$I RAN3.PAS *)
+
+(*$I GAMMLN.PAS *)
+
+(*$I POIDEV.PAS *)
+
+BEGIN
+   gloldm := -1.0;   (* initializes routine poidev *)
+   idum := -13;
+10:   FOR j := 0 to 20 DO BEGIN
+      dist[j] := 0.0
+   END;
+   writeln('Mean of Poisson distribution (x := 0.0 to 20.0); neg. to end');
+   readln(xm);
+   IF (xm < 0.0) THEN GOTO 99;
+   IF (xm > 20.0) THEN GOTO 10;
+   FOR i := 1 to npts DO BEGIN
+      j := trunc(poidev(xm,idum));
+      IF ((j >= 0) AND (j <= 20)) THEN dist[j] := dist[j]+1
+   END;
+   writeln('Poisson-distributed deviate, mean ',xm:5:2,
+         ' of ',npts:6,' points');
+   writeln('x':5,'p(x)':8,'graph:':10);
+   FOR j := 0 to 19 DO BEGIN
+      dist[j] := dist[j]/npts;
+      FOR k := 1 to 50 DO BEGIN
+         txt[k] := ' '
+      END;
+      klim := trunc(iscal*dist[j]);
+      IF (klim > llen) THEN klim := llen;
+      FOR k := 1 to klim DO BEGIN
+         txt[k] := '*'
+      END;
+      writeln (1.0*j:6:2,dist[j]:8:4,'   ',txt)
+   END;
+   GOTO 10;
+99:
+END.
